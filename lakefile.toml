@@ -1,0 +1,16 @@
+name = "StaticSanityCheck"
+version = "0.1.0"
+defaultTargets = ["staticsanitycheck"]
+
+[[lean_lib]]
+name = "StaticSanityCheck"
+
+[[lean_exe]]
+name = "staticsanitycheck"
+root = "Main"
+defaultTargets = ["StaticSanityCheck", "staticsanitycheck"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.27.0"
