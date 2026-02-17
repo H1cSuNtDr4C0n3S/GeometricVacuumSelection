@@ -1,0 +1,171 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{RowBox[{"02","_Action",RowBox[{"_Lagrangian",".","nb"}],"\n","   ","Define"," ","the"," ","4","D"," ","Lagrangian"," ","density"," ","components","\n","\n","   ","GLOBAL"}],"-",RowBox[
+{"ONLY"," ",RowBox[{"VERSION",":","\n","   ",RowBox[{"This"," ","notebook"," ","defines"}],":","\n","   ",RowBox[
+{"1."," ",RowBox[{"L4base",":"," ",RowBox[{"the"," ","local"," ","dynamical"," ","Lagrangian","\n","   ","2."," ","KernelLeaf"}],":"," ",RowBox[
+{RowBox[{RowBox[{"the"," ","constraint"," ","kernel"," ","to"," ","be","\n","      ","integrated"," ","over"," ","the"," ","causal"," ","domain"," ","in"," ","03","\n","\n","   ","The"," ","constraint"," ","is"," ","NOT"," ","enforced"," ",RowBox[
+{"pointwise",".","\n","   ","It"}]," ","will"," ","become"," ","a"," ","leaf"}],"-",RowBox[
+{"integrated"," ","normalized","\n","   ","average"," ","condition"," ","in"," ","notebook"," ","03."}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===","=="}]}]}]}]}]}]}]}]," ","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"Ensure"," ","X"}],","," ","K2",","," ","R",","," ",RowBox[
+{"sqrtMinusg"," ","exist"," ",RowBox[{"(",RowBox[{"run"," ","notebook"," ","00"," ","and"," ","01"," ","first"}],")"}]}]}]," ","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","1"}]}]}],":"," ",RowBox[{RowBox[{"LOCAL"," ","DYNAMICAL"," ","LAGRANGIAN"}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{RowBox[{"This"," ","is"," ","the"," ","standard"," ","GR"}]," ","+"," ",RowBox[
+{"scalar"," ","field"," ",RowBox[{"part",".","\n","   ","It"}]," ","generates"," ","local"," ","field"," ","equations"," ","via"," ","the","\n","   ","usual"," ","variational"," ",RowBox[
+{"principle","."}]}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{RowBox[{"L4base"," ","="," ",RowBox[
+{"FullSimplify","[","\n","  ",RowBox[{"sqrtMinusg"," ","*"," ",RowBox[{"(","\n","    ",RowBox[
+{RowBox[{RowBox[{"(",RowBox[{"1","/",RowBox[{"(",RowBox[{"2"," ","\[Kappa]"}],")"}]}],")"}]," ",RowBox[
+{"(",RowBox[{"R"," ","-"," ",RowBox[{"2"," ","\[CapitalLambda]"}]}],")"}]}],"\n","    ","-"," ",RowBox[
+{RowBox[{"(",RowBox[{"\[Alpha]","/","2"}],")"}]," ","X"}]}],"\n","  ",")"}]}],"\n","]"}]}],";"}]}]],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"L4base (local dynamics) = \"",","," ","L4base"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","2"}]}]}],":"," ",RowBox[{RowBox[{"CONSTRAINT"," ","KERNEL"," ","FOR"," ","LEAF"," ","INTEGRAL"}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"The"," ","constraint"," ",RowBox[{"K","^","2"}]}]}]}]}]," ","="," ",RowBox[
+{RowBox[{"K0","^","2"}]," ","is"," ","NOT"," ","imposed"," ",RowBox[{"pointwise",".","\n","   ","Instead"}]}]}],","," ",RowBox[
+{RowBox[{"we"," ","define"," ","a"," ","kernel"," ","that"," ","will"," ","be"," ","integrated","\n","   ","over"," ","the"," ","causal"," ","domain"," ","D_Theta"," ","on"," ","each"," ","leaf"," ",RowBox[
+{"Sigma_Theta",".","\n","\n","   ","The"}]," ","actual"," ","constraint"," ",RowBox[
+{"(",RowBox[{"built"," ","in"," ","03"}],")"}]," ","is"," ","a"," ","NORMALIZED","\n","   ","AVERAGE"," ","over"," ","the"," ","causal"," ",RowBox[
+{"patch",":","\n","\n","       ",RowBox[{"<"," ",RowBox[{"K","^","2"}]," ",">",RowBox[
+{"_",RowBox[{"{","D_Theta","}"}]}]}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"K0","^","2"}],"\n","\n","   ",RowBox[
+{"where",":","\n","       ",RowBox[{"<"," ",RowBox[{"K","^","2"}]," ",">",RowBox[
+{"_",RowBox[{"{","D_Theta","}"}]}]}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"Integral","[",RowBox[
+{RowBox[{"K2"," ","*"," ","W"," ","*"," ","sqrt",RowBox[{"(","h",")"}]}],","," ","D_Theta"}],"]"}],"\n","                          ","/"," ",RowBox[
+{"Integral","[",RowBox[{RowBox[{"W"," ","*"," ","sqrt",RowBox[{"(","h",")"}]}],","," ","D_Theta"}],"]"}]}],"\n","\n","   ","and"," ","W"," ","is"," ","an"," ","optional"," ",RowBox[
+{"smoothing","/","window"}]," ","function","\n","   ",RowBox[{RowBox[{"(",RowBox[
+{"can"," ","be"," ","set"," ","to"," ","1"," ","for"," ","uniform"," ","weighting"}],")"}],"."}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{"Constraint"," ",RowBox[{"kernel",":"," ",RowBox[{"the"," ","integrand"," ","for"," ",RowBox[
+{"K","^","2"}]}]}]}]," ","*)"}],"\n",RowBox[{RowBox[{"KernelK2"," ","="," ","K2"}],";"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Reference"," ",RowBox[{"kernel",":"," ",RowBox[
+{"the"," ","integrand"," ","for"," ","normalization"}]}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"KernelRef"," ","="," ",RowBox[{"K0","^","2"}]}],";"}]}]],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Print","[",RowBox[{"\"KernelK2 (to be leaf-integrated) = \"",","," ","KernelK2"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"KernelRef (target value) = \"",","," ","KernelRef"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","3"}]}]}],":"," ",RowBox[{RowBox[{"CONSTRAINT"," ","FUNCTIONAL"," ","STRUCTURE"}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"The"," ","global"," ","constraint"," ","functional"," ",RowBox[
+{"(",RowBox[{"to"," ","be"," ","built"," ","in"," ","03"}],")"}],"\n","   ","has"," ","the"," ","form"}]}]}],":","\n","\n","   ",RowBox[
+{"C","[","Theta","]"}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"Integral_",RowBox[{RowBox[
+{"{",RowBox[{"Sigma_Theta"," ","cap"," ","D_Theta"}],"}"}]," ","[",RowBox[{"K2"," ","*"," ","W"," ","*"," ","sqrt",RowBox[
+{"(","h",")"}]," ",RowBox[{"d","^","3"}],"x"}],"]"}]}],"\n","            ","-"," ",RowBox[
+{RowBox[{"K0","^","2"}]," ","*"," ","Integral_",RowBox[{RowBox[{"{",RowBox[{"Sigma_Theta"," ","cap"," ","D_Theta"}],"}"}]," ","[",RowBox[
+{"W"," ","*"," ","sqrt",RowBox[{"(","h",")"}]," ",RowBox[{"d","^","3"}],"x"}],"]"}],"\n","\n","   ","The"," ","Lagrange"," ","multiplier"," ",RowBox[
+{"lambda","[","Theta","]"}]," ","enforces"," ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[
+{"0","\n","   ","for"," ","each"," ","leaf"}]}]}],","," ",RowBox[{"but"," ","this"," ","is"," ","an"," ","INTEGRAL"," ","condition"}],","," ",RowBox[
+{"not"," ",RowBox[{"pointwise",".","\n","\n","   ","Equivalently"}]}],","," ",RowBox[
+{RowBox[{"in"," ","normalized"," ",RowBox[{"form",":","\n","\n","   ",RowBox[{"<"," ",RowBox[
+{"K","^","2"}]," ",">",RowBox[{RowBox[{"_",RowBox[{"{","D_Theta","}"}]}]," ","-"," ",RowBox[
+{"K0","^","2"}]}]}]}]}]," ","="," ",RowBox[{"0","\n","\n","   ","This"," ","is"," ","the"," ","\"average extrinsic curvature constraint\"","\n","   ","on"," ","the"," ","causal"," ","domain"," ","of"," ","each"," ","present"," ",RowBox[
+{"hypersurface","."}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[{"NOTE",":"," ",RowBox[
+{"K0"," ","and"," ","Lambda_Theta"," ","are"," ","defined"," ","in"," ","00","_Setup","_Assumptions"}]}]," ","*)"}],"\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"The"," ","multiplier"," ",RowBox[{"lambda","[","Theta","]"}]," ","will"," ","appear"," ","in"," ","the"," ","total"," ","action","\n","   ","in"," ","03"," ","when"," ","we"," ","assemble"," ","the"," ","leaf"}],"-",RowBox[
+{"integrated"," ",RowBox[{"constraint","."}]}]}]," ","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[
+{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"NOTES"," ","ON"," ","DOMAIN"," ","AND"," ","MEASURE"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"1."," ",RowBox[{"Sigma_Theta",":"," ",RowBox[{"the"," ","full"," ","hypersurface"," ","Theta"}]}]}]}]}]," ","="," ",RowBox[
+{RowBox[{"const","\n","\n","   ","2."," ",RowBox[{"D_Theta",":"," ",RowBox[{RowBox[
+{"the"," ",RowBox[{"causal","/","static"}]," ","domain"," ","on"," ","Sigma_Theta"}],"\n","      ","-"," ",RowBox[
+{"In"," ","static"," ","spherically"," ","symmetric"," ","spacetime"}]}],":"," ",RowBox[
+{RowBox[{"r"," ","in"," ",RowBox[{"(",RowBox[{"r_inner",","," ","r_outer"}],")"}]}],"\n","      ","-"," ",RowBox[
+{"r_inner",":"," ",RowBox[{RowBox[{"inner"," ","horizon"," ","or"," ","origin"}],"\n","      ","-"," ","r_outer"}],":"," ",RowBox[
+{"cosmological"," ","horizon"," ",RowBox[{"(",RowBox[{"de"," ","Sitter"}],")"}]," ","or"," ","spatial"," ","infinity","\n","\n","   ","3."," ","sqrt",RowBox[
+{"(","h",")"}]}],":"," ",RowBox[{RowBox[{"induced"," ","metric"," ","determinant"," ","on"," ","Sigma_Theta"}],"\n","      ","-"," ",RowBox[
+{"For"," ","Theta"}]}]}]}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"t"," ","+"," ",RowBox[
+{"psi",RowBox[{"(","r",")"}]}]}],":"," ",RowBox[{"h_ij"," ",RowBox[{"dx","^","i"}]," ",RowBox[
+{"dx","^","j"}]," ","with"," ","sqrt",RowBox[{"(","h",")"}]," ","from"," ","03","\n","\n","   ","4."," ","W"}],":"," ",RowBox[
+{RowBox[{"optional"," ","smoothing"," ","function"}],"\n","      ","-"," ",RowBox[
+{"Default",":"," ","W"}]}]}]," ","="," ",RowBox[{RowBox[{"1"," ",RowBox[{"(",RowBox[
+{"uniform"," ","average"}],")"}]}],"\n","      ","-"," ",RowBox[{"Can"," ","be"," ","chosen"," ","to"," ","regulate"," ",RowBox[
+{"IR","/","UV"}]," ","if"," ","needed"}],"\n","      ","-"," ",RowBox[{"W"," ","is"," ","NOT"," ","a"," ","dynamical"," ","field"}]}]}]}]}],";"," ",RowBox[
+{RowBox[{"it","'"}],"s"," ","a"," ","fixed"," ","prescription","\n","\n","   ","5."," ","The"," ","constraint"," ","is"," ","GLOBAL"," ","PER"," ",RowBox[
+{"LEAF",":","\n","      ",RowBox[{RowBox[{RowBox[{"-"," ",RowBox[{"lambda","[","Theta","]"}]}]," ","is"," ","constant"," ","on"," ","each"," ","leaf"," ",RowBox[
+{"(",RowBox[{"not"," ","a"," ","function"," ","of"," ","x"}],")"}]}],"\n","      ","-"," ",RowBox[
+{"Variation"," ",RowBox[{"w",".","r",".","t","."," ",RowBox[{"lambda","[","Theta","]"}]}]," ","yields"," ","the"," ","integral"," ","constraint"}],"\n","      ","-"," ",RowBox[
+{"Variation"," ",RowBox[{"w",".","r",".","t","."," ","metric"}]," ","yields"," ","modified"," ","Einstein"," ","equations","\n","        ","where"," ",RowBox[
+{"lambda","[","Theta","]"}]," ","acts"," ","as"," ","a"," ","leaf"}],"-",RowBox[{"dependent"," ","parameter"}]}]}]}]}],"\n","*)"}],"\n"}]]}],
+"Input",CellLabel -> "In[114]:= ",ExpressionUUID -> "5428ccaa-6504-4897-aa2b-5e186bd7e118"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"L4base (local dynamics) = \"","\[InvisibleSpace]",RowBox[
+{"-",FractionBox[RowBox[{RowBox[{"Sin","[","th","]"}]," ",RowBox[{"(",RowBox[{RowBox[
+{SuperscriptBox["r","2"]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}],"+",RowBox[
+{SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",RowBox[{"(",RowBox[{RowBox[{"4"," ",RowBox[
+{"(",RowBox[{"1","+",RowBox[{SuperscriptBox["r","2"]," ","\[CapitalLambda]"}]}],")"}]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[{"4"," ","r"," ",RowBox[{SuperscriptBox[
+"B","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"-",RowBox[{"2"," ",RowBox[
+{"B","[","r","]"}]," ",RowBox[{"(",RowBox[{"2","+",RowBox[{SuperscriptBox["r","2"]," ","\[Alpha]"," ","\[Kappa]"," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}]}]}],")"}]}],"+",RowBox[{"r"," ",RowBox[{"A","[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{"2"," ","r"," ","\[Alpha]"," ","\[Kappa]"," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[{"r"," ",RowBox[{SuperscriptBox["A","\[Prime]",
+MultilineFunction -> None],"[","r","]"}]," ",RowBox[{SuperscriptBox["B","\[Prime]",
+MultilineFunction -> None],"[","r","]"}]}],"-",RowBox[{"2"," ",RowBox[{"B","[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{"2"," ",RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{"r"," ",RowBox[{SuperscriptBox["A","\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}]}]}],")"}]}]}],")"}]}]}],")"}]}],
+RowBox[{"4"," ","\[Kappa]"," ",SuperscriptBox[RowBox[{"(",RowBox[{RowBox[{"A","[","r","]"}]," ",RowBox[
+{"B","[","r","]"}]}],")"}],RowBox[{"3","/","2"}]]}]]}]}],SequenceForm["L4base (local dynamics) = ",
+Times[Rational[-1,4],Power[\[Kappa],-1],Power[Times[A[r],B[r]],Rational[-3,2]],Sin[
+th],Plus[Times[Power[r,2],B[r],Power[Derivative[1][A][r],2]],Times[Power[A[r],2],
+Plus[Times[4,Plus[1,Times[Power[r,2],\[CapitalLambda]]],Power[B[r],2]],Times[4,r,
+Derivative[1][B][r]],Times[-2,B[r],Plus[2,Times[Power[r,2],\[Alpha],\[Kappa],Power[
+Derivative[1][\[Psi]][r],2]]]]]],Times[r,A[r],Plus[Times[2,r,\[Alpha],\[Kappa],Power[
+B[r],2]],Times[r,Derivative[1][A][r],Derivative[1][B][r]],Times[-2,B[r],Plus[Times[
+2,Derivative[1][A][r]],Times[r,Derivative[2][A][r]]]]]]]]],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "f9574133-c1aa-4847-8f2f-703aef90c21f"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"\"KernelK2 (to be leaf-integrated) = \"","\[InvisibleSpace]",FractionBox[
+RowBox[{RowBox[{SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]," ",RowBox[{"(",RowBox[{RowBox[{RowBox[{"-","4"}]," ",SuperscriptBox["r","2"]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["A","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}],"+",RowBox[{"16"," ",SuperscriptBox[
+RowBox[{"A","[","r","]"}],"3"]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}],"-",RowBox[
+{"8"," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"4"]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"4"]}],"+",RowBox[
+{"4"," ",SuperscriptBox["r","2"]," ",RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[
+{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}]}],"-",RowBox[{SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",RowBox[
+{"(",RowBox[{RowBox[{"8"," ",SuperscriptBox[RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[
+{SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"(",RowBox[{RowBox[{SuperscriptBox[
+"B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[{RowBox[{SuperscriptBox[
+"A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}],
+"2"]}]}],")"}]}]}],")"}]}],"+",RowBox[{"4"," ",SuperscriptBox["r","2"]," ",RowBox[
+{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[{"(",RowBox[{RowBox[
+{RowBox[{"A","[","r","]"}]," ",RowBox[{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"-","2"}]," ",RowBox[{"B","[","r","]"}]}],"+",RowBox[
+{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}]}]}],")"}]," ",RowBox[{SuperscriptBox[
+"\[Psi]","\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"-",RowBox[
+{"4"," ",SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],RowBox[{"4"," ",SuperscriptBox[
+"r","2"]," ",RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[
+RowBox[{"(",RowBox[{RowBox[{"-",RowBox[{"B","[","r","]"}]}],"+",RowBox[{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}],"3"]}]]}],SequenceForm["KernelK2 (to be leaf-integrated) = ",Times[
+Rational[1,4],Power[r,-2],Power[A[r],-1],Power[B[r],-1],Power[Plus[Times[-1,B[r]],
+Times[A[r],Power[Derivative[1][\[Psi]][r],2]]],-3],Plus[Times[Power[Derivative[1][
+\[Psi]][r],2],Plus[Times[-4,Power[r,2],Power[B[r],2],Power[Derivative[1][A][r],2]],
+Times[16,Power[A[r],3],B[r],Power[Derivative[1][\[Psi]][r],2]],Times[-8,Power[A[r],
+4],Power[Derivative[1][\[Psi]][r],4]],Times[4,Power[r,2],A[r],B[r],Derivative[1][
+A][r],Plus[Derivative[1][B][r],Times[Derivative[1][A][r],Power[Derivative[1][\[Psi]][
+r],2]]]],Times[-1,Power[A[r],2],Plus[Times[8,Power[B[r],2]],Times[Power[r,2],Power[
+Plus[Derivative[1][B][r],Times[Derivative[1][A][r],Power[Derivative[1][\[Psi]][r],
+2]]],2]]]]]],Times[4,Power[r,2],A[r],B[r],Derivative[1][\[Psi]][r],Plus[Times[A[r],
+Derivative[1][B][r]],Times[Derivative[1][A][r],Plus[Times[-2,B[r]],Times[A[r],Power[
+Derivative[1][\[Psi]][r],2]]]]],Derivative[2][\[Psi]][r]],Times[-4,Power[r,2],Power[
+A[r],2],Power[B[r],2],Power[Derivative[2][\[Psi]][r],2]]]]],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "edb2406f-4027-4566-a9d4-57fec793eeae"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"\"KernelRef (target value) = \"","\[InvisibleSpace]",SuperscriptBox["K0",
+"2"]}],SequenceForm["KernelRef (target value) = ",Power[K0,2]],Editable -> False],
+StandardForm],"Print",ExpressionUUID -> "886ddf81-ef20-45f2-9a4b-3eb3c065e8a8"]},
+Open],ExpressionUUID -> "ed86f141-3e5a-40a3-b4dd-51fe7673785f"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "14.3 for Wolfram Cloud 1.75 (December 9, 2025)"]

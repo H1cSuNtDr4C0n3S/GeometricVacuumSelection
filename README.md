@@ -1,5 +1,11 @@
 # StaticSanityCheck
 
+[![CI](https://github.com/H1cSuNtDr4C0n3S/StaticSanityCheck/actions/workflows/lean_action_ci.yml/badge.svg)](https://github.com/H1cSuNtDr4C0n3S/StaticSanityCheck/actions/workflows/lean_action_ci.yml)
+[![Release](https://img.shields.io/github/v/release/H1cSuNtDr4C0n3S/StaticSanityCheck?display_name=tag)](https://github.com/H1cSuNtDr4C0n3S/StaticSanityCheck/releases)
+[![Lean](https://img.shields.io/badge/Lean-v4.27.0-blue)](https://github.com/leanprover/lean4)
+[![mathlib](https://img.shields.io/badge/mathlib-a3a10db0-informational)](https://github.com/leanprover-community/mathlib4/commit/a3a10db0e9d66acbebf76c5e6a135066525ac900)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18361297.svg)](https://doi.org/10.5281/zenodo.18361297)
+
 Workspace Lean 4 per verifiche formali dei passaggi chiave del paper:
 `Geometric_Vacuum_Selection_from_Constrained_Spacetime_Foliations_v2_causal_domain_resolved.pdf`
 (presente nella root del repository).
@@ -55,6 +61,15 @@ Versioni usate nello sviluppo corrente (pinnate nel repository):
 
 Per una riproduzione fedele da referee, i due file da considerare canonici
 sono `lean-toolchain` e `lake-manifest.json`.
+
+## Artifact Release
+
+- GitHub release/tag consigliata per referaggio:
+  `v2.0`
+- DOI archivio:
+  `10.5281/zenodo.18361297`
+- Metadata citazione:
+  `CITATION.cff` (in root repository)
 
 ## Confini Di Formalizzazione (Espliciti)
 

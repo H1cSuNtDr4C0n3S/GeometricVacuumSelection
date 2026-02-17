@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite it as follows."
+title: "StaticSanityCheck: Lean artifact for geometric vacuum selection from constrained spacetime foliations"
+type: software
+authors:
+  - family-names: Spina
+    given-names: Michael
+    email: michael.spina@mail.com
+repository-code: "https://github.com/H1cSuNtDr4C0n3S/StaticSanityCheck"
+url: "https://github.com/H1cSuNtDr4C0n3S/StaticSanityCheck"
+version: "v2.0"
+doi: "10.5281/zenodo.18361297"
+date-released: "2026-02-16"

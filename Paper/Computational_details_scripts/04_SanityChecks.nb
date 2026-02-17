@@ -1,0 +1,120 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"04",RowBox[{"_SanityChecks",".","nb"}],"\n","   ","Quick"," ","verification"," ","of"," ","limiting"," ","expressions","\n","\n","   ",RowBox[
+{"NOTE",":"," ",RowBox[{"This"," ","notebook"," ","does"," ","NOT"," ","test"," ","the"," ","global","\n","   ",RowBox[
+{"constraint","."," ","It"}]," ","only"," ","verifies"}],":","\n","   ",RowBox[{"1."," ","Volume"," ","element"," ","formula","\n","   ","2."," ","Schwarzschild"," ","R"}]}]}]}]}]," ","="," ",RowBox[
+{"0"," ",RowBox[{"(",RowBox[{"GR"," ","recovery"}],")"}],"\n","   ","3."," ","Static"," ","foliation"," ","limit"," ",RowBox[
+{"(",RowBox[{RowBox[{"psi","'"}]," ","="," ","0"}],")"}],"\n","\n","   ","Constraint"," ","enforcement"," ","is"," ","handled"," ","as"," ","a"," ","LEAF","\n","   ","FUNCTIONAL"," ","in"," ","notebook"," ","03."," ","The"," ","\"vacuum selection\"","\n","   ","conclusions"," ","are"," ","drawn"," ","in"," ","notebooks"," ","05"," ","and"," ","06"}]}],",","\n","   ",RowBox[
+{RowBox[{"not"," ",RowBox[{"here","."}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===","=="}]}]," ","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"CHECK"," ","1"}]}]}],":"," ",RowBox[{RowBox[{"Volume"," ","element"," ","sqrt",RowBox[
+{"(",RowBox[{"-","g"}],")"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===","=="}]}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"=== CHECK 1: Volume Element ===\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"sqrt(-g) = \"",","," ",RowBox[{"FullSimplify","[",RowBox[
+{"sqrtMinusg",","," ","$Assumptions"}],"]"}]}],"]"}],";"}],RowBox[{"\n","\n"}],StyleBox[
+RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"CHECK"," ","2"}]}]}],":"," ",RowBox[{RowBox[{"Schwarzschild"," ","test"," ",RowBox[
+{"(",RowBox[{"R"," ","="," ","0"}],")"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"For"," ","Schwarzschild"}]}]}],":"," ",RowBox[{"A",RowBox[
+{"(","r",")"}]}]}]," ","="," ",RowBox[{"1"," ","-"," ",RowBox[{"2",RowBox[{"M","/","r"}]}]}]}],","," ",RowBox[
+{RowBox[{"B",RowBox[{"(","r",")"}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"1","/","A"}],RowBox[
+{"(","r",")"}],"\n","   ","The"," ","Ricci"," ","scalar"," ","must"," ",RowBox[{"vanish",":"," ","R"}]}]," ","="," ",RowBox[
+{"0","\n","   ","This"," ","confirms"," ","GR"," ","vacuum"," ","equations"," ","are"," ",RowBox[
+{"recovered","."}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[","\"=== CHECK 2: Schwarzschild R = 0 ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"M"," ","="," ",RowBox[{"Symbol","[","\"M\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"Aschw"," ","="," ",RowBox[{"1"," ","-"," ",RowBox[{"2"," ",RowBox[{"M","/","r"}]}]}]}],";"}],"\n",RowBox[
+{RowBox[{"Bschw"," ","="," ",RowBox[{"1","/","Aschw"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Rschw"," ","="," ",RowBox[{"FullSimplify","[","\n","  ",RowBox[{RowBox[
+{"R"," ","/."," ",RowBox[{"{",RowBox[{RowBox[{"A"," ","\[Rule]"," ",RowBox[{"Function","[",RowBox[
+{RowBox[{"{","x","}"}],","," ",RowBox[{"Aschw"," ","/."," ",RowBox[{"r"," ","\[Rule]"," ","x"}]}]}],"]"}]}],",","\n","        ",RowBox[
+{"B"," ","\[Rule]"," ",RowBox[{"Function","[",RowBox[{RowBox[{"{","x","}"}],","," ",RowBox[
+{"Bschw"," ","/."," ",RowBox[{"r"," ","\[Rule]"," ","x"}]}]}],"]"}]}]}],"}"}]}],",","\n","  ",RowBox[
+{"{",RowBox[{RowBox[{"r"," ",">"," ",RowBox[{"2"," ","M"}]}],","," ",RowBox[{"M"," ",">"," ","0"}]}],"}"}]}],"\n","]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"R(Schwarzschild) = \"",","," ","Rschw"}],"]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"If","[",RowBox[{RowBox[{"Rschw"," ","==="," ","0"}],",","\n","  ",RowBox[
+{"Print","[","\"PASS: Schwarzschild is Ricci-flat (GR recovered).\"","]"}],",","\n","  ",RowBox[
+{"Print","[","\"FAIL: R should be zero for Schwarzschild.\"","]"}]}],"\n","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"CHECK"," ","3"}]}]}],":"," ",RowBox[{RowBox[{"Static"," ","foliation"," ","limit"," ",RowBox[
+{"(",RowBox[{RowBox[{"psi","'"}]," ","="," ","0"}],")"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"When"," ",RowBox[{"psi","'"}],RowBox[{"(","r",")"}]}]}]}]}]," ","="," ","0"}],","," ",RowBox[
+{RowBox[{"the"," ","foliation"," ","Theta"}]," ","="," ",RowBox[{RowBox[{"t"," ","+"," ",RowBox[
+{"psi",RowBox[{"(","r",")"}],"\n","   ","coincides"," ","with"," ","constant"}],"-",RowBox[
+{"t"," ",RowBox[{"surfaces","."," ","This"}]," ","is"," ","the","\n","   ","\"static foliation\""," ","or"," ","\"coordinate time\""," ",RowBox[
+{"limit",".","\n","\n","   ","Expected"}]," ",RowBox[{"results",":","\n","   ",RowBox[
+{"-"," ","X"}]}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[{RowBox[{"1","/","A"}],RowBox[
+{"(","r",")"}]," ",RowBox[{"(",RowBox[{"kinetic"," ","invariant"," ","from"," ","lapse"," ","only"}],")"}]}],"\n","   ","-"," ",RowBox[
+{"K2"," ","simplifies"," ",RowBox[{"(",RowBox[{RowBox[{"extrinsic"," ","curvature"," ","of"," ","t"}],"=",RowBox[
+{"const"," ","surfaces"}]}],")"}],"\n","\n","   ",RowBox[{"NOTE",":"," ",RowBox[{"The"," ","fact"," ","that"," ","K2"," ","may"," ","vanish"," ","or"," ","simplify"," ","in","\n","   ","this"," ","limit"," ","is"," ","a"," ","LOCAL"," ","property"," ","of"," ","the"," ",RowBox[
+{"invariants",".","\n","   ","It"}]," ","does"," ","NOT"," ","directly"," ","imply"," ","anything"," ","about"," ","the","\n","   ","global"," ","constraint"," ",RowBox[
+{"C","[","Theta","]"}]}]}]}]}]," ","="," ","0"}]}]}],","," ",RowBox[{"which"," ","involves","\n","   ","integration"," ","over"," ","the"," ","causal"," ","domain"," ",RowBox[
+{"D_Theta",".","\n","\n","   ","The"}]," ","\"vacuum selection\""," ",RowBox[{"(",RowBox[
+{RowBox[{"Minkowski"," ","excluded"}],","," ",RowBox[{"de"," ","Sitter","\n","   ","allowed"}]}],")"}]," ","is"," ","determined"," ","by"," ","the"," ","leaf"," ","functional"," ","in"," ","03"}],",","\n","   ",RowBox[
+{RowBox[{"tested"," ","in"," ","05"," ","and"," ","06"}]," ","-"," ",RowBox[{"NOT"," ","by"," ","this"," ","local"," ",RowBox[
+{"limit","."}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[","\"=== CHECK 3: Static Foliation Limit (psi' = 0) ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Xpsi0"," ","="," ",RowBox[{"FullSimplify","[","\n","  ",RowBox[
+{RowBox[{"X"," ","/."," ",RowBox[{"{",RowBox[{RowBox[{RowBox[{"D","[",RowBox[{RowBox[
+{"\[Psi]","[","r","]"}],","," ","r"}],"]"}]," ","\[Rule]"," ","0"}],","," ",RowBox[
+{RowBox[{"D","[",RowBox[{RowBox[{"\[Psi]","[","r","]"}],","," ",RowBox[{"{",RowBox[
+{"r",","," ","2"}],"}"}]}],"]"}]," ","\[Rule]"," ","0"}]}],"}"}]}],",","\n","  ","$Assumptions"}],"\n","]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"K2psi0"," ","="," ",RowBox[{"FullSimplify","[","\n","  ",RowBox[
+{RowBox[{"K2"," ","/."," ",RowBox[{"{",RowBox[{RowBox[{RowBox[{"D","[",RowBox[{RowBox[
+{"\[Psi]","[","r","]"}],","," ","r"}],"]"}]," ","\[Rule]"," ","0"}],","," ",RowBox[
+{RowBox[{"D","[",RowBox[{RowBox[{"\[Psi]","[","r","]"}],","," ",RowBox[{"{",RowBox[
+{"r",","," ","2"}],"}"}]}],"]"}]," ","\[Rule]"," ","0"}]}],"}"}]}],",","\n","  ","$Assumptions"}],"\n","]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"X | psi'=0 = \"",","," ","Xpsi0"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"K2 | psi'=0 = \"",","," ","K2psi0"}],"]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"Interpretation:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  X -> 1/A(r) : kinetic term from lapse alone\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  K2 simplified: extrinsic curvature of t=const slices\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"NOTE: This is a LOCAL limit check, not a constraint test.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"Print","[","\"The global constraint is evaluated in notebooks 05, 06.\"","]"}],";"}],"\n"}]}],
+"Input",CellLabel -> "In[164]:= ",ExpressionUUID -> "27a0108e-4ee4-43b6-9550-f5c857b79f48"],Cell[
+BoxData[
+"\"=== CHECK 1: Volume Element ===\"",StandardForm],"Print",ExpressionUUID -> "45f79a98-1d8b-402b-9c07-b1347b15203f"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"sqrt(-g) = \"","\[InvisibleSpace]",RowBox[{SuperscriptBox[
+"r","2"]," ",SqrtBox[RowBox[{RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]}]]," ",RowBox[
+{"Sin","[","th","]"}]}]}],SequenceForm["sqrt(-g) = ",Times[Power[r,2],Power[Times[
+A[r],B[r]],Rational[1,2]],Sin[th]]],Editable -> False],StandardForm],"Print",ExpressionUUID -> "d8061490-1b25-4055-8b87-20f21c8cce16"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "460a2875-e775-491c-a305-40fd6c61736d"],Cell[
+BoxData[
+"\"=== CHECK 2: Schwarzschild R = 0 ===\"",StandardForm],"Print",ExpressionUUID -> "6e5eefcb-8b35-4dbf-bf7e-8e9d664c5def"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"R(Schwarzschild) = \"","\[InvisibleSpace]","0"}],SequenceForm[
+"R(Schwarzschild) = ",0],Editable -> False],StandardForm],"Print",ExpressionUUID -> "1a424be4-0c42-4e10-988a-9232ac8a0fdb"],Cell[
+BoxData[
+"\"PASS: Schwarzschild is Ricci-flat (GR recovered).\"",StandardForm],"Print",ExpressionUUID -> "557d4b0b-f10b-400d-973f-723e7c021839"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "56adbe85-2da1-404f-b5af-7db06bf082a8"],Cell[
+BoxData[
+"\"=== CHECK 3: Static Foliation Limit (psi' = 0) ===\"",StandardForm],"Print",ExpressionUUID -> "19abf7aa-27c7-4c9b-afa3-d8c529e1da1f"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"X | psi'=0 = \"","\[InvisibleSpace]",FractionBox["1",
+RowBox[{"A","[","r","]"}]]}],SequenceForm["X | psi'=0 = ",Power[A[r],-1]],Editable -> False],
+StandardForm],"Print",ExpressionUUID -> "1e35cc42-ce20-4f9d-b3bf-385547595bd4"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"K2 | psi'=0 = \"","\[InvisibleSpace]","0"}],SequenceForm[
+"K2 | psi'=0 = ",0],Editable -> False],StandardForm],"Print",ExpressionUUID -> "02122c32-f80b-4877-ad05-458573a2063a"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "35757f6d-94a9-4ca4-aed1-ee6d8eae4e65"],Cell[
+BoxData[
+"\"Interpretation:\"",StandardForm],"Print",ExpressionUUID -> "472997a1-ab2d-4ab2-af75-9a18739f2a07"],Cell[
+BoxData[
+"\"  X -> 1/A(r) : kinetic term from lapse alone\"",StandardForm],"Print",ExpressionUUID -> "4ccaa1f7-210f-49b4-bd48-86edc9b82268"],Cell[
+BoxData[
+"\"  K2 simplified: extrinsic curvature of t=const slices\"",StandardForm],"Print",
+ExpressionUUID -> "bc76d9a2-933a-4416-8e5a-2b068187bf91"],Cell[
+BoxData["\"\"",StandardForm],
+"Print",ExpressionUUID -> "1177440c-ceb8-46d1-829a-0879252749c1"],Cell[
+BoxData["\"NOTE: This is a LOCAL limit check, not a constraint test.\"",
+StandardForm],"Print",ExpressionUUID -> "a0796575-1869-45e8-b046-1ac9ce9dd595"],Cell[
+BoxData[
+"\"The global constraint is evaluated in notebooks 05, 06.\"",StandardForm],"Print",
+ExpressionUUID -> "75b9b703-60d7-4b0c-a53c-94d504ac0107"]},Open],ExpressionUUID -> "d9f3d489-9dee-4059-b02b-7428f92a5638"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "14.3 for Wolfram Cloud 1.75 (December 9, 2025)"]

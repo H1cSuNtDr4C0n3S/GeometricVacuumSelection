@@ -1,0 +1,368 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{RowBox[{RowBox[{RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[
+{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[
+{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[
+{"--",RowBox[{"-","\n","   ","06"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}],"_Test",RowBox[
+{"_deSitter",".","nb"}],"\n","   ",RowBox[{"Test",":"," ",RowBox[{RowBox[{"de"," ","Sitter"," ","in"," ","the"," ","global"}],"-","per","-",RowBox[
+{"leaf"," ","framework","\n","\n","   ","This"," ","notebook"," ","verifies"," ","that"," ","de"," ","Sitter"," ","spacetime","\n","   ","satisfies"," ","the"," ","LEAFWISE"," ","NORMALIZED"," ","constraint"}]}],":","\n","\n","       ",RowBox[
+{"<",RowBox[{"K","^","2"}],">",RowBox[{"_",RowBox[{"{","D_Theta","}"}]}]}]}]}]," ","="," ",RowBox[
+{RowBox[{"K0","^","2"}],"\n","\n","   ","Because"," ",RowBox[{"K","^","2"}]," ","is"," ","CONSTANT"," ","on"," ","de"," ","Sitter"}]}],","," ",RowBox[
+{"the"," ","normalized","\n","   ","average"," ","equals"," ",RowBox[{"K","^","2"}]," ","itself"}],","," ",RowBox[
+{RowBox[{"making"," ","the"," ","constraint","\n","   ","trivially"," ","satisfied"," ","when"," ",RowBox[
+{"H","^","2"}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"K0","^","2"}],"/","3."}],"\n","\n","   ","The"," ","causal"," ","domain"," ","D_Theta"," ","is"," ","the"," ","static"," ","patch"," ",RowBox[
+{RowBox[{"(",RowBox[{"0",","," ",RowBox[{"1","/","H"}]}],")"}],".","\n","   ",RowBox[
+{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[
+{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[
+{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--",RowBox[{"--","-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"ClearAll","[","\"Global`*\"","]"}],";"}]}]],RowBox[{"\n","\n"}],StyleBox[
+RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[{"-"," ","1."}]}]," ","SETUP"," ","AND"," ",RowBox[
+{"ASSUMPTIONS"," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[{"Static"," ","patch"," ","of"," ","de"," ",RowBox[
+{"Sitter",":"," ",RowBox[{"r"," ","<"," ",RowBox[{RowBox[{"1","/","H"}]," ",RowBox[
+{"(",RowBox[{"cosmological"," ","horizon"}],")"}]}]}]}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"assdS"," ","="," ",RowBox[{"{",RowBox[{RowBox[{"r"," ",">"," ","0"}],","," ",RowBox[
+{"K0"," ",">"," ","0"}],","," ",RowBox[{"H"," ",">"," ","0"}],","," ",RowBox[{"r"," ","<"," ",RowBox[
+{"1","/","H"}]}]}],"}"}]}],";"}]}]],RowBox[{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{RowBox[{RowBox[{"--",RowBox[{"-"," ","2."}]}]," ","METRIC"," ",RowBox[{RowBox[{"(",RowBox[
+{"DE"," ","SITTER"," ","STATIC"," ","PATCH"}],")"}]," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"=== DE SITTER METRIC (STATIC PATCH) ===\"","]"}],";"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Metric"," ","components"}]," ","*)"}],"\n",RowBox[
+{RowBox[{"AA"," ","="," ",RowBox[{"1"," ","-"," ",RowBox[{RowBox[{"H","^","2"}]," ","*"," ",RowBox[
+{"r","^","2"}]}]}]}],";"}]}]],"\n",RowBox[{RowBox[{"BB"," ","="," ",RowBox[{"1"," ","/"," ",RowBox[
+{"(",RowBox[{"1"," ","-"," ",RowBox[{RowBox[{"H","^","2"}]," ","*"," ",RowBox[{"r","^","2"}]}]}],")"}]}]}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ","Derivatives"," ","*)"}],"\n",RowBox[
+{RowBox[{"AAp"," ","="," ",RowBox[{"D","[",RowBox[{"AA",","," ","r"}],"]"}]}],";"}]}]],"\n",RowBox[
+{RowBox[{"BBp"," ","="," ",RowBox[{"D","[",RowBox[{"BB",","," ","r"}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"AApp"," ","="," ",RowBox[{"D","[",RowBox[{"AA",","," ",RowBox[{"{",RowBox[
+{"r",","," ","2"}],"}"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[
+{"\"A(r) = \"",","," ","AA"}],"]"}],";"}],"\n",RowBox[{RowBox[{"Print","[",RowBox[
+{"\"B(r) = \"",","," ","BB"}],"]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"Domain: 0 < r < 1/H (static patch)\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[
+{"-"," ","3."}]}]," ","FOLIATION"," ","ANSATZ"," ",RowBox[{RowBox[{"(",RowBox[{RowBox[
+{"PG"," ","/"," ","COSMOLOGICAL"}]," ","SLICING"}],")"}]," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== FOLIATION ANSATZ ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Painleve","-",RowBox[{"Gullstrand"," ","type"," ","slicing"}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"psiP"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"H"," ","*"," ","r"}],")"}]," ","/"," ",RowBox[
+{"(",RowBox[{"1"," ","-"," ",RowBox[{RowBox[{"H","^","2"}]," ","*"," ",RowBox[{"r","^","2"}]}]}],")"}]}]}],";"}]}]],"\n",RowBox[
+{RowBox[{"psiPP"," ","="," ",RowBox[{"D","[",RowBox[{"psiP",","," ","r"}],"]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"psi'(r) = \"",","," ","psiP"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[
+{"-"," ","4."}]}]," ","GEOMETRY"," ","CHECK"," ",RowBox[{RowBox[{"(",RowBox[{"Ricci"," ","Scalar"}],")"}]," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== GEOMETRY CHECK ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Ricci"," ","scalar"," ","for"," ","spherically"," ","symmetric"," ","metric"}]," ","*)"}],"\n",RowBox[
+{RowBox[{"RicciScalar"," ","="," ",RowBox[{RowBox[{"(","\n","  ",RowBox[{RowBox[{RowBox[
+{"-",RowBox[{"r","^","2"}]}]," ","*"," ","BB"," ","*"," ",RowBox[{"AAp","^","2"}]}],"\n","  ","-"," ",RowBox[
+{"4"," ","*"," ",RowBox[{"AA","^","2"}]," ","*"," ",RowBox[{"(",RowBox[{RowBox[{RowBox[
+{"(",RowBox[{RowBox[{"-","1"}]," ","+"," ","BB"}],")"}]," ","*"," ","BB"}]," ","+"," ",RowBox[
+{"r"," ","*"," ","BBp"}]}],")"}]}],"\n","  ","+"," ",RowBox[{"r"," ","*"," ","AA"," ","*"," ",RowBox[
+{"(",RowBox[{RowBox[{"AAp"," ","*"," ",RowBox[{"(",RowBox[{RowBox[{"4"," ","*"," ","BB"}]," ","-"," ",RowBox[
+{"r"," ","*"," ","BBp"}]}],")"}]}]," ","+"," ",RowBox[{"2"," ","*"," ","r"," ","*"," ","BB"," ","*"," ","AApp"}]}],")"}]}]}],"\n",")"}]," ","/"," ",RowBox[
+{"(",RowBox[{"2"," ","*"," ",RowBox[{"r","^","2"}]," ","*"," ",RowBox[{"AA","^","2"}]," ","*"," ",RowBox[
+{"BB","^","2"}]}],")"}]}]}],";"}]}]],RowBox[{"\n","\n"}],RowBox[{RowBox[{"Rval"," ","="," ",RowBox[
+{"FullSimplify","[",RowBox[{"RicciScalar",","," ","assdS"}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"R = \"",","," ","Rval"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"(Sign convention: R = -12 H^2 here; maximal symmetry is |R| = 12 H^2.)\"","]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"geomResult"," ","="," ",RowBox[{"FullSimplify","[",RowBox[
+{RowBox[{RowBox[{"Abs","[","Rval","]"}]," ","=="," ",RowBox[{"12"," ","*"," ",RowBox[
+{"H","^","2"}]}]}],","," ","assdS"}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"Print","[",RowBox[
+{"\"Maximally symmetric (|R| = 12 H^2)? \"",","," ","geomResult"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[
+{"-"," ","5."}]}]," ","CAUSALITY"," ","CHECK"," ",RowBox[{RowBox[{"(",RowBox[{"X"," ",">"," ","0"}],")"}]," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== CAUSALITY CHECK ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"X"," ","="," ",RowBox[{RowBox[
+{"1","/","A"}]," ","-"," ",RowBox[{RowBox[{RowBox[{"psi","'"}],"^","2"}],"/","B"}]}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"Xraw"," ","="," ",RowBox[{RowBox[{"1","/","AA"}]," ","-"," ",RowBox[{RowBox[
+{"psiP","^","2"}],"/","BB"}]}]}],";"}]}]],"\n",RowBox[{RowBox[{"Xval"," ","="," ",RowBox[
+{"FullSimplify","[",RowBox[{"Xraw",","," ","assdS"}],"]"}]}],";"}],"\n",RowBox[{RowBox[
+{"Print","[",RowBox[{"\"X = \"",","," ","Xval"}],"]"}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"xResult"," ","="," ",RowBox[{"TrueQ","[",RowBox[{"FullSimplify","[",RowBox[
+{RowBox[{"Xval"," ","=="," ","1"}],","," ","assdS"}],"]"}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"Timelike foliation (X = 1)? \"",","," ","xResult"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[
+{"-"," ","6."}]}]," ","LOCAL"," ","INVARIANT"," ",RowBox[{"K","^",RowBox[{"2"," ","--"}]}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== LOCAL INVARIANT K^2 ===\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"K","^","2"}]," ","formula"," ",RowBox[
+{"(",RowBox[{"Eq"," ","10"," ","from"," ","paper"}],")"}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"NumK2"," ","="," ",RowBox[{RowBox[{RowBox[{"psiP","^","2"}]," ","*"," ",RowBox[
+{"(","\n","  ",RowBox[{RowBox[{RowBox[{"-","4"}]," ","*"," ",RowBox[{"r","^","2"}]," ","*"," ",RowBox[
+{"BB","^","2"}]," ","*"," ",RowBox[{"AAp","^","2"}]}],"\n","  ","+"," ",RowBox[{"16"," ","*"," ",RowBox[
+{"AA","^","3"}]," ","*"," ","BB"," ","*"," ",RowBox[{"psiP","^","2"}]}],"\n","  ","-"," ",RowBox[
+{"8"," ","*"," ",RowBox[{"AA","^","4"}]," ","*"," ",RowBox[{"psiP","^","4"}]}],"\n","  ","+"," ",RowBox[
+{"4"," ","*"," ",RowBox[{"r","^","2"}]," ","*"," ","AA"," ","*"," ","BB"," ","*"," ","AAp"," ","*"," ",RowBox[
+{"(",RowBox[{"BBp"," ","+"," ",RowBox[{"AAp"," ","*"," ",RowBox[{"psiP","^","2"}]}]}],")"}]}],"\n","  ","-"," ",RowBox[
+{RowBox[{"AA","^","2"}]," ","*"," ",RowBox[{"(",RowBox[{RowBox[{"8"," ","*"," ",RowBox[
+{"BB","^","2"}]}]," ","+"," ",RowBox[{RowBox[{"r","^","2"}]," ","*"," ",RowBox[{RowBox[
+{"(",RowBox[{"BBp"," ","+"," ",RowBox[{"AAp"," ","*"," ",RowBox[{"psiP","^","2"}]}]}],")"}],"^","2"}]}]}],")"}]}]}],"\n",")"}]}]," ","+","\n",RowBox[
+{"4"," ","*"," ",RowBox[{"r","^","2"}]," ","*"," ","AA"," ","*"," ","BB"," ","*"," ","psiP"," ","*"," ",RowBox[
+{"(",RowBox[{RowBox[{"AA"," ","*"," ","BBp"}]," ","+"," ",RowBox[{"AAp"," ","*"," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"-","2"}]," ","*"," ","BB"}]," ","+"," ",RowBox[{"AA"," ","*"," ",RowBox[
+{"psiP","^","2"}]}]}],")"}]}]}],")"}]," ","*"," ","psiPP"}]," ","-","\n",RowBox[{"4"," ","*"," ",RowBox[
+{"r","^","2"}]," ","*"," ",RowBox[{"AA","^","2"}]," ","*"," ",RowBox[{"BB","^","2"}]," ","*"," ",RowBox[
+{"psiPP","^","2"}]}]}]}],";"}]}]],RowBox[{"\n","\n"}],RowBox[{RowBox[{"DenK2"," ","="," ",RowBox[
+{"4"," ","*"," ",RowBox[{"r","^","2"}]," ","*"," ","AA"," ","*"," ","BB"," ","*"," ",RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"-","BB"}]," ","+"," ",RowBox[{"AA"," ","*"," ",RowBox[
+{"psiP","^","2"}]}]}],")"}],"^","3"}]}]}],";"}],RowBox[{"\n","\n"}],RowBox[{RowBox[
+{"K2raw"," ","="," ",RowBox[{"NumK2"," ","/"," ","DenK2"}]}],";"}],"\n",RowBox[{RowBox[
+{"K2val"," ","="," ",RowBox[{"FullSimplify","[",RowBox[{"K2raw",","," ","assdS"}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"K^2 = \"",","," ","K2val"}],"]"}],";"}],RowBox[{"\n","\n"}],StyleBox[
+RowBox[{RowBox[{"(*"," ",RowBox[{"Verify"," ",RowBox[{"K","^","2"}]," ","is"," ","constant"}]," ","*)"}],"\n",RowBox[
+{RowBox[{"DerivK2"," ","="," ",RowBox[{"FullSimplify","[",RowBox[{RowBox[{"D","[",RowBox[
+{"K2val",","," ","r"}],"]"}],","," ","assdS"}],"]"}]}],";"}]}]],"\n",RowBox[{RowBox[
+{"constResult"," ","="," ",RowBox[{"TrueQ","[",RowBox[{"FullSimplify","[",RowBox[
+{RowBox[{"DerivK2"," ","=="," ","0"}],","," ","assdS"}],"]"}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"d(K^2)/dr = \"",","," ","DerivK2"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"K^2 is constant? \"",","," ","constResult"}],"]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"matchResult"," ","="," ",RowBox[{"TrueQ","[",RowBox[
+{"FullSimplify","[",RowBox[{RowBox[{"K2val"," ","=="," ",RowBox[{"3"," ","*"," ",RowBox[
+{"H","^","2"}]}]}],","," ","assdS"}],"]"}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"Print","[",RowBox[
+{"\"K^2 = 3 H^2? \"",","," ","matchResult"}],"]"}],";"}],RowBox[{"\n","\n"}],StyleBox[
+RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[{"-"," ","7."}]}]," ","LEAFWISE"," ","CONSTRAINT"," ",RowBox[
+{RowBox[{"(",RowBox[{"GLOBAL","-","PER","-",RowBox[{"LEAF"," ","FRAMEWORK"}]}],")"}]," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== LEAFWISE CONSTRAINT ANALYSIS ===\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"CAUSAL DOMAIN D_Theta:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  The static patch {r : 0 < r < 1/H} is the\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  natural causal domain for de Sitter.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  The cosmological horizon bounds the region\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  where Theta = const leaves are spacelike.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"LEAF MEASURE:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  With X = 1, the leafwise measure sqrt(-g) sqrt(X)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  coincides with sqrt(-g) on the static patch.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"KEY OBSERVATION:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  Since K^2 = 3 H^2 is CONSTANT on the patch,\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  the normalized leafwise average satisfies:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"    <K^2>_{D_Theta} = K^2 = 3 H^2\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"  This holds for any W >= 0 with finite nonzero\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  integral on the patch (i.e., Integral[f0] > 0).\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"CONSTRAINT SATISFACTION:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  The leafwise constraint C[Theta] = 0 requires\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  <K^2> = K0^2. Since <K^2> = 3 H^2, this gives:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"    H^2 = K0^2 / 3\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"  If the background EOM (e.g., GR with Lambda)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  relate Lambda to H via Lambda = 3 H^2, then\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  the constraint implies Lambda = K0^2.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  (This requires deriving the EOM of the full theory.)\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"--",RowBox[
+{"-"," ","8."}]}]," ","FINAL"," ",RowBox[{"VERDICT"," ","--"}]}],"-"}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"========================================\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"           FINAL VERDICT               \"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"========================================\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],RowBox[{"\n","\n"}],RowBox[{RowBox[{"If","[",RowBox[
+{RowBox[{"geomResult"," ","&&"," ","xResult"," ","&&"," ","matchResult"}],",","\n","  ",RowBox[
+{RowBox[{"Print","[","\"SUCCESS: de Sitter satisfies the LEAFWISE\"","]"}],";","\n","  ",RowBox[
+{"Print","[","\"NORMALIZED constraint (trivially, because\"","]"}],";","\n","  ",RowBox[
+{"Print","[","\"K^2 is constant), selecting H^2 = K0^2/3\"","]"}],";","\n","  ",RowBox[
+{"Print","[","\"on the static patch.\"","]"}]}],",","\n","  ",RowBox[{"(*"," ","else"," ","*)"}],"\n","  ",RowBox[
+{RowBox[{"Print","[","\"FAILURE: Some checks failed.\"","]"}],";","\n","  ",RowBox[
+{"Print","[",RowBox[{"\"  Geometry (|R| = 12 H^2): \"",","," ","geomResult"}],"]"}],";","\n","  ",RowBox[
+{"Print","[",RowBox[{"\"  Causality (X = 1): \"",","," ","xResult"}],"]"}],";","\n","  ",RowBox[
+{"Print","[",RowBox[{"\"  K^2 = 3 H^2: \"",","," ","matchResult"}],"]"}],";"}]}],"\n","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"--",RowBox[{"-"," ",RowBox[
+{"SUPPLEMENTARY",":"," ",RowBox[{RowBox[{"WHY"," ","CONSTANCY"," ","MAKES"," ","IT"," ",RowBox[
+{"TRIVIAL"," ","--"}]}],"-"}]}]}]}]," ","*)"}],"\n","\n",RowBox[{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[","\"=== SUPPLEMENTARY ===\"","]"}],";"}],"\n",RowBox[{RowBox[
+{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"Why the leafwise constraint is trivial for de Sitter:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"For ANY normalized average:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  <K^2> = Integral[f0 * K^2] / Integral[f0]\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"If K^2 = const, it factors out:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  <K^2> = K^2 * Integral[f0] / Integral[f0] = K^2\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"Therefore <K^2> = 3 H^2 regardless of:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - The choice of W (any W >= 0 with Integral[f0] > 0)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - The exact domain bounds (within static patch)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - The angular integration details\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"This is why de Sitter passes the global constraint\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"effortlessly: constancy of K^2 makes the average\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"equal to the local value everywhere.\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"End"," ","of"," ","notebook"}]," ","*)"}],"\n"}]]}],
+"Input",CellLabel -> "In[368]:= ",ExpressionUUID -> "8005de83-0004-458d-9a9e-695c102f5b44",
+CloudRendering -> "InteractiveBoxes"],Cell[
+BoxData["\"=== DE SITTER METRIC (STATIC PATCH) ===\"",
+StandardForm],"Print",ExpressionUUID -> "77cced57-5fbd-41b2-a53e-ad7f94f50edd"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"A(r) = \"","\[InvisibleSpace]",RowBox[{"1","-",RowBox[
+{SuperscriptBox["H","2"]," ",SuperscriptBox["r","2"]}]}]}],SequenceForm["A(r) = ",
+Plus[1,Times[-1,Power[H,2],Power[r,2]]]],Editable -> False],StandardForm],"Print",
+ExpressionUUID -> "a10ad0a3-82e3-49fa-bdad-9af9733d1dbd"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"\"B(r) = \"","\[InvisibleSpace]",FractionBox["1",RowBox[{"1","-",RowBox[
+{SuperscriptBox["H","2"]," ",SuperscriptBox["r","2"]}]}]]}],SequenceForm["B(r) = ",
+Power[Plus[1,Times[-1,Power[H,2],Power[r,2]]],-1]],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "072b2289-208a-433c-ad30-a9958bae067a"],Cell[
+BoxData["\"Domain: 0 < r < 1/H (static patch)\"",
+StandardForm],"Print",ExpressionUUID -> "3ec9c122-501a-4439-9e81-78d8c84457e3"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "03753f1a-0a63-4039-b188-e557c014d2c8"],Cell[
+BoxData[
+"\"=== FOLIATION ANSATZ ===\"",StandardForm],"Print",ExpressionUUID -> "27fefde7-0604-4ebf-8029-0f648b8d360f"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"psi'(r) = \"","\[InvisibleSpace]",FractionBox[RowBox[
+{"H"," ","r"}],RowBox[{"1","-",RowBox[{SuperscriptBox["H","2"]," ",SuperscriptBox[
+"r","2"]}]}]]}],SequenceForm["psi'(r) = ",Times[H,r,Power[Plus[1,Times[-1,Power[H,
+2],Power[r,2]]],-1]]],Editable -> False],StandardForm],"Print",ExpressionUUID -> "95cbcda8-67e6-4b56-8017-4103e13f37d7"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "a135bc2f-fcab-4d60-8bba-3328afa1dbf0"],Cell[
+BoxData[
+"\"=== GEOMETRY CHECK ===\"",StandardForm],"Print",ExpressionUUID -> "89bb3c25-ba45-4870-b81e-2fb87e86ade5"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"R = \"","\[InvisibleSpace]",RowBox[{RowBox[{"-","12"}]," ",SuperscriptBox[
+"H","2"]}]}],SequenceForm["R = ",Times[-12,Power[H,2]]],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "939d1238-a129-4fe1-88ad-31cfccf01540"],Cell[
+BoxData["\"(Sign convention: R = -12 H^2 here; maximal symmetry is |R| = 12 H^2.)\"",
+StandardForm],"Print",ExpressionUUID -> "a32de541-2f83-4e81-9fa3-f1d7730a39ad"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"Maximally symmetric (|R| = 12 H^2)? \"","\[InvisibleSpace]","True"}],
+SequenceForm["Maximally symmetric (|R| = 12 H^2)? ",True],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "b5e4f2cb-d615-4a5e-b57a-8a1d5875979a"],Cell[
+BoxData["\"\"",
+StandardForm],"Print",ExpressionUUID -> "85cd65c4-5344-4fa5-867c-424b9e1e0f38"],Cell[
+BoxData[
+"\"=== CAUSALITY CHECK ===\"",StandardForm],"Print",ExpressionUUID -> "24e7574f-46a4-46e5-b439-a656886a525d"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"X = \"","\[InvisibleSpace]","1"}],SequenceForm["X = ",
+1],Editable -> False],StandardForm],"Print",ExpressionUUID -> "ce1ea6e5-dbda-48ff-8533-034abbbfc1fb"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"Timelike foliation (X = 1)? \"","\[InvisibleSpace]","True"}],
+SequenceForm["Timelike foliation (X = 1)? ",True],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "775b3c49-442e-49d3-af38-b9d2643c627f"],Cell[
+BoxData["\"\"",
+StandardForm],"Print",ExpressionUUID -> "173889ba-6ace-4a9e-b78f-372b1773aaf3"],Cell[
+BoxData[
+"\"=== LOCAL INVARIANT K^2 ===\"",StandardForm],"Print",ExpressionUUID -> "f8467da2-d801-49ff-ab2c-84424068ae9a"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"K^2 = \"","\[InvisibleSpace]",RowBox[{"3"," ",SuperscriptBox[
+"H","2"]}]}],SequenceForm["K^2 = ",Times[3,Power[H,2]]],Editable -> False],StandardForm],
+"Print",ExpressionUUID -> "1595d3f9-6618-4e7b-acc9-6f43781fb43b"],Cell[
+BoxData[InterpretationBox[
+RowBox[{"\"d(K^2)/dr = \"","\[InvisibleSpace]","0"}],SequenceForm["d(K^2)/dr = ",
+0],Editable -> False],StandardForm],"Print",ExpressionUUID -> "fd61cd70-8ec6-497a-949d-739c13407a9e"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"K^2 is constant? \"","\[InvisibleSpace]","True"}],SequenceForm[
+"K^2 is constant? ",True],Editable -> False],StandardForm],"Print",ExpressionUUID -> "00d500a6-35b5-43e3-b81e-683141535f9b"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"K^2 = 3 H^2? \"","\[InvisibleSpace]","True"}],SequenceForm[
+"K^2 = 3 H^2? ",True],Editable -> False],StandardForm],"Print",ExpressionUUID -> "d9f3fcf7-7419-432b-9694-59b55ca3d465"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "a8d5bfec-5212-4e9b-953c-c9c12e4dd4e3"],Cell[
+BoxData[
+"\"=== LEAFWISE CONSTRAINT ANALYSIS ===\"",StandardForm],"Print",ExpressionUUID -> "c1f25f52-396f-47f3-8b4c-9657721dd6c3"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "4c13881f-3825-4636-97ca-a0d7281dcbc0"],Cell[
+BoxData[
+"\"CAUSAL DOMAIN D_Theta:\"",StandardForm],"Print",ExpressionUUID -> "5e528112-34c8-411b-afe9-7bcad2594776"],Cell[
+BoxData[
+"\"  The static patch {r : 0 < r < 1/H} is the\"",StandardForm],"Print",ExpressionUUID -> "dc473a48-9e5f-476c-93c1-394c1d7adbe9"],Cell[
+BoxData[
+"\"  natural causal domain for de Sitter.\"",StandardForm],"Print",ExpressionUUID -> "2447e62e-6c51-4e1b-a62c-60d80bec3f34"],Cell[
+BoxData[
+"\"  The cosmological horizon bounds the region\"",StandardForm],"Print",ExpressionUUID -> "ec14c0ba-c02d-4814-a4bc-9eca0aec9524"],Cell[
+BoxData[
+"\"  where Theta = const leaves are spacelike.\"",StandardForm],"Print",ExpressionUUID -> "169bfbcb-df50-4ba5-84b2-162c3a1aca5c"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "f26d4fd6-7f09-40a0-bad3-65d675defdc0"],Cell[
+BoxData[
+"\"LEAF MEASURE:\"",StandardForm],"Print",ExpressionUUID -> "d399eef1-03f3-428e-8ecc-cff1dd794ef1"],Cell[
+BoxData[
+"\"  With X = 1, the leafwise measure sqrt(-g) sqrt(X)\"",StandardForm],"Print",ExpressionUUID -> "14301502-5f14-4b66-ae8a-5a8069d4dda2"],Cell[
+BoxData[
+"\"  coincides with sqrt(-g) on the static patch.\"",StandardForm],"Print",ExpressionUUID -> "0ca2596f-36a5-4705-8f50-2375efe725fe"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "81f38293-8abb-4b81-9d37-0388d60a549e"],Cell[
+BoxData[
+"\"KEY OBSERVATION:\"",StandardForm],"Print",ExpressionUUID -> "a42903d6-a8c8-421c-9423-eecee7f8599b"],Cell[
+BoxData[
+"\"  Since K^2 = 3 H^2 is CONSTANT on the patch,\"",StandardForm],"Print",ExpressionUUID -> "9f5abbbe-e1b8-4eb9-ace0-4d534def461f"],Cell[
+BoxData[
+"\"  the normalized leafwise average satisfies:\"",StandardForm],"Print",ExpressionUUID -> "9059b108-7122-47f5-aa12-dfe94b77d8bf"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "c69bb799-7787-48a3-8497-3d9af02c4c5d"],Cell[
+BoxData[
+"\"    <K^2>_{D_Theta} = K^2 = 3 H^2\"",StandardForm],"Print",ExpressionUUID -> "e7a92732-b7a5-40bb-8397-4b33ab999bc1"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "17c48815-1d4f-4593-9612-a319187124e1"],Cell[
+BoxData[
+"\"  This holds for any W >= 0 with finite nonzero\"",StandardForm],"Print",ExpressionUUID -> "51e708f7-79df-480d-9386-df8ffe57fdb6"],Cell[
+BoxData[
+"\"  integral on the patch (i.e., Integral[f0] > 0).\"",StandardForm],"Print",ExpressionUUID -> "15a99dbd-27e3-4fd1-8299-7479ed363752"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "2fe657ab-a10b-4545-926e-2f7a11c9d285"],Cell[
+BoxData[
+"\"CONSTRAINT SATISFACTION:\"",StandardForm],"Print",ExpressionUUID -> "6ed8acc3-be5c-4a79-a238-0599ef40e8c9"],Cell[
+BoxData[
+"\"  The leafwise constraint C[Theta] = 0 requires\"",StandardForm],"Print",ExpressionUUID -> "5335ad0b-f329-49ff-b167-443352d1f48b"],Cell[
+BoxData[
+"\"  <K^2> = K0^2. Since <K^2> = 3 H^2, this gives:\"",StandardForm],"Print",ExpressionUUID -> "87649d9a-05c9-4b61-8d64-a478c641ead4"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "d701cf2c-20f6-445f-8cb9-61f17e1fb19a"],Cell[
+BoxData[
+"\"    H^2 = K0^2 / 3\"",StandardForm],"Print",ExpressionUUID -> "71cb6b93-94aa-4785-be1f-894fc7e8340d"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "94a72d61-4c77-4962-bb66-291082264e0c"],Cell[
+BoxData[
+"\"  If the background EOM (e.g., GR with Lambda)\"",StandardForm],"Print",ExpressionUUID -> "7e1d57d6-7f4c-4397-88d6-0d9eb4d42595"],Cell[
+BoxData[
+"\"  relate Lambda to H via Lambda = 3 H^2, then\"",StandardForm],"Print",ExpressionUUID -> "bf79ea9e-0b46-425a-9335-9d1c2b5c47ab"],Cell[
+BoxData[
+"\"  the constraint implies Lambda = K0^2.\"",StandardForm],"Print",ExpressionUUID -> "96f68af2-4294-44fd-8d52-4950b4c2b86e"],Cell[
+BoxData[
+"\"  (This requires deriving the EOM of the full theory.)\"",StandardForm],"Print",
+ExpressionUUID -> "f9a3c4e3-0444-44b0-a94f-0d0a35abc321"],Cell[
+BoxData["\"\"",StandardForm],
+"Print",ExpressionUUID -> "835a5cdb-7063-418e-a9f7-f5645c1f4442"],Cell[
+BoxData["\"========================================\"",
+StandardForm],"Print",ExpressionUUID -> "aa6730d6-3747-4c9f-80a5-d6ac6367652b"],Cell[
+BoxData[
+"\"           FINAL VERDICT               \"",StandardForm],"Print",ExpressionUUID -> "699a99bf-c079-43a7-a8d1-2fd76158fd42"],Cell[
+BoxData[
+"\"========================================\"",StandardForm],"Print",ExpressionUUID -> "26d19841-aa9e-4e30-b5b7-f9180d5a2888"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "72af8b54-8ea3-4b9d-b976-bc2cd57125b2"],Cell[
+BoxData[
+"\"SUCCESS: de Sitter satisfies the LEAFWISE\"",StandardForm],"Print",ExpressionUUID -> "b757c206-0e51-4991-be74-844494d03435"],Cell[
+BoxData[
+"\"NORMALIZED constraint (trivially, because\"",StandardForm],"Print",ExpressionUUID -> "b42db442-00ae-41e7-8ace-aff2e989bf8b"],Cell[
+BoxData[
+"\"K^2 is constant), selecting H^2 = K0^2/3\"",StandardForm],"Print",ExpressionUUID -> "8884db70-ae0e-4657-984f-bb5871a7439a"],Cell[
+BoxData[
+"\"on the static patch.\"",StandardForm],"Print",ExpressionUUID -> "770d4ee4-6126-4700-9fae-d2925ab2653f"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "377db3e8-bf88-409b-8644-2802602953c0"],Cell[
+BoxData[
+"\"=== SUPPLEMENTARY ===\"",StandardForm],"Print",ExpressionUUID -> "91078c5c-4716-445b-b160-3b77df2180cd"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "4a86627b-016e-423a-8cff-379200ae186f"],Cell[
+BoxData[
+"\"Why the leafwise constraint is trivial for de Sitter:\"",StandardForm],"Print",
+ExpressionUUID -> "defe4e72-1838-498e-ba8a-b5924215eab7"],Cell[
+BoxData["\"\"",StandardForm],
+"Print",ExpressionUUID -> "8ceea7d2-d167-4e1c-ab9a-339ee6b0430e"],Cell[
+BoxData["\"For ANY normalized average:\"",
+StandardForm],"Print",ExpressionUUID -> "21a1ea1f-799b-4965-b74a-ff79111641eb"],Cell[
+BoxData[
+"\"  <K^2> = Integral[f0 * K^2] / Integral[f0]\"",StandardForm],"Print",ExpressionUUID -> "58138e6c-0584-40c8-a1dc-17be322bb227"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "b11e9f7c-0b91-4585-826f-60671b48f1d8"],Cell[
+BoxData[
+"\"If K^2 = const, it factors out:\"",StandardForm],"Print",ExpressionUUID -> "bb3f5282-f798-4bcb-9eec-9b948ec50de4"],Cell[
+BoxData[
+"\"  <K^2> = K^2 * Integral[f0] / Integral[f0] = K^2\"",StandardForm],"Print",ExpressionUUID -> "3314451f-a165-491c-a3ce-b2650a35e446"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "87354695-a42d-4175-bc59-96bed0efc83d"],Cell[
+BoxData[
+"\"Therefore <K^2> = 3 H^2 regardless of:\"",StandardForm],"Print",ExpressionUUID -> "36d1d086-f0c9-4d52-a649-7ad4ede7282b"],Cell[
+BoxData[
+"\"  - The choice of W (any W >= 0 with Integral[f0] > 0)\"",StandardForm],"Print",
+ExpressionUUID -> "0c53816d-2b95-45f8-b5c0-e90c4e342237"],Cell[
+BoxData["\"  - The exact domain bounds (within static patch)\"",
+StandardForm],"Print",ExpressionUUID -> "1a34af4d-16af-4083-bb10-520b4e2c40d7"],Cell[
+BoxData[
+"\"  - The angular integration details\"",StandardForm],"Print",ExpressionUUID -> "1ba7f95e-7c40-49ff-9011-c100d226232c"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "2152c178-61d7-4a94-b512-9e9c4f0ad84d"],Cell[
+BoxData[
+"\"This is why de Sitter passes the global constraint\"",StandardForm],"Print",ExpressionUUID -> "45b751c0-c948-4cf7-a04e-1f3c1ed6f0a9"],Cell[
+BoxData[
+"\"effortlessly: constancy of K^2 makes the average\"",StandardForm],"Print",ExpressionUUID -> "d8fac630-0334-4ce3-b5e4-b7f6ace2eb98"],Cell[
+BoxData[
+"\"equal to the local value everywhere.\"",StandardForm],"Print",ExpressionUUID -> "bf53e60f-9a7e-49b3-a366-15d8865976f1"]},
+Open],ExpressionUUID -> "55cdd927-9953-4af5-bebc-be587d57c1d5"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "14.3 for Wolfram Cloud 1.75 (December 9, 2025)"]

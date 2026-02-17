@@ -1,0 +1,557 @@
+% !TeX program = pdflatex
+% !TeX encoding = UTF-8
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\newtheorem{lemma}{Lemma}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=red]{hyperref} % Link colorati per navigazione
+\usepackage{physics} 
+
+\title{Geometric Vacuum Selection from Constrained Spacetime Foliations}
+\author{Michael Spina}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate a scalar-field framework for vacuum structure in General
+Relativity, in which the foliation defined by the gradient of a time-ordering
+field $\Theta$ is subject to a non-local geometric constraint. The level sets
+$\Theta=\mathrm{const}$ define spacelike hypersurfaces interpreted as physical
+“present” leaves. The constraint fixes the normalized average of the squared
+extrinsic curvature $K^2$ over causally defined domains to a constant scale
+$K_0^2$, enforced by a Lagrange multiplier that is constant on each leaf.
+
+We show that this non-local condition acts as a vacuum selection principle:
+in the infrared limit it excludes the static Minkowski vacuum, compelling the
+ground state to be spontaneously curved. De Sitter spacetime emerges as a
+consistent asymptotic vacuum solution, with its expansion rate fixed by the
+geometric selection rule $H^2 = K_0^2/3$.
+
+We further demonstrate that the infrared dominance of the constraint ensures
+compatibility with local gravitational physics. Standard Schwarzschild and
+post-Newtonian limits are recovered for local sources, as the constraint does
+not act as a pointwise modification of the gravitational field.
+
+These results suggest that the observed late-time cosmic acceleration may
+reflect a global geometric property of the spacetime foliation—a resistance
+to staticity—rather than the presence of an additional dynamical dark energy
+degree of freedom. While the implications for the early matter-dominated era
+remain open for future investigation, this framework offers a novel geometric
+perspective on the smallness and non-vanishing nature of the vacuum energy.
+\end{abstract}
+
+\subsection*{Conventions}
+We work in natural units $c=\hbar=1$ adopting metric signature $(+,-,-,-)$.
+Our curvature conventions follow
+\begin{equation}
+{R^\rho}_{\sigma\mu\nu}=\partial_\mu \Gamma^\rho_{\nu\sigma}-\partial_\nu \Gamma^\rho_{\mu\sigma}
++\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma},
+\qquad
+R_{\mu\nu}={R^\rho}_{\mu\rho\nu}.
+\end{equation}
+For the nonlocal functional we set the smoothing/window parameter to its default value $W=1$
+throughout (no variation with respect to $W$ is performed).
+
+\section{Motivation and scope}
+
+General Relativity provides an accurate local description of gravitational
+phenomena, yet it leaves the global structure of time and the selection of
+the vacuum largely unconstrained. In particular, both Minkowski and de
+Sitter spacetimes are admissible vacuum solutions, despite their radically
+different global properties. The observed accelerated expansion is therefore
+introduced phenomenologically through a cosmological constant, rather than
+emerging from a geometric principle.
+
+In this work we explore a minimal geometric extension of General Relativity
+based on a scalar field $\Theta$ whose timelike gradient defines a preferred
+foliation of spacetime. Preferred-foliation frameworks closely related in spirit 
+include Einstein--\AE ther and khronometric theories, where a timelike vector
+ (or scalar-defined) structure selects a preferred slicing while remaining
+ compatible with standard local tests in appropriate limits \cite{Jacobson2001,JacobsonMattingly2004,Blas2010,JacobsonLim2014}.
+ The level sets $\Theta=\mathrm{const}$ are interpreted
+as physical ``present'' hypersurfaces, providing a global time-ordering
+structure without affecting local causal relations or observer-dependent
+simultaneity.
+
+The central ingredient is a non-local geometric constraint acting on the
+foliation itself: the normalized average of the squared extrinsic curvature
+$K^2$ over a causally defined domain on each hypersurface is fixed to a
+constant value. This leafwise constraint selects the global vacuum geometry
+without introducing local modifications of the gravitational field equations.
+
+We show that asymptotically flat Minkowski spacetime is excluded in the
+infrared limit, while de Sitter spacetime is admitted as a consistent vacuum,
+with its expansion rate fixed by the constraint. Local Schwarzschild and
+post-Newtonian physics are recovered, as the constraint is dominated by
+infrared scales.
+
+The framework developed here is not intended as a complete cosmological
+model across all epochs, but as a geometric principle governing the
+admissible vacuum structure in the infrared regime. In particular, the
+analysis focuses on vacuum selection and late-time asymptotic behavior,
+while the coupling of this mechanism to realistic matter-dominated
+cosmological histories is left for future investigation.
+
+
+
+\section{Geometric setup}
+
+We consider a four-dimensional spacetime $(\mathcal{M},g_{\mu\nu})$ endowed
+with a scalar field $\Theta$. When the gradient $\nabla_\mu \Theta$ is
+timelike, the level sets $\Theta=\mathrm{const}$ define a foliation of
+spacetime by spacelike hypersurfaces $\Sigma_\Theta$. Scalar fields used to define
+preferred time functions and associated foliations in GR have been considered
+in earlier contexts; see e.g.\ \cite{Pi2005}.
+Throughout this work, we restrict attention to configurations satisfying this condition.
+
+The scalar invariant
+\begin{equation}
+X \equiv g^{\mu\nu}\partial_\mu\Theta\,\partial_\nu\Theta
+\end{equation}
+is assumed to be positive, ensuring that $\nabla_\mu\Theta$ is timelike.
+We then define the unit normal vector field to the foliation as
+\begin{equation}
+u_\mu \equiv \frac{\partial_\mu \Theta}{\sqrt{X}} \, .
+\end{equation}
+
+The induced metric on each hypersurface $\Sigma_\Theta$ is given by
+\begin{equation}
+h_{\mu\nu} \equiv g_{\mu\nu} - u_\mu u_\nu ,
+\end{equation}
+which projects tensors onto directions tangent to the foliation. 
+We denote by $\gamma_{ij}$ the (positive-definite) induced three-metric on each leaf $\Sigma_\Theta$.
+Its determinant is $\gamma \equiv \det(\gamma_{ij})$, and the intrinsic volume element is
+$\sqrt{\gamma}\,d^3x$.
+The extrinsic curvature of the hypersurfaces is defined in the standard way as
+\begin{equation}
+K_{\mu\nu} \equiv h^\alpha_{\ \mu} h^\beta_{\ \nu} \nabla_\alpha u_\beta .
+\end{equation}
+
+A key scalar quantity in what follows is the squared extrinsic curvature,
+\begin{equation}
+K^2 \equiv K_{\mu\nu}K^{\mu\nu} ,
+\end{equation}
+which measures the curvature of the $\Theta=\mathrm{const}$ hypersurfaces
+within spacetime. Together with the Ricci scalar $R$ of the spacetime
+metric, these invariants will enter the action and the geometric constraint
+introduced in later sections.
+
+
+\section{Spherically symmetric sector}
+
+In order to analyze the geometric properties of the $\Theta$-foliation and
+to construct explicit examples, we consider a static, spherically symmetric
+spacetime. The metric is written in the form
+\begin{equation}
+ds^2 = A(r)\,dt^2 - B(r)\,dr^2 - r^2\left(d\vartheta^2 + \sin^2\vartheta\,d\varphi^2\right),
+\end{equation}
+where $A(r)$ and $B(r)$ are positive functions of the radial coordinate.
+
+For the scalar field we adopt the ansatz
+\begin{equation}
+\Theta(t,r) = t + \psi(r),
+\end{equation}
+which preserves spherical symmetry while allowing for nontrivial
+foliations tilted with respect to the static time coordinate. This form
+captures the most general $\Theta$ compatible with the symmetries of the
+metric.
+
+\subsection{Kinematic invariant}
+
+For the above ansatz, the kinetic scalar $X$ takes the form
+\begin{equation}
+X = \frac{1}{A(r)} - \frac{\psi'(r)^2}{B(r)} .
+\end{equation}
+The requirement that the foliation be spacelike implies $X>0$, which
+constrains the admissible profiles $\psi(r)$.
+
+\subsection{Curvature invariants}
+
+The Ricci scalar associated with the metric is given by
+\begin{equation}
+R = R[A(r),B(r)] ,
+\end{equation}
+where the explicit expression, though lengthy, depends only on the radial
+functions and their derivatives.
+
+The squared extrinsic curvature of the $\Theta=\mathrm{const}$ hypersurfaces
+can be written as
+\begin{equation}
+K^2 = K_{\mu\nu}K^{\mu\nu}
+     = K^2\big(A(r),B(r),\psi(r),\psi'(r),\psi''(r)\big) .
+\end{equation}
+The explicit form is algebraically involved and will not be reproduced in
+full here. What is important for our purposes is its dependence on the
+radial coordinate through the functions $A(r)$, $B(r)$ and the foliation
+profile $\psi(r)$.
+
+These local expressions will enter the construction of the action and the
+leafwise geometric constraint discussed in the following sections.
+
+\section{Constrained action}
+
+\subsection{Local gravitational dynamics}
+
+We start from a local action consisting of the Einstein--Hilbert term and a
+minimal kinetic term for the scalar field $\Theta$,
+\begin{equation}
+S_{\mathrm{loc}} =
+\int d^4x \sqrt{-g}
+\left[
+\frac{1}{2\kappa}(R - 2\Lambda)
+- \frac{\alpha}{2} X
+\right] ,
+\end{equation}
+where $\kappa = 8\pi G$, $\Lambda$ is a cosmological constant and
+$X = g^{\mu\nu}\partial_\mu\Theta\,\partial_\nu\Theta$.
+This local action is fully diffeomorphism invariant and does not introduce
+any preferred frame by itself.
+
+\paragraph{On the bare cosmological constant.}
+We keep $\Lambda$ explicit for generality. In the vacuum-selection discussion below we set the
+bare value to $\Lambda=0$, so that the de Sitter curvature scale arises from the leafwise constraint
+as a selection rule rather than being put in by hand.
+
+\subsection{Leafwise geometric constraint}
+
+The defining ingredient of the theory is a non-local geometric constraint
+acting on the foliation defined by $\Theta$. For each hypersurface
+$\Sigma_\Theta$ we consider a causally defined domain
+$D_\Theta \subset \Sigma_\Theta$, determined by the spacetime geometry and
+the foliation itself.
+
+On each leaf we define the functionals
+\begin{equation}
+I_0[\Theta] \equiv \int_{D_\Theta} W\,\sqrt{\gamma}\, d^3x ,
+\qquad
+I_1[\Theta] \equiv \int_{D_\Theta} W\,K^2 \sqrt{\gamma}\, d^3x ,
+\end{equation}
+
+where $\gamma$ is the determinant of the induced three-metric $\gamma_{ij}$ on $\Sigma_\Theta$,
+and $W\ge 0$ is an optional smoothing/window weight (set to $W=1$ in this work). Then
+
+\begin{equation}
+\langle K^2\rangle_{D_\Theta} \equiv \frac{I_1[\Theta]}{I_0[\Theta]} .
+\end{equation}
+
+The geometric constraint is imposed by requiring
+\begin{equation}
+\langle K^2\rangle_{D_\Theta} = K_0^2 ,
+\end{equation}
+where $K_0$ is a fixed parameter setting the curvature scale of the foliation.
+Conceptually, the use of global (or nonlocal) constraints to control vacuum properties has 
+precedents in unimodular formulations and vacuum-energy sequestering mechanisms 
+\cite{Alvarez2016,KaloperPadilla2014}. 
+The present constraint, however, acts on a foliation-dependent extrinsic-curvature functional
+rather than on the metric determinant or on matter-sector vacuum contributions.
+
+
+\subsection{Full action}
+
+The constraint is enforced through a Lagrange multiplier $\lambda(\Theta)$
+that depends only on the value of the scalar field and is therefore constant
+on each hypersurface $\Sigma_\Theta$. The full action reads
+\begin{equation}
+S = S_{\mathrm{loc}}
++ \int d\Theta\, \lambda(\Theta)
+\left[
+I_1[\Theta] - K_0^2 I_0[\Theta]
+\right] .
+\end{equation}
+
+Because $\lambda$ is not a local field but a function of $\Theta$ only, the
+constraint does not generate a pointwise equation $K^2(x)=K_0^2$. Instead,
+it acts globally on the geometry of each leaf, selecting admissible
+foliations without modifying the local gravitational dynamics.
+
+\section{Sanity checks and local GR recovery}
+
+\subsection{Schwarzschild test}
+
+As a first consistency check, we evaluate the curvature invariants for the
+Schwarzschild solution,
+\begin{equation}
+A(r)=1-\frac{2M}{r}, \qquad B(r)=\left(1-\frac{2M}{r}\right)^{-1}.
+\end{equation}
+The Ricci scalar vanishes identically,
+\begin{equation}
+R\big|_{\mathrm{Schw}} = 0,
+\end{equation}
+as expected for a vacuum solution of General Relativity. This confirms that
+the local gravitational dynamics is unmodified.
+The recovery of standard weak-field and post-Newtonian behavior in the presence 
+of preferred-structure fields has been extensively analyzed in related settings; 
+see e.g.\ \cite{JacobsonMattingly2004} for an explicit post-Newtonian equivalence
+result in Einstein--\AE ther theory.
+
+
+\subsection{Static foliation limit}
+
+When the foliation coincides with constant-$t$ hypersurfaces
+($\psi=\mathrm{const}$), the scalar invariants reduce to
+\begin{align}
+X\big|_{\psi'=0} &= \frac{1}{A(r)}, \\
+K^2\big|_{\psi'=0} &= 0.
+\end{align}
+In this limit the extrinsic curvature of the $\Theta$-hypersurfaces vanishes
+identically, and the local field equations reduce exactly to those of General
+Relativity. This shows that static foliations in static spacetimes are
+locally indistinguishable from GR, irrespective of the presence of the
+global geometric constraint.
+
+\section{Vacuum selection from the leafwise constraint}
+
+\subsection{Minkowski spacetime}
+
+We now evaluate the leafwise geometric functional for Minkowski spacetime,
+written in static spherical coordinates,
+\begin{equation}
+A(r)=1, \qquad B(r)=1.
+\end{equation}
+For foliations of the form $\Theta=t+\psi(r)$ the kinetic invariant becomes
+\begin{equation}
+X = 1-\psi'(r)^2,
+\end{equation}
+so that the timelike condition requires $|\psi'(r)|<1$.
+
+For a linear tilt $\psi(r)=vr$, one finds
+\begin{equation}
+K^2(r)=\frac{2v^2}{r^2(1-v^2)},
+\end{equation}
+which is strictly positive but decays as $r^{-2}$ at large radius.
+
+\subsection{Infrared behaviour of the leafwise average}
+
+The leafwise constraint does not involve the pointwise value of $K^2(r)$,
+but its normalized average over a causally defined domain $D_\Theta$,
+\begin{equation}
+\langle K^2\rangle_{D_\Theta}
+=\frac{\int_{D_\Theta} W\,K^2\sqrt{\gamma}\,d^3x}
+{\int_{D_\Theta} W\,\sqrt{\gamma}\,d^3x}.
+\end{equation}
+
+In Minkowski spacetime, the induced volume element grows as
+$\sqrt{\gamma}\sim r^2$, while $K^2\sim r^{-2}$. As a consequence, the numerator
+scales linearly with the infrared cutoff, whereas the denominator grows
+cubically. In the infrared limit one therefore finds
+\begin{equation}
+\langle K^2\rangle_{D_\Theta} \xrightarrow{\mathrm{IR}} 0.
+\end{equation}
+
+This result holds independently of the tilt parameter $v$ and reflects a
+purely geometric scaling property of asymptotically flat spacetime.
+This infrared scaling mechanism is qualitatively reminiscent of other approaches 
+where large-scale (IR) effects can drive late-time acceleration without introducing a
+new local dark-energy field, albeit implemented here as a geometric selection rule 
+rather than as a dynamical nonlocal modification of the field equations \cite{KaloperPadilla2014}.
+Therefore, Minkowski spacetime cannot satisfy the leafwise constraint
+$\langle K^2\rangle_{D_\Theta}=K_0^2$ for any $K_0^2>0$.
+
+\subsection{de Sitter spacetime}
+
+We next consider de Sitter spacetime in the static patch,
+\begin{equation}
+A(r)=1-H^2 r^2, \qquad B(r)=\left(1-H^2 r^2\right)^{-1}.
+\end{equation}
+For the Painlev\'e--Gullstrand slicing,
+\begin{equation}
+\psi'(r)=\frac{Hr}{1-H^2 r^2},
+\end{equation}
+the kinetic invariant satisfies $X=1$, and the squared extrinsic curvature
+of the $\Theta$-hypersurfaces is constant,
+\begin{equation}
+K^2 = 3H^2.
+\end{equation}
+
+Since $K^2$ is constant on the entire causal domain of the static patch, its
+normalized leafwise average coincides with the local value,
+\begin{equation}
+\langle K^2\rangle_{D_\Theta} = 3H^2.
+\end{equation}
+The leafwise constraint therefore selects de Sitter spacetime as an
+admissible vacuum, with the expansion rate fixed by
+\begin{equation}
+H^2=\frac{K_0^2}{3}.
+\end{equation}
+
+This relation should be interpreted as fixing the curvature scale of the
+vacuum geometry selected by the leafwise constraint, rather than as enforcing
+a constant Hubble parameter throughout the entire cosmological history.
+The result characterizes the asymptotic vacuum structure in the infrared
+regime, independently of the intermediate matter- or radiation-dominated
+phases.
+
+
+\subsection{Infrared dominance of the leafwise constraint}
+
+At this stage a potential concern may arise. Since the leafwise constraint
+fixes a non-zero value of the normalized average $\langle K^2\rangle_{D_\Theta}$,
+one might worry that local Schwarzschild or post-Newtonian physics could be
+incompatible with the theory. This concern, however, relies on an incorrect
+interpretation of the constraint as a local condition.
+
+The geometric constraint does not act pointwise on $K^2$, but only through
+its leafwise average over a causally defined domain. As a result, its effect
+is controlled by the large-scale structure of the foliation rather than by
+local curvature near compact sources. In the following we show explicitly
+that, for physically relevant foliations, the induced geometry on the
+$\Theta=\mathrm{const}$ hypersurfaces remains locally Euclidean, ensuring
+full compatibility with standard Schwarzschild and post-Newtonian physics.
+
+
+\begin{lemma}[Euclidean induced metric on the SdS--PG foliation]
+\label{lem:euclidean-sds-pg}
+Consider the static Schwarzschild--de Sitter line element
+\begin{equation}
+ds^2 = A(r)\,dt^2 - B(r)\,dr^2 - r^2 d\Omega^2,
+\qquad
+A(r)=1-\frac{2M}{r}-H^2 r^2,
+\qquad
+B(r)=\frac{1}{A(r)}.
+\label{eq:sds-static}
+\end{equation}
+Let the foliation be defined by the scalar field
+\begin{equation}
+\Theta(t,r)=t+\psi(r),
+\label{eq:theta-foliation}
+\end{equation}
+and choose the Painlev\'e--Gullstrand--type slicing
+\begin{equation}
+\psi'(r)=\frac{\sqrt{\frac{2M}{r}+H^2 r^2}}{A(r)}.
+\label{eq:psi-prime-pg-sds}
+\end{equation}
+Then the metric induced on the hypersurfaces $\Sigma_\Theta:\ \Theta=\mathrm{const}$ is exactly Euclidean:
+\begin{equation}
+\gamma_{ij}\,dx^i dx^j = dr^2 + r^2 d\Omega^2,
+\qquad\text{hence}\qquad
+\sqrt{\gamma}=r^2\sin\theta.
+\label{eq:euclidean-induced}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On a hypersurface $\Theta=\mathrm{const}$ we have $d\Theta = dt+\psi'(r)\,dr=0$, hence
+\begin{equation}
+dt = -\psi'(r)\,dr.
+\label{eq:dt-on-leaf}
+\end{equation}
+Substituting \eqref{eq:dt-on-leaf} into \eqref{eq:sds-static}, the induced line element on $\Sigma_\Theta$ becomes
+\begin{equation}
+ds^2\big|_{\Sigma_\Theta}
+= \big(B(r)-A(r)\psi'(r)^2\big)\,dr^2 + r^2 d\Omega^2.
+\label{eq:induced-general}
+\end{equation}
+Using \eqref{eq:psi-prime-pg-sds} and $B=1/A$, we compute
+\begin{align}
+B(r)-A(r)\psi'(r)^2
+&= \frac{1}{A(r)} - A(r)\,\frac{\frac{2M}{r}+H^2 r^2}{A(r)^2}
+= \frac{1-\left(\frac{2M}{r}+H^2 r^2\right)}{A(r)}.
+\label{eq:key-computation-1}
+\end{align}
+Finally, since $A(r)=1-\frac{2M}{r}-H^2 r^2$, the numerator in \eqref{eq:key-computation-1} equals $A(r)$ and therefore
+\begin{equation}
+B(r)-A(r)\psi'(r)^2 = \frac{A(r)}{A(r)}=1.
+\label{eq:key-identity}
+\end{equation}
+Substituting \eqref{eq:key-identity} into \eqref{eq:induced-general} yields \eqref{eq:euclidean-induced}.
+\end{proof}
+
+As a consequence, the leafwise geometric constraint is dominated by the
+large-scale structure of the foliation, while local Schwarzschild and
+post-Newtonian physics remain unaffected. The apparent tension between the
+constraint and local gravity is therefore resolved at the geometric level.
+
+\section{Covariance and preferred foliation backgrounds}
+
+The formalism is generally covariant at the level of the action, but
+backgrounds for which $\nabla_\mu\Theta$ is timelike naturally select a
+preferred foliation of spacetime. This mechanism is conceptually related to
+those appearing in Einstein--Æther theories \cite{Jacobson2001},
+Hořava--Lifshitz gravity \cite{Horava2009}, and khronometric models
+\cite{Blas2010}.
+
+Although the foliation is defined by the gradient of a scalar field, the
+present framework differs from khronometric and scalar Einstein--Æther
+theories in a crucial way. The field $\Theta$ is not introduced as an
+independent dynamical degree of freedom with its own kinetic couplings, but
+serves a purely geometric role in defining the hypersurfaces on which the
+global constraint acts. Related scalar-aether and khronometric constructions,
+used for comparison, are discussed for instance in \cite{JacobsonLim2014,Blas2024}.
+
+The breaking of local Lorentz symmetry is therefore spontaneous rather than
+fundamental. The action remains fully diffeomorphism invariant, while
+specific solutions dynamically single out a preferred time direction
+through the gradient of $\Theta$. In this sense, the preferred foliation does
+not represent a violation of covariance at the level of physical laws, but
+emerges as a property of the vacuum geometry selected by the leafwise
+constraint.
+
+\section{Computational details}
+
+All symbolic computations presented in this work were performed using
+\textit{Wolfram Mathematica}~14.3 on Wolfram Cloud. The calculations are
+organized in a sequence of notebooks implementing independent checks of the
+geometric invariants, the local action, and the evaluation of the leafwise
+constraint in symmetric settings:
+\begin{enumerate}
+\item \texttt{00\_Setup\_Assumptions.nb} - Global assumptions and symbol definitions.
+\item \texttt{01\_Invariants\_X\_K2\_R.nb} - Computation of $X$, $K^2$, and $R$ from the metric ansatz.
+\item \texttt{02\_Action\_Lagrangian.nb} - Construction of the local \\ 
+four-dimensional Lagrangian and of the leafwise constraint functional.
+\item \texttt{03\_Leff\_Radial\_Reduction.nb} - Angular integration and construction of the
+radial kernels entering the leafwise averages.
+\item \texttt{04\_SanityChecks.nb} - Verification of limiting cases (Schwarzschild, $\psi'=0$).
+\item \texttt{05\_Test\_Minkowski.nb} - Evaluation of the leafwise average in \\ Minkowski spacetime
+and analysis of its infrared behaviour.
+\item \texttt{06\_Test\_deSitter.nb} - Verification that de Sitter spacetime satisfies the
+leafwise constraint through a cosmological (Painlev\'e--Gullstrand) slicing.
+\end{enumerate}
+
+An additional notebook, \texttt{GR\_Spherical\_Foliation\_K2\_R.nb}, provides an
+independent derivation of the geometric invariants through explicit
+construction of the Christoffel symbols, Riemann tensor, and extrinsic
+curvature tensor $K_{\mu\nu}$.
+
+The notebooks are provided as supplementary material.
+
+\section{Conclusion}
+
+We have presented a scalar-field framework in which the foliation defined by
+the gradient of $\Theta$ is subject to a non-local geometric constraint acting
+leafwise on spacetime hypersurfaces. The constraint fixes the normalized
+average of the squared extrinsic curvature over causally defined domains,
+rather than imposing a pointwise condition on the geometry.
+
+While the theory locally reproduces the field equations of General Relativity
+when the foliation aligns with static time coordinates, the leafwise
+constraint leads to a non-trivial selection of the vacuum structure. In
+particular, asymptotically flat Minkowski spacetime is excluded in the
+infrared limit, whereas de Sitter spacetime is admitted as a consistent
+vacuum, with its expansion rate fixed by the geometric selection rule
+$H^2 = K_0^2/3$.
+
+Crucially, the constraint is dominated by infrared scales and does not act as
+a local modification of the gravitational field. As a result, standard
+Schwarzschild and post-Newtonian physics are fully recovered, and no
+additional local degrees of freedom or force terms are introduced.
+
+These results suggest that the observed late-time cosmic acceleration may
+reflect a global geometric property of the spacetime foliation defining the
+present, rather than requiring the introduction of an additional dynamical
+dark energy degree of freedom. In this sense, the effect can be understood as
+a property of the vacuum geometry selected by the constraint, rather than as
+a new local source in the gravitational field equations. More general
+spacetimes and the role of perturbations around the selected vacuum are left
+for future investigation.
+
+
+% BIBLIOGRAFIA
+\sloppy  
+\bibliographystyle{unsrt} % Stile numerico standard [1], [2]...
+\bibliography{refs}       % Chiama il file refs.bib
+
+\end{document}

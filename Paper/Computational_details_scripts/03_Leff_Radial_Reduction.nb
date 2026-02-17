@@ -1,0 +1,416 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"03","_Leff","_Radial",RowBox[{"_Reduction",".","nb"}],"\n","   ","Angular"," ","integration"}]}]}]," ","->"," ",RowBox[
+{RowBox[{"radial"," ","kernels","\n","\n","   ","GLOBAL"}],"-",RowBox[{"ONLY"," ",RowBox[
+{"VERSION",":","\n","   ",RowBox[{"This"," ","notebook"," ","builds"}],":","\n","   ",RowBox[
+{"1."," ","LeffBase",RowBox[{"(","r",")"}]}],":"," ",RowBox[{"local"," ","dynamics"," ",RowBox[
+{"(",RowBox[{"EH"," ","+"," ",RowBox[{"X"," ","term"}]}],")"}],"\n","   ","2."," ","f0",RowBox[
+{"(","r",")"}]}]}]}]}]}],","," ",RowBox[{RowBox[{"f1",RowBox[{"(","r",")"}]}],":"," ",RowBox[
+{"constraint"," ","kernels"," ","for"," ","leaf"," ","integration","\n","   ","3."," ",RowBox[
+{"C","[","Theta","]"}]}],":"," ",RowBox[{"the"," ","global"," ","constraint"," ","functional","\n","\n","   ","NO"," ","local"," ","\"Leffhard(r)\""," ",RowBox[
+{"exists","."," ","The"}]," ","constraint","\n","   ","is"," ","an"," ","INTEGRAL"," ","condition"," ","on"," ","each"," ","leaf"}]}],","," ",RowBox[
+{RowBox[{"not"," ","a","\n","   ","pointwise"," ","Lagrangian"," ",RowBox[{"term","."}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===","=="}]}]," ","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"ANGULAR"," ","INTEGRATION"," ","FACTOR"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===","=="}]," ","*)"}],"\n","\n",RowBox[
+{RowBox[{"angIntFactor"," ","="," ",RowBox[{RowBox[{"Integrate","[",RowBox[{RowBox[
+{"Sin","[","th","]"}],","," ",RowBox[{"{",RowBox[{"th",","," ","0",","," ","Pi"}],"}"}]}],"]"}]," ","*"," ",RowBox[
+{"Integrate","[",RowBox[{"1",","," ",RowBox[{"{",RowBox[{"ph",","," ","0",","," ",RowBox[
+{"2"," ","Pi"}]}],"}"}]}],"]"}]}]}],";"}]}]],"\n",StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[
+{"="," ",RowBox[{"4"," ","Pi"}]}]," ","*)"}],"\n","\n",RowBox[{RowBox[{"Print","[",RowBox[
+{"\"Angular integration factor = \"",","," ","angIntFactor"}],"]"}],";"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","1"}]}]}],":"," ",RowBox[{RowBox[{RowBox[{"LOCAL"," ","DYNAMICS"}]," ","-"," ",RowBox[
+{"LeffBase",RowBox[{"(","r",")"}]}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"This"," ","is"," ","the"," ","radial"," ","reduction"," ","of"," ","the"," ","local","\n","   ","dynamical"," ","Lagrangian"," ",RowBox[
+{RowBox[{"(",RowBox[{"Einstein","-","Hilbert"," ","+"," ",RowBox[{"X"," ","term"}]}],")"}],".","\n","   ","It"}]," ","generates"," ","the"," ","standard"," ","field"," ",RowBox[
+{"equations","."}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{RowBox[{"LeffBase"," ","="," ",RowBox[
+{"FullSimplify","[","\n","  ",RowBox[{RowBox[{"Integrate","[",RowBox[{"L4base",","," ",RowBox[
+{"{",RowBox[{"th",","," ","0",","," ","Pi"}],"}"}],","," ",RowBox[{"{",RowBox[{"ph",","," ","0",","," ",RowBox[
+{"2"," ","Pi"}]}],"}"}]}],"]"}],",","\n","  ","$Assumptions"}],"\n","]"}]}],";"}]}]],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"LeffBase(r) [local dynamics] = \"",","," ","LeffBase"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","2"}]}]}],":"," ",RowBox[{RowBox[{"CONSTRAINT"," ","KERNELS"}]," ","-"," ",RowBox[
+{"f0",RowBox[{"(","r",")"}]}]}]}],","," ",RowBox[{RowBox[{RowBox[{"f1",RowBox[{"(","r",")"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"These"," ","are"," ","the"," ","radial"," ","kernels"," ","for"," ","the"," ","global","\n","   ","leaf"," ",RowBox[
+{"constraint","."," ","They"}]," ","will"," ","be"," ","integrated"," ","over","\n","   ","the"," ","causal"," ","domain"," ","D_Theta"," ","to"," ","form"," ","the"," ",RowBox[
+{"constraint",".","\n","\n","   ","The"}]," ","leaf"," ","measure"," ",RowBox[{"is",":"," ",RowBox[
+{"sqrt",RowBox[{"(","h",")"}]," ","*"," ","sqrt",RowBox[{"(","X",")"}]," ","*"," ","W","\n","   ","where"}],":","\n","   ",RowBox[
+{RowBox[{"-"," ","sqrt"}],RowBox[{"(","h",")"}]}]}]}]}]}]," ","="," ",RowBox[{RowBox[
+{RowBox[{"induced"," ","metric"," ","determinant"," ","on"," ","Sigma_Theta"}],"\n","   ","-"," ",RowBox[
+{"sqrt",RowBox[{"(","X",")"}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"normalization"," ","from"," ",RowBox[
+{"d","^","4"}],"x"}]," ","->"," ",RowBox[{RowBox[{RowBox[{"d","^","3"}],"x"," ",RowBox[
+{"(",RowBox[{"proper"," ","time"}],")"}]}],"\n","   ","-"," ","W"}]}]," ","="," ",RowBox[
+{RowBox[{"smoothing"," ","function"," ",RowBox[{"(",RowBox[{RowBox[{"default",":"," ","W"}]," ","="," ","1"}],")"}],"\n","\n","   ","For"," ","spherically"," ","symmetric"," ",RowBox[
+{"reduction",":","\n","   ",RowBox[{RowBox[{"-"," ","Full"}]," ","4","D"," ","measure"}],":"," ",RowBox[
+{"sqrt",RowBox[{"(",RowBox[{"-","g"}],")"}]}]}]}]," ","="," ",RowBox[{RowBox[{RowBox[
+{"r","^","2"}]," ","sin",RowBox[{"(","th",")"}]," ","sqrt",RowBox[{"(",RowBox[{"A"," ","B"}],")"}]}],"\n","   ","-"," ",RowBox[
+{"Leaf"," ","measure"," ",RowBox[{"contribution",":"," ",RowBox[{"sqrt",RowBox[{"(",RowBox[
+{"-","g"}],")"}]," ","*"," ","sqrt",RowBox[{"(","X",")"}]}]}]}]}]}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{RowBox[{"SMOOTHING"," ","FUNCTION"," ","W"}]," ","-"," ","EXOGENOUS"}]}]}],","," ",RowBox[
+{RowBox[{RowBox[{"NOT"," ","VARIED"}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"W"," ","is"," ","a"," ","FIXED"," ",RowBox[{"smoothing","/","regularization"}]," ",RowBox[
+{"function",".","\n","   ","It"}]," ","is"," ",RowBox[{"EXOGENOUS",":"," ",RowBox[
+{"does"," ","NOT"," ","depend"," ","on"," ",RowBox[{RowBox[{"(",RowBox[{"A",","," ","B",","," ","psi"}],")"}],".","\n","   ","It"}]," ","is"," ","NOT"," ","VARIED"," ","in"," ","the"," ","action"," ",RowBox[
+{"principle",".","\n","\n","   ","Options"}]}],":","\n","   ",RowBox[{"-"," ","W"}]}]}]}]}]," ","="," ",RowBox[
+{RowBox[{RowBox[{"1"," ",RowBox[{"(","default",")"}]}],":"," ",RowBox[{RowBox[{"uniform"," ","weighting"}],"\n","   ","-"," ","W"}]}]," ","="," ",RowBox[
+{RowBox[{RowBox[{"W",RowBox[{"(",RowBox[{"r",";"," ","epsilon"}],")"}]}],":"," ",RowBox[
+{RowBox[{"compact"," ","support"," ","or"," ","smooth"," ","cutoff"}],"\n","   ","-"," ","W"}]}]," ","="," ",RowBox[
+{RowBox[{"Exp","[",RowBox[{RowBox[{"-",RowBox[{"r","^","2"}]}],"/",RowBox[{"L","^","2"}]}],"]"}],":"," ",RowBox[
+{"Gaussian"," ","regularization","\n","\n","   ","The"," ","choice"," ","of"," ","W"," ","is"," ","part"," ","of"," ","the"," ","DEFINITION"," ","of"," ","the","\n","   ","theory"}]}]}]}]}],","," ",RowBox[
+{"not"," ","a"," ","dynamical"," ","degree"," ","of"," ",RowBox[{"freedom",".","\n","   ","This"}]," ","prevents"," ","the"," ","objection"," ",RowBox[
+{"\"hidden dynamics in W\"","."}]}]}],"\n","*)"}],"\n","\n",RowBox[{RowBox[{"W"," ","="," ","1"}],";"}],"  ",RowBox[
+{"(*"," ",RowBox[{RowBox[{"Default",":"," ",RowBox[{"uniform"," ","weighting"}]}],","," ","exogenous"}]," ","*)"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Induced"," ","measure"," ","kernel"," ","after"," ","angular"," ","integration"}]," ","*)"}],"\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"Note",":"," ",RowBox[{"sqrt",RowBox[{"(","h",")"}]," ","for"," ","Theta"}]}]," ","="," ",RowBox[
+{"t"," ","+"," ",RowBox[{"psi",RowBox[{"(","r",")"}]," ","foliation"," ","is"," ","computed"," ","from","\n","   ","the"," ","induced"," ",RowBox[
+{"metric","."," ","For"}]," ","the"," ","PG"}],"-",RowBox[{"type"," ","slicing"," ","this"," ",RowBox[
+{"simplifies","."}]}]}]}]," ","*)"}],"\n","\n",RowBox[{RowBox[{"leafMeasureKernel"," ","="," ",RowBox[
+{"sqrtMinusg"," ","*"," ",RowBox[{"Sqrt","[","X","]"}]," ","*"," ","W"}]}],";"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"f0",RowBox[{"(","r",")"}]}],":"," ",RowBox[
+{"normalization"," ","kernel"," ",RowBox[{"(",RowBox[{"measure"," ","only"}],")"}]}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"f0"," ","="," ",RowBox[{"FullSimplify","[","\n","  ",RowBox[{RowBox[{"Integrate","[",RowBox[
+{"leafMeasureKernel",","," ",RowBox[{"{",RowBox[{"th",","," ","0",","," ","Pi"}],"}"}],","," ",RowBox[
+{"{",RowBox[{"ph",","," ","0",","," ",RowBox[{"2"," ","Pi"}]}],"}"}]}],"]"}],",","\n","  ","$Assumptions"}],"\n","]"}]}],";"}]}]],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"f1",RowBox[{"(","r",")"}]}],":"," ",RowBox[
+{"weighted"," ",RowBox[{"K","^","2"}]," ","kernel"}]}]," ","*)"}],"\n",RowBox[{RowBox[
+{"f1"," ","="," ",RowBox[{"FullSimplify","[","\n","  ",RowBox[{RowBox[{"Integrate","[",RowBox[
+{RowBox[{"leafMeasureKernel"," ","*"," ","K2"}],","," ",RowBox[{"{",RowBox[{"th",","," ","0",","," ","Pi"}],"}"}],","," ",RowBox[
+{"{",RowBox[{"ph",","," ","0",","," ",RowBox[{"2"," ","Pi"}]}],"}"}]}],"]"}],",","\n","  ","$Assumptions"}],"\n","]"}]}],";"}]}]],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"f0(r) [measure kernel] = \"",","," ","f0"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[",RowBox[{"\"f1(r) [K^2 weighted kernel] = \"",","," ","f1"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"Constraint"," ","density"," ",RowBox[
+{"(",RowBox[{RowBox[{"NOT"," ","a"," ","Lagrangian"}],","," ",RowBox[{"just"," ","a"," ","kernel"}]}],")"}]}]," ","*)"}],"\n",RowBox[
+{RowBox[{"Gconstraint"," ","="," ",RowBox[{"f1"," ","-"," ",RowBox[{RowBox[{"K0","^","2"}]," ","*"," ","f0"}]}]}],";"}]}]],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Print","[",RowBox[{"\"Gconstraint(r) = f1 - K0^2 * f0 = \"",","," ","Gconstraint"}],"]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","3"}]}]}],":"," ",RowBox[{RowBox[{"GLOBAL"," ","CONSTRAINT"," ","FUNCTIONAL"}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"The"," ","constraint"," ","on"," ","each"," ","leaf"," ","Theta"}]}]}]}]," ","="," ",RowBox[
+{RowBox[{"const"," ",RowBox[{"is",":","\n","\n","   ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[
+{RowBox[{"Integral_",RowBox[{"{",RowBox[{"r"," ","in"," ","D_Theta"}],"}"}]," ",RowBox[
+{"dr"," ","["," ",RowBox[{RowBox[{"f1",RowBox[{"(","r",")"}]}]," ","-"," ",RowBox[
+{RowBox[{"K0","^","2"}]," ","*"," ","f0",RowBox[{"(","r",")"}]}]}]," ","]"}]}]," ","="," ",RowBox[
+{"0","\n","\n","   ","where"," ","D_Theta"," ","is"," ","the"," ",RowBox[{"CAUSAL","/","STATIC"}]," ","DOMAIN"}]}]}]}],","," ",RowBox[
+{"defined"," ","by","\n","   ","a"," ","FIXED"," ","geometric"," ","criterion"," ","used"," ","consistently"," ","in"," ","ALL"," ",RowBox[
+{"tests",":","\n","\n","   ",RowBox[{RowBox[{RowBox[{"-"," ","r"}]," ","in"," ",RowBox[
+{"(",RowBox[{"r_inner",","," ","r_outer"}],")"}]}],"\n","   ","-"," ","r_inner"}],":"," ",RowBox[
+{RowBox[{"origin"," ",RowBox[{"(",RowBox[{"r","=","0"}],")"}]," ","or"," ","inner"," ","horizon"," ","if"," ","present"}],"\n","   ","-"," ",RowBox[
+{"r_outer",":"," ",RowBox[{"cosmological"," ","horizon"," ",RowBox[{"(",RowBox[{RowBox[
+{"de"," ",RowBox[{"Sitter",":"," ","r"}]}],"=",RowBox[{"1","/","H"}]}],")"}]," ","or","\n","              ","spatial"," ","infinity"," ","with"," ","appropriate"," ","cutoff","\n","\n","   ","IMPORTANT"}],":"," ",RowBox[
+{"The"," ","domain"," ","D_Theta"," ","is"," ","determined"," ","by"," ","the","\n","   ","GEOMETRY"," ",RowBox[
+{"(",RowBox[{"horizons",","," ",RowBox[{"causal"," ","structure"}]}],")"}]}]}]}]}]}],","," ",RowBox[
+{RowBox[{RowBox[{"not"," ","adjusted","\n","   ","per"}],"-",RowBox[{RowBox[{"test","."," ","This"}]," ","prevents"," ",RowBox[
+{"\"changing domain to fit results\"",".","\n","\n","   ","The"}]," ","constraint"," ","is"," ","the"," ","NORMALIZED"," ","AVERAGE"," ",RowBox[
+{"condition",":","\n","\n","   ",RowBox[{"<"," ",RowBox[{"K","^","2"}]," ",">",RowBox[
+{"_",RowBox[{"{","D_Theta","}"}]}]}]}]}]}]," ","="," ",RowBox[{RowBox[{"I1"," ","/"," ","I0"}]," ","="," ",RowBox[
+{RowBox[{RowBox[{"K0","^","2"}],"\n","\n","   ","where"," ","I0"}]," ","="," ",RowBox[
+{"Integral","[",RowBox[{"f0",","," ","D_Theta"}],"]"}]}]}]}],","," ",RowBox[{"I1"," ","="," ",RowBox[
+{RowBox[{RowBox[{"Integral","[",RowBox[{"f1",","," ","D_Theta"}],"]"}],".","\n","\n","   ",RowBox[
+{"Equivalently",":"," ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[{RowBox[
+{"I1"," ","-"," ",RowBox[{RowBox[{"K0","^","2"}]," ","*"," ","I0"}]}]," ","="," ",RowBox[
+{"0","\n","\n","   ",RowBox[{"NOTE",":"," ",RowBox[{"We"," ","do"," ","NOT"," ","say"," ","\"K^2 = K0^2\""," ",RowBox[
+{RowBox[{"(",RowBox[{"which"," ","implies"," ","pointwise"}],")"}],".","\n","   ","The"}]," ","constraint"," ","is"," ","on"," ","the"," ","AVERAGE"," ","over"," ","the"," ","causal"," ",RowBox[
+{"domain",".","\n","\n","   ","The"}]," ","Lagrange"," ","multiplier"," ",RowBox[
+{"lambda","[","Theta","]"}]," ","enforces"," ","this","\n","   ","as"," ","an"," ","INTEGRAL"," ","condition"}]}]}]}]}]}],","," ",RowBox[
+{"not"," ",RowBox[{"pointwise","."}]}]}],"\n","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[
+{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"CONSTRAINT"," ","FUNCTIONAL"," ","DEFINITION"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"The"," ","constraint"," ",RowBox[{"C","[","Theta","]"}]," ","cannot"," ","be"," ","computed"," ","symbolically","\n","   ","for"," ","generic"," ",RowBox[
+{"A","[","r","]"}]}]}]}],","," ",RowBox[{"B","[","r","]"}],","," ",RowBox[{RowBox[
+{RowBox[{RowBox[{"psi","[","r","]"}],"."," ","It"}]," ","must"," ","be"," ","evaluated","\n","   ","AFTER"," ","substituting"," ","a"," ","specific"," ","metric"," ",RowBox[
+{"ansatz",".","\n","\n","   ",RowBox[{"Structure",":","\n","   ",RowBox[{"-"," ","Numerator"}],":"," ","I1"}]}]}]," ","="," ",RowBox[
+{RowBox[{RowBox[{"Integral_",RowBox[{"{","D_Theta","}"}]," ","f1",RowBox[{"(","r",")"}]," ","dr"}],"\n","   ","-"," ",RowBox[
+{"Denominator",":"," ","I0"}]}]," ","="," ",RowBox[{RowBox[{RowBox[{"Integral_",RowBox[
+{"{","D_Theta","}"}]," ","f0",RowBox[{"(","r",")"}]," ","dr"}],"\n","   ","-"," ",RowBox[
+{"Constraint",":"," ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[{RowBox[
+{"I1"," ","-"," ",RowBox[{RowBox[{"K0","^","2"}]," ","*"," ","I0"}]}]," ","="," ",RowBox[
+{RowBox[{"0","\n","   ","-"," ",RowBox[{"Normalized",":"," ",RowBox[{"<",RowBox[{"K","^","2"}],">"}]}]}]," ","="," ",RowBox[
+{RowBox[{"I1","/","I0"}]," ","="," ",RowBox[{"K0","^","2"}]}]}]}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{"For"," ","a"," ","SPECIFIC"," ","metric"}],","," ",RowBox[
+{"the"," ","integrals"," ","are"," ","computed"," ","in"," ","test"," ","notebooks"}]}]," ","*)"}],"\n",RowBox[
+{"(*"," ",RowBox[{RowBox[{RowBox[{RowBox[{"Example"," ","usage"," ",RowBox[{"(",RowBox[
+{RowBox[{"in"," ","05"}],","," ","06"}],")"}]}],":","\n","\n","   ",RowBox[{"(*"," ",RowBox[
+{"Substitute"," ","metric"}]," ","*)"}],"\n","   ","f0dS"}]," ","="," ",RowBox[{"f0"," ","/."," ","deSitterRules"}]}],";","\n","   ",RowBox[
+{"f1dS"," ","="," ",RowBox[{"f1"," ","/."," ","deSitterRules"}]}],";","\n","\n","   ",RowBox[
+{"(*"," ",RowBox[{"Compute"," ","integrals"," ","over"," ","causal"," ","domain"}]," ","*)"}],"\n","   ",RowBox[
+{"I0dS"," ","="," ",RowBox[{"Integrate","[",RowBox[{"f0dS",","," ",RowBox[{"{",RowBox[
+{"r",","," ","0",","," ",RowBox[{"1","/","H"}]}],"}"}]}],"]"}]}],";","\n","   ",RowBox[
+{"I1dS"," ","="," ",RowBox[{"Integrate","[",RowBox[{"f1dS",","," ",RowBox[{"{",RowBox[
+{"r",","," ","0",","," ",RowBox[{"1","/","H"}]}],"}"}]}],"]"}]}],";","\n","\n","   ",RowBox[
+{"(*"," ",RowBox[{"Check"," ","constraint"}]," ","*)"}],"\n","   ",RowBox[{"averageK2"," ","="," ",RowBox[
+{"I1dS"," ","/"," ","I0dS"}]}],";","\n","   ",RowBox[{"Print","[",RowBox[{"\"<K^2> = \"",","," ","averageK2"}],"]"}],";"}],"\n","*)"}],"\n","\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}]}]],"\n",RowBox[{RowBox[{"Print","[","\"=== GLOBAL CONSTRAINT STRUCTURE ===\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"The constraint on each leaf is:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"  C[Theta] = I1 - K0^2 * I0 = 0\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"where:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  I0 = Integral_{D_Theta} f0(r) dr  [volume]\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  I1 = Integral_{D_Theta} f1(r) dr  [K^2 weighted]\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"Equivalently: <K^2>_{D_Theta} = I1/I0 = K0^2\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"This is NOT a local equation.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"lambda[Theta] is constant on each leaf.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"The constraint selects globally consistent foliations.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"NOTE: Integrals computed in test notebooks (05, 06)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"after substituting specific metric ansatz.\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"PART"," ","4"}]}]}],":"," ",RowBox[{RowBox[{"AUGMENTED"," ","INTEGRAND"," ",RowBox[
+{"(",RowBox[{"for"," ","EOM"," ","derivation"}],")"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"If"," ","field"," ","equations"," ","are"," ","needed"}]}]}]}],","," ",RowBox[
+{RowBox[{"one"," ","can"," ","define","\n","   ","an"," ","augmented"," ","radial"," ","integrand"," ","at"," ","fixed"," ","Theta"}]," ","="," ",RowBox[
+{RowBox[{RowBox[{"Theta_","0"}],":","\n","\n","   ",RowBox[{"L_aug",RowBox[{"(","r",")"}]}]}]," ","="," ",RowBox[
+{RowBox[{"LeffBase",RowBox[{"(","r",")"}]}]," ","+"," ",RowBox[{RowBox[{"lambda","[",RowBox[
+{"Theta_","0"}],"]"}]," ","*"," ","Gconstraint",RowBox[{"(","r",")"}],"\n","\n","   ",RowBox[
+{"CRITICAL",":"," ",RowBox[{RowBox[{"lambda","[",RowBox[{"Theta_","0"}],"]"}]," ","is"," ","a"," ","PARAMETER"}]}]}]}]}]}],","," ",RowBox[
+{RowBox[{RowBox[{"not"," ","a"," ",RowBox[{"field",".","\n","   ",RowBox[{"-"," ","It"}]}]," ","is"," ","CONSTANT"," ","in"," ","r"," ",RowBox[
+{"(",RowBox[{"does"," ","not"," ","vary"," ","along"," ","the"," ","leaf"}],")"}]}],"\n","   ","-"," ",RowBox[
+{"It"," ","depends"," ","ONLY"," ","on"," ","the"," ","leaf"," ","label"," ","Theta_","0"}],"\n","   ","-"," ",RowBox[
+{"It"," ","is"," ","NOT"," ","varied"," ","in"," ","the"," ","EOM"," ","derivation"," ",RowBox[
+{"w",".","r",".","t","."," ","r"}],"\n","\n","   ","This"," ","does"," ","NOT"," ","reintroduce"," ","locality"," ",RowBox[
+{"because",":","\n","   ",RowBox[{RowBox[{"1."," ","lambda"," ","cannot"," ","\"adjust\""," ","the"," ","solution"," ","point"}],"-","by","-",RowBox[
+{"point","\n","   ","2."," ","The"," ","ONLY"," ","condition"," ","on"," ","lambda"," ","is"," ","the"," ","integral"," ","constraint"}]}],":","\n","      ",RowBox[
+{"C","[",RowBox[{"Theta_","0"}],"]"}]}]}]}]," ","="," ",RowBox[{RowBox[{"Integral","[",RowBox[
+{"Gconstraint",","," ","D_Theta"}],"]"}]," ","="," ",RowBox[{RowBox[{"0","\n","   ","3."," ","Varying"," ",RowBox[
+{"w",".","r",".","t","."," ","metric"}]," ","gives"," ","EOM"," ","with"," ","lambda"," ","as"," ","parameter","\n","   ","4."," ","Varying"," ",RowBox[
+{"w",".","r",".","t","."," ","lambda"}]," ","gives"," ","the"," ","global"," ","constraint"," ","C"}]," ","="," ",RowBox[
+{RowBox[{"0","\n","\n","   ","The"," ","system"," ",RowBox[{"is",":","\n","   ",RowBox[
+{RowBox[{"-"," ","Local"}]," ","EOM"," ","from"," ","delta",RowBox[{RowBox[{"(",RowBox[
+{"LeffBase"," ","+"," ",RowBox[{"lambda"," ","*"," ","Gconstraint"}]}],")"}],"/","delta"}],RowBox[
+{"(","metric",")"}]}]}]}]," ","="," ",RowBox[{RowBox[{"0","\n","   ","-"," ",RowBox[
+{"Global"," ","constraint"," ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[
+{"0"," ",RowBox[{"(",RowBox[{"fixes"," ","lambda"," ","implicitly"}],")"}],"\n","\n","   ","This"," ","is"," ","analogous"," ","to"," ","constrained"," ","mechanics"," ","with"," ","a","\n","   ","holonomic"," ","constraint"," ","enforced"," ","by"," ","a"," ","Lagrange"," ",RowBox[
+{"multiplier","."}]}]}]}]}]}]}]}],"\n","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[{RowBox[
+{"Augmented"," ","integrand"," ","at"," ","fixed"," ","leaf"}]," ","-"," ",RowBox[
+{"lambda"," ","is"," ","a"," ","PARAMETER"}]}]," ","*)"}],"\n",RowBox[{RowBox[{RowBox[
+{"LaugFixed","[","\[Lambda]val_","]"}]," ",":="," ",RowBox[{"LeffBase"," ","+"," ",RowBox[
+{"\[Lambda]val"," ","*"," ","Gconstraint"}]}]}],";"}]}]],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"=== AUGMENTED INTEGRAND FOR EOM ===\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"L_aug(r) = LeffBase(r) + lambda * Gconstraint(r)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"where lambda = lambda[Theta] is:\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - CONSTANT in r (leaf-dependent only)\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - A PARAMETER, not a dynamical field\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"  - Determined by the global constraint C[Theta] = 0\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"\"","]"}],";"}],"\n",RowBox[{RowBox[{"Print","[","\"The constraint C[Theta] = 0 is the ONLY equation for lambda.\"","]"}],";"}],"\n",RowBox[
+{RowBox[{"Print","[","\"There is NO local equation 'K^2 = K0^2' anywhere.\"","]"}],";"}],RowBox[
+{"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","   ",RowBox[{"SUMMARY"," ","OF"," ","OUTPUTS"}]}],"\n","   ","===","===","===","===","===","===","===","===","===","===","===","===","===",RowBox[
+{"==","\n","\n","   ",RowBox[{"From"," ","this"," ",RowBox[{"notebook",":","\n","\n","   ",RowBox[
+{RowBox[{"1."," ","LeffBase",RowBox[{"(","r",")"}]}]," ","-"," ",RowBox[{"local"," ","dynamics"}]}]}]}]}]}],","," ",RowBox[
+{RowBox[{RowBox[{"generates"," ","standard"," ","EOM","\n","   ","2."," ","f0",RowBox[
+{"(","r",")"}]}]," ","-"," ",RowBox[{"measure"," ","kernel"," ","for"," ","normalization","\n","   ","3."," ","f1",RowBox[
+{"(","r",")"}]}]," ","-"," ",RowBox[{RowBox[{"K","^","2"}]," ","weighted"," ","kernel","\n","   ","4."," ","Gconstraint",RowBox[
+{"(","r",")"}]}]}]," ","="," ",RowBox[{RowBox[{"f1"," ","-"," ",RowBox[{RowBox[{"K0","^","2"}]," ","*"," ","f0"}]," ","-"," ",RowBox[
+{"constraint"," ","density","\n","   ","5."," ",RowBox[{"C","[","Theta","]"}]}]}]," ","="," ",RowBox[
+{RowBox[{"Integral","[",RowBox[{"Gconstraint",","," ","D_Theta"}],"]"}]," ","-"," ",RowBox[
+{"global"," ","constraint","\n","\n","   ","NO"," ","\"Leffhard(r)\""," ",RowBox[
+{"exists","."," ","The"}]," ","constraint"," ","is"," ","purely"," ",RowBox[{"integral","."}]}]}]}]}]}],"\n","*)"}],"\n"}]]}],
+"Input",CellLabel -> "In[120]:= ",ExpressionUUID -> "765a8150-6ada-41b7-862e-7e8dd08f53ac"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"Angular integration factor = \"","\[InvisibleSpace]",RowBox[
+{"4"," ","\[Pi]"}]}],SequenceForm["Angular integration factor = ",Times[4,Pi]],Editable -> False],
+StandardForm],"Print",ExpressionUUID -> "0174be07-3e75-49b6-b7df-712a12ee887f"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"LeffBase(r) [local dynamics] = \"","\[InvisibleSpace]",RowBox[
+{"-",FractionBox[RowBox[{"\[Pi]"," ",RowBox[{"(",RowBox[{RowBox[{SuperscriptBox["r",
+"2"]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["A",
+"\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}],"+",RowBox[{SuperscriptBox[
+RowBox[{"A","[","r","]"}],"2"]," ",RowBox[{"(",RowBox[{RowBox[{"4"," ",RowBox[{"(",RowBox[
+{"1","+",RowBox[{SuperscriptBox["r","2"]," ","\[CapitalLambda]"}]}],")"}]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[{"4"," ","r"," ",RowBox[{SuperscriptBox[
+"B","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"-",RowBox[{"2"," ",RowBox[
+{"B","[","r","]"}]," ",RowBox[{"(",RowBox[{"2","+",RowBox[{SuperscriptBox["r","2"]," ","\[Alpha]"," ","\[Kappa]"," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}]}]}],")"}]}],"+",RowBox[{"r"," ",RowBox[{"A","[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{"2"," ","r"," ","\[Alpha]"," ","\[Kappa]"," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[{"r"," ",RowBox[{SuperscriptBox["A","\[Prime]",
+MultilineFunction -> None],"[","r","]"}]," ",RowBox[{SuperscriptBox["B","\[Prime]",
+MultilineFunction -> None],"[","r","]"}]}],"-",RowBox[{"2"," ",RowBox[{"B","[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{"2"," ",RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{"r"," ",RowBox[{SuperscriptBox["A","\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}]}]}],")"}]}]}],")"}]}]}],")"}]}],
+RowBox[{"\[Kappa]"," ",SuperscriptBox[RowBox[{"(",RowBox[{RowBox[{"A","[","r","]"}]," ",RowBox[
+{"B","[","r","]"}]}],")"}],RowBox[{"3","/","2"}]]}]]}]}],SequenceForm["LeffBase(r) [local dynamics] = ",
+Times[-1,Pi,Power[\[Kappa],-1],Power[Times[A[r],B[r]],Rational[-3,2]],Plus[Times[
+Power[r,2],B[r],Power[Derivative[1][A][r],2]],Times[Power[A[r],2],Plus[Times[4,Plus[
+1,Times[Power[r,2],\[CapitalLambda]]],Power[B[r],2]],Times[4,r,Derivative[1][B][r]],
+Times[-2,B[r],Plus[2,Times[Power[r,2],\[Alpha],\[Kappa],Power[Derivative[1][\[Psi]][
+r],2]]]]]],Times[r,A[r],Plus[Times[2,r,\[Alpha],\[Kappa],Power[B[r],2]],Times[r,Derivative[
+1][A][r],Derivative[1][B][r]],Times[-2,B[r],Plus[Times[2,Derivative[1][A][r]],Times[
+r,Derivative[2][A][r]]]]]]]]],Editable -> False],StandardForm],"Print",ExpressionUUID -> "41a85616-f1d2-4eca-a511-1860eaf91c88"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"f0(r) [measure kernel] = \"","\[InvisibleSpace]",RowBox[
+{"4"," ","\[Pi]"," ",SuperscriptBox["r","2"]," ",SqrtBox[RowBox[{RowBox[{"B","[","r","]"}],"-",RowBox[
+{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}]}]]}]}],SequenceForm["f0(r) [measure kernel] = ",
+Times[4,Pi,Power[r,2],Power[Plus[B[r],Times[-1,A[r],Power[Derivative[1][\[Psi]][r],
+2]]],Rational[1,2]]]],Editable -> False],StandardForm],"Print",ExpressionUUID -> "eeb06941-4a82-4be0-89e1-f68704da7c63"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"f1(r) [K^2 weighted kernel] = \"","\[InvisibleSpace]",FractionBox[
+RowBox[{"\[Pi]"," ",RowBox[{"(",RowBox[{RowBox[{SuperscriptBox[RowBox[{SuperscriptBox[
+"\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]," ",RowBox[{"(",RowBox[
+{RowBox[{"4"," ",SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"B","[","r","]"}],
+"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}],"-",RowBox[{"16"," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"3"]," ",RowBox[
+{"B","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}],"+",RowBox[{"8"," ",SuperscriptBox[
+RowBox[{"A","[","r","]"}],"4"]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]",MultilineFunction -> None],"[","r","]"}],"4"]}],"-",RowBox[{"4"," ",SuperscriptBox[
+"r","2"]," ",RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[{SuperscriptBox[
+"A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[{"(",RowBox[{RowBox[
+{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}]}],"+",RowBox[{SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",RowBox[
+{"(",RowBox[{RowBox[{"8"," ",SuperscriptBox[RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[
+{SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"(",RowBox[{RowBox[{SuperscriptBox[
+"B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[{RowBox[{SuperscriptBox[
+"A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}],
+"2"]}]}],")"}]}]}],")"}]}],"-",RowBox[{"4"," ",SuperscriptBox["r","2"]," ",RowBox[
+{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[{"(",RowBox[{RowBox[
+{RowBox[{"A","[","r","]"}]," ",RowBox[{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"-","2"}]," ",RowBox[{"B","[","r","]"}]}],"+",RowBox[
+{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}]}]}],")"}]," ",RowBox[{SuperscriptBox[
+"\[Psi]","\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{"4"," ",SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}]}],RowBox[
+{RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[
+{"(",RowBox[{RowBox[{"B","[","r","]"}],"-",RowBox[{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}],RowBox[{"5","/","2"}]]}]]}],SequenceForm["f1(r) [K^2 weighted kernel] = ",
+Times[Pi,Power[A[r],-1],Power[B[r],-1],Power[Plus[B[r],Times[-1,A[r],Power[Derivative[
+1][\[Psi]][r],2]]],Rational[-5,2]],Plus[Times[Power[Derivative[1][\[Psi]][r],2],Plus[
+Times[4,Power[r,2],Power[B[r],2],Power[Derivative[1][A][r],2]],Times[-16,Power[A[
+r],3],B[r],Power[Derivative[1][\[Psi]][r],2]],Times[8,Power[A[r],4],Power[Derivative[
+1][\[Psi]][r],4]],Times[-4,Power[r,2],A[r],B[r],Derivative[1][A][r],Plus[Derivative[
+1][B][r],Times[Derivative[1][A][r],Power[Derivative[1][\[Psi]][r],2]]]],Times[Power[
+A[r],2],Plus[Times[8,Power[B[r],2]],Times[Power[r,2],Power[Plus[Derivative[1][B][
+r],Times[Derivative[1][A][r],Power[Derivative[1][\[Psi]][r],2]]],2]]]]]],Times[-4,
+Power[r,2],A[r],B[r],Derivative[1][\[Psi]][r],Plus[Times[A[r],Derivative[1][B][r]],
+Times[Derivative[1][A][r],Plus[Times[-2,B[r]],Times[A[r],Power[Derivative[1][\[Psi]][
+r],2]]]]],Derivative[2][\[Psi]][r]],Times[4,Power[r,2],Power[A[r],2],Power[B[r],2],
+Power[Derivative[2][\[Psi]][r],2]]]]],Editable -> False],StandardForm],"Print",ExpressionUUID -> "fabc6360-4847-4b43-bd00-78197818bcec"],Cell[
+BoxData[
+InterpretationBox[RowBox[{"\"Gconstraint(r) = f1 - K0^2 * f0 = \"","\[InvisibleSpace]",RowBox[
+{RowBox[{RowBox[{"-","4"}]," ",SuperscriptBox["K0","2"]," ","\[Pi]"," ",SuperscriptBox[
+"r","2"]," ",SqrtBox[RowBox[{RowBox[{"B","[","r","]"}],"-",RowBox[{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}]]}],"+",FractionBox[RowBox[{"\[Pi]"," ",RowBox[{"(",RowBox[{RowBox[{SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]," ",RowBox[{"(",RowBox[{RowBox[{"4"," ",SuperscriptBox["r","2"]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["A","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}],"-",RowBox[{"16"," ",SuperscriptBox[
+RowBox[{"A","[","r","]"}],"3"]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}],"+",RowBox[
+{"8"," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"4"]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"4"]}],"-",RowBox[
+{"4"," ",SuperscriptBox["r","2"]," ",RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[
+{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}]}],"+",RowBox[{SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",RowBox[
+{"(",RowBox[{RowBox[{"8"," ",SuperscriptBox[RowBox[{"B","[","r","]"}],"2"]}],"+",RowBox[
+{SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"(",RowBox[{RowBox[{SuperscriptBox[
+"B","\[Prime]",MultilineFunction -> None],"[","r","]"}],"+",RowBox[{RowBox[{SuperscriptBox[
+"A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",SuperscriptBox[RowBox[
+{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}],
+"2"]}]}],")"}]}]}],")"}]}],"-",RowBox[{"4"," ",SuperscriptBox["r","2"]," ",RowBox[
+{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[{"(",RowBox[{RowBox[
+{RowBox[{"A","[","r","]"}]," ",RowBox[{SuperscriptBox["B","\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{RowBox[{SuperscriptBox["A","\[Prime]",MultilineFunction -> None],"[","r","]"}]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"-","2"}]," ",RowBox[{"B","[","r","]"}]}],"+",RowBox[
+{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]","\[Prime]",
+MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}]}]}],")"}]," ",RowBox[{SuperscriptBox[
+"\[Psi]","\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}]}],"+",RowBox[
+{"4"," ",SuperscriptBox["r","2"]," ",SuperscriptBox[RowBox[{"A","[","r","]"}],"2"]," ",SuperscriptBox[
+RowBox[{"B","[","r","]"}],"2"]," ",SuperscriptBox[RowBox[{SuperscriptBox["\[Psi]",
+"\[Prime]\[Prime]",MultilineFunction -> None],"[","r","]"}],"2"]}]}],")"}]}],RowBox[
+{RowBox[{"A","[","r","]"}]," ",RowBox[{"B","[","r","]"}]," ",SuperscriptBox[RowBox[
+{"(",RowBox[{RowBox[{"B","[","r","]"}],"-",RowBox[{RowBox[{"A","[","r","]"}]," ",SuperscriptBox[
+RowBox[{SuperscriptBox["\[Psi]","\[Prime]",MultilineFunction -> None],"[","r","]"}],
+"2"]}]}],")"}],RowBox[{"5","/","2"}]]}]]}]}],SequenceForm["Gconstraint(r) = f1 - K0^2 * f0 = ",
+Plus[Times[-4,Power[K0,2],Pi,Power[r,2],Power[Plus[B[r],Times[-1,A[r],Power[Derivative[
+1][\[Psi]][r],2]]],Rational[1,2]]],Times[Pi,Power[A[r],-1],Power[B[r],-1],Power[Plus[
+B[r],Times[-1,A[r],Power[Derivative[1][\[Psi]][r],2]]],Rational[-5,2]],Plus[Times[
+Power[Derivative[1][\[Psi]][r],2],Plus[Times[4,Power[r,2],Power[B[r],2],Power[Derivative[
+1][A][r],2]],Times[-16,Power[A[r],3],B[r],Power[Derivative[1][\[Psi]][r],2]],Times[
+8,Power[A[r],4],Power[Derivative[1][\[Psi]][r],4]],Times[-4,Power[r,2],A[r],B[r],
+Derivative[1][A][r],Plus[Derivative[1][B][r],Times[Derivative[1][A][r],Power[Derivative[
+1][\[Psi]][r],2]]]],Times[Power[A[r],2],Plus[Times[8,Power[B[r],2]],Times[Power[r,
+2],Power[Plus[Derivative[1][B][r],Times[Derivative[1][A][r],Power[Derivative[1][\[Psi]][
+r],2]]],2]]]]]],Times[-4,Power[r,2],A[r],B[r],Derivative[1][\[Psi]][r],Plus[Times[
+A[r],Derivative[1][B][r]],Times[Derivative[1][A][r],Plus[Times[-2,B[r]],Times[A[r],
+Power[Derivative[1][\[Psi]][r],2]]]]],Derivative[2][\[Psi]][r]],Times[4,Power[r,2],
+Power[A[r],2],Power[B[r],2],Power[Derivative[2][\[Psi]][r],2]]]]]],Editable -> False],
+StandardForm],"Print",ExpressionUUID -> "06ce3f0e-71fe-4da9-9cf9-8efa4acc2d70"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "c5bb3aa1-fcc4-42d8-8d87-3acb2d99771d"],Cell[
+BoxData[
+"\"=== GLOBAL CONSTRAINT STRUCTURE ===\"",StandardForm],"Print",ExpressionUUID -> "fa3d4901-6c22-433c-b16f-2317e123fb36"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "56bab0d4-d959-4849-bbc4-0167dc3499c5"],Cell[
+BoxData[
+"\"The constraint on each leaf is:\"",StandardForm],"Print",ExpressionUUID -> "f5f23dbb-8434-4137-8028-2dbcb3d10f5c"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "3646562e-cfa2-4ea6-bf14-c3ce44a90ac0"],Cell[
+BoxData[
+"\"  C[Theta] = I1 - K0^2 * I0 = 0\"",StandardForm],"Print",ExpressionUUID -> "dbd5d217-be15-4187-957f-20e886936d6d"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "70360fb6-86a9-420b-840c-0734e5da4957"],Cell[
+BoxData[
+"\"where:\"",StandardForm],"Print",ExpressionUUID -> "05d467ed-2a2c-44d5-adaf-b151f3cace91"],Cell[
+BoxData[
+"\"  I0 = Integral_{D_Theta} f0(r) dr  [volume]\"",StandardForm],"Print",ExpressionUUID -> "169e7243-1387-4f5b-9eed-2fc551d80e46"],Cell[
+BoxData[
+"\"  I1 = Integral_{D_Theta} f1(r) dr  [K^2 weighted]\"",StandardForm],"Print",ExpressionUUID -> "0713a2c2-d5e1-4588-8e07-5b4446c8a241"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "d38e3350-5d73-4f15-ba60-57e731e82fe7"],Cell[
+BoxData[
+"\"Equivalently: <K^2>_{D_Theta} = I1/I0 = K0^2\"",StandardForm],"Print",ExpressionUUID -> "ea838f8b-156a-493e-8ba8-ace9d31f85c6"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "9cbe62a5-2210-47ca-b8c2-7ecbeb45b620"],Cell[
+BoxData[
+"\"This is NOT a local equation.\"",StandardForm],"Print",ExpressionUUID -> "b605e16b-1fcb-49fc-b445-fa333c14a8fe"],Cell[
+BoxData[
+"\"lambda[Theta] is constant on each leaf.\"",StandardForm],"Print",ExpressionUUID -> "f54e84ea-124a-4c34-88e0-0beda223225f"],Cell[
+BoxData[
+"\"The constraint selects globally consistent foliations.\"",StandardForm],"Print",
+ExpressionUUID -> "2cc22295-8ace-4a4c-9065-4609b71fa505"],Cell[
+BoxData["\"\"",StandardForm],
+"Print",ExpressionUUID -> "c7e47164-693d-48ec-844f-dac78a355770"],Cell[
+BoxData["\"NOTE: Integrals computed in test notebooks (05, 06)\"",
+StandardForm],"Print",ExpressionUUID -> "e947c254-75ec-4dea-a2ff-c5c928d53fe4"],Cell[
+BoxData[
+"\"after substituting specific metric ansatz.\"",StandardForm],"Print",ExpressionUUID -> "231ee66c-c3c5-44ce-9b6d-cdfb803008b0"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "44199060-f734-49b7-93f4-8a03423b6b15"],Cell[
+BoxData[
+"\"=== AUGMENTED INTEGRAND FOR EOM ===\"",StandardForm],"Print",ExpressionUUID -> "30eac632-dfbd-4c19-af41-de1674ae0a4d"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "7fead86d-7339-4f5f-8ce1-2479b5430913"],Cell[
+BoxData[
+"\"L_aug(r) = LeffBase(r) + lambda * Gconstraint(r)\"",StandardForm],"Print",ExpressionUUID -> "a63d3400-51f1-4df6-9a56-7f51d616a520"],Cell[
+BoxData[
+"\"\"",StandardForm],"Print",ExpressionUUID -> "9954ef78-48ce-4e71-807e-b4d032e71fdd"],Cell[
+BoxData[
+"\"where lambda = lambda[Theta] is:\"",StandardForm],"Print",ExpressionUUID -> "3479977d-e0cc-4661-8660-08c2b5e6d105"],Cell[
+BoxData[
+"\"  - CONSTANT in r (leaf-dependent only)\"",StandardForm],"Print",ExpressionUUID -> "8c733867-7637-49ed-afe8-6f7e30a36d91"],Cell[
+BoxData[
+"\"  - A PARAMETER, not a dynamical field\"",StandardForm],"Print",ExpressionUUID -> "eddac5a9-2a9b-4f9b-a708-95390b4a158a"],Cell[
+BoxData[
+"\"  - Determined by the global constraint C[Theta] = 0\"",StandardForm],"Print",
+ExpressionUUID -> "2f8059fa-c18c-4f7b-8f02-86a15dc79559"],Cell[
+BoxData["\"\"",StandardForm],
+"Print",ExpressionUUID -> "6f15b333-53e1-4d1e-85aa-383372462031"],Cell[
+BoxData["\"The constraint C[Theta] = 0 is the ONLY equation for lambda.\"",
+StandardForm],"Print",ExpressionUUID -> "e58fef70-adee-4d1f-8ec5-1e34a46bacdf"],Cell[
+BoxData[
+"\"There is NO local equation 'K^2 = K0^2' anywhere.\"",StandardForm],"Print",ExpressionUUID -> "1f6e18a5-b00a-4485-82b2-1e5158c14ff5"]},
+Open],ExpressionUUID -> "e89be11a-670e-4305-b516-6040b483aa43"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "14.3 for Wolfram Cloud 1.75 (December 9, 2025)"]
