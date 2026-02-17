@@ -372,6 +372,8 @@ In the limit $R \to \infty$, local sources effectively represent measure-zero co
 to the vacuum selection rule.
 This confirms that the global constraint acts purely as an infrared boundary condition, 
 leaving local astrophysical tests of gravity unaffected.
+The static identities above are also certified in the Lean artifact by
+the static-limit lemmas in \path{StaticSanityCheck/StaticLimit.lean}.
 
 \section{Vacuum selection from the leafwise constraint}
 
@@ -411,6 +413,9 @@ cubically. In the infrared limit one therefore finds
 \begin{equation}
 \langle K^2\rangle_{D_\Theta} \xrightarrow{\mathrm{IR}} 0.
 \end{equation}
+In Lean, this infrared statement is certified by
+the Minkowski IR-limit theorem in
+\path{StaticSanityCheck/MinkowskiLinearTilt.lean}.
 
 % =========================
 % FIGURE 1 — Minkowski IR scaling
@@ -482,6 +487,9 @@ normalized leafwise average coincides with the local value,
 \begin{equation}
 \langle K^2\rangle_{D_\Theta} = 3H^2.
 \end{equation}
+This step is certified in Lean by
+the de Sitter PG average theorem in
+\path{StaticSanityCheck/DeSitterPG.lean}.
 
 It is worth noting that the causal domain of the de Sitter foliation
 is bounded by the cosmological horizon at $r=H^{-1}$, so that $D_\Theta$
@@ -509,6 +517,9 @@ admissible vacuum, with the expansion rate fixed by
 \begin{equation}
 H^2=\frac{K_0^2}{3}.
 \end{equation}
+In the Lean artifact, this selection rule is proved both in the direct
+de Sitter module and in an independent module obtained by substitution into
+the general \(K^2\) expression.
 This relation fixes the curvature scale of the \emph{asymptotic} vacuum geometry selected by the leafwise constraint. 
 Since the constraint is formally defined in the infinite-volume limit ($R \to \infty$), it does not impose a constant 
 Hubble rate during the dynamical history at finite causal volume, where standard General Relativity is recovered. 
@@ -532,6 +543,10 @@ local curvature near compact sources. In the following we show explicitly
 that, for physically relevant foliations, the induced geometry on the
 $\Theta=\mathrm{const}$ hypersurfaces remains locally Euclidean, ensuring
 full compatibility with standard Schwarzschild and post-Newtonian physics.
+The corresponding IR-suppression statement for compactly supported
+contributions is formalized in Lean as
+the compact-support IR-dominance theorem in
+\path{StaticSanityCheck/IRDominance.lean}.
 
 
 \begin{lemma}[Euclidean induced metric on the SdS--PG foliation]
@@ -658,6 +673,30 @@ construction of the Christoffel symbols, Riemann tensor, and extrinsic
 curvature tensor $K_{\mu\nu}$.
 
 The notebooks are provided as supplementary material.
+
+\subsection{Formal verification artifact (Lean)}
+
+The Lean formalization used in this work is publicly available and
+version-pinned for reproducibility:
+\begin{itemize}
+\item Repository:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection}
+{GitHub repository}
+\item Artifact release used for this manuscript:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/tree/v2.0}
+{\texttt{v2.0} release snapshot}
+\item Archived DOI:
+\href{https://doi.org/10.5281/zenodo.18361297}
+{\texttt{10.5281/zenodo.18361297}}
+\item Continuous integration build:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/actions/workflows/lean_action_ci.yml}
+{CI workflow}
+\end{itemize}
+
+For referee traceability, the artifact README provides a mapping from
+paper equations to Lean theorems, with assumptions:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/blob/v2.0/README.md}
+{README traceability table}.
 
 \subsection{Scope of formal verification (explicit boundaries)}
 
