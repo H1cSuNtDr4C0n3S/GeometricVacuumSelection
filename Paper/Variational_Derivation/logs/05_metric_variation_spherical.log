@@ -1,0 +1,9 @@
+Notebook: 05_Metric_Variation_Spherical.nb
+checkAExpr = True
+checkA = True
+k2Minkowski = (-2*v^2)/(r^2*(-1 + v^2))
+checkBExpr = True
+checkB = True
+k2dS = 3*H^2
+checkCExpr = True
+checkC = True

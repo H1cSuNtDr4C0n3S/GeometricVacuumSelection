@@ -1,0 +1,17 @@
+Notebook: 20_Minisuperspace_Noether_Bianchi_Identity.nb
+Ea = (-3*(aa[t]^2*NN[t]^3*(K0^2*kappa*ll[t] + Lambda*NN[t]) + (kappa*ll[t] - NN[t])*NN[t]*Derivative[1][aa][t]^2 + 2*aa[t]*(-2*kappa*ll[t]*Derivative[1][aa][t]*Derivative[1][NN][t] - NN[t]^2*Derivative[2][aa][t] + NN[t]*(Derivative[1][aa][t]*(kappa*Derivative[1][ll][t] + Derivative[1][NN][t]) + kappa*ll[t]*Derivative[2][aa][t]))))/(kappa*NN[t]^3)
+EN = -((aa[t]*(Lambda*aa[t]^2*NN[t]^3 + 3*(2*kappa*ll[t] - NN[t])*Derivative[1][aa][t]^2))/(kappa*NN[t]^3))
+Elam = -(K0^2*aa[t]^3) + (3*aa[t]*Derivative[1][aa][t]^2)/NN[t]^2
+noetherRaw = (-3*K0^2*aa[t]^2*ll[t]*NN[t]^3*Derivative[1][aa][t] + 3*ll[t]*NN[t]*Derivative[1][aa][t]^3 - K0^2*aa[t]^3*NN[t]^3*Derivative[1][ll][t] + 3*aa[t]*NN[t]*Derivative[1][aa][t]^2*Derivative[1][ll][t] - 6*aa[t]*ll[t]*Derivative[1][aa][t]^2*Derivative[1][NN][t] + 6*aa[t]*ll[t]*NN[t]*Derivative[1][aa][t]*Derivative[2][aa][t])/NN[t]^3
+auxTerm = (-3*K0^2*aa[t]^2*ll[t]*NN[t]^3*Derivative[1][aa][t] + 3*ll[t]*NN[t]*Derivative[1][aa][t]^3 - K0^2*aa[t]^3*NN[t]^3*Derivative[1][ll][t] + 3*aa[t]*NN[t]*Derivative[1][aa][t]^2*Derivative[1][ll][t] - 6*aa[t]*ll[t]*Derivative[1][aa][t]^2*Derivative[1][NN][t] + 6*aa[t]*ll[t]*NN[t]*Derivative[1][aa][t]*Derivative[2][aa][t])/NN[t]^3
+noetherId = 0
+checkA = True
+propEq = 0
+checkB = True
+idDS = 0
+checkC = True
+samplePts = {0, 1/2, 1, 3/2}
+idVals = {0, 0, 0, 0}
+maxAbs = 0
+checkNum = True
+check = True

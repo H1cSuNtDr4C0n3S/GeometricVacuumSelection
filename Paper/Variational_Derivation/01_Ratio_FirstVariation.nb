@@ -1,0 +1,103 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3100,         94]
+NotebookOptionsPosition[      2284,         76]
+NotebookOutlinePosition[      2598,         90]
+CellTagsIndexPosition[      2555,         87]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["01 - Ratio First Variation", "Title",ExpressionUUID->"046ea94a-a250-4942-973c-84713f75e601"],
+
+Cell["\<\
+Linearizzazione simbolica della media normalizzata <K^2> = I1/I0.\
+\>", "Text",ExpressionUUID->"57c13fc6-952e-43f2-8e06-737084127a6b"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"ratioPerturbed", "=", 
+   FractionBox[
+    RowBox[{"i1", "+", 
+     RowBox[{"eps", " ", "di1"}]}], 
+    RowBox[{"i0", "+", 
+     RowBox[{"eps", " ", "di0"}]}]]}],
+  HoldForm]], "Input",ExpressionUUID->"ff1b601a-42bf-44d1-9d93-31e8c60a2630"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"series1", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"Normal", "[", 
+     RowBox[{"Series", "[", 
+      RowBox[{"ratioPerturbed", ",", 
+       RowBox[{"{", 
+        RowBox[{"eps", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"fc9b7cd1-6d70-4b71-9014-c773792ee6d6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaRatio", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{
+      RowBox[{"series1", "-", 
+       FractionBox["i1", "i0"]}], ",", "eps"}], "]"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"798a18de-b4ab-4ee9-a531-865f2ca9f073"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"expected", "=", 
+   RowBox[{
+    FractionBox["di1", "i0"], "-", 
+    FractionBox[
+     RowBox[{"i1", " ", "di0"}], 
+     SuperscriptBox["i0", "2"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bf913aed-3c21-4af5-8da0-30ab2a8cad6d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"check", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     RowBox[{"deltaRatio", "\[Equal]", "expected"}], ",", 
+     RowBox[{"i0", "\[NotEqual]", "0"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"cc41f9e3-7500-435b-b792-15f2c74ad757"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5b73d207-067b-45bd-bf5f-bb12de66541b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 98, 0, 70, "Title",ExpressionUUID->"046ea94a-a250-4942-973c-84713f75e601"],
+Cell[655, 22, 144, 2, 70, "Text",ExpressionUUID->"57c13fc6-952e-43f2-8e06-737084127a6b"],
+Cell[802, 26, 274, 8, 70, "Input",ExpressionUUID->"ff1b601a-42bf-44d1-9d93-31e8c60a2630"],
+Cell[1079, 36, 349, 9, 70, "Input",ExpressionUUID->"fc9b7cd1-6d70-4b71-9014-c773792ee6d6"],
+Cell[1431, 47, 301, 8, 70, "Input",ExpressionUUID->"798a18de-b4ab-4ee9-a531-865f2ca9f073"],
+Cell[1735, 57, 264, 8, 70, "Input",ExpressionUUID->"bf913aed-3c21-4af5-8da0-30ab2a8cad6d"],
+Cell[2002, 67, 278, 7, 70, "Input",ExpressionUUID->"cc41f9e3-7500-435b-b792-15f2c74ad757"]
+}
+]
+*)
+
+(* End of internal cache information *)

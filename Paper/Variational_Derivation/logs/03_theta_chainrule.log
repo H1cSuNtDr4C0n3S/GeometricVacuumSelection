@@ -1,0 +1,7 @@
+Notebook: 03_Theta_ChainRule.nb
+dfdth = lambda[th]*(-(K0^2*Derivative[1][I0][th]) + Derivative[1][I1][th]) + (-(K0^2*I0[th]) + I1[th])*Derivative[1][lambda][th]
+expected = lambda[th]*(-(K0^2*Derivative[1][I0][th]) + Derivative[1][I1][th]) + (-(K0^2*I0[th]) + I1[th])*Derivative[1][lambda][th]
+checkA = True
+deltaTheta = dTheta[th]*(lambda[th]*(-(K0^2*Derivative[1][I0][th]) + Derivative[1][I1][th]) + (-(K0^2*I0[th]) + I1[th])*Derivative[1][lambda][th])
+expectedDelta = dTheta[th]*(lambda[th]*(-(K0^2*Derivative[1][I0][th]) + Derivative[1][I1][th]) + (-(K0^2*I0[th]) + I1[th])*Derivative[1][lambda][th])
+checkB = True

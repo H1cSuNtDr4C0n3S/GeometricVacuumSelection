@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2823,         88]
+NotebookOptionsPosition[      2188,         72]
+NotebookOutlinePosition[      2502,         86]
+CellTagsIndexPosition[      2459,         83]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["17 - FRW Linearized Constraint Channel", "Title",ExpressionUUID->"1bfb23d6-d5c6-4d29-83bd-49bec254b06f"],
+
+Cell["\<\
+First-order perturbation of C = 3 a a'^2/N^2 - K0^2 a^3 around de Sitter.\
+\>", "Text",ExpressionUUID->"547b445b-b80b-497c-a48b-531575725c39"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", "t", "]"}], "\[Equal]", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{"H", " ", "t"}], "]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"eps", " ", 
+         RowBox[{"u", "[", "t", "]"}]}]}], ")"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"N", "[", "t", "]"}], "\[Equal]", 
+     RowBox[{"1", "+", 
+      RowBox[{"eps", " ", 
+       RowBox[{"n", "[", "t", "]"}]}]}]}]}], "}"}],
+  HoldForm]], "Input",ExpressionUUID->"fe970b7a-f65f-4e2d-8098-ccc24f0be30d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"C1", "\[Equal]", 
+   RowBox[{"6", " ", "H", " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"3", " ", "H", " ", "t"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["u", "\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}], "-", 
+      RowBox[{"H", " ", 
+       RowBox[{"n", "[", "t", "]"}]}]}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"0aeeae36-b60b-40e3-8523-6cba5bd1275b"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "[", "t", "]"}], "\[Equal]", "0"}], "\[Implies]", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["u", "\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "\[Equal]", "0"}]}],
+  HoldForm]], "Input",ExpressionUUID->"33ec95ee-956e-4faf-b2c4-c02e3393c56f"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3e24aca6-8c99-e44a-a004-09d6edb0bb35"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 110, 0, 70, "Title",ExpressionUUID->"1bfb23d6-d5c6-4d29-83bd-49bec254b06f"],
+Cell[667, 22, 152, 2, 70, "Text",ExpressionUUID->"547b445b-b80b-497c-a48b-531575725c39"],
+Cell[822, 26, 574, 18, 70, "Input",ExpressionUUID->"fe970b7a-f65f-4e2d-8098-ccc24f0be30d"],
+Cell[1399, 46, 459, 13, 70, "Input",ExpressionUUID->"0aeeae36-b60b-40e3-8523-6cba5bd1275b"],
+Cell[1861, 61, 323, 9, 70, "Input",ExpressionUUID->"33ec95ee-956e-4faf-b2c4-c02e3393c56f"]
+}
+]
+*)
+
+(* End of internal cache information *)

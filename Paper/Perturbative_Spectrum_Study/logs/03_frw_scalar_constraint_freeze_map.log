@@ -1,0 +1,17 @@
+Notebook: 03_FRW_Scalar_Constraint_Freeze_Map.nb
+C1onBranch = -2*E^(3*H0*t)*(K0^2*n1 - 3*H0*up)
+nRule = {n1 -> (Sqrt[3]*up)/K0}
+checkA = True
+upRuleGauge = {up -> 0}
+upGauge = 0
+checkB = True
+Hess = {{2*a1, a2}, {a2, 2*a3}}
+detHess = -a2^2 + 4*a1*a3
+LkinRed = ((3*a3 + K0*(Sqrt[3]*a2 + a1*K0))*up^2)/K0^2
+Kred = a1 + (3*a3 + Sqrt[3]*a2*K0)/K0^2
+checkC = True
+LkinGauge = 0
+checkD = True
+numKred = 4.5267090063073977446062052845882269724523377115086505233799`30.
+checkNum = True
+check = True

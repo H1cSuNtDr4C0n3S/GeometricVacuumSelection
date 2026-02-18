@@ -1,0 +1,21 @@
+Notebook: 06_Second_Order_Boundary_Shape_Derivative.nb
+dchi1 = rho*DiracDelta[r - R]
+dchi2 = sigma*DiracDelta[r - R] + 4*rho^2*Derivative[1][DiracDelta][-2*r + 2*R]
+checkA = True
+i1Leib = ((5 + R*(5 + R))*rho)/(5*E^R)
+i1Dist = ((5 + R*(5 + R))*rho)/(5*E^R)
+checkB = True
+i2Leib = (-(R*(3 + R)*rho^2) + (5 + R*(5 + R))*sigma)/(5*E^R)
+i2Dist = (-(R*(3 + R)*rho^2) + (5 + R*(5 + R))*sigma)/(5*E^R)
+i2Expected = (-(R*(3 + R)*rho^2) + (5 + R*(5 + R))*sigma)/(5*E^R)
+checkC = True
+checkD = True
+i1Num = 0.050325720895261954261065756957333025079093983689899469251`30.
+i1Pred = 0.0503257209016607672925700427222481298283566786590517099968`30.
+err1 = 6.3988130315042857649151047492626949691522407457`19.80327942021018*^-12
+i2Num = 0.0416433485300855078336639400563610858579432147245679556165`30.
+i2Pred = 0.0416433485328245869797781282033814268623772963344778922375`30.
+err2 = 2.7390791461141881470203410044340816099099366209`19.517028942021792*^-12
+checkNumA = True
+checkNumB = True
+check = True

@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2841,         88]
+NotebookOptionsPosition[      2115,         71]
+NotebookOutlinePosition[      2429,         85]
+CellTagsIndexPosition[      2386,         82]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["09 - Vector Sector and Full Stability Map", "Title",ExpressionUUID->"ea211117-040a-4e24-a699-fac743aa9c0c"],
+
+Cell["\<\
+Complete stability map with explicit vector channel and scalar \
+diagonalization from K^-1 G, including IR-suppressed non-local corrections.\
+\>", "Text",ExpressionUUID->"edc349e9-9d2e-4734-82a6-b316c76b8c82"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"cT2", "\[Equal]", 
+    FractionBox["g2", "c2"]}], "&&", 
+   RowBox[{"cV2", "\[Equal]", 
+    FractionBox["g1", "c1"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"da69b187-8cee-458a-9ca8-36bfc5d668cf"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Ks", "\[Equal]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"cs", ",", "cm"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"cm", ",", "cw"}], "}"}]}], "}"}]}], "&&", 
+   RowBox[{"Gs", "\[Equal]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"gs", ",", "gm"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"gm", ",", "gw"}], "}"}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e9ad3cdd-35e2-453b-9372-5b8375ea53c5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"eigScalar", "\[Equal]", 
+   RowBox[{"Eigenvalues", "[", 
+    RowBox[{
+     TemplateBox[{"Ks"},
+      "Inverse"], ".", "Gs"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"fa01477e-633d-4961-ae9f-7b54327d8994"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"coeffs", "\[Rule]", 
+   RowBox[{"coeffs0", "+", 
+    FractionBox["ncoeffs", "I0"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"cbd18247-fdc8-4280-bc49-7a1e866d98fa"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b66b1769-cd7f-4048-87d2-bf5d1d84448a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 113, 0, 70, "Title",ExpressionUUID->"ea211117-040a-4e24-a699-fac743aa9c0c"],
+Cell[670, 22, 219, 3, 70, "Text",ExpressionUUID->"edc349e9-9d2e-4734-82a6-b316c76b8c82"],
+Cell[892, 27, 244, 7, 70, "Input",ExpressionUUID->"da69b187-8cee-458a-9ca8-36bfc5d668cf"],
+Cell[1139, 36, 522, 17, 70, "Input",ExpressionUUID->"e9ad3cdd-35e2-453b-9372-5b8375ea53c5"],
+Cell[1664, 55, 246, 7, 70, "Input",ExpressionUUID->"fa01477e-633d-4961-ae9f-7b54327d8994"],
+Cell[1913, 64, 198, 5, 70, "Input",ExpressionUUID->"cbd18247-fdc8-4280-bc49-7a1e866d98fa"]
+}
+]
+*)
+
+(* End of internal cache information *)

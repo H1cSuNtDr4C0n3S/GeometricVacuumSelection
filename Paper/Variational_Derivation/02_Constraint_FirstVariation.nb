@@ -1,0 +1,199 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      6407,        190]
+NotebookOptionsPosition[      5213,        168]
+NotebookOutlinePosition[      5527,        182]
+CellTagsIndexPosition[      5484,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["02 - Constraint First Variation", "Title",ExpressionUUID->"f91c4955-9830-4e38-b2c3-2f62a9befe67"],
+
+Cell["First variation of the leafwise constrained integrand.", "Text",ExpressionUUID->"289432d6-7aa2-4e62-b53c-e2b98b86a535"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"integrand", "[", "th_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"lambda", "[", "th", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"I1", "[", "th", "]"}], "-", 
+      RowBox[{
+       SuperscriptBox["K0", "2"], " ", 
+       RowBox[{"I0", "[", "th", "]"}]}]}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bb93423c-d4da-41f8-bb4f-a918d0a64c4c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"perturbed", "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"lambda", "[", "th", "]"}], "+", 
+       RowBox[{"eps", " ", 
+        RowBox[{"eta", "[", "th", "]"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"I1", "[", "th", "]"}], "+", 
+         RowBox[{"eps", " ", 
+          RowBox[{"dI1", "[", "th", "]"}]}]}], ")"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"I0", "[", "th", "]"}], "+", 
+          RowBox[{"eps", " ", 
+           RowBox[{"dI0", "[", "th", "]"}]}]}], ")"}]}]}], ")"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"a224ab28-9338-4b1c-98d2-109a60ef0c00"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaIntegrand", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"SeriesCoefficient", "[", 
+     RowBox[{"perturbed", ",", 
+      RowBox[{"{", 
+       RowBox[{"eps", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"da93db91-f872-4241-8d05-88130b6cb512"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"expected", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"eta", "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"I1", "[", "th", "]"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        RowBox[{"I0", "[", "th", "]"}]}]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"lambda", "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"dI1", "[", "th", "]"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        RowBox[{"dI0", "[", "th", "]"}]}]}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"5fa34806-76eb-4e8c-8243-41f7e7d0459d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"checkA", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"deltaIntegrand", "\[Equal]", "expected"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"cc6fa6b9-7879-49e0-b9ca-4459ebc340d7"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"q", "[", "th_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"I1", "[", "th", "]"}], 
+    RowBox[{"I0", "[", "th", "]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"6fe7f8cb-1465-42cb-a7f7-2f1780f2fdc0"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"expectedQ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"eta", "[", "th", "]"}], " ", 
+     RowBox[{"I0", "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"q", "[", "th", "]"}], "-", 
+       SuperscriptBox["K0", "2"]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"lambda", "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"dI0", "[", "th", "]"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"q", "[", "th", "]"}], "-", 
+          SuperscriptBox["K0", "2"]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"I0", "[", "th", "]"}], " ", 
+        RowBox[{"dQ", "[", "th", "]"}]}]}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"b832c176-3bac-4a21-8ccd-1f2ba2ecca45"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"fromIQ", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"expected", "/.", "\[VeryThinSpace]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"I1", "[", "th", "]"}], "\[Rule]", 
+        RowBox[{
+         RowBox[{"I0", "[", "th", "]"}], " ", 
+         RowBox[{"q", "[", "th", "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"dI1", "[", "th", "]"}], "\[Rule]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"dI0", "[", "th", "]"}], " ", 
+          RowBox[{"q", "[", "th", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"I0", "[", "th", "]"}], " ", 
+          RowBox[{"dQ", "[", "th", "]"}]}]}]}]}], "}"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"6a53c702-1528-4338-b17f-9b454999b352"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"checkB", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"fromIQ", "\[Equal]", "expectedQ"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"fd414d2f-2c96-495d-9d2e-0ac814ce2402"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"cb4e2203-0072-483f-9c31-23003f5127de"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 103, 0, 70, "Title",ExpressionUUID->"f91c4955-9830-4e38-b2c3-2f62a9befe67"],
+Cell[660, 22, 125, 0, 70, "Text",ExpressionUUID->"289432d6-7aa2-4e62-b53c-e2b98b86a535"],
+Cell[788, 24, 404, 12, 70, "Input",ExpressionUUID->"bb93423c-d4da-41f8-bb4f-a918d0a64c4c"],
+Cell[1195, 38, 800, 24, 70, "Input",ExpressionUUID->"a224ab28-9338-4b1c-98d2-109a60ef0c00"],
+Cell[1998, 64, 323, 8, 70, "Input",ExpressionUUID->"da93db91-f872-4241-8d05-88130b6cb512"],
+Cell[2324, 74, 647, 20, 70, "Input",ExpressionUUID->"5fa34806-76eb-4e8c-8243-41f7e7d0459d"],
+Cell[2974, 96, 220, 5, 70, "Input",ExpressionUUID->"cc6fa6b9-7879-49e0-b9ca-4459ebc340d7"],
+Cell[3197, 103, 245, 7, 70, "Input",ExpressionUUID->"6fe7f8cb-1465-42cb-a7f7-2f1780f2fdc0"],
+Cell[3445, 112, 787, 24, 70, "Input",ExpressionUUID->"b832c176-3bac-4a21-8ccd-1f2ba2ecca45"],
+Cell[4235, 138, 758, 21, 70, "Input",ExpressionUUID->"6a53c702-1528-4338-b17f-9b454999b352"],
+Cell[4996, 161, 213, 5, 70, "Input",ExpressionUUID->"fd414d2f-2c96-495d-9d2e-0ac814ce2402"]
+}
+]
+*)
+
+(* End of internal cache information *)

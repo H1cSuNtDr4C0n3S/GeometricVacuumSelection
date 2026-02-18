@@ -1,0 +1,24 @@
+Notebook: 18_deSitter_Constraint_Propagation.nb
+EaDS = (-3*E^(2*H0*t)*(K0^2*kappa*lam0 + 3*H0^2*(-1 + kappa*lam0) + Lambda))/kappa
+ENDS = -((E^(3*H0*t)*(H0^2*(-3 + 6*kappa*lam0) + Lambda))/kappa)
+ElamDS = E^(3*H0*t)*(3*H0^2 - K0^2)
+branchRule = H0^2 -> K0^2/3
+lamRule = {lam0 -> (K0^2 - Lambda)/(2*K0^2*kappa)}
+EaOn = 0
+ENOn = 0
+ElamOn = 0
+dEaOn = 0
+dENOn = 0
+dElamOn = 0
+checkA = True
+checkB = True
+checkC = True
+checkD = True
+checkE = True
+checkF = True
+eaVals = {0``29.529612127939306, 0``29.329020099111773, 0``29.128428070284244}
+enVals = {0``30.262685003587762, 0``29.961796960346465, 0``29.66090891710517}
+elVals = {0``29.89279003035213, 0``29.59190198711084, 0``29.291013943869544}
+maxAbsNum = 0``29.128428070284244
+checkNum = True
+check = True

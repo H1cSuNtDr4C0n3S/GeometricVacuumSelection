@@ -1,0 +1,82 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2433,         73]
+NotebookOptionsPosition[      1891,         58]
+NotebookOutlinePosition[      2205,         72]
+CellTagsIndexPosition[      2162,         69]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["09 - Metric Kernels A,B (Numeric)", "Title",ExpressionUUID->"d5a643b5-f571-4093-9d22-92865ce4e01f"],
+
+Cell["\<\
+Numerical verification of metric variation kernels E_A and E_B for the \
+K2_general block.\
+\>", "Text",ExpressionUUID->"2ac087de-9d1c-476b-82ca-91c6c73ec03b"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL", "=", 
+   RowBox[{
+    RowBox[{"\[ExponentialE]_A", " ", "deltaA"}], "+", 
+    RowBox[{"\[ExponentialE]_B", " ", "deltaB"}], "+", 
+    FractionBox[
+     RowBox[{"d", " ", "boundary"}], "dr"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"5463f822-cc79-4991-b892-2f6ab406836f"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"\[ExponentialE]_A", "=", 
+    RowBox[{
+     FractionBox["\[AHat]\.88\.82L", "\[AHat]\.88\.82A"], "-", 
+     FractionBox[
+      RowBox[{"d", " ", "\[AHat]\.88\.82L"}], 
+      RowBox[{"dr", " ", 
+       SuperscriptBox["\[AHat]\.88\.82A", "\[Prime]",
+        MultilineFunction->None]}]]}]}], ",", 
+   RowBox[{"\[ExponentialE]_B", "=", 
+    RowBox[{
+     FractionBox["\[AHat]\.88\.82L", "\[AHat]\.88\.82B"], "-", 
+     FractionBox[
+      RowBox[{"d", " ", "\[AHat]\.88\.82L"}], 
+      RowBox[{"dr", " ", 
+       SuperscriptBox["\[AHat]\.88\.82B", "\[Prime]",
+        MultilineFunction->None]}]]}]}]}], "]"}]], "Input",ExpressionUUID->\
+"047c0f65-49b3-4d9b-9e10-541f4c510bfc"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a293a7ac-8a96-c74b-b0b5-5eed98f1a338"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 105, 0, 70, "Title",ExpressionUUID->"d5a643b5-f571-4093-9d22-92865ce4e01f"],
+Cell[662, 22, 169, 3, 70, "Text",ExpressionUUID->"2ac087de-9d1c-476b-82ca-91c6c73ec03b"],
+Cell[834, 27, 315, 8, 70, "Input",ExpressionUUID->"5463f822-cc79-4991-b892-2f6ab406836f"],
+Cell[1152, 37, 735, 19, 70, "Input",ExpressionUUID->"047c0f65-49b3-4d9b-9e10-541f4c510bfc"]
+}
+]
+*)
+
+(* End of internal cache information *)

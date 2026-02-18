@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3379,        101]
+NotebookOptionsPosition[      2744,         85]
+NotebookOutlinePosition[      3058,         99]
+CellTagsIndexPosition[      3015,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["08 - K2 Psi EL Operator", "Title",ExpressionUUID->"6c494ff7-9fa6-4267-b614-bc5ebbb95e49"],
+
+Cell["\<\
+Explicit EL_psi operator for the K2_general block on a nontrivial spherical \
+background.\
+\>", "Text",ExpressionUUID->"b2f807bc-83bf-42bf-b49b-b5123ccc8ce2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Lsym", "[", 
+    RowBox[{"x_", ",", "q1_", ",", "q2_"}], "]"}], ":=", 
+   RowBox[{"K2general", "/.", "\[VeryThinSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"r", "\[Rule]", "x"}], ",", 
+      RowBox[{"AA", "\[Rule]", 
+       RowBox[{"Aexpr", "[", "x", "]"}]}], ",", 
+      RowBox[{"BB", "\[Rule]", 
+       RowBox[{"Bexpr", "[", "x", "]"}]}], ",", 
+      RowBox[{"AAp", "\[Rule]", 
+       RowBox[{
+        SuperscriptBox["Aexpr", "\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], ",", 
+      RowBox[{"BBp", "\[Rule]", 
+       RowBox[{
+        SuperscriptBox["Bexpr", "\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], ",", 
+      RowBox[{"psiP", "\[Rule]", "q1"}], ",", 
+      RowBox[{"psiPP", "\[Rule]", "q2"}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"23e1942f-9304-4f0f-b9ee-14ef9d2a0fa4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"ELpsi", "[", "x", "]"}], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"d", " ", "\[AHat]\.88\.82L"}], 
+      RowBox[{"dx", " ", 
+       SuperscriptBox["\[AHat]\.88\.82psi", "\[Prime]",
+        MultilineFunction->None]}]]}], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], " ", "\[AHat]\.88\.82L"}], 
+     RowBox[{
+      SuperscriptBox["dx", "2"], " ", 
+      SuperscriptBox["\[AHat]\.88\.82psi", "\[Prime]\[Prime]",
+       MultilineFunction->None]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"04a607a3-ce8b-47e0-a071-dc1c101cff91"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"check", "=", 
+   RowBox[{
+    RowBox[{"deltaL", "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"ELpsi", " ", "eta"}], "+", 
+       FractionBox[
+        RowBox[{"d", " ", "boundary"}], "dx"]}], ")"}]}], "\[Equal]", 
+    RowBox[{"0", " ", "on", " ", "sample", " ", "points"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"1f5c830c-ab60-4d00-a7d2-7867893245ed"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"994910ff-86f1-4c6a-b80e-cecb6b0e4929"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 95, 0, 70, "Title",ExpressionUUID->"6c494ff7-9fa6-4267-b614-bc5ebbb95e49"],
+Cell[652, 22, 168, 3, 70, "Text",ExpressionUUID->"b2f807bc-83bf-42bf-b49b-b5123ccc8ce2"],
+Cell[823, 27, 890, 23, 70, "Input",ExpressionUUID->"23e1942f-9304-4f0f-b9ee-14ef9d2a0fa4"],
+Cell[1716, 52, 623, 18, 70, "Input",ExpressionUUID->"04a607a3-ce8b-47e0-a071-dc1c101cff91"],
+Cell[2342, 72, 398, 11, 70, "Input",ExpressionUUID->"1f5c830c-ab60-4d00-a7d2-7867893245ed"]
+}
+]
+*)
+
+(* End of internal cache information *)

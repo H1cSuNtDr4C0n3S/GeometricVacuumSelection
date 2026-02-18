@@ -1,0 +1,131 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3985,        122]
+NotebookOptionsPosition[      3163,        104]
+NotebookOutlinePosition[      3477,        118]
+CellTagsIndexPosition[      3434,        115]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["08 - Covariant to Spin-Coefficient Map", "Title",ExpressionUUID->"3895b024-e3d3-4952-b373-8f50428f58f8"],
+
+Cell["\<\
+Coefficient identification from the covariant second variation of Q=I1/I0 to \
+spin blocks {c2,c1,cs,cw,cm}.\
+\>", "Text",ExpressionUUID->"0b8c771c-6820-4cbf-9300-736d72d598d2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2", "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"d2I1", "-", 
+      RowBox[{"q", " ", "d2I0"}]}], "I0"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "dI0", " ", 
+      RowBox[{"(", 
+       RowBox[{"dI1", "-", 
+        RowBox[{"q", " ", "dI0"}]}], ")"}]}], 
+     SuperscriptBox["I0", "2"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"fc1471dd-2363-41aa-9bbd-1163ae425950"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"dI0", "\[Equal]", 
+    RowBox[{
+     RowBox[{"at", " ", "ht"}], "+", 
+     RowBox[{"av", " ", "hv"}], "+", 
+     RowBox[{"as", " ", "xs"}], "+", 
+     RowBox[{"aw", " ", "xw"}]}]}], "&&", 
+   RowBox[{"dI1", "\[Equal]", 
+    RowBox[{
+     RowBox[{"bt", " ", "ht"}], "+", 
+     RowBox[{"bv", " ", "hv"}], "+", 
+     RowBox[{"bs", " ", "xs"}], "+", 
+     RowBox[{"bw", " ", "xw"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"701d44d6-2d12-4fe6-96e8-03ae576829e6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"d2I0", "\[Equal]", 
+   RowBox[{
+    RowBox[{"A2", " ", 
+     SuperscriptBox["ht", "2"]}], "+", 
+    RowBox[{"A1", " ", 
+     SuperscriptBox["hv", "2"]}], "+", 
+    RowBox[{"As", " ", 
+     SuperscriptBox["xs", "2"]}], "+", 
+    RowBox[{"Aw", " ", 
+     SuperscriptBox["xw", "2"]}], "+", 
+    RowBox[{"2", " ", "Am", " ", "xs", " ", "xw"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"956b0019-c8ba-43fc-850d-0edb05311066"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"d2I1", "\[Equal]", 
+   RowBox[{
+    RowBox[{"B2", " ", 
+     SuperscriptBox["ht", "2"]}], "+", 
+    RowBox[{"B1", " ", 
+     SuperscriptBox["hv", "2"]}], "+", 
+    RowBox[{"Bs", " ", 
+     SuperscriptBox["xs", "2"]}], "+", 
+    RowBox[{"Bw", " ", 
+     SuperscriptBox["xw", "2"]}], "+", 
+    RowBox[{"2", " ", "Bm", " ", "xs", " ", "xw"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"88678b6d-6399-4901-8900-f206f7e81aef"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2", "\[Equal]", 
+   RowBox[{
+    RowBox[{"c2", " ", 
+     SuperscriptBox["ht", "2"]}], "+", 
+    RowBox[{"c1", " ", 
+     SuperscriptBox["hv", "2"]}], "+", 
+    RowBox[{"cs", " ", 
+     SuperscriptBox["xs", "2"]}], "+", 
+    RowBox[{"cw", " ", 
+     SuperscriptBox["xw", "2"]}], "+", 
+    RowBox[{"2", " ", "cm", " ", "xs", " ", "xw"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"d211d153-6fa8-4a1a-ac06-1c14094b93bc"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5fa027f0-eefc-41ba-b5ae-b6816c439562"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 110, 0, 70, "Title",ExpressionUUID->"3895b024-e3d3-4952-b373-8f50428f58f8"],
+Cell[667, 22, 187, 3, 70, "Text",ExpressionUUID->"0b8c771c-6820-4cbf-9300-736d72d598d2"],
+Cell[857, 27, 419, 13, 70, "Input",ExpressionUUID->"fc1471dd-2363-41aa-9bbd-1163ae425950"],
+Cell[1279, 42, 508, 15, 70, "Input",ExpressionUUID->"701d44d6-2d12-4fe6-96e8-03ae576829e6"],
+Cell[1790, 59, 455, 13, 70, "Input",ExpressionUUID->"956b0019-c8ba-43fc-850d-0edb05311066"],
+Cell[2248, 74, 455, 13, 70, "Input",ExpressionUUID->"88678b6d-6399-4901-8900-f206f7e81aef"],
+Cell[2706, 89, 453, 13, 70, "Input",ExpressionUUID->"d211d153-6fa8-4a1a-ac06-1c14094b93bc"]
+}
+]
+*)
+
+(* End of internal cache information *)

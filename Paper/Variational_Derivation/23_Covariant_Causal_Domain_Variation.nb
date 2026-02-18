@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3396,        101]
+NotebookOptionsPosition[      2668,         84]
+NotebookOutlinePosition[      2982,         98]
+CellTagsIndexPosition[      2939,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["23 - Covariant Causal-Domain Variation (4D)", "Title",ExpressionUUID->"7b7bc314-ad85-4278-96b7-ccfaeaf56551"],
+
+Cell["\<\
+Full 4D covariant representation of leafwise functionals I0/I1 using \
+delta(Theta-theta) and causal-domain indicator chi_Theta, then \
+first-variation split.\
+\>", "Text",ExpressionUUID->"32078949-b854-4858-912d-6093711de58a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"I0", "[", "theta", "]"}], "\[Equal]", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{
+      SqrtBox[
+       RowBox[{"-", "g"}]], " ", "W", " ", 
+      SqrtBox["X"], " ", 
+      RowBox[{"DiracDelta", "[", 
+       RowBox[{"Theta", "-", "theta"}], "]"}], " ", "chiTheta"}], 
+     RowBox[{"\[DifferentialD]", "d4x"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"00f79cdf-4ad2-47b5-a644-a91c985922bb"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"I1", "[", "theta", "]"}], "\[Equal]", 
+   RowBox[{"\[Integral]", 
+    RowBox[{
+     RowBox[{
+      SqrtBox[
+       RowBox[{"-", "g"}]], " ", "W", " ", 
+      SqrtBox["X"], " ", 
+      RowBox[{"DiracDelta", "[", 
+       RowBox[{"Theta", "-", "theta"}], "]"}], " ", "chiTheta", " ", "K2"}], 
+     RowBox[{"\[DifferentialD]", "d4x"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e315f0c6-c0dc-456d-8dfe-1a1bccb7fd8f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"deltaI0", "\[Equal]", 
+    RowBox[{"Int4", "[", 
+     RowBox[{
+      RowBox[{"chiTheta", " ", "deltaMu"}], "+", 
+      RowBox[{"mu", " ", "deltaChi"}]}], "]"}]}], "&&", 
+   RowBox[{"deltaI1", "\[Equal]", 
+    RowBox[{"Int4", "[", 
+     RowBox[{
+      RowBox[{"chiTheta", " ", "K2", " ", "deltaMu"}], "+", 
+      RowBox[{"chiTheta", " ", "mu", " ", "deltaK2"}], "+", 
+      RowBox[{"mu", " ", "K2", " ", "deltaChi"}]}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"436e01e2-29d6-43a9-93f5-39e570b6884e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaQ", "\[Equal]", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"deltaI1", " ", "I0"}], "-", 
+     RowBox[{"I1", " ", "deltaI0"}]}], 
+    SuperscriptBox["I0", "2"]]}],
+  HoldForm]], "Input",ExpressionUUID->"87c42876-8181-475c-ae22-431df7f754cb"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f1d63cd9-339c-4795-9911-c1816054072f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 115, 0, 70, "Title",ExpressionUUID->"7b7bc314-ad85-4278-96b7-ccfaeaf56551"],
+Cell[672, 22, 237, 4, 70, "Text",ExpressionUUID->"32078949-b854-4858-912d-6093711de58a"],
+Cell[912, 28, 450, 13, 70, "Input",ExpressionUUID->"00f79cdf-4ad2-47b5-a644-a91c985922bb"],
+Cell[1365, 43, 461, 13, 70, "Input",ExpressionUUID->"e315f0c6-c0dc-456d-8dfe-1a1bccb7fd8f"],
+Cell[1829, 58, 553, 14, 70, "Input",ExpressionUUID->"436e01e2-29d6-43a9-93f5-39e570b6884e"],
+Cell[2385, 74, 279, 8, 70, "Input",ExpressionUUID->"87c42876-8181-475c-ae22-431df7f754cb"]
+}
+]
+*)
+
+(* End of internal cache information *)

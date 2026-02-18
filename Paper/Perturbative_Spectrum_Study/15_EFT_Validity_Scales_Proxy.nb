@@ -1,0 +1,104 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3150,         95]
+NotebookOptionsPosition[      2422,         78]
+NotebookOutlinePosition[      2736,         92]
+CellTagsIndexPosition[      2693,         89]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["15 - EFT Validity, Cutoff, and Strong-Coupling Proxies", "Title",ExpressionUUID->"03923982-a217-4f85-ab26-6477e4efb372"],
+
+Cell["\<\
+Operational EFT discussion in the perturbative pipeline: (i) non-local \
+correction size, (ii) kinetic-distance from strong coupling, (iii) \
+conservative tested-q^2 window for dispersion positivity.\
+\>", "Text",ExpressionUUID->"b809cc8d-36e0-4340-b381-1ba5d64a18c1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"epsNL", "[", "L", "]"}], "\[Equal]", 
+    FractionBox[
+     TemplateBox[{
+       RowBox[{"KNL", "[", "L", "]"}], "2"},
+      "Norm2"], 
+     TemplateBox[{"KIR", "2"},
+      "Norm2"]]}], "&&", 
+   RowBox[{
+    RowBox[{"epsNL", "[", "L", "]"}], " ", 
+    RowBox[{"<<", "\"\<1\>\""}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"4d1b2e4a-045a-4596-9888-02ac66447e45"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"zT", "[", "L", "]"}], "\[Equal]", 
+    RowBox[{"c2Tot", "[", "L", "]"}]}], "&&", 
+   RowBox[{
+    RowBox[{"zV", "[", "L", "]"}], "\[Equal]", 
+    RowBox[{"c1Tot", "[", "L", "]"}]}], "&&", 
+   RowBox[{
+    RowBox[{"zSmin", "[", "L", "]"}], "\[Equal]", 
+    RowBox[{"Min", "[", 
+     RowBox[{"Eigenvalues", "[", 
+      RowBox[{"KsTot", "[", "L", "]"}], "]"}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"082aaa26-1663-4568-9dd3-8953dd2509fc"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "xTensor", ",", "xVector", ",", "xScalarPlus", ",", "xScalarMinus"}], 
+    "}"}], ">", 
+   RowBox[{"0", " ", 
+    RowBox[{"ForAll", "[", 
+     RowBox[{"q2", "\[Element]", "q2Grid"}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"83b1b1e6-624c-4f1c-a58e-41701ae80817"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2CutProxy", "\[Equal]", 
+   RowBox[{"Max", "[", "q2Grid", "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"2a4708eb-5a5e-40ec-9b36-40bd7efcf174"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"95211e24-7653-4da4-ad7c-80846d3bee88"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 126, 0, 70, "Title",ExpressionUUID->"03923982-a217-4f85-ab26-6477e4efb372"],
+Cell[683, 22, 278, 4, 70, "Text",ExpressionUUID->"b809cc8d-36e0-4340-b381-1ba5d64a18c1"],
+Cell[964, 28, 422, 14, 70, "Input",ExpressionUUID->"4d1b2e4a-045a-4596-9888-02ac66447e45"],
+Cell[1389, 44, 505, 14, 70, "Input",ExpressionUUID->"082aaa26-1663-4568-9dd3-8953dd2509fc"],
+Cell[1897, 60, 339, 10, 70, "Input",ExpressionUUID->"83b1b1e6-624c-4f1c-a58e-41701ae80817"],
+Cell[2239, 72, 179, 4, 70, "Input",ExpressionUUID->"2a4708eb-5a5e-40ec-9b36-40bd7efcf174"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,17 @@
+Notebook: 17_FRW_Linearized_Constraint_Channel.nb
+C0 = E^(3*H0*t)*(3*H0^2 - K0^2)
+C1 = -3*E^(3*H0*t)*(2*H0^2*n[t] + (-3*H0^2 + K0^2)*u[t] - 2*H0*Derivative[1][u][t])
+C0_onBranch = 0
+C1_onBranch = -2*E^(3*H0*t)*(K0^2*n[t] - 3*H0*Derivative[1][u][t])
+expectedC1 = 6*E^(3*H0*t)*H0*(-(H0*n[t]) + Derivative[1][u][t])
+checkBExpr = 0
+checkA = True
+checkB = True
+C1_gauge_n0 = 6*E^(3*H0*t)*H0*Derivative[1][u][t]
+checkC = True
+checkD = True
+samplePts = {0, 1/2, 1, 3/2}
+c1Vals(constrained) = {0, 0, 0, 0}
+maxAbs = 0
+checkNum = True
+check = True

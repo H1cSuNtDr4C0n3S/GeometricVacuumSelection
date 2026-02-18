@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2639,         84]
+NotebookOptionsPosition[      2003,         68]
+NotebookOutlinePosition[      2317,         82]
+CellTagsIndexPosition[      2274,         79]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["13 - IR Flow: Minkowski vs de Sitter", "Title",ExpressionUUID->"d578f757-f708-40b8-94ef-56177fd6251d"],
+
+Cell["\<\
+Finite-domain flow dQ/dR for Q(R)=I1(R)/I0(R) and its contrasting behavior in \
+Minkowski/de Sitter toy sectors.\
+\>", "Text",ExpressionUUID->"19c1f2ec-a48c-405f-b29f-33f3a7f65c93"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   FractionBox["dQ", "dR"], "=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f1", " ", "R", " ", "I0", " ", "R"}], "-", 
+       RowBox[{"I1", " ", "R", " ", "f0", " ", "R"}]}], ")"}], " ", 
+     SuperscriptBox["R", "2"]}], "I0"]}],
+  HoldForm]], "Input",ExpressionUUID->"dee7a22c-1295-4822-a14a-d70a73369736"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Q_M", " ", "R"}], "=", 
+    FractionBox[
+     RowBox[{"3", " ", "c"}], 
+     SuperscriptBox["R", "2"]]}], ",", 
+   RowBox[{
+    FractionBox["dQ_M", "dR"], "=", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"6", " ", "c"}], 
+      SuperscriptBox["R", "3"]]}]}]}], "]"}]], "Input",ExpressionUUID->\
+"39ee1d2a-dc1b-47e7-8da8-ff7e67b37368"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"f1", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"KdS", " ", "f0"}], "\[Rule]", 
+      RowBox[{"Q_dS", " ", "R"}]}], "=", "KdS"}]}], ",", 
+   RowBox[{
+    FractionBox["dQ_dS", "dR"], "=", "0"}]}], "]"}]], "Input",ExpressionUUID->\
+"db909b78-67e5-43e8-ba2e-4ca0530b30c8"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c13840bf-6a7a-ac49-964d-7a8d43b56618"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 108, 0, 70, "Title",ExpressionUUID->"d578f757-f708-40b8-94ef-56177fd6251d"],
+Cell[665, 22, 191, 3, 70, "Text",ExpressionUUID->"19c1f2ec-a48c-405f-b29f-33f3a7f65c93"],
+Cell[859, 27, 379, 11, 70, "Input",ExpressionUUID->"dee7a22c-1295-4822-a14a-d70a73369736"],
+Cell[1241, 40, 418, 14, 70, "Input",ExpressionUUID->"39ee1d2a-dc1b-47e7-8da8-ff7e67b37368"],
+Cell[1662, 56, 337, 10, 70, "Input",ExpressionUUID->"db909b78-67e5-43e8-ba2e-4ca0530b30c8"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,18 @@
+Notebook: 15_FRW_K2_Leafwise_Average.nb
+K2 = (3*ad^2)/(a^2*N^2)
+expectedK2 = (3*ad^2)/(a^2*N^2)
+checkA = True
+I0 = (4*a^3*Pi*R^3)/3
+I1 = (4*a*ad^2*Pi*R^3)/N^2
+Q = (3*ad^2)/(a^2*N^2)
+checkB = True
+QdS = 3*H^2
+dQdt_dS = 0
+checkC = True
+selectionRule(H^2) = {h2 -> K0^2/3}
+checkD = True
+qNum = 1.4399999999999999999999999999999999999999999999999999999995`29.69897000433602
+targetNum = 1.44`30.
+numErr = 0``29.364516253185087
+checkNum = True
+check = True

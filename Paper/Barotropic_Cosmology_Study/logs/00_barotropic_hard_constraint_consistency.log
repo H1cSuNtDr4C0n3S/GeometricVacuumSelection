@@ -1,0 +1,21 @@
+Notebook: 00_Barotropic_Hard_Constraint_Consistency.nb
+EaDS = (-3*(-3*E^(2*H0*t)*H0^2 + E^(2*H0*t)*Lambda - (E^(H0*t))^(-1 - 3*ww)*kappa*rho0*ww + E^(2*H0*t)*(3*H0^2 + K0^2)*kappa*ll[t] + 2*E^(2*H0*t)*H0*kappa*Derivative[1][ll][t]))/kappa
+ENDS = -((E^(3*H0*t)*Lambda + (kappa*rho0)/(E^(H0*t))^(3*ww) + 3*E^(3*H0*t)*H0^2*(-1 + 2*kappa*ll[t]))/kappa)
+ElamDS = E^(3*H0*t)*(3*H0^2 - K0^2)
+hardRule = H0^2 -> K0^2/3
+lamRule = {ll[t] -> (E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2 - E^(3*H0*t)*(E^(H0*t))^(3*ww)*Lambda - kappa*rho0)/(2*E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2*kappa)}
+lamExpr = -1/2*(-K0^2 + Lambda + (kappa*rho0)/(E^(3*H0*t)*(E^(H0*t))^(3*ww)))/(K0^2*kappa)
+lamPrimeExpr = (3*H0*rho0*(1 + ww))/(2*E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2)
+EaCons = (3*(E^(H0*t))^(-1 - 3*ww)*(-3*H0^2 + K0^2)*rho0*(1 + ww))/K0^2
+checkA(Elam) = True
+checkB(vacuum) = True
+checkC(w=-1) = True
+matterValsDust = {0, 0, 0, 0}
+maxDust = 0
+checkD(Ea redundancy on hard branch) = True
+lamPrimeDustVals = {1.4433756729740644112728719512548936391190043781753171900467`30., 0.8584467265031960999145043756673975761005360905909121730563`30., 0.5105606226032706979096089441511114107247521959516716564339`30.}
+maxLamPrimeDust = 1.4433756729740644112728719512548936391190043781753171900467`30.
+checkE(lambda time dependence for dust) = True
+lamPrimeDE(w=-1) = 0
+checkF(lambda static for w=-1) = True
+check = True

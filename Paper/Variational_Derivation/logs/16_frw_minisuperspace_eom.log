@@ -1,0 +1,15 @@
+Notebook: 16_FRW_Minisuperspace_EOM.nb
+EaDS = (-3*E^(2*H0*t)*(K0^2*kappa*lam0 + 3*H0^2*(-1 + kappa*lam0) + Lambda))/kappa
+ENDS = -((E^(3*H0*t)*(H0^2*(-3 + 6*kappa*lam0) + Lambda))/kappa)
+ElamDS = E^(3*H0*t)*(3*H0^2 - K0^2)
+constraintRule = H0^2 -> K0^2/3
+lamRule = {lam0 -> (K0^2 - Lambda)/(2*K0^2*kappa)}
+checkA(Elam) = True
+checkB(EN) = True
+checkC(Ea) = True
+eaNum = 0.
+enNum = 0.
+elamNum = 0.
+maxAbsNum = 0.
+checkNum = True
+check = True

@@ -1,0 +1,5 @@
+Notebook: 00_Variational_Seed.nb
+eqLambda = -(K0^2*I0[th]) + I1[th]
+check1 = True
+lin = -(K0^2*eta[th]*I0[th]) + eta[th]*I1[th]
+check2 = True

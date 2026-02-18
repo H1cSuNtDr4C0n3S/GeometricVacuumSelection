@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      4694,        138]
+NotebookOptionsPosition[      3872,        120]
+NotebookOutlinePosition[      4186,        134]
+CellTagsIndexPosition[      4143,        131]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["07 - K2 Psi Variation (Numeric Check)", "Title",ExpressionUUID->"590b3133-40c1-4d6d-af0c-c9244dbd1725"],
+
+Cell["\<\
+Numerical verification of second-order EL identity for the K2_general block \
+with nontrivial A(r), B(r).\
+\>", "Text",ExpressionUUID->"14f992d9-bcf6-4705-b6f8-9f01c971d8cc"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Lsym", "[", 
+    RowBox[{"x_", ",", "q1_", ",", "q2_"}], "]"}], ":=", 
+   RowBox[{"K2general", "/.", "\[VeryThinSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"r", "\[Rule]", "x"}], ",", 
+      RowBox[{"AA", "\[Rule]", 
+       RowBox[{"Aexpr", "[", "x", "]"}]}], ",", 
+      RowBox[{"BB", "\[Rule]", 
+       RowBox[{"Bexpr", "[", "x", "]"}]}], ",", 
+      RowBox[{"AAp", "\[Rule]", 
+       RowBox[{
+        SuperscriptBox["Aexpr", "\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], ",", 
+      RowBox[{"BBp", "\[Rule]", 
+       RowBox[{
+        SuperscriptBox["Bexpr", "\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}]}], ",", 
+      RowBox[{"psiP", "\[Rule]", "q1"}], ",", 
+      RowBox[{"psiPP", "\[Rule]", "q2"}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"0a8191d6-a040-4902-add9-c0d96ddd84c4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL", "=", 
+   RowBox[{
+    RowBox[{"coeff", "[", 
+     RowBox[{"eps", ",", "1"}], "]"}], " ", "of", " ", 
+    RowBox[{"Lsym", "[", 
+     RowBox[{"x", ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["psi", "\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}], "+", 
+       RowBox[{"eps", " ", 
+        RowBox[{
+         SuperscriptBox["eta", "\[Prime]",
+          MultilineFunction->None], "[", "x", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["psi", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "x", "]"}], "+", 
+       RowBox[{"eps", " ", 
+        RowBox[{
+         SuperscriptBox["eta", "\[Prime]\[Prime]",
+          MultilineFunction->None], "[", "x", "]"}]}]}]}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"154a9320-6a6c-46d0-b70c-98b433fa13ee"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"ELpsi", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"d", " ", "\[AHat]\.88\.82L"}], 
+      RowBox[{"dx", " ", 
+       SuperscriptBox["\[AHat]\.88\.82psi", "\[Prime]",
+        MultilineFunction->None]}]]}], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], " ", "\[AHat]\.88\.82L"}], 
+     RowBox[{
+      SuperscriptBox["dx", "2"], " ", 
+      SuperscriptBox["\[AHat]\.88\.82psi", "\[Prime]\[Prime]",
+       MultilineFunction->None]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e79208e5-4db5-436e-b5fc-225185290023"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"residue", "=", 
+   RowBox[{"deltaL", "-", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"ELpsi", " ", "eta"}], "+", 
+      FractionBox[
+       RowBox[{"d", " ", "boundary"}], "dx"]}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"0c5ae224-ce8a-4561-9d80-ab51899e19a2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"check", "=", 
+   RowBox[{
+    RowBox[{"Max", "[", 
+     RowBox[{"Abs", "[", 
+      RowBox[{"residue", " ", "x_i"}], "]"}], "]"}], "<", 
+    FractionBox[
+     RowBox[{"on", " ", "sample", " ", "points"}], 
+     SuperscriptBox["10", "14"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"3c105039-4d77-456b-8343-4e094eda9da0"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 109, 0, 70, "Title",ExpressionUUID->"590b3133-40c1-4d6d-af0c-c9244dbd1725"],
+Cell[666, 22, 184, 3, 70, "Text",ExpressionUUID->"14f992d9-bcf6-4705-b6f8-9f01c971d8cc"],
+Cell[853, 27, 890, 23, 70, "Input",ExpressionUUID->"0a8191d6-a040-4902-add9-c0d96ddd84c4"],
+Cell[1746, 52, 858, 24, 70, "Input",ExpressionUUID->"154a9320-6a6c-46d0-b70c-98b433fa13ee"],
+Cell[2607, 78, 594, 17, 70, "Input",ExpressionUUID->"e79208e5-4db5-436e-b5fc-225185290023"],
+Cell[3204, 97, 307, 9, 70, "Input",ExpressionUUID->"0c5ae224-ce8a-4561-9d80-ab51899e19a2"],
+Cell[3514, 108, 354, 10, 70, "Input",ExpressionUUID->"3c105039-4d77-456b-8343-4e094eda9da0"]
+}
+]
+*)
+
+(* End of internal cache information *)

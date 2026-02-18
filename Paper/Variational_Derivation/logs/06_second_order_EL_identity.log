@@ -1,0 +1,4 @@
+Notebook: 06_SecondOrder_EL_Identity.nb
+EL = 2*c0*q0c - 4*c1*q2c + 48*c2*q4c + c5*x + 2*c0*q1c*x - 12*c1*q3c*x + 2*c0*q2c*x^2 - 24*c1*q4c*x^2 + 2*c0*q3c*x^3 + 2*c0*q4c*x^4
+residue = 0
+check = True

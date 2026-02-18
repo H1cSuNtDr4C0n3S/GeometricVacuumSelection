@@ -1,0 +1,105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3192,         96]
+NotebookOptionsPosition[      2464,         79]
+NotebookOutlinePosition[      2778,         93]
+CellTagsIndexPosition[      2735,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["14 - Full 4D Covariant Gauge-Fixed Coefficients", "Title",ExpressionUUID->"f3295ea5-8ac2-4198-8b69-0816b7021c43"],
+
+Cell["\<\
+Direct 4D derivation map from the non-local action variation to quadratic \
+metric+Theta coefficients, with fully covariant gauge-fixing shifts and IR \
+checks.\
+\>", "Text",ExpressionUUID->"8a0b548c-1c8b-4238-a26e-aeeb98af607c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2", "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"d2I1", "-", 
+      RowBox[{"q", " ", "d2I0"}]}], "I0"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "dI0", " ", 
+      RowBox[{"(", 
+       RowBox[{"dI1", "-", 
+        RowBox[{"q", " ", "dI0"}]}], ")"}]}], 
+     SuperscriptBox["I0", "2"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"8c86cf54-5851-4aa2-a9fb-db3e9d6c43fa"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"c2NL", ",", "c1NL", ",", "csNL", ",", "cwNL", ",", "cmNL"}], 
+    "}"}], "\[Equal]", 
+   RowBox[{"Coefficients", "[", 
+    RowBox[{"q2", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       SuperscriptBox["ht", "2"], ",", 
+       SuperscriptBox["hv", "2"], ",", 
+       SuperscriptBox["xs", "2"], ",", 
+       SuperscriptBox["xw", "2"], ",", 
+       RowBox[{"2", " ", "xs", " ", "xw"}]}], "}"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"cf4390c0-fd30-4b77-a7df-2a6ec5cc71ec"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"cA", "\[Equal]", 
+   RowBox[{"cA_loc", "+", "cA_NL", "+", "DeltaCgfA"}]}],
+  HoldForm]], "Input",ExpressionUUID->"bf2ae128-ddfb-49cd-8b2e-4976bfc73ccf"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"Op4D", "\[Equal]", 
+   RowBox[{
+    RowBox[{"c2", " ", "P2"}], "+", 
+    RowBox[{"c1", " ", "P1"}], "+", 
+    RowBox[{"cs", " ", "P0s"}], "+", 
+    RowBox[{"cw", " ", "P0w"}], "+", 
+    RowBox[{"cm", " ", 
+     RowBox[{"(", 
+      RowBox[{"P0sw", "+", "P0ws"}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"562a31e4-26b2-4826-b7b2-9b646e903daa"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"42098975-b990-4465-8b3d-44f8cca0498c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 119, 0, 70, "Title",ExpressionUUID->"f3295ea5-8ac2-4198-8b69-0816b7021c43"],
+Cell[676, 22, 239, 4, 70, "Text",ExpressionUUID->"8a0b548c-1c8b-4238-a26e-aeeb98af607c"],
+Cell[918, 28, 419, 13, 70, "Input",ExpressionUUID->"8c86cf54-5851-4aa2-a9fb-db3e9d6c43fa"],
+Cell[1340, 43, 542, 15, 70, "Input",ExpressionUUID->"cf4390c0-fd30-4b77-a7df-2a6ec5cc71ec"],
+Cell[1885, 60, 186, 4, 70, "Input",ExpressionUUID->"bf2ae128-ddfb-49cd-8b2e-4976bfc73ccf"],
+Cell[2074, 66, 386, 11, 70, "Input",ExpressionUUID->"562a31e4-26b2-4826-b7b2-9b646e903daa"]
+}
+]
+*)
+
+(* End of internal cache information *)

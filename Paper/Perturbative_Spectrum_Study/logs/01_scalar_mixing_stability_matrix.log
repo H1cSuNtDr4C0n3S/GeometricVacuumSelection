@@ -1,0 +1,17 @@
+Notebook: 01_Scalar_Mixing_Stability_Matrix.nb
+detK = -k12^2 + k11*k22
+traceKG = (g22*k11 - 2*g12*k12 + g11*k22)/(-k12^2 + k11*k22)
+detKG = (g12^2 - g11*g22)/(k12^2 - k11*k22)
+traceExpected = (g22*k11 - 2*g12*k12 + g11*k22)/(-k12^2 + k11*k22)
+detExpected = (g12^2 - g11*g22)/(k12^2 - k11*k22)
+checkA = True
+checkB = True
+disc = ((g22*k11 - 2*g12*k12 + g11*k22)^2 - 4*(g12^2 - g11*g22)*(k12^2 - k11*k22))/(k12^2 - k11*k22)^2
+c2plus = ((g22*k11 - 2*g12*k12 + g11*k22)/(-k12^2 + k11*k22) + Sqrt[((g22*k11 - 2*g12*k12 + g11*k22)^2 - 4*(g12^2 - g11*g22)*(k12^2 - k11*k22))/(k12^2 - k11*k22)^2])/2
+c2minus = ((g22*k11 - 2*g12*k12 + g11*k22)/(-k12^2 + k11*k22) - Sqrt[((g22*k11 - 2*g12*k12 + g11*k22)^2 - 4*(g12^2 - g11*g22)*(k12^2 - k11*k22))/(k12^2 - k11*k22)^2])/2
+eigStable = {0.8318193279083411053687111524581812315906515634664089284138`30., 0.746379724224360316432236714840396967461481137955392019458`30.}
+checkNumA(K positive definite) = True
+checkNumB(stable eigenvalues positive) = True
+eigUnstable = {0.7502566164485734942186388786902216979932473459457448524385`30., -0.4042850524675308401902028597328757264292663032917164164186`30.}
+checkNumC(unstable sample has negative c^2) = True
+check = True

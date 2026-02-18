@@ -1,0 +1,7 @@
+Notebook: 04_Ratio_Kernel_Form.nb
+deltaQ = (-(I1*Inactive[Integrate][dg[x]*k0[x], {x, xmin, xmax}]) + I0*Inactive[Integrate][dg[x]*k1[x], {x, xmin, xmax}])/I0^2
+rhs = (-(I1*Inactive[Integrate][dg[x]*k0[x], {x, xmin, xmax}]) + I0*Inactive[Integrate][dg[x]*k1[x], {x, xmin, xmax}])/I0^2
+checkA = True
+rhsKernel = (-(I1*Inactive[Integrate][dg[x]*k0[x], {x, xmin, xmax}]) + I0*Inactive[Integrate][dg[x]*k1[x], {x, xmin, xmax}])/I0^2
+expectedKernelExpanded = -((I1*Inactive[Integrate][dg[x]*k0[x], {x, xmin, xmax}])/I0^2) + Inactive[Integrate][dg[x]*k1[x], {x, xmin, xmax}]/I0
+checkB = True

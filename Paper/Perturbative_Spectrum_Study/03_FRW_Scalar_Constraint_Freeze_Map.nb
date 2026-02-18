@@ -1,0 +1,99 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2917,         90]
+NotebookOptionsPosition[      2189,         73]
+NotebookOutlinePosition[      2503,         87]
+CellTagsIndexPosition[      2460,         84]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["03 - FRW Scalar Constraint Freeze Map", "Title",ExpressionUUID->"3dd7d3db-a4ab-4a90-a656-4dd9f997caa4"],
+
+Cell["\<\
+Map from the linear FRW constraint channel (already derived in \
+Variational_Derivation/17) to explicit scalar freezing relations.\
+\>", "Text",ExpressionUUID->"dabb8d1c-afe0-4ab7-8092-ca0544ec3751"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"C1onBranch", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"3", " ", "H0", " ", "t"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["K0", "2"], " ", "n1"}], "-", 
+      RowBox[{"3", " ", "H0", " ", "up"}]}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"3727c794-fec3-44d8-82e2-c99e513e9b4c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"H0", "\[Equal]", 
+    FractionBox["K0", 
+     SqrtBox["3"]]}], "&&", 
+   RowBox[{"n1", "\[Equal]", 
+    FractionBox[
+     RowBox[{
+      SqrtBox["3"], " ", "up"}], "K0"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"78b83212-8072-4edb-a1c4-e06baac12a23"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"n1", "\[Equal]", "0"}], "\[Rule]", 
+   RowBox[{"up", "\[Equal]", "0"}]}],
+  HoldForm]], "Input",ExpressionUUID->"44fd9076-c91a-4d4d-be81-d4e3bbe00386"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Lkin", "\[Equal]", 
+    RowBox[{
+     RowBox[{"a1", " ", 
+      SuperscriptBox["up", "2"]}], "+", 
+     RowBox[{"a2", " ", "up", " ", "n1"}], "+", 
+     RowBox[{"a3", " ", 
+      SuperscriptBox["n1", "2"]}]}]}], "\[Rule]", 
+   RowBox[{"LkinRed", "[", "up", "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"a4eb5870-40e2-40a5-95d2-0e18338dbbec"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"92657e22-df8b-40f7-884a-b9c0e5af57e8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 109, 0, 70, "Title",ExpressionUUID->"3dd7d3db-a4ab-4a90-a656-4dd9f997caa4"],
+Cell[666, 22, 209, 3, 70, "Text",ExpressionUUID->"dabb8d1c-afe0-4ab7-8092-ca0544ec3751"],
+Cell[878, 27, 414, 12, 70, "Input",ExpressionUUID->"3727c794-fec3-44d8-82e2-c99e513e9b4c"],
+Cell[1295, 41, 298, 10, 70, "Input",ExpressionUUID->"78b83212-8072-4edb-a1c4-e06baac12a23"],
+Cell[1596, 53, 197, 5, 70, "Input",ExpressionUUID->"44fd9076-c91a-4d4d-be81-d4e3bbe00386"],
+Cell[1796, 60, 389, 11, 70, "Input",ExpressionUUID->"a4eb5870-40e2-40a5-95d2-0e18338dbbec"]
+}
+]
+*)
+
+(* End of internal cache information *)

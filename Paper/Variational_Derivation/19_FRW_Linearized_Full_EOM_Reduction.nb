@@ -1,0 +1,108 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3205,         99]
+NotebookOptionsPosition[      2477,         82]
+NotebookOutlinePosition[      2791,         96]
+CellTagsIndexPosition[      2748,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["19 - FRW Linearized Full EOM Reduction", "Title",ExpressionUUID->"0f580b0c-f9f0-46dc-9c94-5ebbfde071ab"],
+
+Cell["\<\
+Linearized system (Ea, EN, Elam) around de Sitter: eliminate constraint \
+variables and obtain the reduced scalar-mode ODE.\
+\>", "Text",ExpressionUUID->"09c1bfc5-9b0a-4bf4-b2a1-8dbba3f1262d"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"a", "=", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"H0", " ", "t"}], "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"eps", " ", 
+        RowBox[{"u", "[", "t", "]"}]}]}], ")"}]}]}], ",", 
+   RowBox[{"N", "=", 
+    RowBox[{"1", "+", 
+     RowBox[{"eps", " ", 
+      RowBox[{"n", "[", "t", "]"}]}]}]}], ",", 
+   RowBox[{"lambda", "=", 
+    RowBox[{"lam0", "+", 
+     RowBox[{"eps", " ", 
+      RowBox[{"l1", "[", "t", "]"}]}]}]}]}], "]"}]], "Input",ExpressionUUID->\
+"59397574-f807-4484-8dae-37a637d26fe2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["Elam", "1"], "\[Equal]", "0"}], "\[Rule]", 
+   RowBox[{
+    RowBox[{"n", "[", "t", "]"}], "\[Equal]", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["u", "\[Prime]",
+       MultilineFunction->None], "[", "t", "]"}], "H0"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bf9d2a39-4e32-4bc4-9e0f-c089786d8a8d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["EN", "1"], "\[Equal]", "0"}], "\[Rule]", 
+    RowBox[{"l1", "[", "t", "]"}]}], "=", 
+   RowBox[{"l1", "[", 
+    RowBox[{"u", ",", 
+     SuperscriptBox["u", "\[Prime]",
+      MultilineFunction->None]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"32d65948-af13-49c1-a845-93ce70169d91"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SuperscriptBox["Ea", "1"], "\[Rule]", 
+   RowBox[{"reduced", " ", "ODE", " ", "for", " ", 
+    RowBox[{"u", "[", "t", "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"1f728b58-2f25-4441-b26b-6889145ce0fb"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"cd4753a1-60f4-4526-af0e-719ee40aad3d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 110, 0, 70, "Title",ExpressionUUID->"0f580b0c-f9f0-46dc-9c94-5ebbfde071ab"],
+Cell[667, 22, 202, 3, 70, "Text",ExpressionUUID->"09c1bfc5-9b0a-4bf4-b2a1-8dbba3f1262d"],
+Cell[872, 27, 605, 19, 70, "Input",ExpressionUUID->"59397574-f807-4484-8dae-37a637d26fe2"],
+Cell[1480, 48, 376, 11, 70, "Input",ExpressionUUID->"bf9d2a39-4e32-4bc4-9e0f-c089786d8a8d"],
+Cell[1859, 61, 368, 11, 70, "Input",ExpressionUUID->"32d65948-af13-49c1-a845-93ce70169d91"],
+Cell[2230, 74, 243, 6, 70, "Input",ExpressionUUID->"1f728b58-2f25-4441-b26b-6889145ce0fb"]
+}
+]
+*)
+
+(* End of internal cache information *)

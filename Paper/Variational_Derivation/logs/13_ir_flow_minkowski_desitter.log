@@ -1,0 +1,14 @@
+Notebook: 13_IR_Flow_Minkowski_DeSitter.nb
+qPrime = (f1R*I0 - f0R*I1)/I0^2
+flowExpected = (f1R*I0 - f0R*I1)/I0^2
+checkA = True
+qM(R) = (3*c)/R^2
+dqM(R) = (-6*c)/R^3
+checkM = True
+qD(R) = KdS
+dqD(R) = 0
+checkD = True
+sampleRs = {2, 4, 8}
+qMvals(c=0.8) = {0.6000000000000001, 0.15000000000000002, 0.037500000000000006}
+qDvals(KdS=1.2) = {1.2, 1.2, 1.2}
+check = True

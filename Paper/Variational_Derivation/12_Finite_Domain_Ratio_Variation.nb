@@ -1,0 +1,85 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2439,         76]
+NotebookOptionsPosition[      1805,         60]
+NotebookOutlinePosition[      2119,         74]
+CellTagsIndexPosition[      2076,         71]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["12 - Finite-Domain Ratio Variation", "Title",ExpressionUUID->"79adb46a-c38f-4b3d-8f48-691a1b2895c6"],
+
+Cell["\<\
+First variation of Q = I1/I0 on a finite domain including moving-boundary \
+contribution.\
+\>", "Text",ExpressionUUID->"a1c06637-23eb-4fd6-bb71-b872e65271ea"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaQ", "=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"deltaI1", " ", "I0"}], "-", 
+     RowBox[{"I1", " ", "deltaI0"}]}], 
+    SuperscriptBox["I0", "2"]]}],
+  HoldForm]], "Input",ExpressionUUID->"0cf346b7-b2e8-4286-8cba-89ecbee2056d"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"deltaI0", "=", 
+    RowBox[{"dI0bulk", "+", 
+     RowBox[{"rho", " ", "f0", " ", "R"}]}]}], ",", 
+   RowBox[{"deltaI1", "=", 
+    RowBox[{"dI1bulk", "+", 
+     RowBox[{"rho", " ", "f1", " ", "R"}]}]}]}], "]"}]], "Input",ExpressionUUI\
+D->"77f27f24-524e-447f-911d-27942231da68"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"boundaryPiece", "=", 
+   FractionBox[
+    RowBox[{"rho", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f1", " ", "R", " ", "I0"}], "-", 
+       RowBox[{"I1", " ", "f0", " ", "R"}]}], ")"}]}], 
+    SuperscriptBox["I0", "2"]]}],
+  HoldForm]], "Input",ExpressionUUID->"56a9ec2e-22c1-4964-ae9f-976285f4362a"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a293a7ac-8a96-c74b-b0b5-5eed98f1a338"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 106, 0, 70, "Title",ExpressionUUID->"79adb46a-c38f-4b3d-8f48-691a1b2895c6"],
+Cell[663, 22, 168, 3, 70, "Text",ExpressionUUID->"a1c06637-23eb-4fd6-bb71-b872e65271ea"],
+Cell[834, 27, 272, 8, 70, "Input",ExpressionUUID->"0cf346b7-b2e8-4286-8cba-89ecbee2056d"],
+Cell[1109, 37, 341, 9, 70, "Input",ExpressionUUID->"77f27f24-524e-447f-911d-27942231da68"],
+Cell[1453, 48, 348, 10, 70, "Input",ExpressionUUID->"56a9ec2e-22c1-4964-ae9f-976285f4362a"]
+}
+]
+*)
+
+(* End of internal cache information *)

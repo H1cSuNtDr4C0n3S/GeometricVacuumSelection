@@ -1,0 +1,160 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      4997,        151]
+NotebookOptionsPosition[      3991,        131]
+NotebookOutlinePosition[      4305,        145]
+CellTagsIndexPosition[      4262,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["03 - Theta Chain Rule Variation", "Title",ExpressionUUID->"297fec0f-a2e2-4d10-95c9-7235709fc82d"],
+
+Cell["\<\
+Chain-rule structure for the Theta variation of the constrained leafwise \
+integrand.\
+\>", "Text",ExpressionUUID->"8c693dc5-3f86-4865-869f-54aad80324e5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"f", "[", "th_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"lambda", "[", "th", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"I1", "[", "th", "]"}], "-", 
+      RowBox[{
+       SuperscriptBox["K0", "2"], " ", 
+       RowBox[{"I0", "[", "th", "]"}]}]}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"779b50f4-0cc0-4a2e-a2ce-60ab44e38320"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"dfdth", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     SubscriptBox["\[PartialD]", "th"], 
+     RowBox[{"f", "[", "th", "]"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"9d1bf018-4c4d-4c85-becf-b0cc750df178"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"expected", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["lambda", "\[Prime]",
+       MultilineFunction->None], "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"I1", "[", "th", "]"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        RowBox[{"I0", "[", "th", "]"}]}]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"lambda", "[", "th", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["I1", "\[Prime]",
+         MultilineFunction->None], "[", "th", "]"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        RowBox[{
+         SuperscriptBox["I0", "\[Prime]",
+          MultilineFunction->None], "[", "th", "]"}]}]}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"af4700b9-34a9-4530-b474-84578fda07ad"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"checkA", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"dfdth", "\[Equal]", "expected"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"ee088c70-f42d-435f-ba42-e754a098f65d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaTheta", "=", 
+   RowBox[{"dfdth", " ", 
+    RowBox[{"dTheta", "[", "th", "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"a3db0f88-44c5-4541-a361-470186253d1c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"expectedDelta", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["lambda", "\[Prime]",
+         MultilineFunction->None], "[", "th", "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"I1", "[", "th", "]"}], "-", 
+         RowBox[{
+          SuperscriptBox["K0", "2"], " ", 
+          RowBox[{"I0", "[", "th", "]"}]}]}], ")"}]}], "+", 
+      RowBox[{
+       RowBox[{"lambda", "[", "th", "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["I1", "\[Prime]",
+           MultilineFunction->None], "[", "th", "]"}], "-", 
+         RowBox[{
+          SuperscriptBox["K0", "2"], " ", 
+          RowBox[{
+           SuperscriptBox["I0", "\[Prime]",
+            MultilineFunction->None], "[", "th", "]"}]}]}], ")"}]}]}], ")"}], 
+    " ", 
+    RowBox[{"dTheta", "[", "th", "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"72fae073-00c8-4504-a8e9-bc3b9e860c3c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"checkB", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"deltaTheta", "\[Equal]", "expectedDelta"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"7b712ce5-cd85-4e05-beaa-f864dacd130a"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"20249fb0-fb57-4e45-beec-34b561b36b82"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 103, 0, 70, "Title",ExpressionUUID->"297fec0f-a2e2-4d10-95c9-7235709fc82d"],
+Cell[660, 22, 164, 3, 70, "Text",ExpressionUUID->"8c693dc5-3f86-4865-869f-54aad80324e5"],
+Cell[827, 27, 396, 12, 70, "Input",ExpressionUUID->"779b50f4-0cc0-4a2e-a2ce-60ab44e38320"],
+Cell[1226, 41, 255, 7, 70, "Input",ExpressionUUID->"9d1bf018-4c4d-4c85-becf-b0cc750df178"],
+Cell[1484, 50, 859, 26, 70, "Input",ExpressionUUID->"af4700b9-34a9-4530-b474-84578fda07ad"],
+Cell[2346, 78, 211, 5, 70, "Input",ExpressionUUID->"ee088c70-f42d-435f-ba42-e754a098f65d"],
+Cell[2560, 85, 200, 5, 70, "Input",ExpressionUUID->"a3db0f88-44c5-4541-a361-470186253d1c"],
+Cell[2763, 92, 1000, 30, 70, "Input",ExpressionUUID->"72fae073-00c8-4504-a8e9-bc3b9e860c3c"],
+Cell[3766, 124, 221, 5, 70, "Input",ExpressionUUID->"7b712ce5-cd85-4e05-beaa-f864dacd130a"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,20 @@
+Notebook: 19_FRW_Linearized_Full_EOM_Reduction.nb
+ea1_branch = (E^((2*K0*t)/Sqrt[3])*(-6*K0^4*kappa*l1[t] - 6*K0^2*Lambda*n[t] - 2*Sqrt[3]*K0^3*kappa*Derivative[1][l1][t] - 2*Sqrt[3]*K0*Lambda*Derivative[1][n][t] + 3*Sqrt[3]*K0^3*Derivative[1][u][t] + 3*Sqrt[3]*K0*Lambda*Derivative[1][u][t] + 3*K0^2*Derivative[2][u][t] + 3*Lambda*Derivative[2][u][t]))/(K0^2*kappa)
+en1_branch = (E^(Sqrt[3]*K0*t)*(-2*K0^3*kappa*l1[t] + (K0^3 - 3*K0*Lambda)*n[t] + 2*Sqrt[3]*Lambda*Derivative[1][u][t]))/(K0*kappa)
+el1_branch = -2*E^(Sqrt[3]*K0*t)*K0*(K0*n[t] - Sqrt[3]*Derivative[1][u][t])
+nRule = {n[t] -> (Sqrt[3]*Derivative[1][u][t])/K0}
+dnRule = Derivative[1][n][t] -> (Sqrt[3]*Derivative[2][u][t])/K0
+expectedN = (Sqrt[3]*Derivative[1][u][t])/K0
+checkA = True
+lRule = {l1[t] -> (Sqrt[3]*(K0^2 - Lambda)*Derivative[1][u][t])/(2*K0^3*kappa)}
+dlRule = Derivative[1][l1][t] -> (Sqrt[3]*(K0^2 - Lambda)*Derivative[2][u][t])/(2*K0^3*kappa)
+checkB = True
+eaReduced = 0
+u2Rule = {}
+u2Expr = Derivative[2][u][t]
+checkC = True
+checkD = True
+resVals = {0, 0, 0}
+maxAbs = 0
+checkNum = True
+check = True

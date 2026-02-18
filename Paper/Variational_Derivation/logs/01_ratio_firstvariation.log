@@ -1,0 +1,5 @@
+Notebook: 01_Ratio_FirstVariation.nb
+series1 = (di1*eps*i0 - di0*eps*i1 + i0*i1)/i0^2
+deltaRatio = (di1*i0 - di0*i1)/i0^2
+expected = (di1*i0 - di0*i1)/i0^2
+check = True

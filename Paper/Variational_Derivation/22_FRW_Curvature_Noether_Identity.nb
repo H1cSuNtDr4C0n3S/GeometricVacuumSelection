@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3484,        109]
+NotebookOptionsPosition[      2849,         93]
+NotebookOutlinePosition[      3163,        107]
+CellTagsIndexPosition[      3120,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["22 - FRW Curvature Noether Identity", "Title",ExpressionUUID->"5e6719e8-af19-4bed-9ec5-5bda5088c79c"],
+
+Cell["\<\
+Noether/Bianchi-type identity in FRW minisuperspace with spatial curvature k.\
+\
+\>", "Text",ExpressionUUID->"afb4223b-2f5f-430f-9394-836d8e9e93d2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"Lk", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"3", " ", "a", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SuperscriptBox["a", "\[Prime]",
+          MultilineFunction->None], ")"}], "2"]}], 
+      RowBox[{"kappa", " ", "N"}]]}], "+", 
+    FractionBox[
+     RowBox[{"3", " ", "k", " ", "a", " ", "N"}], "kappa"], "-", 
+    FractionBox[
+     RowBox[{"Lambda", " ", 
+      SuperscriptBox["a", "3"], " ", "N"}], "kappa"], "+", 
+    RowBox[{"lambda", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"3", " ", "a", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox["a", "\[Prime]",
+            MultilineFunction->None], ")"}], "2"]}], 
+        SuperscriptBox["N", "2"]], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        SuperscriptBox["a", "3"]}]}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"d4f681ab-9cff-4550-86f7-b6b156cbb062"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"noetherRaw", "=", 
+    RowBox[{
+     RowBox[{"Ea", " ", 
+      SuperscriptBox["a", "\[Prime]",
+       MultilineFunction->None]}], "+", 
+     RowBox[{"EN", " ", 
+      SuperscriptBox["N", "\[Prime]",
+       MultilineFunction->None]}], "+", 
+     RowBox[{"Elam", " ", 
+      SuperscriptBox["lambda", "\[Prime]",
+       MultilineFunction->None]}], "-", 
+     FractionBox[
+      RowBox[{"d", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", " ", "EN"}], ")"}]}], "dt"]}]}], ",", 
+   RowBox[{"noetherId", "=", 
+    RowBox[{"noetherRaw", "-", 
+     FractionBox[
+      RowBox[{"d", " ", 
+       RowBox[{"(", 
+        RowBox[{"lambda", " ", "Elam"}], ")"}]}], "dt"]}]}]}], "]"}]], "Input",\
+ExpressionUUID->"0d7c645b-5128-48b2-9c96-dd1e10676b25"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"noetherId", "\[Equal]", 
+   RowBox[{"0", " ", 
+    RowBox[{"(", 
+     RowBox[{"off", "-", "shell"}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"b0e18263-11a2-41f8-90de-fb40a76c6d39"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"64b3b7cc-05bc-48a8-85b8-cfb26db8ef29"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 107, 0, 70, "Title",ExpressionUUID->"5e6719e8-af19-4bed-9ec5-5bda5088c79c"],
+Cell[664, 22, 158, 3, 70, "Text",ExpressionUUID->"afb4223b-2f5f-430f-9394-836d8e9e93d2"],
+Cell[825, 27, 990, 30, 70, "Input",ExpressionUUID->"d4f681ab-9cff-4550-86f7-b6b156cbb062"],
+Cell[1818, 59, 801, 24, 70, "Input",ExpressionUUID->"0d7c645b-5128-48b2-9c96-dd1e10676b25"],
+Cell[2622, 85, 223, 6, 70, "Input",ExpressionUUID->"b0e18263-11a2-41f8-90de-fb40a76c6d39"]
+}
+]
+*)
+
+(* End of internal cache information *)

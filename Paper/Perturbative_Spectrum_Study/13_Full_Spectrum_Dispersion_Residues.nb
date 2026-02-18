@@ -1,0 +1,94 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2762,         85]
+NotebookOptionsPosition[      2035,         68]
+NotebookOutlinePosition[      2349,         82]
+CellTagsIndexPosition[      2306,         79]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["13 - Full Spectrum Dispersion and Residue Map", "Title",ExpressionUUID->"fe22dc29-ffbf-4212-a4a3-8e9582bce80f"],
+
+Cell["\<\
+Unified tensor/vector/scalar dispersion analysis with scalar mixing and mass \
+terms. Includes UV-speed recovery, positivity checks, and IR-flow scaling.\
+\>", "Text",ExpressionUUID->"7a358e74-c019-4033-8399-39c823a74f8d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"det", "[", 
+    RowBox[{
+     RowBox[{"x", " ", "Ks"}], "-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"q2", " ", "Gs"}], "+", "Ms"}], ")"}]}], "]"}], "\[Equal]", 
+   "0"}],
+  HoldForm]], "Input",ExpressionUUID->"2e251259-02ee-4b85-8bbd-0b8adf18d15b"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"xTensor", "\[Equal]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"q2", " ", "g2"}], "+", "mt2"}], "c2"]}], "&&", 
+   RowBox[{"xVector", "\[Equal]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"q2", " ", "g1"}], "+", "mv2"}], "c1"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"b14ee2b9-cc99-4d50-af06-a2262ec0d58d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"cScalarUV", "\[Equal]", 
+   RowBox[{"Eigenvalues", "[", 
+    RowBox[{
+     TemplateBox[{"Ks"},
+      "Inverse"], ".", "Gs"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"f578c9ad-07fb-492f-8200-f8e80139e97f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"coeffs", "\[Rule]", 
+   RowBox[{"coeffs0", "+", 
+    FractionBox["ncoeffs", "I0"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"920e70d1-2969-4a09-bde7-1da83c281c6d"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5e3eeef2-f204-4336-b231-6ae068fa343b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 117, 0, 70, "Title",ExpressionUUID->"fe22dc29-ffbf-4212-a4a3-8e9582bce80f"],
+Cell[674, 22, 232, 3, 70, "Text",ExpressionUUID->"7a358e74-c019-4033-8399-39c823a74f8d"],
+Cell[909, 27, 305, 10, 70, "Input",ExpressionUUID->"2e251259-02ee-4b85-8bbd-0b8adf18d15b"],
+Cell[1217, 39, 364, 11, 70, "Input",ExpressionUUID->"b14ee2b9-cc99-4d50-af06-a2262ec0d58d"],
+Cell[1584, 52, 246, 7, 70, "Input",ExpressionUUID->"f578c9ad-07fb-492f-8200-f8e80139e97f"],
+Cell[1833, 61, 198, 5, 70, "Input",ExpressionUUID->"920e70d1-2969-4a09-bde7-1da83c281c6d"]
+}
+]
+*)
+
+(* End of internal cache information *)

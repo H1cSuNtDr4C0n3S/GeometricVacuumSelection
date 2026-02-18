@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3328,        101]
+NotebookOptionsPosition[      2600,         84]
+NotebookOutlinePosition[      2914,         98]
+CellTagsIndexPosition[      2871,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["02 - Frozen Scalar Reduction", "Title",ExpressionUUID->"6533cd47-63b9-480b-b4f5-6718f1b2a46e"],
+
+Cell["\<\
+Integrate out a non-dynamical scalar in a mixed quadratic action and extract \
+effective kinetic/gradient coefficients for the remaining scalar mode.\
+\>", "Text",ExpressionUUID->"b4f329de-7c98-4ccb-ba80-c19f5eee4180"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"L2", "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"A", " ", 
+      SuperscriptBox["zd", "2"]}], "2"], "+", 
+    RowBox[{"B", " ", "zd", " ", "pi"}], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"C", "+", 
+       RowBox[{"F", " ", "q2"}]}], ")"}], " ", 
+     SuperscriptBox["pi", "2"]}], "-", 
+    RowBox[{"\[ExponentialE]", " ", "q2", " ", "z", " ", "pi"}], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "D", " ", "q2", " ", 
+     SuperscriptBox["z", "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"82c79706-ff56-4f88-84c2-061ea6607c54"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"piRule", "\[Equal]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["\[PartialD]", "pi"], "L2"}], "\[Equal]", "0"}], ",", 
+      "pi"}], "]"}], "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
+  
+  HoldForm]], "Input",ExpressionUUID->"7276c9f4-6f1e-4dd9-93a6-268fa5cd5a12"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Leff", "\[Equal]", "L2"}], "/.", "\[VeryThinSpace]", "piRule"}],
+  HoldForm]], "Input",ExpressionUUID->"e4b854ff-74e5-4151-82fe-2a5b873147f7"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Keff", "\[Equal]", 
+    RowBox[{"A", "+", 
+     FractionBox[
+      SuperscriptBox["B", "2"], 
+      RowBox[{"C", "+", 
+       RowBox[{"F", " ", "q2"}]}]]}]}], "&&", 
+   RowBox[{"Geff", "\[Equal]", 
+    RowBox[{"D", "-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", "2"], " ", "q2"}], 
+      RowBox[{"C", "+", 
+       RowBox[{"F", " ", "q2"}]}]]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"ffe8af12-0a77-4a53-ab4e-b25fabd9ccb9"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"48c1a4ce-140f-4fef-9c8d-e2b2744590a9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 100, 0, 70, "Title",ExpressionUUID->"6533cd47-63b9-480b-b4f5-6718f1b2a46e"],
+Cell[657, 22, 228, 3, 70, "Text",ExpressionUUID->"b4f329de-7c98-4ccb-ba80-c19f5eee4180"],
+Cell[888, 27, 631, 18, 70, "Input",ExpressionUUID->"82c79706-ff56-4f88-84c2-061ea6607c54"],
+Cell[1522, 47, 375, 11, 70, "Input",ExpressionUUID->"7276c9f4-6f1e-4dd9-93a6-268fa5cd5a12"],
+Cell[1900, 60, 188, 4, 70, "Input",ExpressionUUID->"e4b854ff-74e5-4151-82fe-2a5b873147f7"],
+Cell[2091, 66, 505, 16, 70, "Input",ExpressionUUID->"ffe8af12-0a77-4a53-ab4e-b25fabd9ccb9"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,115 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3508,        106]
+NotebookOptionsPosition[      2779,         89]
+NotebookOutlinePosition[      3093,        103]
+CellTagsIndexPosition[      3050,        100]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["06 - Second-Order Boundary Shape Derivative", "Title",ExpressionUUID->"36b3fe64-ac7f-411c-80ef-29dd66e1aa79"],
+
+Cell["\<\
+Second-order variation of causal-domain indicator and consistency with \
+Leibniz derivatives for moving boundaries.\
+\>", "Text",ExpressionUUID->"6ffe0a7f-0336-4c6a-a226-f607eb9dbe11"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"chiEps", "[", "r_", "]"}], ":=", 
+   RowBox[{"HeavisideTheta", "[", 
+    RowBox[{"R", "+", 
+     RowBox[{"eps", " ", "rho"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "sigma"}], "2"], "-", "r"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"6fb60a37-59ce-4498-90a7-fdce5c29ed54"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"dchi1", "\[Equal]", 
+    RowBox[{
+     SubscriptBox["\[PartialD]", "eps"], 
+     RowBox[{"chiEps", "[", "r", "]"}]}]}], "/.", "\[VeryThinSpace]", 
+   RowBox[{"eps", "\[Rule]", 
+    RowBox[{"0", "\[Equal]", 
+     RowBox[{"rho", " ", 
+      RowBox[{"DiracDelta", "[", 
+       RowBox[{"R", "-", "r"}], "]"}]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"cbcb7dac-0f31-4780-8bd8-1c945d731242"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"dchi2", "\[Equal]", 
+    RowBox[{
+     SubscriptBox["\[PartialD]", 
+      RowBox[{"{", 
+       RowBox[{"eps", ",", "2"}], "}"}]], 
+     RowBox[{"chiEps", "[", "r", "]"}]}]}], "/.", "\[VeryThinSpace]", 
+   RowBox[{"eps", "\[Rule]", 
+    RowBox[{"0", "\[Equal]", 
+     RowBox[{
+      RowBox[{"sigma", " ", 
+       RowBox[{"DiracDelta", "[", 
+        RowBox[{"R", "-", "r"}], "]"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["rho", "2"], " ", 
+       RowBox[{
+        SuperscriptBox["DiracDelta", "\[Prime]",
+         MultilineFunction->None], "[", 
+        RowBox[{"R", "-", "r"}], "]"}]}]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"f027ae43-c7ab-49ad-9ead-6bbfdf3dae1a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"I2", "\[Equal]", 
+   RowBox[{
+    RowBox[{"sigma", " ", 
+     RowBox[{"f", "[", "R", "]"}]}], "+", 
+    RowBox[{
+     SuperscriptBox["rho", "2"], " ", 
+     RowBox[{
+      SuperscriptBox["f", "\[Prime]",
+       MultilineFunction->None], "[", "R", "]"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"1028dd5b-5148-42f5-8e60-e182714bcbd0"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d0228a94-5015-45a9-b02a-79218cf3d406"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 115, 0, 70, "Title",ExpressionUUID->"36b3fe64-ac7f-411c-80ef-29dd66e1aa79"],
+Cell[672, 22, 194, 3, 70, "Text",ExpressionUUID->"6ffe0a7f-0336-4c6a-a226-f607eb9dbe11"],
+Cell[869, 27, 366, 10, 70, "Input",ExpressionUUID->"6fb60a37-59ce-4498-90a7-fdce5c29ed54"],
+Cell[1238, 39, 437, 12, 70, "Input",ExpressionUUID->"cbcb7dac-0f31-4780-8bd8-1c945d731242"],
+Cell[1678, 53, 723, 21, 70, "Input",ExpressionUUID->"f027ae43-c7ab-49ad-9ead-6bbfdf3dae1a"],
+Cell[2404, 76, 371, 11, 70, "Input",ExpressionUUID->"1028dd5b-5148-42f5-8e60-e182714bcbd0"]
+}
+]
+*)
+
+(* End of internal cache information *)

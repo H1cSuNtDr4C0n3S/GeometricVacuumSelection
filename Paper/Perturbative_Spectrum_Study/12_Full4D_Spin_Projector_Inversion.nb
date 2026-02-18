@@ -1,0 +1,109 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3301,        100]
+NotebookOptionsPosition[      2573,         83]
+NotebookOutlinePosition[      2887,         97]
+CellTagsIndexPosition[      2844,         94]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["12 - Full 4D Spin-Projector Algebra and Inversion", "Title",ExpressionUUID->"2314acf6-5745-43a8-ad55-1105bc9a939d"],
+
+Cell["\<\
+Barnes-Rivers decomposition in full 4D (not only spatial proxy), with \
+explicit inverse operator and IR-suppressed coefficient flow.\
+\>", "Text",ExpressionUUID->"368b244a-c044-4dfd-8aba-7e2ad1ac9896"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"Op4D", "\[Equal]", 
+   RowBox[{
+    RowBox[{"c2", " ", "P2"}], "+", 
+    RowBox[{"c1", " ", "P1"}], "+", 
+    RowBox[{"cs", " ", "P0s"}], "+", 
+    RowBox[{"cw", " ", "P0w"}], "+", 
+    RowBox[{"cm", " ", 
+     RowBox[{"(", 
+      RowBox[{"P0sw", "+", "P0ws"}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"ca83c3e8-b507-474d-8dd2-d58b5440658d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"Op4DInv", "\[Equal]", 
+   RowBox[{
+    FractionBox["P2", "c2"], "+", 
+    FractionBox["P1", "c1"], "+", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"cw", " ", "P0s"}], "+", 
+      RowBox[{"cs", " ", "P0w"}], "-", 
+      RowBox[{"cm", " ", 
+       RowBox[{"(", 
+        RowBox[{"P0sw", "+", "P0ws"}], ")"}]}]}], 
+     RowBox[{
+      RowBox[{"cs", " ", "cw"}], "-", 
+      SuperscriptBox["cm", "2"]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"9de02e82-3e94-4973-a735-04173080d08e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"P2", "+", "P1", "+", "P0s", "+", "P0w"}], "\[Equal]", "Isym"}],
+  HoldForm]], "Input",ExpressionUUID->"60e8987d-6580-4bcf-abd9-f5bc26dcdefc"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"c2", ",", "c1", ",", "cs", ",", "cw", ",", "cm"}], "}"}], "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"c20", "+", 
+      FractionBox["nc2", "I0"]}], ",", 
+     RowBox[{"c10", "+", 
+      FractionBox["nc1", "I0"]}], ",", 
+     RowBox[{"cs0", "+", 
+      FractionBox["ncs", "I0"]}], ",", 
+     RowBox[{"cw0", "+", 
+      FractionBox["ncw", "I0"]}], ",", 
+     RowBox[{"cm0", "+", 
+      FractionBox["ncm", "I0"]}]}], "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"290f18e5-ab97-4155-b711-dcf4f5c312f1"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b66b1769-cd7f-4048-87d2-bf5d1d84448a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 121, 0, 70, "Title",ExpressionUUID->"2314acf6-5745-43a8-ad55-1105bc9a939d"],
+Cell[678, 22, 212, 3, 70, "Text",ExpressionUUID->"368b244a-c044-4dfd-8aba-7e2ad1ac9896"],
+Cell[893, 27, 386, 11, 70, "Input",ExpressionUUID->"ca83c3e8-b507-474d-8dd2-d58b5440658d"],
+Cell[1282, 40, 518, 16, 70, "Input",ExpressionUUID->"9de02e82-3e94-4973-a735-04173080d08e"],
+Cell[1803, 58, 187, 4, 70, "Input",ExpressionUUID->"60e8987d-6580-4bcf-abd9-f5bc26dcdefc"],
+Cell[1993, 64, 576, 17, 70, "Input",ExpressionUUID->"290f18e5-ab97-4155-b711-dcf4f5c312f1"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2950,         93]
+NotebookOptionsPosition[      2223,         76]
+NotebookOutlinePosition[      2537,         90]
+CellTagsIndexPosition[      2494,         87]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["15 - FRW K2 and Leafwise Average", "Title",ExpressionUUID->"9ce0dca8-84bd-4b76-aaab-9e408e60341e"],
+
+Cell["\<\
+Homogeneous FRW reduction: K^2, leafwise average Q=I1/I0, and de Sitter \
+selection rule.\
+\>", "Text",ExpressionUUID->"6c79befd-e4ea-45fd-a3be-4517311a5bc6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Kij", "\[Equal]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"a", " ", "ad"}], ")"}], " ", "deltaij"}], "N"]}], "&&", 
+   RowBox[{"Kmixed", "\[Equal]", 
+    FractionBox[
+     RowBox[{"ad", " ", "deltaij"}], 
+     RowBox[{"a", " ", "N"}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bc68b5fc-e238-48e0-97e2-f3ea87437e7c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"K2", "\[Equal]", 
+   RowBox[{"3", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["ad", 
+       RowBox[{"a", " ", "N"}]], ")"}], "2"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"d585151d-3a6a-44bb-ac3d-7198102551aa"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{"R", ",", "t"}], "]"}], "\[Equal]", 
+   FractionBox["I1", "I0"], "\[Equal]", "K2"}],
+  HoldForm]], "Input",ExpressionUUID->"97507b5d-7e42-4683-b8c3-7809d5f8f13e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"N", "\[Equal]", "1"}], ",", 
+    RowBox[{"a", "\[Equal]", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"H", " ", "t"}], "]"}]}], ",", 
+    RowBox[{"Q", "\[Equal]", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["H", "2"]}]}], ",", 
+    RowBox[{
+     SuperscriptBox["H", "2"], "\[Equal]", 
+     FractionBox[
+      SuperscriptBox["K0", "2"], "3"]}]}], "}"}],
+  HoldForm]], "Input",ExpressionUUID->"e9289a73-2a76-464f-9dbf-af60d591368a"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6f73e24d-2662-495a-ba5a-2c24259ed196"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 104, 0, 70, "Title",ExpressionUUID->"9ce0dca8-84bd-4b76-aaab-9e408e60341e"],
+Cell[661, 22, 168, 3, 70, "Text",ExpressionUUID->"6c79befd-e4ea-45fd-a3be-4517311a5bc6"],
+Cell[832, 27, 390, 12, 70, "Input",ExpressionUUID->"bc68b5fc-e238-48e0-97e2-f3ea87437e7c"],
+Cell[1225, 41, 265, 8, 70, "Input",ExpressionUUID->"d585151d-3a6a-44bb-ac3d-7198102551aa"],
+Cell[1493, 51, 230, 6, 70, "Input",ExpressionUUID->"97507b5d-7e42-4683-b8c3-7809d5f8f13e"],
+Cell[1726, 59, 493, 15, 70, "Input",ExpressionUUID->"e9289a73-2a76-464f-9dbf-af60d591368a"]
+}
+]
+*)
+
+(* End of internal cache information *)

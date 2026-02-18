@@ -1,0 +1,102 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2920,         93]
+NotebookOptionsPosition[      2284,         77]
+NotebookOutlinePosition[      2598,         91]
+CellTagsIndexPosition[      2555,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["10 - Full Proxy EOM Operators", "Title",ExpressionUUID->"71d42569-334e-4ff1-9da1-6d9ccaeb58f5"],
+
+Cell["\<\
+Explicit reduced operators E_A, E_B, E_psi for the full local+constraint \
+proxy density.\
+\>", "Text",ExpressionUUID->"0f525c77-92a2-4e2b-8233-dff57bc76265"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[ExponentialE]_A", "=", 
+   RowBox[{
+    FractionBox["dL", "da"], "-", 
+    FractionBox[
+     RowBox[{"d", " ", "dL"}], 
+     RowBox[{"dr", " ", 
+      SuperscriptBox["da", "\[Prime]",
+       MultilineFunction->None]}]], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], " ", "dL"}], 
+     RowBox[{
+      SuperscriptBox["dr", "2"], " ", 
+      SuperscriptBox["da", "\[Prime]\[Prime]",
+       MultilineFunction->None]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e976f608-c7c8-4e60-985c-f8c85c0a5575"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[ExponentialE]_B", "=", 
+   RowBox[{
+    FractionBox["dL", "db"], "-", 
+    FractionBox[
+     RowBox[{"d", " ", "dL"}], 
+     RowBox[{"dr", " ", 
+      SuperscriptBox["db", "\[Prime]",
+       MultilineFunction->None]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bfe11fac-5749-4f2c-a7c5-d9744de13fb0"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[ExponentialE]_psi", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"d", " ", "dL"}], 
+      RowBox[{"dr", " ", 
+       SuperscriptBox["dpsi", "\[Prime]",
+        MultilineFunction->None]}]]}], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["d", "2"], " ", "dL"}], 
+     RowBox[{
+      SuperscriptBox["dr", "2"], " ", 
+      SuperscriptBox["dpsi", "\[Prime]\[Prime]",
+       MultilineFunction->None]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"fd0240ce-d573-40b9-bd3b-549c2b64e37b"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6f73e24d-2662-495a-ba5a-2c24259ed196"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 101, 0, 70, "Title",ExpressionUUID->"71d42569-334e-4ff1-9da1-6d9ccaeb58f5"],
+Cell[658, 22, 168, 3, 70, "Text",ExpressionUUID->"0f525c77-92a2-4e2b-8233-dff57bc76265"],
+Cell[829, 27, 556, 17, 70, "Input",ExpressionUUID->"e976f608-c7c8-4e60-985c-f8c85c0a5575"],
+Cell[1388, 46, 337, 10, 70, "Input",ExpressionUUID->"bfe11fac-5749-4f2c-a7c5-d9744de13fb0"],
+Cell[1728, 58, 552, 17, 70, "Input",ExpressionUUID->"fd0240ce-d573-40b9-bd3b-549c2b64e37b"]
+}
+]
+*)
+
+(* End of internal cache information *)

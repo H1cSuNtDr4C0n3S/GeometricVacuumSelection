@@ -1,0 +1,14 @@
+Notebook: 14_Constraint_Finite_Domain_Boundary.nb
+deltaC = dI1bulk - dI0bulk*K0^2 + f1R*rho - f0R*K0^2*rho
+bulkPart = dI1bulk - dI0bulk*K0^2
+expectedBulk = dI1bulk - dI0bulk*K0^2
+checkA = True
+boundaryPart = f1R - f0R*K0^2
+expectedBoundary = f1R - f0R*K0^2
+checkB = True
+checkBoundaryNeutral = True
+deltaNum = 0.1006720000000007869375000000000000000000000000000000000001`30.
+deltaPred = 0.100672`30.
+absErr = 7.869375000000000000000000000000000000000001`15.592001549004069*^-16
+checkNum = True
+check = True

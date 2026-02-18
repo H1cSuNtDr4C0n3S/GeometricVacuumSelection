@@ -1,0 +1,5 @@
+Notebook: 07_K2_Psi_Variation_Numeric.nb
+samplePts = {0.7, 0.9, 1.1, 1.3}
+residualValues = {0, 0, 0, 0}
+maxResidual = 0
+check = True

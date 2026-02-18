@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3296,        101]
+NotebookOptionsPosition[      2568,         84]
+NotebookOutlinePosition[      2882,         98]
+CellTagsIndexPosition[      2839,         95]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["00 - Tensor Channel IR Stability", "Title",ExpressionUUID->"5db5af17-9a5d-4df4-a13f-29831d661db8"],
+
+Cell["\<\
+Quadratic tensor channel around FRW/de Sitter: ghost/gradient conditions and \
+IR-suppressed nonlocal corrections consistent with the paper.\
+\>", "Text",ExpressionUUID->"42117336-e58a-4ed3-9610-48551c20dbb4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"ST2", "\[Equal]", 
+   RowBox[{
+    FractionBox["1", "8"], " ", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["a", "3"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"GT", " ", 
+          SuperscriptBox["hdot", "2"]}], "-", 
+         FractionBox[
+          RowBox[{"FT", " ", 
+           SuperscriptBox[
+            RowBox[{"grad", "[", "h", "]"}], "2"]}], 
+          SuperscriptBox["a", "2"]]}], ")"}]}], 
+      RowBox[{"\[DifferentialD]", "d4x"}]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"88f9c4e2-92d6-40af-a170-461e8f72c679"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"GT", "\[Equal]", 
+    RowBox[{
+     FractionBox["1", "kappa"], "+", "dGT"}]}], "&&", 
+   RowBox[{"FT", "\[Equal]", 
+    RowBox[{
+     FractionBox["1", "kappa"], "+", "dFT"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"37a3f71f-2d88-4437-9956-d60b7691f283"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"cT2", "\[Equal]", 
+    FractionBox["FT", "GT"]}], "&&", 
+   RowBox[{"ghostCondition", "\[Equal]", 
+    RowBox[{"(", 
+     RowBox[{"GT", ">", "0"}], ")"}]}], "&&", 
+   RowBox[{"gradientCondition", "\[Equal]", 
+    RowBox[{"(", 
+     RowBox[{"FT", ">", "0"}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"5d1f4431-ba58-43a2-8b8c-be641351b5be"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"dGT", "\[Equal]", 
+     FractionBox["aGT", "I0"]}], "&&", 
+    RowBox[{"dFT", "\[Equal]", 
+     FractionBox["aFT", "I0"]}], "&&", "cT2"}], "\[Rule]", 
+   RowBox[{
+    RowBox[{"as", " ", "I0"}], "\[Rule]", "\[Infinity]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"e27c5583-3b64-46ea-9ef2-13db28b89ba5"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"965a7dc1-79ad-4608-bb9f-f4e586631d38"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 104, 0, 70, "Title",ExpressionUUID->"5db5af17-9a5d-4df4-a13f-29831d661db8"],
+Cell[661, 22, 219, 3, 70, "Text",ExpressionUUID->"42117336-e58a-4ed3-9610-48551c20dbb4"],
+Cell[883, 27, 618, 19, 70, "Input",ExpressionUUID->"88f9c4e2-92d6-40af-a170-461e8f72c679"],
+Cell[1504, 48, 302, 9, 70, "Input",ExpressionUUID->"37a3f71f-2d88-4437-9956-d60b7691f283"],
+Cell[1809, 59, 392, 11, 70, "Input",ExpressionUUID->"5d1f4431-ba58-43a2-8b8c-be641351b5be"],
+Cell[2204, 72, 360, 10, 70, "Input",ExpressionUUID->"e27c5583-3b64-46ea-9ef2-13db28b89ba5"]
+}
+]
+*)
+
+(* End of internal cache information *)

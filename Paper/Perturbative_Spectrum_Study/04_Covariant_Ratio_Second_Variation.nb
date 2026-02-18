@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3512,        109]
+NotebookOptionsPosition[      2784,         92]
+NotebookOutlinePosition[      3098,        106]
+CellTagsIndexPosition[      3055,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["04 - Covariant Ratio Second Variation", "Title",ExpressionUUID->"d92203c6-f108-4419-aee0-50a4111bf349"],
+
+Cell["\<\
+Second variation of Q = I1/I0 in covariant finite-domain form, including IR \
+scaling of first and second variation channels.\
+\>", "Text",ExpressionUUID->"ea802a9f-e564-4fee-9243-c20369099178"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"qeps", "\[Equal]", 
+   FractionBox[
+    RowBox[{"i1", "+", 
+     RowBox[{"eps", " ", "di1"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "d2i1"}], "2"]}], 
+    RowBox[{"i0", "+", 
+     RowBox[{"eps", " ", "di0"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "d2i0"}], "2"]}]]}],
+  HoldForm]], "Input",ExpressionUUID->"d765630a-201f-4115-bd40-94c5a16ed700"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"q1", "\[Equal]", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "eps"], "qeps"}]}], "/.", 
+    "\[VeryThinSpace]", 
+    RowBox[{"eps", "\[Rule]", 
+     RowBox[{"0", "&&", 
+      RowBox[{"q2", "\[Equal]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         RowBox[{"{", 
+          RowBox[{"eps", ",", "2"}], "}"}]], "qeps"}]}]}]}]}], "/.", 
+   "\[VeryThinSpace]", 
+   RowBox[{"eps", "\[Rule]", "0"}]}],
+  HoldForm]], "Input",ExpressionUUID->"a23cf97f-102b-4edf-b5aa-e5aefe425ff8"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"q1Branch", "\[Equal]", 
+    FractionBox[
+     RowBox[{"di1", "-", 
+      RowBox[{"q", " ", "di0"}]}], "i0"]}], "&&", 
+   RowBox[{"q2Branch", "\[Equal]", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"d2i1", "-", 
+       RowBox[{"q", " ", "d2i0"}]}], "i0"], "-", 
+     FractionBox[
+      RowBox[{"2", " ", "di0", " ", 
+       RowBox[{"(", 
+        RowBox[{"di1", "-", 
+         RowBox[{"q", " ", "di0"}]}], ")"}]}], 
+      SuperscriptBox["i0", "2"]]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"747f09d9-4da9-49fd-a9c6-27d11e3803ef"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"i0", "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["L", "3"], "\[Implies]", "q1"}]}], ",", 
+   RowBox[{
+    RowBox[{"q2", " ", "are", " ", "IR"}], "-", "suppressed"}]}], 
+  "]"}]], "Input",ExpressionUUID->"3efda487-1270-462b-b230-85e1d6aa8c3c"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e9319d7-f4c5-4c7b-ba3e-2d8ec58133cd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 109, 0, 70, "Title",ExpressionUUID->"d92203c6-f108-4419-aee0-50a4111bf349"],
+Cell[666, 22, 204, 3, 70, "Text",ExpressionUUID->"ea802a9f-e564-4fee-9243-c20369099178"],
+Cell[873, 27, 461, 14, 70, "Input",ExpressionUUID->"d765630a-201f-4115-bd40-94c5a16ed700"],
+Cell[1337, 43, 551, 17, 70, "Input",ExpressionUUID->"a23cf97f-102b-4edf-b5aa-e5aefe425ff8"],
+Cell[1891, 62, 579, 18, 70, "Input",ExpressionUUID->"747f09d9-4da9-49fd-a9c6-27d11e3803ef"],
+Cell[2473, 82, 307, 8, 70, "Input",ExpressionUUID->"3efda487-1270-462b-b230-85e1d6aa8c3c"]
+}
+]
+*)
+
+(* End of internal cache information *)

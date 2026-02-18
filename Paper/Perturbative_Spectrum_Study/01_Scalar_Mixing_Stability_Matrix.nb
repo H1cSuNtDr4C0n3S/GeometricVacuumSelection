@@ -1,0 +1,108 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3142,         99]
+NotebookOptionsPosition[      2415,         82]
+NotebookOutlinePosition[      2729,         96]
+CellTagsIndexPosition[      2686,         93]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["01 - Scalar Mixing Stability Matrix", "Title",ExpressionUUID->"15e9fa31-1818-43af-9781-30e6b8ae866b"],
+
+Cell["\<\
+General 2-field scalar quadratic system: kinetic/gradient matrices, ghost \
+criteria, and high-k sound-speed eigenvalues.\
+\>", "Text",ExpressionUUID->"0139340c-0fd2-4628-be95-4a34469141fb"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Kmat", "\[Equal]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"k11", ",", "k12"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k12", ",", "k22"}], "}"}]}], "}"}]}], "&&", 
+   RowBox[{"Gmat", "\[Equal]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"g11", ",", "g12"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"g12", ",", "g22"}], "}"}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e6ae5f8a-d98b-4969-a7d1-2b298a063de1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"ghostFree", "\[Equal]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"k11", ">", "0"}], "&&", 
+     RowBox[{
+      RowBox[{"Det", "[", "Kmat", "]"}], ">", "0"}]}], ")"}]}],
+  HoldForm]], "Input",ExpressionUUID->"0890dd81-30ae-48b5-bcf1-3391e86d520c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"c2eig", "\[Equal]", 
+   RowBox[{"Eigenvalues", "[", 
+    RowBox[{
+     TemplateBox[{"Kmat"},
+      "Inverse"], ".", "Gmat"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"0d41426c-d95a-4fa6-928e-a3c5e2282004"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"gradientStable", "\[Equal]", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Tr", "[", 
+       RowBox[{
+        TemplateBox[{"Kmat"},
+         "Inverse"], ".", "Gmat"}], "]"}], ">", "0"}], "&&", 
+     RowBox[{
+      RowBox[{"Det", "[", 
+       RowBox[{
+        TemplateBox[{"Kmat"},
+         "Inverse"], ".", "Gmat"}], "]"}], ">", "0"}]}], ")"}]}],
+  HoldForm]], "Input",ExpressionUUID->"36447c22-a49a-4bac-8b55-51fd019388c0"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b66b1769-cd7f-4048-87d2-bf5d1d84448a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 107, 0, 70, "Title",ExpressionUUID->"15e9fa31-1818-43af-9781-30e6b8ae866b"],
+Cell[664, 22, 200, 3, 70, "Text",ExpressionUUID->"0139340c-0fd2-4628-be95-4a34469141fb"],
+Cell[867, 27, 534, 17, 70, "Input",ExpressionUUID->"e6ae5f8a-d98b-4969-a7d1-2b298a063de1"],
+Cell[1404, 46, 283, 8, 70, "Input",ExpressionUUID->"0890dd81-30ae-48b5-bcf1-3391e86d520c"],
+Cell[1690, 56, 246, 7, 70, "Input",ExpressionUUID->"0d41426c-d95a-4fa6-928e-a3c5e2282004"],
+Cell[1939, 65, 472, 15, 70, "Input",ExpressionUUID->"36447c22-a49a-4bac-8b55-51fd019388c0"]
+}
+]
+*)
+
+(* End of internal cache information *)

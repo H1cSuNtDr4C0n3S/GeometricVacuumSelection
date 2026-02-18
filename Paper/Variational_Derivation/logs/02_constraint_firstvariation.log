@@ -1,0 +1,7 @@
+Notebook: 02_Constraint_FirstVariation.nb
+deltaIntegrand = eta[th]*(-(K0^2*I0[th]) + I1[th]) + (-(K0^2*dI0[th]) + dI1[th])*lambda[th]
+expected = eta[th]*(-(K0^2*I0[th]) + I1[th]) + (-(K0^2*dI0[th]) + dI1[th])*lambda[th]
+checkA = True
+fromIQ = eta[th]*(-(K0^2*I0[th]) + I1[th]) + (dQ[th]*I0[th] + dI0[th]*(-K0^2 + I1[th]/I0[th]))*lambda[th]
+expectedQ = eta[th]*I0[th]*(-K0^2 + I1[th]/I0[th]) + (dQ[th]*I0[th] + dI0[th]*(-K0^2 + I1[th]/I0[th]))*lambda[th]
+checkB = True

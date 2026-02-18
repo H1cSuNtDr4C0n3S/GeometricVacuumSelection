@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3782,        115]
+NotebookOptionsPosition[      3053,         98]
+NotebookOutlinePosition[      3367,        112]
+CellTagsIndexPosition[      3324,        109]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["00 - Barotropic Hard-Constraint Consistency", "Title",ExpressionUUID->"7ae188c8-2512-4b85-895b-97d2783b2a19"],
+
+Cell["\<\
+FRW minisuperspace with barotropic matter: test consistency of a hard \
+geometric constraint H^2=K0^2/3.\
+\>", "Text",ExpressionUUID->"003caebc-fcb1-4830-b163-6c7151ea3935"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"rho", "[", "a_", "]"}], "\[Equal]", 
+   RowBox[{"rho0", " ", 
+    SuperscriptBox["a", 
+     RowBox[{
+      RowBox[{"-", "3"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "w"}], ")"}]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"c6b48bad-a86d-4aad-a5bd-032c828dd69d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"L", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"3", " ", "a", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SuperscriptBox["a", "\[Prime]",
+          MultilineFunction->None], ")"}], "2"]}], 
+      RowBox[{"kappa", " ", "N"}]]}], "-", 
+    FractionBox[
+     RowBox[{"Lambda", " ", 
+      SuperscriptBox["a", "3"], " ", "N"}], "kappa"], "+", 
+    RowBox[{"lambda", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"3", " ", "a", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox["a", "\[Prime]",
+            MultilineFunction->None], ")"}], "2"]}], 
+        SuperscriptBox["N", "2"]], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        SuperscriptBox["a", "3"]}]}], ")"}]}], "-", 
+    RowBox[{"rho0", " ", 
+     SuperscriptBox["a", 
+      RowBox[{
+       RowBox[{"-", "3"}], " ", "w"}]], " ", "N"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"e850447b-c56c-4a86-8a76-6fac0cff026f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"hardConstraint", "\[Equal]", "Elam", "\[Equal]", "0"}], "\[Implies]", 
+   RowBox[{
+    SuperscriptBox["H", "2"], "\[Equal]", 
+    FractionBox[
+     SuperscriptBox["K0", "2"], "3"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"d27dcf46-e788-4a82-a3b1-9a6f1d760e43"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"with", " ", "EN"}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"lambda", "[", "t", "]"}], " ", "is", " ", "fixed"}], ";", 
+    FractionBox[
+     RowBox[{
+     "Ea", " ", "checks", " ", "whether", " ", "a", " ", "genuine", " ", 
+      "dust", " ", "era", " ", "survives", " ", "under", " ", "hard", " ", 
+      "constraint"}], "radiation"]}]}], "]"}]], "Input",ExpressionUUID->\
+"e2b97bff-ba51-4e02-9b85-aee99b76f146"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 115, 0, 70, "Title",ExpressionUUID->"7ae188c8-2512-4b85-895b-97d2783b2a19"],
+Cell[672, 22, 183, 3, 70, "Text",ExpressionUUID->"003caebc-fcb1-4830-b163-6c7151ea3935"],
+Cell[858, 27, 322, 10, 70, "Input",ExpressionUUID->"c6b48bad-a86d-4aad-a5bd-032c828dd69d"],
+Cell[1183, 39, 1038, 32, 70, "Input",ExpressionUUID->"e850447b-c56c-4a86-8a76-6fac0cff026f"],
+Cell[2224, 73, 308, 8, 70, "Input",ExpressionUUID->"d27dcf46-e788-4a82-a3b1-9a6f1d760e43"],
+Cell[2535, 83, 514, 13, 70, "Input",ExpressionUUID->"e2b97bff-ba51-4e02-9b85-aee99b76f146"]
+}
+]
+*)
+
+(* End of internal cache information *)

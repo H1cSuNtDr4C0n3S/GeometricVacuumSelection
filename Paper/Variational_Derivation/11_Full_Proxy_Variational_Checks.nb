@@ -1,0 +1,79 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2281,         70]
+NotebookOptionsPosition[      1648,         54]
+NotebookOutlinePosition[      1962,         68]
+CellTagsIndexPosition[      1919,         65]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["11 - Full Proxy Variational Checks", "Title",ExpressionUUID->"1def35fb-aa2f-4f2d-a976-c026337e326e"],
+
+Cell["\<\
+Channel-by-channel first-variation consistency checks for A, B, psi on the \
+full proxy density.\
+\>", "Text",ExpressionUUID->"e7c3fb7b-0bb6-4c77-9977-044caf828ba5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL_A", "=", 
+   RowBox[{
+    RowBox[{"\[ExponentialE]_A", " ", "deltaA"}], "+", 
+    FractionBox[
+     RowBox[{"d", " ", "boundary_A"}], "dr"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"9a74710b-5a5b-47a8-bb7b-e3b3f6e95617"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL_B", "=", 
+   RowBox[{
+    RowBox[{"\[ExponentialE]_B", " ", "deltaB"}], "+", 
+    FractionBox[
+     RowBox[{"d", " ", "boundary_B"}], "dr"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"1e32b74d-c928-4b73-aed6-71c726e602b5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL_psi", "=", 
+   RowBox[{
+    RowBox[{"\[ExponentialE]_psi", " ", "deltaPsi"}], "+", 
+    FractionBox[
+     RowBox[{"d", " ", "boundary_psi"}], "dr"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"9d0e9238-e5b8-416e-8321-07408c99dc55"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c13840bf-6a7a-ac49-964d-7a8d43b56618"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 106, 0, 70, "Title",ExpressionUUID->"1def35fb-aa2f-4f2d-a976-c026337e326e"],
+Cell[663, 22, 175, 3, 70, "Text",ExpressionUUID->"e7c3fb7b-0bb6-4c77-9977-044caf828ba5"],
+Cell[841, 27, 263, 7, 70, "Input",ExpressionUUID->"9a74710b-5a5b-47a8-bb7b-e3b3f6e95617"],
+Cell[1107, 36, 263, 7, 70, "Input",ExpressionUUID->"1e32b74d-c928-4b73-aed6-71c726e602b5"],
+Cell[1373, 45, 271, 7, 70, "Input",ExpressionUUID->"9d0e9238-e5b8-416e-8321-07408c99dc55"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,114 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3493,        105]
+NotebookOptionsPosition[      2673,         87]
+NotebookOutlinePosition[      2987,        101]
+CellTagsIndexPosition[      2944,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["11 - Explicit Metric+Theta Mode Dictionary", "Title",ExpressionUUID->"f8fdfb10-8ee6-4061-b632-bd3b1c548637"],
+
+Cell["\<\
+Extraction of {m,c,p,m2,c2,k2} from an explicit ADM-inspired perturbative \
+ansatz for gamma_ij, K_ij, and Theta.\
+\>", "Text",ExpressionUUID->"2662bd38-6fb4-48eb-8575-c1d2ac359ba6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"gamma", "\[Equal]", 
+   RowBox[{
+    SuperscriptBox["a", "2"], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"2", " ", "eps", " ", "xs"}], "]"}], " ", 
+    RowBox[{"DiagonalMatrix", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Exp", "[", 
+        RowBox[{"2", " ", "eps", " ", "ht"}], "]"}], ",", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", "eps"}], " ", "ht"}], "]"}], ",", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", "eps"}], " ", "ht"}], "]"}]}], "}"}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"8ef0d932-b957-40cf-abe7-d351d15c21d9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Kcov", "\[Equal]", 
+    RowBox[{
+     RowBox[{"H0", " ", "gamma"}], "+", 
+     RowBox[{"eps", " ", "hv", " ", "S"}]}]}], "&&", 
+   RowBox[{"ThetaDot", "\[Equal]", 
+    RowBox[{"1", "+", 
+     RowBox[{"eps", " ", "xw"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"671ba826-af89-4d74-a300-cefb065286e9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"mu", "\[Equal]", 
+    RowBox[{
+     SqrtBox[
+      RowBox[{"Det", "[", "gamma", "]"}]], " ", 
+     SqrtBox["X"]}]}], "&&", 
+   RowBox[{"X", "\[Equal]", 
+    SuperscriptBox["ThetaDot", "2"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"15d0b328-3e3b-459b-8477-aea13dd041ac"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"chiProxy", "\[Equal]", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"3", " ", "eps", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "xs"}], "+", "xw"}], ")"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"cd4c130c-aeec-461b-be7d-ed5ef11c47c5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"k2inv", "\[Equal]", 
+   RowBox[{"gammaInv", ".", "gammaInv", ".", "Kcov", ".", "Kcov"}]}],
+  HoldForm]], "Input",ExpressionUUID->"ed70f4aa-209b-4e59-9496-89ce1a990465"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d61c7376-586f-4f72-809d-355f5251cbb0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 114, 0, 70, "Title",ExpressionUUID->"f8fdfb10-8ee6-4061-b632-bd3b1c548637"],
+Cell[671, 22, 192, 3, 70, "Text",ExpressionUUID->"2662bd38-6fb4-48eb-8575-c1d2ac359ba6"],
+Cell[866, 27, 636, 18, 70, "Input",ExpressionUUID->"8ef0d932-b957-40cf-abe7-d351d15c21d9"],
+Cell[1505, 47, 349, 10, 70, "Input",ExpressionUUID->"671ba826-af89-4d74-a300-cefb065286e9"],
+Cell[1857, 59, 317, 10, 70, "Input",ExpressionUUID->"15d0b328-3e3b-459b-8477-aea13dd041ac"],
+Cell[2177, 71, 287, 8, 70, "Input",ExpressionUUID->"cd4c130c-aeec-461b-be7d-ed5ef11c47c5"],
+Cell[2467, 81, 202, 4, 70, "Input",ExpressionUUID->"ed70f4aa-209b-4e59-9496-89ce1a990465"]
+}
+]
+*)
+
+(* End of internal cache information *)

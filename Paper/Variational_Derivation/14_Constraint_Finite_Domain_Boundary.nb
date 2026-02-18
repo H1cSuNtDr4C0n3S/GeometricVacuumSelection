@@ -1,0 +1,87 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2517,         78]
+NotebookOptionsPosition[      1883,         62]
+NotebookOutlinePosition[      2197,         76]
+CellTagsIndexPosition[      2154,         73]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["14 - Constraint Variation with Finite-Domain Boundary", "Title",ExpressionUUID->"8118cf3d-a403-4a90-b93f-21b4f3c28a78"],
+
+Cell["\<\
+First variation of C = I1 - K0^2 I0 with explicit bulk+boundary split on R -> \
+R + eps rho.\
+\>", "Text",ExpressionUUID->"70aab2e6-7628-450b-ace9-116a2360807d"],
+
+Cell[BoxData[
+ RowBox[{"HoldForm", "[", 
+  RowBox[{
+   RowBox[{"deltaI0", "=", 
+    RowBox[{"dI0bulk", "+", 
+     RowBox[{"rho", " ", "f0", " ", "R"}]}]}], ",", 
+   RowBox[{"deltaI1", "=", 
+    RowBox[{"dI1bulk", "+", 
+     RowBox[{"rho", " ", "f1", " ", "R"}]}]}]}], "]"}]], "Input",ExpressionUUI\
+D->"0f981eb7-6b80-4fa0-84a3-b74d81f84d5a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaC", "=", 
+   RowBox[{"deltaI1", "-", 
+    RowBox[{
+     SuperscriptBox["K0", "2"], " ", "deltaI0"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"f41b80cb-aeea-4953-8ee8-08cea53372b4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaC", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"dI1bulk", "-", 
+      RowBox[{
+       SuperscriptBox["K0", "2"], " ", "dI0bulk"}]}], ")"}], "+", 
+    RowBox[{"rho", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f1", " ", "R"}], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", "f0", " ", "R"}]}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bb6baaa0-d89c-4783-aec6-54c0560e71d7"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3e24aca6-8c99-e44a-a004-09d6edb0bb35"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 125, 0, 70, "Title",ExpressionUUID->"8118cf3d-a403-4a90-b93f-21b4f3c28a78"],
+Cell[682, 22, 171, 3, 70, "Text",ExpressionUUID->"70aab2e6-7628-450b-ace9-116a2360807d"],
+Cell[856, 27, 341, 9, 70, "Input",ExpressionUUID->"0f981eb7-6b80-4fa0-84a3-b74d81f84d5a"],
+Cell[1200, 38, 221, 6, 70, "Input",ExpressionUUID->"f41b80cb-aeea-4953-8ee8-08cea53372b4"],
+Cell[1424, 46, 455, 14, 70, "Input",ExpressionUUID->"bb6baaa0-d89c-4783-aec6-54c0560e71d7"]
+}
+]
+*)
+
+(* End of internal cache information *)

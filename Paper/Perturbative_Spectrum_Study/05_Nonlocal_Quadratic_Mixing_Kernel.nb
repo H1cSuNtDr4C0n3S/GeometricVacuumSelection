@@ -1,0 +1,111 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3273,        102]
+NotebookOptionsPosition[      2545,         85]
+NotebookOutlinePosition[      2859,         99]
+CellTagsIndexPosition[      2816,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["05 - Nonlocal Quadratic Mixing Kernel", "Title",ExpressionUUID->"0e99945a-cdeb-4446-b054-55188fa2d938"],
+
+Cell["\<\
+Two-field quadratic kernel induced by second variation of Q=I1/I0: explicit \
+mixing coefficients and IR scaling.\
+\>", "Text",ExpressionUUID->"d80ccb05-7ed2-4dfb-90b8-c20fc724a51d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"dI0", "\[Equal]", 
+    RowBox[{
+     RowBox[{"a0", " ", "x"}], "+", 
+     RowBox[{"b0", " ", "y"}]}]}], "&&", 
+   RowBox[{"dI1", "\[Equal]", 
+    RowBox[{
+     RowBox[{"a1", " ", "x"}], "+", 
+     RowBox[{"b1", " ", "y"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"cc8a5f0e-3cda-4480-a0b9-6559317ef797"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"d2I0", "\[Equal]", 
+    RowBox[{
+     RowBox[{"aa0", " ", 
+      SuperscriptBox["x", "2"]}], "+", 
+     RowBox[{"2", " ", "ab0", " ", "x", " ", "y"}], "+", 
+     RowBox[{"bb0", " ", 
+      SuperscriptBox["y", "2"]}]}]}], "&&", 
+   RowBox[{"d2I1", "\[Equal]", 
+    RowBox[{
+     RowBox[{"aa1", " ", 
+      SuperscriptBox["x", "2"]}], "+", 
+     RowBox[{"2", " ", "ab1", " ", "x", " ", "y"}], "+", 
+     RowBox[{"bb1", " ", 
+      SuperscriptBox["y", "2"]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"2293a000-ee84-40dd-89d1-3be816630dae"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2", "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"d2I1", "-", 
+      RowBox[{"q", " ", "d2I0"}]}], "i0"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "dI0", " ", 
+      RowBox[{"(", 
+       RowBox[{"dI1", "-", 
+        RowBox[{"q", " ", "dI0"}]}], ")"}]}], 
+     SuperscriptBox["i0", "2"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"7ac3eb3f-1d3e-47f8-bb1a-f5067334d3e1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"q2", "\[Equal]", 
+   RowBox[{
+    RowBox[{"Mxx", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"Mxy", " ", "x", " ", "y"}], "+", 
+    RowBox[{"Myy", " ", 
+     SuperscriptBox["y", "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"3708a916-c0ad-4cd5-b180-6e4352aeb3ac"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"965a7dc1-79ad-4608-bb9f-f4e586631d38"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 109, 0, 70, "Title",ExpressionUUID->"0e99945a-cdeb-4446-b054-55188fa2d938"],
+Cell[666, 22, 192, 3, 70, "Text",ExpressionUUID->"d80ccb05-7ed2-4dfb-90b8-c20fc724a51d"],
+Cell[861, 27, 352, 11, 70, "Input",ExpressionUUID->"cc8a5f0e-3cda-4480-a0b9-6559317ef797"],
+Cell[1216, 40, 586, 17, 70, "Input",ExpressionUUID->"2293a000-ee84-40dd-89d1-3be816630dae"],
+Cell[1805, 59, 419, 13, 70, "Input",ExpressionUUID->"7ac3eb3f-1d3e-47f8-bb1a-f5067334d3e1"],
+Cell[2227, 74, 314, 9, 70, "Input",ExpressionUUID->"3708a916-c0ad-4cd5-b180-6e4352aeb3ac"]
+}
+]
+*)
+
+(* End of internal cache information *)

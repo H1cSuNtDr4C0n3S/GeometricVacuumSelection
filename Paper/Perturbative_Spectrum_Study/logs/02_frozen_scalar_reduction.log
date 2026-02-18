@@ -1,0 +1,27 @@
+Notebook: 02_Frozen_Scalar_Reduction.nb
+piRule = {pi -> (-(E*q2*z) + B*zd)/(C + F*q2)}
+Leff = (-(q2*(C*D - E^2*q2 + D*F*q2)*z^2) - 2*B*E*q2*z*zd + (B^2 + A*(C + F*q2))*zd^2)/(2*(C + F*q2))
+Keff = A + B^2/(C + F*q2)
+crossEff = -((B*E*q2)/(C + F*q2))
+Geff = (C*D - E^2*q2 + D*F*q2)/(C + F*q2)
+checkA = True
+checkB = True
+checkC = True
+KeffHigh = A
+GeffHigh = D - E^2/F
+crossHigh = -((B*E)/F)
+checkD = True
+checkE = True
+checkF = True
+KeffFreeze = A
+GeffFreeze = D
+crossFreeze = 0
+checkG = True
+checkH = True
+checkI = True
+stableVals(q2={1,10,100}) = {{2.0078431372549019607843137254901960784313725490196078431373`30., 1.2509803921568627450980392156862745098039215686274509803921`30.}, {2.0026666666666666666666666666666666666666666666666666666666`30., 1.1333333333333333333333333333333333333333333333333333333333`30.}, {2.0003508771929824561403508771929824561403508771929824561403`30., 1.0807017543859649122807017543859649122807017543859649122806`30.}}
+checkNumA(Keff>0) = True
+checkNumB(Geff>0) = True
+unstableHigh = -3.`30.
+checkNumC(unstable sample) = True
+check = True

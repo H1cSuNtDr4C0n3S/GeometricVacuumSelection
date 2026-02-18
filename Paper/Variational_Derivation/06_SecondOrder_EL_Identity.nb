@@ -1,0 +1,258 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8348,        249]
+NotebookOptionsPosition[      6962,        225]
+NotebookOutlinePosition[      7276,        239]
+CellTagsIndexPosition[      7233,        236]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["06 - Second-Order Euler-Lagrange Identity", "Title",ExpressionUUID->"fb95fee1-8594-437f-b213-ea4276f783e5"],
+
+Cell["Exact variational identity for L(x, q, q', q'').", "Text",ExpressionUUID->"c221c57f-0207-46df-92a1-5c510100c507"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Lsym", "[", 
+    RowBox[{"x_", ",", "q0_", ",", "q1_", ",", "q2_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"c0", " ", 
+     SuperscriptBox["q0", "2"]}], "+", 
+    RowBox[{"c1", " ", 
+     SuperscriptBox["q1", "2"]}], "+", 
+    RowBox[{"c2", " ", 
+     SuperscriptBox["q2", "2"]}], "+", 
+    RowBox[{"c3", " ", "q0", " ", "q1"}], "+", 
+    RowBox[{"c4", " ", "q1", " ", "q2"}], "+", 
+    RowBox[{"c5", " ", "x", " ", "q0"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"d7ba55ab-eb4b-45d4-b2bc-8ea3c53af20f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"q", "[", "x_", "]"}], ":=", 
+   RowBox[{"q0c", "+", 
+    RowBox[{"q1c", " ", "x"}], "+", 
+    RowBox[{"q2c", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"q3c", " ", 
+     SuperscriptBox["x", "3"]}], "+", 
+    RowBox[{"q4c", " ", 
+     SuperscriptBox["x", "4"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"02f2896b-db5f-4975-9dc8-9a6627c447a4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"eta", "[", "x_", "]"}], ":=", 
+   RowBox[{"e0", "+", 
+    RowBox[{"e1", " ", "x"}], "+", 
+    RowBox[{"e2", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"e3", " ", 
+     SuperscriptBox["x", "3"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"9743bb4c-6567-4f3e-88f6-94d54a6b64d2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"deltaL", "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"SeriesCoefficient", "[", 
+     RowBox[{
+      RowBox[{"Lsym", "[", 
+       RowBox[{"x", ",", 
+        RowBox[{
+         RowBox[{"q", "[", "x", "]"}], "+", 
+         RowBox[{"eps", " ", 
+          RowBox[{"eta", "[", "x", "]"}]}]}], ",", 
+        RowBox[{
+         SubscriptBox["\[PartialD]", "x"], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"q", "[", "x", "]"}], "+", 
+           RowBox[{"eps", " ", 
+            RowBox[{"eta", "[", "x", "]"}]}]}], ")"}]}], ",", 
+        RowBox[{
+         SubscriptBox["\[PartialD]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "2"}], "}"}]], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"q", "[", "x", "]"}], "+", 
+           RowBox[{"eps", " ", 
+            RowBox[{"eta", "[", "x", "]"}]}]}], ")"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"eps", ",", "0", ",", "1"}], "}"}]}], "]"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"d31ad356-eeb4-4bf1-8809-4a900a405442"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"dLdq0", "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "q0"], 
+     RowBox[{"Lsym", "[", 
+      RowBox[{"x", ",", "q0", ",", "q1", ",", "q2"}], "]"}]}], "/.", 
+    "\[VeryThinSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"q0", "\[Rule]", 
+       RowBox[{"q", "[", "x", "]"}]}], ",", 
+      RowBox[{"q1", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "x"], 
+        RowBox[{"q", "[", "x", "]"}]}]}], ",", 
+      RowBox[{"q2", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "2"}], "}"}]], 
+        RowBox[{"q", "[", "x", "]"}]}]}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"9cc24287-d2c8-4e11-9b84-70bf809209f6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"dLdq1", "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "q1"], 
+     RowBox[{"Lsym", "[", 
+      RowBox[{"x", ",", "q0", ",", "q1", ",", "q2"}], "]"}]}], "/.", 
+    "\[VeryThinSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"q0", "\[Rule]", 
+       RowBox[{"q", "[", "x", "]"}]}], ",", 
+      RowBox[{"q1", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "x"], 
+        RowBox[{"q", "[", "x", "]"}]}]}], ",", 
+      RowBox[{"q2", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "2"}], "}"}]], 
+        RowBox[{"q", "[", "x", "]"}]}]}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"ffb94557-5777-447e-983c-5f90d0115793"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"dLdq2", "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "q2"], 
+     RowBox[{"Lsym", "[", 
+      RowBox[{"x", ",", "q0", ",", "q1", ",", "q2"}], "]"}]}], "/.", 
+    "\[VeryThinSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"q0", "\[Rule]", 
+       RowBox[{"q", "[", "x", "]"}]}], ",", 
+      RowBox[{"q1", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", "x"], 
+        RowBox[{"q", "[", "x", "]"}]}]}], ",", 
+      RowBox[{"q2", "\[Rule]", 
+       RowBox[{
+        SubscriptBox["\[PartialD]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "2"}], "}"}]], 
+        RowBox[{"q", "[", "x", "]"}]}]}]}], "}"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"f2cdc1e7-be8f-4754-b1d1-1291e7756402"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"EL", "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"dLdq0", "-", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "x"], "dLdq1"}], "+", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "2"}], "}"}]], "dLdq2"}]}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"800b9a9f-16fd-47ef-afdb-e95f3c44b996"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"boundary", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"eta", "[", "x", "]"}], " ", "dLdq1"}], "+", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[PartialD]", "x"], 
+      RowBox[{"eta", "[", "x", "]"}]}], " ", "dLdq2"}], "-", 
+    RowBox[{
+     RowBox[{"eta", "[", "x", "]"}], " ", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "x"], "dLdq2"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"b300e7f5-1c1c-41c2-afa2-9dd7aef243b3"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"residue", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"Expand", "[", 
+     RowBox[{"deltaL", "-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"EL", " ", 
+         RowBox[{"eta", "[", "x", "]"}]}], "+", 
+        RowBox[{
+         SubscriptBox["\[PartialD]", "x"], "boundary"}]}], ")"}]}], "]"}], 
+    "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"7e03e251-7241-4db5-8b26-b8b6cd0dd1c2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"check", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"residue", "\[Equal]", "0"}], "]"}]}],
+  HoldForm]], "Input",ExpressionUUID->"11a09b59-4827-4323-896f-5814fb5718b2"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"20249fb0-fb57-4e45-beec-34b561b36b82"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 113, 0, 70, "Title",ExpressionUUID->"fb95fee1-8594-437f-b213-ea4276f783e5"],
+Cell[670, 22, 119, 0, 70, "Text",ExpressionUUID->"c221c57f-0207-46df-92a1-5c510100c507"],
+Cell[792, 24, 551, 15, 70, "Input",ExpressionUUID->"d7ba55ab-eb4b-45d4-b2bc-8ea3c53af20f"],
+Cell[1346, 41, 403, 12, 70, "Input",ExpressionUUID->"02f2896b-db5f-4975-9dc8-9a6627c447a4"],
+Cell[1752, 55, 337, 10, 70, "Input",ExpressionUUID->"9743bb4c-6567-4f3e-88f6-94d54a6b64d2"],
+Cell[2092, 67, 1055, 30, 70, "Input",ExpressionUUID->"d31ad356-eeb4-4bf1-8809-4a900a405442"],
+Cell[3150, 99, 768, 23, 70, "Input",ExpressionUUID->"9cc24287-d2c8-4e11-9b84-70bf809209f6"],
+Cell[3921, 124, 768, 23, 70, "Input",ExpressionUUID->"ffb94557-5777-447e-983c-5f90d0115793"],
+Cell[4692, 149, 768, 23, 70, "Input",ExpressionUUID->"f2cdc1e7-be8f-4754-b1d1-1291e7756402"],
+Cell[5463, 174, 380, 11, 70, "Input",ExpressionUUID->"800b9a9f-16fd-47ef-afdb-e95f3c44b996"],
+Cell[5846, 187, 469, 14, 70, "Input",ExpressionUUID->"b300e7f5-1c1c-41c2-afa2-9dd7aef243b3"],
+Cell[6318, 203, 432, 13, 70, "Input",ExpressionUUID->"7e03e251-7241-4db5-8b26-b8b6cd0dd1c2"],
+Cell[6753, 218, 205, 5, 70, "Input",ExpressionUUID->"11a09b59-4827-4323-896f-5814fb5718b2"]
+}
+]
+*)
+
+(* End of internal cache information *)

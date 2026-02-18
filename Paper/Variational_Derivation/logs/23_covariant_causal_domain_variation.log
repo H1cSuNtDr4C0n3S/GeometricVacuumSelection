@@ -1,0 +1,20 @@
+Notebook: 23_Covariant_Causal_Domain_Variation.nb
+dj0 = chi*dmu + dchi*mu
+expectedDj0 = chi*dmu + dchi*mu
+checkA = True
+dj1 = chi*dmu*k2 + chi*dk2*mu + dchi*k2*mu
+expectedDj1 = chi*dmu*k2 + chi*dk2*mu + dchi*k2*mu
+checkB = True
+bulk0 = chi*dmu
+boundary0 = mu
+bulk1 = chi*(dmu*k2 + dk2*mu)
+boundary1 = k2*mu
+checkC = True
+checkD = True
+checkE = True
+checkF = True
+deltaQ = (-(I1*(dI0bulk + b0*xi)) + I0*(dI1bulk + b1*xi))/I0^2
+boundaryQ = (b1*I0 - b0*I1)/I0^2
+expectedBoundaryQ = (b1*I0 - b0*I1)/I0^2
+checkG = True
+check = True

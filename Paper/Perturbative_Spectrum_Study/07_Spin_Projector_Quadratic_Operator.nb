@@ -1,0 +1,104 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3112,         95]
+NotebookOptionsPosition[      2384,         78]
+NotebookOutlinePosition[      2698,         92]
+CellTagsIndexPosition[      2655,         89]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["07 - Spin-Projector Quadratic Operator (4D Proxy)", "Title",ExpressionUUID->"9296571c-cce2-4407-8721-41954a7f1c84"],
+
+Cell["\<\
+General tensor/vector/scalar block decomposition for a symmetric spatial \
+tensor kernel using Barnes-Rivers projectors; includes IR-suppressed \
+non-local scalar mixing.\
+\>", "Text",ExpressionUUID->"6c2f071b-af4d-4a3c-9cda-174f6a92d37e"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"Op", "\[Equal]", 
+   RowBox[{
+    RowBox[{"c2", " ", "P2"}], "+", 
+    RowBox[{"c1", " ", "P1"}], "+", 
+    RowBox[{"cs", " ", "P0s"}], "+", 
+    RowBox[{"cw", " ", "P0w"}], "+", 
+    RowBox[{"cm", " ", 
+     RowBox[{"(", 
+      RowBox[{"P0sw", "+", "P0ws"}], ")"}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"893eba81-b62b-48ac-b9aa-65edc84d221c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"P2", "+", "P1", "+", "P0s", "+", "P0w"}], "\[Equal]", "Isym"}],
+  HoldForm]], "Input",ExpressionUUID->"def487cc-5e8c-4c28-ab5a-da99f9eb07af"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Kscalar", "\[Equal]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"cs", ",", "cm"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"cm", ",", "cw"}], "}"}]}], "}"}]}], "&&", 
+   RowBox[{"detKscalar", "\[Equal]", 
+    RowBox[{
+     RowBox[{"cs", " ", "cw"}], "-", 
+     SuperscriptBox["cm", "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"14db2a47-539b-4323-9022-b891bec2d03c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"cs", ",", "cw", ",", "cm"}], "}"}], "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"cs0", "+", 
+      FractionBox["ns", "I0"]}], ",", 
+     RowBox[{"cw0", "+", 
+      FractionBox["nw", "I0"]}], ",", 
+     RowBox[{"cm0", "+", 
+      FractionBox["nm", "I0"]}]}], "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"17a9a2ba-3719-4212-b674-e4ed297ded82"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e9319d7-f4c5-4c7b-ba3e-2d8ec58133cd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 121, 0, 70, "Title",ExpressionUUID->"9296571c-cce2-4407-8721-41954a7f1c84"],
+Cell[678, 22, 249, 4, 70, "Text",ExpressionUUID->"6c2f071b-af4d-4a3c-9cda-174f6a92d37e"],
+Cell[930, 28, 384, 11, 70, "Input",ExpressionUUID->"893eba81-b62b-48ac-b9aa-65edc84d221c"],
+Cell[1317, 41, 187, 4, 70, "Input",ExpressionUUID->"def487cc-5e8c-4c28-ab5a-da99f9eb07af"],
+Cell[1507, 47, 451, 14, 70, "Input",ExpressionUUID->"14db2a47-539b-4323-9022-b891bec2d03c"],
+Cell[1961, 63, 419, 13, 70, "Input",ExpressionUUID->"17a9a2ba-3719-4212-b674-e4ed297ded82"]
+}
+]
+*)
+
+(* End of internal cache information *)

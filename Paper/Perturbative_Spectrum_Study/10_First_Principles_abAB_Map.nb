@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3637,        111]
+NotebookOptionsPosition[      2909,         94]
+NotebookOutlinePosition[      3223,        108]
+CellTagsIndexPosition[      3180,        105]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["10 - First-Principles abAB Map (Covariant Expansion)", "Title",ExpressionUUID->"4eb25a48-5d58-475c-ab1e-2ba66e4ec759"],
+
+Cell["\<\
+Derivation of first/second-order coefficient blocks {a,b,A,B} directly from \
+covariant epsilon-expansion of j0=chi mu and j1=chi mu K2.\
+\>", "Text",ExpressionUUID->"a08aba84-df9b-4b16-8c67-77810e80d0be"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"muEps", "\[Equal]", 
+    RowBox[{"mu", "+", 
+     RowBox[{"eps", " ", "mu1"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "mu2"}], "2"]}]}], "&&", 
+   RowBox[{"chiEps", "\[Equal]", 
+    RowBox[{"chi", "+", 
+     RowBox[{"eps", " ", "chi1"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "chi2"}], "2"]}]}], "&&", 
+   RowBox[{"kEps", "\[Equal]", 
+    RowBox[{"k0", "+", 
+     RowBox[{"eps", " ", "k1"}], "+", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["eps", "2"], " ", "k2"}], "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"88e87100-1a34-4a22-9375-9948d046fab1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"j0eps", "\[Equal]", 
+    RowBox[{"chiEps", " ", "muEps"}]}], "&&", 
+   RowBox[{"j1eps", "\[Equal]", 
+    RowBox[{"chiEps", " ", "muEps", " ", "kEps"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"83dbec41-6561-4885-ae15-6b828d307797"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"dI0", "\[Equal]", 
+    RowBox[{"a", ".", "phi"}]}], "&&", 
+   RowBox[{"dI1", "\[Equal]", 
+    RowBox[{"b", ".", "phi"}]}], "&&", 
+   RowBox[{"d2I0", "\[Equal]", 
+    RowBox[{"phi", ".", "A", ".", "phi"}]}], "&&", 
+   RowBox[{"d2I1", "\[Equal]", 
+    RowBox[{"phi", ".", "B", ".", "phi"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"c020c540-68e6-45f4-afad-81aac757b869"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"qKernel", "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"B", "-", 
+      RowBox[{"q", " ", "A"}]}], "I0"], "-", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"a", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"b", "-", 
+          RowBox[{"q", " ", "a"}]}], ")"}], "T"]}], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "-", 
+         RowBox[{"q", " ", "a"}]}], ")"}], " ", 
+       SuperscriptBox["a", "T"]}]}], 
+     SuperscriptBox["I0", "2"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"8abfdbc7-4373-4b36-a9d7-0c1be7b2bd94"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ff033c97-1cfb-4df0-8331-58a399a36771"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 124, 0, 70, "Title",ExpressionUUID->"4eb25a48-5d58-475c-ab1e-2ba66e4ec759"],
+Cell[681, 22, 215, 3, 70, "Text",ExpressionUUID->"a08aba84-df9b-4b16-8c67-77810e80d0be"],
+Cell[899, 27, 695, 21, 70, "Input",ExpressionUUID->"88e87100-1a34-4a22-9375-9948d046fab1"],
+Cell[1597, 50, 279, 7, 70, "Input",ExpressionUUID->"83dbec41-6561-4885-ae15-6b828d307797"],
+Cell[1879, 59, 416, 11, 70, "Input",ExpressionUUID->"c020c540-68e6-45f4-afad-81aac757b869"],
+Cell[2298, 72, 607, 20, 70, "Input",ExpressionUUID->"8abfdbc7-4373-4b36-a9d7-0c1be7b2bd94"]
+}
+]
+*)
+
+(* End of internal cache information *)

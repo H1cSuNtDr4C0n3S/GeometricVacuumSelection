@@ -1,0 +1,12 @@
+Notebook: 12_Finite_Domain_Ratio_Variation.nb
+deltaQ = (dI1bulk*I0 - dI0bulk*I1 + f1R*I0*rho - f0R*I1*rho)/I0^2
+expected = (-(I1*(dI0bulk + f0R*rho)) + I0*(dI1bulk + f1R*rho))/I0^2
+checkA = True
+boundaryPiece = (f1R*I0 - f0R*I1)/I0^2
+expectedBoundary = (f1R*I0 - f0R*I1)/I0^2
+checkB = True
+deltaNum = 0.0871228388174273043170618346112253574359857178106621173916`30.
+deltaPred = 0.0871228388174262140273603379268826091806459542071834440351`30.
+absErr = 1.0902897014966843427482553397636034786733565`15.796379896180397*^-15
+checkNum = True
+check = True

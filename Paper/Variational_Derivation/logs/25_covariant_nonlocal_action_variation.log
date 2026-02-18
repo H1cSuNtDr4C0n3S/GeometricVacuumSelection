@@ -1,0 +1,20 @@
+Notebook: 25_Covariant_Nonlocal_Action_Variation.nb
+deltaSleaf = eta*i1 - eta*i0*k0^2 + di1*lam - di0*k0^2*lam
+expectedDeltaSleaf = eta*i1 - eta*i0*k0^2 + di1*lam - di0*k0^2*lam
+checkA = True
+di0Cov = A0 + B0
+di1Cov = A1 + B1 + C1
+deltaC = A1 + B1 + C1 - A0*k0^2 - B0*k0^2
+bulkPart = A1 + C1 - A0*k0^2
+boundaryPart = B1 - B0*k0^2
+checkB = True
+checkC(boundary neutral when B1=K0^2 B0) = True
+deltaSgeom = A1*lam + B1*lam + C1*lam - A0*k0^2*lam - B0*k0^2*lam
+deltaSfull = eta*i1 - eta*i0*k0^2 + A1*lam + B1*lam + C1*lam - A0*k0^2*lam - B0*k0^2*lam
+deltaQ = ((A1 + B1 + C1)*i0 - (A0 + B0)*i1)/i0^2
+deltaQIR = (A1 + B1 + C1 - A0*q - B0*q)/i0
+checkD = True
+vals(L={10,20,40}) = {0.0015549999999999999999999999999999999999999999999999999999`30., 0.0001943749999999999999999999999999999999999999999999999999`30., 0.0000242968749999999999999999999999999999999999999999999999`30.}
+ratios = {7.9999999999999999999999999999999999999999985894067790128016`29.69897000433602, 7.9999999999999999999999999999999999999999997318403512157534`29.69897000433602}
+checkE(IR decay) = True
+check = True
