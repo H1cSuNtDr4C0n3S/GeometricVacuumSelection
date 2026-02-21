@@ -24,32 +24,34 @@
 \maketitle
 
 \begin{abstract}
-We investigate a scalar-field framework for vacuum structure in General
-Relativity, in which the foliation defined by the gradient of a time-ordering
-field $\Theta$ is subject to a non-local geometric constraint. The level sets
-$\Theta=\mathrm{const}$ define spacelike hypersurfaces interpreted as physical
-“present” leaves. The constraint fixes the asymptotic normalized average 
-of the squared extrinsic curvature in the infrared limit to a constant scale
-$K_0^2$, enforced by a Lagrange multiplier that is constant on each leaf.
+We investigate a scalar-field framework for vacuum structure in General Relativity,
+in which the foliation defined by the gradient of a time-ordering field $\Theta$
+is subject to a non-local geometric constraint.
+The level sets $\Theta=\mathrm{const}$ define spacelike hypersurfaces interpreted as
+physical ``present'' leaves.
+The constraint fixes the asymptotic normalized average of the squared extrinsic curvature
+in the infrared limit to a constant scale $K_0^2$, enforced by a leafwise-constant
+Lagrange multiplier $\lambda(\Theta)$.
 
-We show that this non-local condition acts as a vacuum selection principle:
+We show that this non-local condition acts as a vacuum-selection principle:
 in the infrared limit it generically excludes the static Minkowski vacuum,
-compelling the ground state to be spontaneously curved. De Sitter spacetime
-emerges as a consistent asymptotic vacuum solution, with its expansion rate
-fixed by the geometric selection rule $H^2 = K_0^2/3$.
+compelling the ground state to be spontaneously curved.
+De Sitter spacetime emerges as a consistent asymptotic vacuum solution,
+with its expansion rate fixed by the geometric selection rule $H^2=K_0^2/3$.
 
+We further demonstrate that the infrared dominance of the constraint ensures compatibility
+with local gravitational physics.
+Standard Schwarzschild and post-Newtonian limits are recovered for local sources,
+as the constraint does not introduce unsuppressed local modifications of the gravitational dynamics.
 
-We further demonstrate that the infrared dominance of the constraint ensures
-compatibility with local gravitational physics. Standard Schwarzschild and
-post-Newtonian limits are recovered for local sources, as the constraint does not 
-introduce unsuppressed local modifications of the gravitational dynamics.
-
-These results suggest that the observed late-time cosmic acceleration may
-reflect a global geometric property of the spacetime foliation—a resistance
-to staticity—rather than the presence of an additional dynamical dark energy
-degree of freedom. While the implications for the early matter-dominated era
-remain open for future investigation, this framework offers a novel geometric
-perspective on the smallness and non-vanishing nature of the vacuum energy.
+These results suggest that the observed late-time cosmic acceleration may reflect a global
+geometric property of the spacetime foliation---a resistance to staticity---rather than the presence
+of an additional dynamical dark energy degree of freedom.
+A supplementary minisuperspace check including barotropic matter shows that, under a hard
+implementation of the leafwise constraint, the selected homogeneous branch remains de Sitter
+($H^2=K_0^2/3$) while matter sources the leafwise multiplier $\lambda(\Theta)$ rather than an evolving
+$H(t)$. This reinforces the need for a finite-domain/causal prescription to obtain a realistic
+radiation/matter history.
 \end{abstract}
 
 \subsection*{Conventions}
@@ -102,9 +104,27 @@ The purpose of this work is not to present a complete modified-gravity theory va
 at all scales, nor a full cosmological model including perturbations and matter evolution.
 Rather, the framework is intended as a proof-of-principle demonstrating how a 
 non-local, foliation-based geometric constraint can act as an infrared vacuum-selection 
-mechanism within General Relativity. Issues such as perturbative stability, detailed 
-cosmological histories, and observational constraints lie beyond the present scope 
-and are left for future investigation.
+mechanism within General Relativity.
+
+While the present manuscript focuses on the strict infrared vacuum-selection mechanism
+and its consistency with local GR limits, we also provide a dedicated supplementary
+pipeline (\texttt{Perturbative\_Spectrum\_Study}, scripts 00--15) that derives the quadratic kernel
+around isotropic backgrounds and evaluates ghost/gradient stability conditions in the
+tensor, vector and scalar (mixing) sectors, including the infrared suppression expected
+from the normalized-channel structure.
+A full BRST\slash Faddeev--Popov proof of gauge-independence of physical residues, a
+fundamental UV cutoff/UV completion, and a complete cosmological-perturbation
+phenomenology remain outside the scope of this work.
+
+\paragraph{Additional supplementary minisuperspace pipeline (barotropic matter).}
+We additionally provide a dedicated supplementary minisuperspace pipeline
+(\texttt{Paper/Barotropic\_Cosmology\_Study}) analyzing FRW cosmology with barotropic matter.
+It verifies that on the hard-constrained homogeneous branch (by ``hard implementation'' we mean
+a uniform enforcement of the infrared leafwise condition $Q(\theta)=K_0^2$ across all leaves
+in the homogeneous reduction, rather than a finite-domain/causal prescription)
+the constraint fixes $H^2=K_0^2/3$ while the matter sector is absorbed into a time-dependent leafwise multiplier
+$\lambda(\Theta)$, thereby motivating the finite-domain/causal formulation required for a realistic
+radiation/matter era.
 
 
 
@@ -284,12 +304,12 @@ constraints to control vacuum properties has precedents in unimodular
 formulations and vacuum-energy sequestering mechanisms\footnote{...}.
 The present constraint, however, acts on a foliation-dependent
 extrinsic-curvature functional rather than on the metric determinant
-or on matter-sector vacuum contributions.s.
+or on matter-sector vacuum contributions.
 
 
 \subsection{Full action}
 
-The constraint is enforced through a Lagrange multiplier $\lambda(\Theta)$
+The constraint is enforced through a leafwise-constant Lagrange multiplier $\lambda(\Theta)$
 that depends only on the value of the scalar field and is therefore constant
 on each hypersurface $\Sigma_\Theta$. The full action reads
 \begin{equation}
@@ -307,28 +327,43 @@ Because $\lambda$ is not a local field but a function of $\Theta$ only, the
 constraint does not generate a pointwise equation $K^2(x)=K_0^2$. Instead,
 it acts globally on the geometry of each leaf, selecting admissible
 foliations without introducing unsuppressed local modifications of the
-gravitational dynamics. Boundary terms required for a well-defined variational principle are assumed implicitly.
+gravitational dynamics. Boundary terms required for a well-defined variational principle can be made explicit by representing the causal domain through an indicator function and performing a covariant shape variation; the full covariant treatment is given in Appendix~\ref{app:covariant_variation}. A complete bulk+boundary derivation of the non-local Euler--Lagrange structure is provided in the supplementary \texttt{Variational\_Derivation} pipeline (scripts 00--25), together with symbolic and independent numerical checks.
 
-\subsection {Variational structure and infrared dominance}
+\subsection{Variational structure and infrared dominance}
 
-A complete derivation of the Euler--Lagrange equations associated with the
- non-local action \eqref{eq:lag_mult} is beyond the scope of this work. 
-Nevertheless, some qualitative features of the variational structure can be stated.
-The variation of the leafwise functional
-\[
-\langle K^2 \rangle_{D_\Theta} = \frac{I_1}{I_0}
-\]
-with respect to the metric generically produces local contributions proportional to functional 
-derivatives of $K_{\mu\nu}K^{\mu\nu}$ and $\sqrt{\gamma}$, multiplied by the leafwise Lagrange
-multiplier $\lambda(\Theta)$. Crucially, these contributions are weighted by inverse powers of the 
-domain volume $I_0$ and are therefore dominated by infrared scales.
-As a result, for localized sources and weak-field configurations, the induced corrections to the
-Einstein equations are parametrically suppressed by the ratio between local curvature scales
-and the infrared size of the causal domain $D_\Theta$. In the limit where $D_\Theta$ extends
-to cosmological scales, these corrections vanish locally, ensuring recovery of standard Schwarzschild
-and post-Newtonian physics at leading order.
-This mechanism is conceptually analogous to other global-constraint frameworks, where non-local 
-terms affect the infrared vacuum structure while leaving local gravitational dynamics effectively unchanged.
+A complete derivation of the Euler--Lagrange structure associated with the non-local term in \eqref{eq:lag_mult} is now available in the supplementary\linebreak\texttt{Variational\_Derivation} pipeline (scripts 00--25) and is summarized in covariant form in Appendix~\ref{app:covariant_variation}, including explicit bulk/boundary splitting and independent numerical cross-checks. Here we summarize the structural features needed in the main text.
+
+Define the leafwise functionals
+\begin{align}
+I_0[\Theta] &\equiv \int_{D_\Theta} W\sqrt{\gamma}\,d^3x,
+\qquad
+I_1[\Theta] \equiv \int_{D_\Theta} W K^2\sqrt{\gamma}\,d^3x,
+\nonumber\\
+Q[\Theta] &\equiv \frac{I_1[\Theta]}{I_0[\Theta]}=\langle K^2\rangle_{D_\Theta}.
+\end{align}
+For an arbitrary first-order variation one has the exact ratio identity
+\begin{equation}
+\delta Q = \frac{I_0\,\delta I_1 - I_1\,\delta I_0}{I_0^2}.
+\label{eq:deltaQ_ratio}
+\end{equation}
+This formula underlies both the constraint channel and the metric/scalar Euler--Lagrange channels and is repeatedly used \linebreak[2]in the supplementary derivation.
+
+Crucially, when the domain $D_\Theta$ is treated as a \emph{geometrically defined} region, its variation contributes alongside the usual bulk variations. Writing schematically
+\begin{equation}
+\delta I_a = \delta I_a^{\rm bulk} + \delta I_a^{\partial D}\qquad (a=0,1),
+\end{equation}
+the induced boundary piece in the normalized channel is
+\begin{equation}
+\delta Q\big|_{\partial D}=\frac{b_1\,I_0 - b_0\,I_1}{I_0^2},
+\label{eq:deltaQ_boundary}
+\end{equation}
+where $b_0,b_1$ are the domain-shape (``injection'') densities associated with $I_0$ and $I_1$ on $\partial D_\Theta$. In the covariant formulation (supplementary scripts 23--25), this term arises from a shape derivative $\delta\chi_\Theta\sim \rho\,\delta(\partial D_\Theta)$ of the causal-domain indicator $\chi_\Theta$, i.e.\ it is not added by hand.
+
+Equation \eqref{eq:deltaQ_ratio} immediately implies infrared dominance in the normalized channel: for extensive variations $\delta I_a = \mathcal{O}(I_0)$ one has
+\begin{equation}
+\delta Q = \mathcal{O}\!\left(\frac{1}{I_0}\right),
+\end{equation}
+so the induced corrections to the local field equations are suppressed by inverse powers of the leafwise volume. In asymptotically flat configurations $I_0\sim L^3$ for a domain of linear size $L$, and the non-local corrections vanish locally as $L\to\infty$. In spacetimes with a cosmological horizon, $D_\Theta$ saturates at finite size, so the same mechanism naturally selects an infrared vacuum geometry while leaving local Schwarzschild/post-Newtonian physics unsuppressed at leading order.
 
 \section{Sanity checks and local GR recovery}
 
@@ -372,6 +407,8 @@ In the limit $R \to \infty$, local sources effectively represent measure-zero co
 to the vacuum selection rule.
 This confirms that the global constraint acts purely as an infrared boundary condition, 
 leaving local astrophysical tests of gravity unaffected.
+The static identities above are also certified in the Lean artifact by
+the static-limit lemmas in \path{StaticSanityCheck/StaticLimit.lean}.
 
 \section{Vacuum selection from the leafwise constraint}
 
@@ -411,6 +448,9 @@ cubically. In the infrared limit one therefore finds
 \begin{equation}
 \langle K^2\rangle_{D_\Theta} \xrightarrow{\mathrm{IR}} 0.
 \end{equation}
+In Lean, this infrared statement is certified by
+the Minkowski IR-limit theorem in
+\path{StaticSanityCheck/MinkowskiLinearTilt.lean}.
 
 % =========================
 % FIGURE 1 — Minkowski IR scaling
@@ -482,6 +522,9 @@ normalized leafwise average coincides with the local value,
 \begin{equation}
 \langle K^2\rangle_{D_\Theta} = 3H^2.
 \end{equation}
+This step is certified in Lean by
+the de Sitter PG average theorem in
+\path{StaticSanityCheck/DeSitterPG.lean}.
 
 It is worth noting that the causal domain of the de Sitter foliation
 is bounded by the cosmological horizon at $r=H^{-1}$, so that $D_\Theta$
@@ -509,6 +552,9 @@ admissible vacuum, with the expansion rate fixed by
 \begin{equation}
 H^2=\frac{K_0^2}{3}.
 \end{equation}
+In the Lean artifact, this selection rule is proved both in the direct
+de Sitter module and in an independent module obtained by substitution into
+the general \(K^2\) expression.
 This relation fixes the curvature scale of the \emph{asymptotic} vacuum geometry selected by the leafwise constraint. 
 Since the constraint is formally defined in the infinite-volume limit ($R \to \infty$), it does not impose a constant 
 Hubble rate during the dynamical history at finite causal volume, where standard General Relativity is recovered. 
@@ -532,6 +578,10 @@ local curvature near compact sources. In the following we show explicitly
 that, for physically relevant foliations, the induced geometry on the
 $\Theta=\mathrm{const}$ hypersurfaces remains locally Euclidean, ensuring
 full compatibility with standard Schwarzschild and post-Newtonian physics.
+The corresponding IR-suppression statement for compactly supported
+contributions is formalized in Lean as
+the compact-support IR-dominance theorem in
+\path{StaticSanityCheck/IRDominance.lean}.
 
 
 \begin{lemma}[Euclidean induced metric on the SdS--PG foliation]
@@ -626,6 +676,91 @@ not represent a violation of covariance at the level of physical laws, but
 emerges as a property of the vacuum geometry selected by the leafwise
 constraint.
 
+\subsection{Homogeneous cosmology: minisuperspace consistency}
+
+As an internal consistency test of the constrained variational structure, one can reduce the theory to homogeneous FRW minisuperspace,
+\begin{equation}
+ds^2 = N(t)^2\,dt^2 - a(t)^2\,d\vec{x}^{\,2}.
+\end{equation}
+In this sector the extrinsic-curvature invariant takes the simple form
+\begin{equation}
+K^2 = 3\left(\frac{\dot{a}}{aN}\right)^2,
+\end{equation}
+and on a comoving ball one finds $I_1 = K^2 I_0$, hence $Q = I_1/I_0 = K^2$ identically. The leafwise constraint therefore yields the selection rule
+\begin{equation}
+H^2 \equiv \left(\frac{\dot{a}}{aN}\right)^2 = \frac{K_0^2}{3}.
+\label{eq:H_selection}
+\end{equation}
+The full minisuperspace Euler--Lagrange system (for $a$, $N$, $\lambda$) is consistent on the de Sitter branch, and the constraint propagates without drift. Moreover, the three minisuperspace equations satisfy an exact off-shell Noether\slash Bianchi-type identity reflecting time-reparametrization invariance,
+\begin{equation}
+E_a\,\dot{a} + E_N\,\dot{N} + E_\lambda\,\dot{\lambda}
+- \frac{d}{dt}(N E_N) - \frac{d}{dt}(\lambda E_\lambda) = 0,
+\label{eq:Noether_identity}
+\end{equation}
+which guarantees compatibility among the channels and structurally explains the observed constraint propagation. These results have been verified symbolically and numerically in notebooks 15--20 of the supplementary \texttt{Variational\_Derivation} pipeline, with all residuals confirmed null to machine precision.
+
+\subsubsection{Barotropic matter on the hard-constrained FRW branch}
+\label{sec:barotropic}
+
+As a further internal consistency check, we include an effective barotropic matter sector
+with equation of state $p=w\rho$ and energy density $\rho(a)=\rho_0 a^{-3(1+w)}$.
+In minisuperspace, the corresponding matter contribution is $-N a^3\rho(a)=-\rho_0 a^{-3w}N$.
+Working in the homogeneous reduction, the Lagrangian becomes
+\begin{equation*}
+L
+= -\frac{3a\dot a^2}{\kappa N} - \frac{\Lambda a^3 N}{\kappa}
++ \lambda(t)\left(\frac{3a\dot a^2}{N^2}-K_0^2 a^3\right)
+-\rho_0 a^{-3w}N,
+\end{equation*}
+where in minisuperspace one may identify $\Theta=t$ (up to reparametrization),
+so a leafwise function $\lambda(\Theta)$ is represented as $\lambda(t)$ while remaining constant on each leaf.
+
+On the hard-constrained homogeneous branch one has $Q=K^2$ identically, so the constraint channel yields
+\begin{equation*}
+H^2\equiv\left(\frac{\dot a}{aN}\right)^2=\frac{K_0^2}{3}.
+\end{equation*}
+The lapse channel instead fixes the leafwise multiplier; on the de Sitter branch ($H=\mathrm{const}$),
+\begin{equation*}
+\lambda(t)= -\frac{1}{2}\,\frac{-K_0^2+\Lambda+\kappa\rho_0\,e^{-3(1+w)Ht}}{K_0^2\kappa},
+\qquad
+\dot\lambda(t)=\frac{3H\rho_0(1+w)}{2K_0^2}\,e^{-3(1+w)Ht}.
+\end{equation*}
+For $w=-1$ one recovers $\dot\lambda=0$, while for $w\neq -1$ matter is encoded in $\lambda(t)$ rather than
+in an evolving $H(t)$.
+This reinforces the need for the finite-domain/causal prescription for realistic cosmological eras.
+
+\subsection{Perturbative spectrum (summary of supplementary results)}
+\label{sec:perturbative_spectrum}
+
+A dedicated supplementary pipeline (\texttt{Perturbative\_Spectrum\_Study}, scripts 00--15)
+analyzes the quadratic perturbative kernel around isotropic FRW/de~Sitter backgrounds.
+The kernel is decomposed in Barnes--Rivers spin projectors, yielding separate
+spin-2 (tensor), spin-1 (vector), and a coupled spin-0 (scalar) block.
+
+In the tensor sector the quadratic action takes the standard form
+\begin{equation}
+S_T^{(2)}\sim\int a^3\!\left(G_T \dot{h}^2 - F_T \frac{(\nabla h)^2}{a^2}\right),
+\end{equation}
+so ghost/gradient stability requires $G_T>0$ and $F_T>0$, with
+$c_T^2=F_T/G_T$ approaching the GR value as non-local corrections scale as $1/I_0$.
+Analogously, in the vector sector one finds $c_V^2=g_1\slash c_1$ with positivity conditions
+entirely parallel to the tensor case.
+
+The scalar sector is described by a $2\times2$ kinetic matrix $K_s$ and gradient matrix
+$G_s$, so UV stability reduces to positive definiteness of $K_s$ and positivity of the
+eigenvalues of $K_s^{-1}G_s$ (including mixing). On the constrained FRW branch,
+the linear scalar channel is frozen in cosmic gauge, consistently with the minisuperspace
+structure and with the interpretation of $\Theta$ as a geometric time-ordering field
+rather than an additional propagating infrared degree of freedom.
+
+Across all channels, the supplementary analysis verifies that non-local contributions to
+the quadratic coefficients are infrared-suppressed (scaling as $I_0^{-1}$) and that the
+full dispersion relations match the expected UV limits. Complete derivations, explicit
+coefficient expressions, and numerical spot-checks are available in the pipeline logs
+(\texttt{logs/*.log}) and notebooks, with the normalized-channel
+second-variation identities summarized in Appendix~\ref{app:secondvar} and the isotropic
+spin-projector inversion summarized in Appendix~\ref{app:BR}.
+
 \section{Computational details}
 
 Symbolic computations underlying the results of this work were performed
@@ -658,6 +793,45 @@ construction of the Christoffel symbols, Riemann tensor, and extrinsic
 curvature tensor $K_{\mu\nu}$.
 
 The notebooks are provided as supplementary material.
+
+In addition, a dedicated supplementary pipeline\linebreak(\texttt{Paper/Variational\_Derivation}) provides a complete derivation of the non-local variational structure (including explicit boundary/shape terms and a covariant causal-domain formulation), organized as scripts 00--25 with mandatory checks. The pipeline is executable via \texttt{wolframscript} and produces both notebooks and plain-text logs (\texttt{logs/*.log}) for reproducibility.
+
+A second dedicated supplementary pipeline (\texttt{Paper/Perturbative\_Spectrum\_Study})
+provides the perturbative spectrum analysis (ghost/gradient conditions and dispersion
+relations in tensor/vector/scalar sectors, including scalar mixing), the quadratic
+non-local kernel from second variations of $Q=I_1/I_0$, and second-order boundary
+shape-derivative terms. The pipeline is organized as scripts 00--15 with mandatory
+checks and plain-text logs for reproducibility.
+
+A third dedicated supplementary pipeline (\texttt{Paper/Barotropic\_Cosmology\_Study})
+provides minisuperspace FRW checks with barotropic matter.
+The validated block (\texttt{00\_barotropic\_hard\_constraint\_consistency.wl})
+enforces the hard branch $H^2=K_0^2/3$ and solves the lapse channel for $\lambda(t)$,
+with mandatory checks (\texttt{check=True}) recorded in plain-text logs for reproducibility.
+
+\subsection{Formal verification artifact (Lean)}
+
+The Lean formalization used in this work is publicly available and
+version-pinned for reproducibility:
+\begin{itemize}
+\item Repository:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection}
+{GitHub repository}
+\item Artifact release used for this manuscript:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/tree/v2.0}
+{\texttt{v2.0} release snapshot}
+\item Archived DOI:
+\href{https://doi.org/10.5281/zenodo.18361297}
+{\texttt{10.5281/zenodo.18361297}}
+\item Continuous integration build:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/actions/workflows/lean_action_ci.yml}
+{CI workflow}
+\end{itemize}
+
+For referee traceability, the artifact README provides a mapping from
+paper equations to Lean theorems, with assumptions:
+\href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/blob/v2.0/README.md}
+{README traceability table}.
 
 \subsection{Scope of formal verification (explicit boundaries)}
 
@@ -700,6 +874,11 @@ Build verified for artifact release \texttt{v2.0} with Lean \texttt{v4.27.0} /
 mathlib \texttt{a3a10db0e9d66acbebf76c5e6a135066525ac900}; CI reproduces
 \texttt{lake build} on every push.
 
+\begin{sloppypar}
+\paragraph{Variational structure (supplementary).}
+The full bulk+boundary variational derivation of the non-local term, including explicit shape derivatives for finite/causal domains and a covariant indicator-function formulation, is verified in the supplementary Mathematica pipeline (\texttt{Variational\_Derivation}, scripts 00--25). This verification is symbolic plus independently cross-checked numerically at machine precision; it is complementary to (and currently separate from) the Lean formalization scope stated above.
+\end{sloppypar}
+
 
 \section{Conclusion}
 
@@ -736,6 +915,10 @@ early universe but relevant at late times---will provide the dynamical mechanism
 driving the evolution toward the selected de Sitter vacuum.
 Developing such a finite-domain formulation and its implications for the
 radiation- and matter-dominated eras is left for future work.
+This necessity is reinforced by the barotropic minisuperspace check:
+under a uniform hard implementation the homogeneous branch remains de Sitter,
+while the matter sector is absorbed into the leafwise multiplier $\lambda(\Theta)$
+rather than reopening a standard FRW evolution $H(t)$.
 
 These results suggest that the observed late-time cosmic acceleration may reflect
 a global geometric property of the spacetime foliation defining the present---a
@@ -744,9 +927,276 @@ requiring the introduction of an additional dynamical dark energy degree of free
 
 
 
+
+
 % BIBLIOGRAFIA
 \sloppy  
 \bibliographystyle{unsrt} % Stile numerico standard [1], [2]...
 \bibliography{refs}       % Chiama il file refs.bib
+
+% ============================
+% Appendix A — Covariant causal-domain variation and boundary terms
+% ============================
+\appendix
+\section{Covariant causal-domain variation and boundary terms}
+\label{app:covariant_variation}
+
+This appendix makes explicit the bulk+boundary variational structure of the
+leafwise non-local functional entering the action \eqref{eq:lag_mult}.
+The key point is that the causal domain on each leaf is geometrically defined
+and therefore varies under field variations. This produces boundary/shape
+terms that can be written covariantly using an indicator function.
+
+\subsection{Covariant representation of leafwise functionals}
+\label{app:covariant_functionals}
+
+Let $\Theta$ be a scalar field with timelike gradient ($X \equiv g^{\mu\nu}\partial_\mu\Theta\partial_\nu\Theta>0$)
+defining the foliation $\Sigma_\theta : \Theta=\theta$ with unit normal
+$u_\mu=\partial_\mu\Theta/\sqrt{X}$ and induced metric $h_{\mu\nu}=g_{\mu\nu}-u_\mu u_\nu$.
+Let $K_{\mu\nu}$ be the extrinsic curvature of $\Sigma_\theta$ and $K^2\equiv K_{\mu\nu}K^{\mu\nu}$.
+
+We define a (possibly trivial) leafwise weight $W$ and introduce the covariant
+leaf measure density
+\begin{equation}
+\mu(x;\theta) \;\equiv\; \sqrt{-g}\, W(x)\, \sqrt{X}\, \delta\!\left(\Theta(x)-\theta\right).
+\label{eq:mu_def}
+\end{equation}
+Using standard $\delta$-function identities for level sets, one has
+\begin{equation}
+\int d^4x\, \mu(x;\theta)\, F(x)
+\;=\;
+\int_{\Sigma_\theta} d^3x\, \sqrt{\gamma}\, W\, F\big|_{\Sigma_\theta}.
+\label{eq:leaf_delta_identity}
+\end{equation}
+
+Let $D_\theta\subset\Sigma_\theta$ denote the (causally defined) integration region on the leaf.
+We represent it by an indicator function $\chi_\theta(x)\in\{0,1\}$ supported on $D_\theta$:
+$\chi_\theta(x)=1$ for $x\in D_\theta$ and $\chi_\theta(x)=0$ otherwise.
+Then the leafwise functionals can be written as
+\begin{align}
+I_0[\theta] &\equiv \int d^4x \,\mu(x;\theta)\,\chi_\theta(x), \label{eq:I0_cov}\\
+I_1[\theta] &\equiv \int d^4x \,\mu(x;\theta)\,\chi_\theta(x)\,K^2(x), \label{eq:I1_cov}\\
+Q[\theta] &\equiv \frac{I_1[\theta]}{I_0[\theta]} \;=\; \langle K^2\rangle_{D_\theta}. \label{eq:Q_def_app}
+\end{align}
+
+\subsection{First variations: bulk and boundary channels}
+\label{app:bulk_boundary_split}
+
+Consider an arbitrary first-order variation of the fields and the domain data,
+\begin{equation}
+\begin{aligned}
+g_{\mu\nu}&\to g_{\mu\nu}+\varepsilon\,\delta g_{\mu\nu},
+\qquad
+\Theta\to \Theta+\varepsilon\,\delta\Theta,
+\\
+\chi_\theta&\to \chi_\theta+\varepsilon\,\delta\chi_\theta,
+\qquad
+K^2\to K^2+\varepsilon\,\delta K^2.
+\end{aligned}
+\end{equation}
+At integrand level, the variations of the covariant densities are exactly
+\begin{align}
+\delta\!\left(\mu\,\chi_\theta\right) &= \chi_\theta\,\delta\mu \;+\; \mu\,\delta\chi_\theta,
+\label{eq:dj0}\\
+\delta\!\left(\mu\,\chi_\theta\,K^2\right) &= \chi_\theta\,K^2\,\delta\mu \;+\; \chi_\theta\,\mu\,\delta K^2 \;+\; \mu\,K^2\,\delta\chi_\theta.
+\label{eq:dj1}
+\end{align}
+Therefore,
+\begin{align}
+\delta I_0 &= \delta I_0^{\rm bulk} + \delta I_0^{\partial D},
+\qquad
+\delta I_0^{\rm bulk} \equiv \int d^4x\,\chi_\theta\,\delta\mu,
+\qquad
+\delta I_0^{\partial D} \equiv \int d^4x\,\mu\,\delta\chi_\theta,
+\label{eq:dI0_split}
+\\
+\delta I_1 &= \delta I_1^{\rm bulk} + \delta I_1^{\partial D},
+\nonumber\\
+&\quad
+\delta I_1^{\rm bulk} \equiv \int d^4x\,\chi_\theta(\,K^2\,\delta\mu+\mu\,\delta K^2\,),
+\quad
+\delta I_1^{\partial D} \equiv \int d^4x\,\mu\,K^2\,\delta\chi_\theta.
+\label{eq:dI1_split}
+\end{align}
+
+The ratio functional satisfies the exact identity
+\begin{equation}
+\delta Q
+=
+\frac{I_0\,\delta I_1 - I_1\,\delta I_0}{I_0^2}.
+\label{eq:deltaQ_exact}
+\end{equation}
+Using the split \eqref{eq:dI0_split}--\eqref{eq:dI1_split}, the boundary contribution is
+\begin{equation}
+\delta Q\big|_{\partial D}
+=
+\frac{I_0\,\delta I_1^{\partial D} - I_1\,\delta I_0^{\partial D}}{I_0^2}.
+\label{eq:deltaQ_boundary_general}
+\end{equation}
+If the domain variation can be parameterized by an infinitesimal displacement
+$\varepsilon\,\xi$ of the boundary $\partial D_\theta$ (shape variation),
+one may write
+\begin{equation}
+\delta I_0^{\partial D} \equiv b_0\,\xi,
+\qquad
+\delta I_1^{\partial D} \equiv b_1\,\xi,
+\label{eq:b0b1_def}
+\end{equation}
+leading to the compact form
+\begin{equation}
+\delta Q\big|_{\partial D}
+=
+\frac{b_1 I_0 - b_0 I_1}{I_0^2}\,\xi.
+\label{eq:boundaryQ_compact}
+\end{equation}
+This is the universal boundary structure in the normalized channel.
+
+\subsection{Shape derivatives from an indicator: first and second order}
+\label{app:shape_derivative}
+
+To make the domain-variation channel explicit, consider a one-parameter family of
+domains defined by a moving radial boundary
+\[
+r = R + \varepsilon\,\rho + \frac{\varepsilon^2}{2}\sigma,
+\]
+encoded by an indicator
+\[
+\chi_\varepsilon(r)=H\!\left(R + \varepsilon\rho + \frac{\varepsilon^2}{2}\sigma - r\right),
+\]
+with $H$ the Heaviside step function. Differentiating distributionally yields
+\begin{equation}
+\delta\chi \equiv \left.\frac{d\chi_\varepsilon}{d\varepsilon}\right|_{\varepsilon=0}
+= \rho\,\delta(R-r),
+\label{eq:dchi_first}
+\end{equation}
+and
+\begin{equation}
+\delta^2\chi \equiv \left.\frac{d^2\chi_\varepsilon}{d\varepsilon^2}\right|_{\varepsilon=0}
+= \sigma\,\delta(R-r) + \rho^2\,\delta'(R-r),
+\label{eq:dchi_second}
+\end{equation}
+where $\delta'$ is the derivative of the Dirac delta with respect to its argument.
+
+Inserting these expressions into the covariant representations
+\eqref{eq:dI0_split}--\eqref{eq:dI1_split} reproduces
+the Leibniz-rule differentiation of integrals with moving boundary, both at first and
+second order. In particular, the second-order boundary contribution is not postulated:
+it follows uniquely from the domain dependence encoded in $\chi_\varepsilon$.
+The identity \eqref{eq:dchi_second} has been verified analytically and independently
+cross-checked numerically to residuals of order $10^{-12}$ in the supplementary pipeline logs.
+
+\subsection{Variation of the non-local leafwise action}
+\label{app:deltaSleaf}
+
+The non-local part of the action can be written as
+\begin{equation}
+S_{\rm NL} = \int d\theta\; \lambda(\theta)\,\Big(I_1[\theta]-K_0^2 I_0[\theta]\Big).
+\label{eq:SNL_app}
+\end{equation}
+Under $\lambda\to\lambda+\varepsilon\eta$ and the field/domain variations above, one finds
+\begin{equation}
+\delta S_{\rm NL}
+=
+\int d\theta\;\Big[
+\eta(\theta)\,\big(I_1-K_0^2 I_0\big)
++
+\lambda(\theta)\,\big(\delta I_1 - K_0^2 \delta I_0\big)
+\Big].
+\label{eq:deltaSNL_app}
+\end{equation}
+The first term enforces the leafwise constraint $I_1-K_0^2 I_0=0$.
+The second term contains the geometric response and splits into bulk and boundary pieces
+according to \eqref{eq:dI0_split}--\eqref{eq:dI1_split}. In particular, the boundary channel
+contributes
+\begin{equation}
+\delta S_{\rm NL}\big|_{\partial D}
+=
+\int d\theta\;\lambda(\theta)\,\big(\delta I_1^{\partial D}-K_0^2\delta I_0^{\partial D}\big),
+\label{eq:deltaSNL_boundary}
+\end{equation}
+with $\delta I_a^{\partial D}$ computable from \eqref{eq:dchi_first} in explicit domain models.
+
+\subsection{Infrared suppression in the normalized channel}
+\label{app:ir_suppression}
+
+Finally, the exact ratio identity \eqref{eq:deltaQ_exact} implies that, for variations
+whose bulk contributions scale extensively with the domain size (schematically
+$\delta I_a=\mathcal{O}(I_0)$), the induced correction in the normalized channel scales as
+\begin{equation}
+\delta Q = \mathcal{O}\!\left(\frac{1}{I_0}\right),
+\label{eq:deltaQ_ir_scaling}
+\end{equation}
+so local modifications to the field equations are parametrically suppressed by the
+infrared volume of the causal domain. This provides a precise underpinning for the
+infrared-dominance arguments used in the main text.
+
+\subsection{Second variations of the normalized channel and quadratic kernel}
+\label{app:secondvar}
+
+For the normalized leafwise functional $Q=I_1/I_0$, consider the second-order expansion
+\[
+I_a(\varepsilon)=I_a + \varepsilon\,\delta I_a + \frac{\varepsilon^2}{2}\,\delta^2 I_a,
+\qquad (a=0,1),
+\]
+and define
+\[
+Q(\varepsilon)=\frac{I_1(\varepsilon)}{I_0(\varepsilon)}
+= Q + \varepsilon\,q_1 + \frac{\varepsilon^2}{2}\,q_2 + O(\varepsilon^3).
+\]
+A direct ratio expansion gives the exact identities
+\begin{equation}
+q_1=\frac{I_0\,\delta I_1 - I_1\,\delta I_0}{I_0^2},
+\label{eq:q1_exact}
+\end{equation}
+and
+\begin{equation}
+q_2=\frac{-2\,\delta I_0\,\delta I_1\,I_0 + 2(\delta I_0)^2 I_1
++ I_0\!\left(\delta^2 I_1\,I_0-\delta^2 I_0\,I_1\right)}{I_0^3}.
+\label{eq:q2_exact}
+\end{equation}
+On the constrained branch $I_1 = Q\,I_0$ these simplify to
+\begin{equation}
+q_1=\frac{\delta I_1 - Q\,\delta I_0}{I_0},
+\qquad
+q_2=\frac{\delta^2 I_1 - Q\,\delta^2 I_0}{I_0}
+-\frac{2\,\delta I_0\,(\delta I_1 - Q\,\delta I_0)}{I_0^2}.
+\label{eq:q1q2_branch}
+\end{equation}
+Therefore, for extensive variations $\delta I_a=O(I_0)$ and $\delta^2 I_a=O(I_0)$,
+both $q_1$ and $q_2$ are infrared-suppressed, scaling as $O(1/I_0)$.
+This provides the algebraic backbone needed to construct the quadratic non-local
+kernel used in the supplementary \texttt{Perturbative\_Spectrum\_Study} pipeline.
+
+\section{Barnes--Rivers decomposition and closed-form inversion}
+\label{app:BR}
+
+For an isotropic quadratic operator acting on symmetric rank-2 perturbations, it is
+convenient to decompose the kernel into Barnes--Rivers spin projectors
+\begin{equation}
+\mathcal{O} = c_2 P^{(2)} + c_1 P^{(1)} + c_s P^{(0s)} + c_w P^{(0w)}
++ c_m\!\left(P^{(0sw)}+P^{(0ws)}\right),
+\label{eq:BR_decomp}
+\end{equation}
+where $P^{(2)}$, $P^{(1)}$ project onto the spin-2 and spin-1 subspaces, while the
+spin-0 sector is represented by the coupled block spanned by $P^{(0s)}$, $P^{(0w)}$
+with mixing $c_m$. The scalar-block determinant is
+\begin{equation}
+\det S \equiv c_s c_w - c_m^2.
+\label{eq:BR_detS}
+\end{equation}
+Whenever $c_2\neq 0$, $c_1\neq 0$ and $\det S\neq 0$, the inverse operator exists and
+takes the closed form
+\begin{equation}
+\mathcal{O}^{-1} = \frac{1}{c_2}P^{(2)} + \frac{1}{c_1}P^{(1)}
++ \frac{c_w P^{(0s)} + c_s P^{(0w)}
+- c_m\!\left(P^{(0sw)}+P^{(0ws)}\right)}{c_s c_w - c_m^2}.
+\label{eq:BR_inv}
+\end{equation}
+This decomposition makes explicit that (in the isotropic case) tensor and vector
+channels do not mix with the scalar block, and that stability/invertibility conditions
+reduce to positivity of the relevant coefficients and of $\det S$.
+These identities are verified analytically in the supplementary
+\texttt{Perturbative\_Spectrum\_Study} pipeline (projector algebra, scripts 07, and
+bilateral inversion including IR limits, script 12).
 
 \end{document}
