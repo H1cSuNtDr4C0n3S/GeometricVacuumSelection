@@ -1,0 +1,89 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2712,         80]
+NotebookOptionsPosition[      1987,         63]
+NotebookOutlinePosition[      2301,         77]
+CellTagsIndexPosition[      2258,         74]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["03 - Era Sequence Continuity and Global IR Channel Test", "Title",ExpressionUUID->"754ac4d3-0cf9-4a2b-a0dd-7ae596e10b3f"],
+
+Cell["\<\
+Objective: verify smooth radiation->matter->de Sitter ordering and show the \
+non-local channel stays a global IR consistency correction (subleading, no \
+era discontinuities).\
+\>", "Text",ExpressionUUID->"f0aeb51a-86a9-4971-8f28-812dbde5c240"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"zEq", ":=", 
+   RowBox[{
+    FractionBox["\[CapitalOmega]m", "\[CapitalOmega]r"], "-", "1"}]}],
+  HoldForm]], "Input",ExpressionUUID->"99f06c63-d744-4502-b8a6-8a921c900e64"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"zLambdaMatter", ":=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["\[CapitalOmega]\[CapitalLambda]", "\[CapitalOmega]m"], 
+      ")"}], 
+     RowBox[{"1", "/", "3"}]], "-", "1"}]}],
+  HoldForm]], "Input",ExpressionUUID->"8d57eb33-dbc3-4342-a3fc-fc03f19c24f7"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"eps", "[", "z_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"deltaQ", "[", "z", "]"}], 
+    RowBox[{"3", " ", 
+     SuperscriptBox[
+      RowBox[{"\[ExponentialE]", "[", "z", "]"}], "2"]}]]}],
+  HoldForm]], "Input",ExpressionUUID->"a8b2d2e1-d9a1-4e88-9edc-b5c98ae7d707"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", "\[Equal]", "\"\<ERAS_PIPELINE_CONTINUITY_CONFIRMED\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"1bcfdfc3-ce03-434b-8166-bf6cb1969e82"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b735e3cb-a7b8-4a2c-9b6a-dfeb5ebc691b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 127, 0, 70, "Title",ExpressionUUID->"754ac4d3-0cf9-4a2b-a0dd-7ae596e10b3f"],
+Cell[684, 22, 255, 4, 70, "Text",ExpressionUUID->"f0aeb51a-86a9-4971-8f28-812dbde5c240"],
+Cell[942, 28, 207, 5, 70, "Input",ExpressionUUID->"99f06c63-d744-4502-b8a6-8a921c900e64"],
+Cell[1152, 35, 319, 9, 70, "Input",ExpressionUUID->"8d57eb33-dbc3-4342-a3fc-fc03f19c24f7"],
+Cell[1474, 46, 315, 9, 70, "Input",ExpressionUUID->"a8b2d2e1-d9a1-4e88-9edc-b5c98ae7d707"],
+Cell[1792, 57, 191, 4, 70, "Input",ExpressionUUID->"1bcfdfc3-ce03-434b-8166-bf6cb1969e82"]
+}
+]
+*)
+
+(* End of internal cache information *)

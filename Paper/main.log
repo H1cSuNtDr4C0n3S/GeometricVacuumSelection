@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.1)  21 FEB 2026 03:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.1)  22 FEB 2026 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -418,7 +418,7 @@ the static Minkowski
  []
 
 
-Overfull \hbox (0.7507pt too wide) in paragraph at lines 47--55
+Overfull \hbox (0.7507pt too wide) in paragraph at lines 47--57
 \OT1/cmr/m/n/10 tion may re-flect a global ge-o-met-ric prop-erty of the space-
 time foliation---
  []
@@ -426,131 +426,207 @@ time foliation---
 [1
 
 {C:/Users/mspin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (0.95505pt too wide) in paragraph at lines 109--118
+Overfull \hbox (0.95505pt too wide) in paragraph at lines 111--120
 \OT1/cmr/m/n/10.95 scripts 00--15) that de-rives the quadratic ker-nel around i
 sotropic back-grounds
  []
 
 [2]
-Overfull \hbox (8.54568pt too wide) in paragraph at lines 120--128
+Overfull \hbox (8.54568pt too wide) in paragraph at lines 122--130
  []\OT1/cmr/bx/n/10.95 Additional sup-ple-men-tary min-isu-per-space pipeline (
 barotropic mat-
  []
 
-[3] [4] [5] [6]
-Underfull \hbox (badness 7759) in paragraph at lines 334--335
+[3] [4] [5] [6] [7]
+Overfull \hbox (18.73843pt too wide) in paragraph at lines 409--412
+\OT1/cmr/m/n/10.95 For $\OML/cmm/m/it/10.95 W \OT1/cmr/m/n/10.95 = 1$, the met-
+ric vari-a-tion of the co-vari-ant leaf mea-sure $\OML/cmm/m/it/10.95 ^^V \OT1/
+cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 ^^N\OT1/cmr/m/n/10.95 (^^B \OMS/cmsy/m
+/n/10.95 ^^@
+ []
+
+[8]
+Overfull \hbox (154.32668pt too wide) in paragraph at lines 495--499
+\OT1/cmr/m/n/10.95 as ver-i-fied in the sup-ple-men-tary logs (\OT1/cmtt/m/n/10
+.95 16[]frw[]minisuperspace[]eom\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 18[]de
+sitter[]constraint[]propagation\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 502--503
 \OT1/cmr/m/n/10.95 non-local term in [] is now avail-able in the sup-ple-men-ta
 ry
  []
 
 
-Overfull \hbox (0.83337pt too wide) in paragraph at lines 348--350
+Overfull \hbox (0.83337pt too wide) in paragraph at lines 516--518
 \OT1/cmr/m/n/10.95 Euler--Lagrange chan-nels and is re-peat-edly used in the su
 p-ple-men-tary deriva-
  []
 
-[7] [8] [9]
-<plot_1_minkowski_sensitivity.png, id=246, 722.7pt x 505.89pt>
+[9] [10]
+<plot_1_minkowski_sensitivity.png, id=282, 722.7pt x 505.89pt>
 File: plot_1_minkowski_sensitivity.png Graphic file (type png)
 <use plot_1_minkowski_sensitivity.png>
-Package pdftex.def Info: plot_1_minkowski_sensitivity.png  used on input line 4
-61.
+Package pdftex.def Info: plot_1_minkowski_sensitivity.png  used on input line 6
+29.
 (pdftex.def)             Requested size: 277.20154pt x 194.03877pt.
-<plot_2_velocity_dependence.png, id=248, 722.7pt x 505.89pt>
+ [11]
+<plot_2_velocity_dependence.png, id=293, 722.7pt x 505.89pt>
 File: plot_2_velocity_dependence.png Graphic file (type png)
 <use plot_2_velocity_dependence.png>
-Package pdftex.def Info: plot_2_velocity_dependence.png  used on input line 474
+Package pdftex.def Info: plot_2_velocity_dependence.png  used on input line 642
 .
 (pdftex.def)             Requested size: 277.20154pt x 194.03877pt.
- [10 <./plot_1_minkowski_sensitivity.png>]
-<plot_4_convergence_analysis.png, id=258, 722.7pt x 505.89pt>
+ [12 <./plot_1_minkowski_sensitivity.png> <./plot_2_velocity_dependence.png>]
+<plot_4_convergence_analysis.png, id=304, 722.7pt x 505.89pt>
 File: plot_4_convergence_analysis.png Graphic file (type png)
 <use plot_4_convergence_analysis.png>
-Package pdftex.def Info: plot_4_convergence_analysis.png  used on input line 49
-8.
+Package pdftex.def Info: plot_4_convergence_analysis.png  used on input line 66
+6.
 (pdftex.def)             Requested size: 277.20154pt x 194.03877pt.
- [11 <./plot_2_velocity_dependence.png>] [12 <./plot_4_convergence_analysis.png
->]
-<plot_3_hybrid_transition.png, id=276, 722.7pt x 505.89pt>
+ [13 <./plot_4_convergence_analysis.png>]
+<plot_3_hybrid_transition.png, id=315, 722.7pt x 505.89pt>
 File: plot_3_hybrid_transition.png Graphic file (type png)
 <use plot_3_hybrid_transition.png>
-Package pdftex.def Info: plot_3_hybrid_transition.png  used on input line 545.
+Package pdftex.def Info: plot_3_hybrid_transition.png  used on input line 714.
 (pdftex.def)             Requested size: 277.20154pt x 194.03877pt.
- [13 <./plot_3_hybrid_transition.png>] [14] [15]
-Overfull \hbox (1.05042pt too wide) detected at line 727
+ [14 <./plot_3_hybrid_transition.png>] [15] [16] [17]
+Overfull \hbox (1.05042pt too wide) detected at line 896
 \OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10
 .95 ) = \OMS/cmsy/m/n/10.95 ^^@[] []\OML/cmm/m/it/10.95 ;  []\OT1/cmr/m/n/10.95
  (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 e[]:
  []
 
-[16]
-Overfull \hbox (4.18105pt too wide) in paragraph at lines 735--739
+
+Overfull \hbox (9.13623pt too wide) in paragraph at lines 903--918
+ []\OT1/cmr/bx/n/10.95 Supplementary finite-domain clo-sure (proof-of-principle
+).[] \OT1/cmr/m/n/10.95 The hard-
+ []
+
+
+Overfull \hbox (32.85205pt too wide) in paragraph at lines 903--918
+\OT1/cmr/m/n/10.95 mat-ter ab-sorbed into the leaf-wise mul-ti-plier. Mo-ti-vat
+ed by the finite-domain/causal
+ []
+
+
+Overfull \hbox (17.60678pt too wide) in paragraph at lines 903--918
+\OT1/cmtt/m/n/10.95 10[]pipeline[]06[]09[]appendix[]ready[]summary[]test.wl\OT1
+/cmr/m/n/10.95 , and the section-closure
+ []
+
+
+Overfull \hbox (4.18105pt too wide) in paragraph at lines 922--926
 \OT1/cmr/m/n/10.95 A ded-i-cated sup-ple-men-tary pipeline (\OT1/cmtt/m/n/10.95
  Perturbative[]Spectrum[]Study\OT1/cmr/m/n/10.95 , scripts
  []
 
 
-Overfull \hbox (15.038pt too wide) in paragraph at lines 735--739
+Overfull \hbox (15.038pt too wide) in paragraph at lines 922--926
 \OT1/cmr/m/n/10.95 00--15) an-a-lyzes the quadratic per-tur-ba-tive ker-nel aro
 und isotropic FRW/de Sit-
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 797--798
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 984--985
 []\OT1/cmr/m/n/10.95 In ad-di-tion, a ded-i-cated sup-ple-men-tary pipeline
  []
 
 
-Overfull \hbox (57.16359pt too wide) in paragraph at lines 799--805
+Overfull \hbox (57.16359pt too wide) in paragraph at lines 986--992
 []\OT1/cmr/m/n/10.95 A sec-ond ded-i-cated sup-ple-men-tary pipeline (\OT1/cmtt
 /m/n/10.95 Paper/Perturbative[]Spectrum[]Study\OT1/cmr/m/n/10.95 )
  []
 
 
-Overfull \hbox (43.47617pt too wide) in paragraph at lines 806--811
+Overfull \hbox (43.47617pt too wide) in paragraph at lines 993--998
 []\OT1/cmr/m/n/10.95 A third ded-i-cated sup-ple-men-tary pipeline (\OT1/cmtt/m
 /n/10.95 Paper/Barotropic[]Cosmology[]Study\OT1/cmr/m/n/10.95 )
  []
 
-[18] [19]
-Underfull \hbox (badness 1275) in paragraph at lines 879--880
+
+Overfull \hbox (32.00928pt too wide) in paragraph at lines 999--1008
+[]\OT1/cmr/m/n/10.95 A fourth ded-i-cated sup-ple-men-tary pipeline (\OT1/cmtt/
+m/n/10.95 Paper/Cosmological[]Eras[]Study\OT1/cmr/m/n/10.95 )
+ []
+
+
+Overfull \hbox (220.42415pt too wide) in paragraph at lines 999--1008
+\OT1/cmr/m/n/10.95 tion/matter IR sup-pres-sion, era con-ti-nu-ity, proxy-equiv
+alence) and \OT1/cmtt/m/n/10.95 10[]pipeline[]06[]09[]appendix[]ready[]summary[
+]test.wl
+ []
+
+
+Overfull \hbox (97.82224pt too wide) in paragraph at lines 999--1008
+\OT1/cmr/m/n/10.95 ar-ti-fact (test 11). De-tailed out-puts are pro-vided in \O
+T1/cmtt/m/n/10.95 summary.md \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n/10.95 detaile
+d[]calculations.md\OT1/cmr/m/n/10.95 . 
+ []
+
+[20] [21]
+Underfull \hbox (badness 1275) in paragraph at lines 1076--1077
  []\OT1/cmr/bx/n/10.95 Variational struc-ture (sup-ple-men-tary).[] \OT1/cmr/m/
 n/10.95 The full bulk+boundary
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 879--880
+Underfull \hbox (badness 1067) in paragraph at lines 1076--1077
 \OT1/cmr/m/n/10.95 vari-a-tional deriva-tion of the non-local term, in-clud-ing
  ex-plicit shape
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 879--880
+Underfull \hbox (badness 2591) in paragraph at lines 1076--1077
 \OT1/cmr/m/n/10.95 for-mu-la-tion, is ver-i-fied in the sup-ple-men-tary Math-e
 -mat-ica pipeline
  []
 
-[20] (main.bbl) [21] [22] [23]
-Underfull \hbox (badness 2478) in paragraph at lines 1133--1133
+[22]
+Overfull \hbox (0.86382pt too wide) in paragraph at lines 1106--1123
+\OT1/cmr/m/n/10.95 ior with global era con-ti-nu-ity and proxy-independence (ap
+pendix-ready block
+ []
+
+(main.bbl [23]) [24] [25] [26]
+Overfull \hbox (33.30666pt too wide) detected at line 1386
+[][][][] \OT1/cmr/m/n/10.95 = 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 12504735
+17 []   ([])\OML/cmm/m/it/10.95 ;  \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 :\OT
+1/cmr/m/n/10.95 1251027240 []   ([])\OML/cmm/m/it/10.95 ;
+ []
+
+
+Overfull \hbox (36.42207pt too wide) in paragraph at lines 1407--1419
+ [][] 
+ []
+
+[27]
+Overfull \hbox (136.48366pt too wide) in paragraph at lines 1426--1437
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 1445--1445
 []\OT1/cmr/bx/n/12 Second vari-a-tions of the nor-mal-ized chan-nel and
  []
 
-[24] [25] [26] (main.aux)
+[28] [29] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 41E0DBF337AA8F9BDBE6C00CF26C5A41;8210.
+(rerunfilecheck)             Checksum: A68F628A00E62E96D941C27B3445BE32;9292.
  ) 
 Here is how much of TeX's memory you used:
- 12246 strings out of 474486
- 192051 string characters out of 5743755
+ 12306 strings out of 474486
+ 193104 string characters out of 5743755
  1940542 words of memory out of 5000000
- 34214 multiletter control sequences out of 15000+600000
- 571058 words of font info for 86 fonts, out of 8000000 for 9000
+ 34244 multiletter control sequences out of 15000+600000
+ 571226 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,568b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,577b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\mspin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -576,10 +652,11 @@ Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.
 pfb><C:/Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmtt10.pfb><C:/Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmtt12.pfb><C:/Users/mspin/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 1213489 bytes).
+/public/amsfonts/symbols/msam10.pfb><C:/Users/mspin/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (29 pages, 1253507 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 195 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

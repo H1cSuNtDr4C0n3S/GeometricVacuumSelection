@@ -18,12 +18,12 @@ WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["04 - BH Non-Switches-Off Selection (IR Scaling Test)", "Title",ExpressionUUID->"78d60532-888b-4371-b185-646c3aa01f31"],
+Cell["04 - BH Non-Switches-Off Selection (IR Scaling Test)", "Title",ExpressionUUID->"062476be-9177-491c-aace-02c87d849042"],
 
 Cell["\<\
 Objective: validate that BH contribution to Q is IR-suppressed and decreases \
 as cosmic domain grows (H -> H/2).\
-\>", "Text",ExpressionUUID->"13ddf925-b249-4432-8b16-eea18efc6cfc"],
+\>", "Text",ExpressionUUID->"354e0c76-0be1-4441-bde1-11ac6b5867fb"],
 
 Cell[BoxData[
  TagBox[
@@ -37,7 +37,7 @@ Cell[BoxData[
       RowBox[{"f", "[", 
        RowBox[{"r", ",", "M", ",", "H"}], "]"}], "\[GreaterEqual]", "z2"}]}], 
     "}"}]}],
-  HoldForm]], "Input",ExpressionUUID->"4d7957bc-2963-46d7-89cc-72edd93c2a9d"],
+  HoldForm]], "Input",ExpressionUUID->"3084c4ef-e8eb-4579-8498-98b6f7b54cf0"],
 
 Cell[BoxData[
  TagBox[
@@ -49,7 +49,7 @@ Cell[BoxData[
      RowBox[{"M", ",", "H"}], "]"}], 
     RowBox[{"I0", "[", 
      RowBox[{"M", ",", "H"}], "]"}]]}],
-  HoldForm]], "Input",ExpressionUUID->"4c6e8c76-6e27-48b1-9f1b-fd06b9b858ad"],
+  HoldForm]], "Input",ExpressionUUID->"cce5d405-f19b-4350-86a3-093aeeeab492"],
 
 Cell[BoxData[
  TagBox[
@@ -60,7 +60,7 @@ Cell[BoxData[
      RowBox[{"M", ",", "H"}], "]"}], "-", 
     RowBox[{"Q", "[", 
      RowBox[{"0", ",", "H"}], "]"}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"45d2e6f7-dd18-483c-823a-1d687c1fd25e"],
+  HoldForm]], "Input",ExpressionUUID->"14b68946-05e3-4767-9c51-24e771e43a32"],
 
 Cell[BoxData[
  TagBox[
@@ -69,11 +69,11 @@ Cell[BoxData[
     RowBox[{"deltaQ", "[", 
      FractionBox["H", "2"], "]"}], 
     RowBox[{"deltaQ", "[", "H", "]"}]]}],
-  HoldForm]], "Input",ExpressionUUID->"067b268b-8ca4-4351-ac71-62e1f1d91a5d"]
+  HoldForm]], "Input",ExpressionUUID->"6c9e00af-b2d7-4f44-b411-8783c78210f4"]
 },
 FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"16265b3e-d4d9-4a48-9b54-e67fdfb61732"
+ExpressionUUID->"c9116b29-1cb7-4cbf-ac58-74bc83224b0e"
 ]
 (* End of Notebook Content *)
 
@@ -86,12 +86,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 124, 0, 70, "Title",ExpressionUUID->"78d60532-888b-4371-b185-646c3aa01f31"],
-Cell[681, 22, 192, 3, 70, "Text",ExpressionUUID->"13ddf925-b249-4432-8b16-eea18efc6cfc"],
-Cell[876, 27, 398, 12, 70, "Input",ExpressionUUID->"4d7957bc-2963-46d7-89cc-72edd93c2a9d"],
-Cell[1277, 41, 326, 10, 70, "Input",ExpressionUUID->"4c6e8c76-6e27-48b1-9f1b-fd06b9b858ad"],
-Cell[1606, 53, 305, 9, 70, "Input",ExpressionUUID->"45d2e6f7-dd18-483c-823a-1d687c1fd25e"],
-Cell[1914, 64, 260, 7, 70, "Input",ExpressionUUID->"067b268b-8ca4-4351-ac71-62e1f1d91a5d"]
+Cell[554, 20, 124, 0, 70, "Title",ExpressionUUID->"062476be-9177-491c-aace-02c87d849042"],
+Cell[681, 22, 192, 3, 70, "Text",ExpressionUUID->"354e0c76-0be1-4441-bde1-11ac6b5867fb"],
+Cell[876, 27, 398, 12, 70, "Input",ExpressionUUID->"3084c4ef-e8eb-4579-8498-98b6f7b54cf0"],
+Cell[1277, 41, 326, 10, 70, "Input",ExpressionUUID->"cce5d405-f19b-4350-86a3-093aeeeab492"],
+Cell[1606, 53, 305, 9, 70, "Input",ExpressionUUID->"14b68946-05e3-4767-9c51-24e771e43a32"],
+Cell[1914, 64, 260, 7, 70, "Input",ExpressionUUID->"6c9e00af-b2d7-4f44-b411-8783c78210f4"]
 }
 ]
 *)

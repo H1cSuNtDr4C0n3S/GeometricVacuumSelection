@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2720,         84]
+NotebookOptionsPosition[      1994,         67]
+NotebookOutlinePosition[      2308,         81]
+CellTagsIndexPosition[      2265,         78]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["02 - Matter Era Finite-Domain IR Scaling Test", "Title",ExpressionUUID->"2e59009f-fb00-4390-9c5c-3ce78385a2a4"],
+
+Cell["\<\
+Objective: in matter era, verify finite-domain non-local channel remains \
+IR-suppressed and follows expected scaling when H is reduced.\
+\>", "Text",ExpressionUUID->"6c5ababc-40ad-4342-84f8-017ceb78fe90"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"hNorm", "[", "z_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"\[ExponentialE]", "[", "z", "]"}], 
+    RowBox[{"\[ExponentialE]", "[", "zRef", "]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"6ef8b7f5-835d-4bfd-a9e6-912b36a0df66"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Rdom", "[", "h_", "]"}], ":=", 
+   FractionBox[
+    SqrtBox[
+     RowBox[{"1", "-", "z2"}]], "h"]}],
+  HoldForm]], "Input",ExpressionUUID->"3b42f2e6-0ac6-41db-8724-82c8de62177c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Q", "[", "h_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"3", " ", 
+     SuperscriptBox["h", "2"]}], "+", 
+    FractionBox[
+     RowBox[{"I1", "[", "h", "]"}], 
+     RowBox[{"I0", "[", "h", "]"}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"2d6ebcb3-9c59-4cc9-9180-637ef015beb9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"deltaQ", "[", "h_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Q", "[", "h", "]"}], "-", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["h", "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"5c3d5b2d-3050-4020-bdb0-3094e587dad9"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"deab0406-6351-4299-90cf-6650dc29e347"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 117, 0, 70, "Title",ExpressionUUID->"2e59009f-fb00-4390-9c5c-3ce78385a2a4"],
+Cell[674, 22, 215, 3, 70, "Text",ExpressionUUID->"6c5ababc-40ad-4342-84f8-017ceb78fe90"],
+Cell[892, 27, 275, 7, 70, "Input",ExpressionUUID->"6ef8b7f5-835d-4bfd-a9e6-912b36a0df66"],
+Cell[1170, 36, 224, 7, 70, "Input",ExpressionUUID->"3b42f2e6-0ac6-41db-8724-82c8de62177c"],
+Cell[1397, 45, 321, 10, 70, "Input",ExpressionUUID->"2d6ebcb3-9c59-4cc9-9180-637ef015beb9"],
+Cell[1721, 57, 269, 8, 70, "Input",ExpressionUUID->"5c3d5b2d-3050-4020-bdb0-3094e587dad9"]
+}
+]
+*)
+
+(* End of internal cache information *)

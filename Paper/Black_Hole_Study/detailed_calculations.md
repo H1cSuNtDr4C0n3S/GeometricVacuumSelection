@@ -438,6 +438,81 @@ Dal log:
 3. Il canale BH resta subleading e non O(1), quindi la selezione globale resta IR-dominata dal dominio cosmologico.
 4. Questo implementa concretamente la scelta `(1)` richiesta: `Interior regularization`.
 
+## 07 - Domain Proxy IR Class Equivalence Test
+
+Riferimenti:
+1. Script: `scripts/07_domain_proxy_ir_class_equivalence_test.wl`.
+2. Log: `logs/07_domain_proxy_ir_class_equivalence_test.log`.
+3. Notebook generato: `07_Domain_Proxy_IR_Class_Equivalence_Test.nb`.
+
+### 1) Obiettivo del test
+
+Verificare che la conclusione IR non dipenda da un tuning della prescrizione di dominio:
+1. confrontare due proxy causali ragionevoli per `D_Theta`;
+2. classificare il comportamento IR su ciascun proxy con lo stesso criterio;
+3. mostrare che la classe resta invariata.
+
+### 2) Proxy confrontati
+
+1. Proxy redshift-threshold:
+   `D_Theta^red(M,H,z2) = {r>0 | f(r;M,H) >= z2}`.
+2. Proxy apparent-horizon-based:
+   `D_Theta^app(M,H) = {r>0 | f(r;M,H) >= 0}`.
+3. In entrambi i casi si usa lo stesso canale `Q=I1/I0` e la stessa regolarizzazione locale del contributo BH in `I1`.
+
+### 3) Diagnostiche comuni
+
+Per ogni proxy:
+1. `Q(M,H)`, `Q(0,H)`, `deltaQ(H)=Q(M,H)-Q(0,H)`;
+2. ripetizione a `H/2`;
+3. rapporti:
+   `ratioDelta = deltaQ(H/2)/deltaQ(H)`,
+   `ratioI0 = I0(H/2)/I0(H)`,
+   `ratioLoc = localI1(H/2)/localI1(H)`;
+4. ampiezze relative:
+   `epsRef = deltaQ(H)/Q0(H)`,
+   `epsHalf = deltaQ(H/2)/Q0(H/2)`.
+
+Classe assegnata al proxy:
+`IR_SUPPRESSED_SUBLEADING` se `ratioDelta ~ 1/8` e `eps` resta subleading.
+
+### 4) Test anti fine-tuning
+
+Oltre al confronto 1:1 tra proxy, il test esegue una scansione
+`z2 in {0.01, 0.02, 0.05, 0.1}` sul proxy redshift e richiede:
+1. stessa classe su tutta la scansione;
+2. `ratioDelta` sempre vicino a `1/8`;
+3. `eps` sempre subleading.
+
+### 5) Benchmark numerico di riferimento
+
+Con parametri del benchmark BH (`M=1`, `H=1/100`):
+1. proxy redshift (`z2=0.05`):
+   `ratioDelta = 0.125047351783873...`,
+   `ratioI0 = 8.135159074166715...`,
+   `epsRef = 0.01359030348629268...`,
+   `epsHalf = 0.006797725843600157...`;
+2. proxy apparent-horizon:
+   `ratioDelta = 0.12510272401715578...`,
+   `ratioI0 = 8.124747757702517...`,
+   `epsRef = 0.012835120633473382...`,
+   `epsHalf = 0.006422834217345289...`;
+3. scansione `z2`:
+   `ratioDelta` in banda stretta `[0.124984..., 0.125092...]`,
+   `epsRef` in `[0.012981..., 0.014413...]`,
+   `epsHalf` in `[0.006495..., 0.007205...]`.
+
+Classificazione target del notebook:
+`classification = "PROXY_CLASS_EQUIVALENT_IR"`.
+Esito log:
+`check=True`.
+
+### 6) Lettura fisica del test 07
+
+1. Le due prescrizioni danno domini numericamente diversi, ma stessa classe IR.
+2. Il comportamento chiave (`deltaQ` IR-soppresso, BH subleading) resta invariato.
+3. La conclusione non dipende da fine-tuning del proxy causale scelto.
+
 ## Conclusione tecnica attuale
 
 1. La "domanda zero" su `D_Theta` e ora chiusa operativamente (`00`).
@@ -448,6 +523,7 @@ Dal log:
 6. Il killer test geometrico (`05`) conferma che il no-go sulle singolarita classiche resta valido anche senza profili toy.
 7. Il test `06` implementa `Interior regularization` e verifica che il core diventa integrabile (`n_eff ~ 2`), `Q` converge, e la soppressione IR resta compatibile con il quadro globale.
 8. Nel branch crossing, la consistenza del framework richiede quindi un interno regolato (oppure una ridefinizione non banale del dominio che escluda il core profondo).
+9. Il test `07` mostra che la classe IR resta invariata tra proxy causali ragionevoli, quindi il risultato non e un artefatto di tuning della definizione di `D_Theta`.
 
 ## Riproduzione rapida
 

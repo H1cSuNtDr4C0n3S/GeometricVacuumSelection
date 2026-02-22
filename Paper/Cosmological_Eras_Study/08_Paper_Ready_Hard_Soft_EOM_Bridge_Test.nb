@@ -1,0 +1,112 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3358,        103]
+NotebookOptionsPosition[      2723,         87]
+NotebookOutlinePosition[      3037,        101]
+CellTagsIndexPosition[      2994,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["08 - Paper-Ready Hard vs Soft EOM Bridge Test", "Title",ExpressionUUID->"1613ed1a-36b8-48e7-9249-874acd33fdd8"],
+
+Cell["\<\
+Objective: produce compact hard-vs-soft EOM formulas ready for main \
+text/appendix and verify internal algebraic consistency against the \
+complete-channel structure.\
+\>", "Text",ExpressionUUID->"68f23c63-22d4-4809-ba3b-7764c8feaad7"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"hardBranch", "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", 
+        SuperscriptBox["H", "2"]}], "-", 
+       SuperscriptBox["K0", "2"]}], "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"lambdaHard", "[", "a_", "]"}], "\[Equal]", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["K0", "2"], "-", "Lambda", "-", 
+        RowBox[{"kappa", " ", 
+         RowBox[{"rho", "[", "a", "]"}]}]}], 
+       RowBox[{"2", " ", "kappa", " ", 
+        SuperscriptBox["K0", "2"]}]]}]}], "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"8fd75674-4b8f-42e0-bb3f-8dece5148d66"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"softBranch", "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", 
+        SuperscriptBox["H", "2"]}], "-", 
+       SuperscriptBox["K0", "2"]}], "\[Equal]", 
+      FractionBox["sigma", 
+       SuperscriptBox["a", "3"]]}], ",", 
+     RowBox[{
+      RowBox[{"H2soft", "[", "a_", "]"}], "\[Equal]", 
+      RowBox[{
+       FractionBox[
+        SuperscriptBox["K0", "2"], "3"], "+", 
+       FractionBox["sigma", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["a", "3"]}]]}]}], ",", 
+     RowBox[{
+      RowBox[{"weff", "[", "a_", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", 
+       FractionBox["sigma", 
+        RowBox[{"sigma", "+", 
+         RowBox[{
+          SuperscriptBox["K0", "2"], " ", 
+          SuperscriptBox["a", "3"]}]}]]}]}]}], "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"541e553e-bbe4-4eda-83df-922a395cef01"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", 
+   "\[Equal]", "\"\<PAPER_READY_HARD_SOFT_EOM_BRIDGE_CONFIRMED\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"b7dd2889-6dad-429a-864c-df28acbea3dd"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 117, 0, 70, "Title",ExpressionUUID->"1613ed1a-36b8-48e7-9249-874acd33fdd8"],
+Cell[674, 22, 246, 4, 70, "Text",ExpressionUUID->"68f23c63-22d4-4809-ba3b-7764c8feaad7"],
+Cell[923, 28, 657, 19, 70, "Input",ExpressionUUID->"8fd75674-4b8f-42e0-bb3f-8dece5148d66"],
+Cell[1583, 49, 930, 29, 70, "Input",ExpressionUUID->"541e553e-bbe4-4eda-83df-922a395cef01"],
+Cell[2516, 80, 203, 5, 70, "Input",ExpressionUUID->"b7dd2889-6dad-429a-864c-df28acbea3dd"]
+}
+]
+*)
+
+(* End of internal cache information *)

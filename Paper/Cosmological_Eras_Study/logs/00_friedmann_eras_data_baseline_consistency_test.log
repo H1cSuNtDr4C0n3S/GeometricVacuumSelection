@@ -1,0 +1,40 @@
+Notebook: 00_Friedmann_Eras_Data_Baseline_Consistency_Test.nb
+sourceUsed = "embedded_snapshot"
+bestfitURL = "https://data.desi.lbl.gov/public/dr1/vac/dr1/bao-cosmo-params/v1.0/iminuit/base/desi-bao-all/bestfit.minimum.txt"
+dataFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/desi_dr1_v1.0_bestfit.minimum.txt"
+hashFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/desi_dr1_v1.0.sha256sum"
+manifestFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/manifest.md"
+expectedHash = 948784a698e81e31ef496e212bde038604b71ff4fed13ff7bda0a4ee2db12b25
+actualHash = "948784a698e81e31ef496e212bde038604b71ff4fed13ff7bda0a4ee2db12b25"
+checkA(files exist) = True
+checkB(parse + required keys) = True
+checkC(sha256 match) = True
+hrdrag = 101.94944
+rdrag = 151.35012
+H0rdrag = 10194.944
+h0DESIFromHrdrag = 67.35999945028124
+h0DESIFromH0rdrag = 67.35999945028124
+checkD(H0 reconstruction consistency) = True
+omPlanck = 0.30966
+omDESI = 0.29353038
+orPlanck = 0.0000912427019293302
+orDESI = 0.0000920572451620294
+olPlanck = 0.6902487572980707
+olDESI = 0.70639
+zEqPlanck = 3392.805679273281
+zEqDESI = 3187.563588703517
+zLambdaMatterPlanck = 0.306291721795789
+zLambdaMatterDESI = 0.34007928913383556
+checkE(era ordering) = True
+wRadPlanck(z=1e6) = 0.33220589221708013
+wMatPlanck(z=100) = 0.009631223177569712
+wDSPlanck(z=-0.9) = -0.9995515626863059
+checkF(w_eff probes) = True
+checkG(Planck-DESI parameter proximity) = True
+zSamples = {0, 1, 10, 100}
+eRatios = {1.0000062186032455, 0.9820279811418215, 0.9737732857167074, 0.9745128732102355}
+maxERelDiff = 0.026226714283292596
+checkH(background closeness across eras) = True
+checkI(source availability policy) = True
+classification = "STANDARD_ERA_HISTORY_COMPATIBLE"
+check = True

@@ -11,6 +11,7 @@ Questa cartella e separata dalle altre pipeline e contiene test mirati sui buchi
 6. Validare che il BH non spenga la selezione del vuoto (scaling IR con `H -> H/2`).
 7. Eseguire il killer test con `K2` geometrico reale (non toy) sulla foliazione crossing.
 8. Implementare e validare la via `Interior regularization` come scelta coerente dopo il killer test.
+9. Verificare la robustezza della classe IR rispetto alla scelta del proxy di dominio causale (`redshift-threshold` vs `apparent-horizon-based`).
 
 ## Struttura
 1. `scripts/00_dtheta_domain_sds_shape_derivative.wl`
@@ -20,10 +21,11 @@ Questa cartella e separata dalle altre pipeline e contiene test mirati sui buchi
 5. `scripts/04_bh_non_switches_off_selection_ir_scaling_test.wl`
 6. `scripts/05_geometric_k2_cutoff_killer_test.wl`
 7. `scripts/06_interior_regularization_consistency_test.wl`
-8. `logs/`
-9. `summary.md`
-10. `detailed_calculations.md`
-11. `run_all.ps1`
+8. `scripts/07_domain_proxy_ir_class_equivalence_test.wl`
+9. `logs/`
+10. `summary.md`
+11. `detailed_calculations.md`
+12. `run_all.ps1`
 
 ## Cosa verifica il notebook 00
 1. Definizione operativa:
@@ -100,6 +102,20 @@ Questa cartella e separata dalle altre pipeline e contiene test mirati sui buchi
 6. Classifica la consistenza del ramo:
    `classification="INTERIOR_REGULARIZATION_CONSISTENT"` se convergenza core + soppressione IR restano vere.
 
+## Cosa verifica il notebook 07
+1. Definisce due proxy ragionevoli per `D_Theta`:
+   `redshift-threshold`: `f(r;M,H) >= z2`,
+   `apparent-horizon-based`: `f(r;M,H) >= 0`.
+2. Per ciascun proxy calcola:
+   `Q(M,H)`, `Q(0,H)`, `deltaQ(H)=Q(M,H)-Q(0,H)`,
+   e ripete il test IR a `H/2`.
+3. Classifica il comportamento di ciascun proxy come:
+   `IR_SUPPRESSED_SUBLEADING` se `deltaQ(H/2)/deltaQ(H) ~ 1/8` e il contributo BH resta subleading.
+4. Esegue una scansione su `z2` nel proxy redshift per testare stabilita di classe:
+   `z2 in {0.01, 0.02, 0.05, 0.1}`.
+5. Conclude con:
+   `classification="PROXY_CLASS_EQUIVALENT_IR"` se entrambe le prescrizioni danno la stessa classe IR e la scansione su `z2` non cambia la classificazione.
+
 ## Esito attuale
 Dal log `logs/00_dtheta_domain_sds_shape_derivative.log`:
 1. `check=True`.
@@ -165,6 +181,24 @@ Dal log `logs/06_interior_regularization_consistency_test.log`:
    `ratioI0 = 8.12468890948...`,
    `epsRef = 0.14619...`, `epsHalf = 0.08254...` (subleading, non O(1)).
 
+Dal log `logs/07_domain_proxy_ir_class_equivalence_test.log`:
+1. `check=True`.
+2. `classification = "PROXY_CLASS_EQUIVALENT_IR"`.
+3. proxy redshift (`z2=0.05`):
+   `ratioDelta = 0.125047351783873...`,
+   `ratioI0 = 8.135159074166715...`,
+   `epsRef = 0.01359030348629268...`,
+   `epsHalf = 0.006797725843600157...`.
+4. proxy apparent-horizon:
+   `ratioDelta = 0.12510272401715578...`,
+   `ratioI0 = 8.124747757702517...`,
+   `epsRef = 0.012835120633473382...`,
+   `epsHalf = 0.006422834217345289...`.
+5. scan `z2={0.01,0.02,0.05,0.1}`:
+   classe sempre `IR_SUPPRESSED_SUBLEADING`,
+   `ratioDelta` in banda `0.124984... - 0.125092...`,
+   `eps` sempre subleading.
+
 ## Risposta operativa alla tua domanda 2
 1. Nel patch Kottler il test `01` trova una foliazione globale regolare che attraversa gli orizzonti.
 2. In coordinate statiche `t` le foglie possono apparire asintotiche (slope molto grande vicino all'orizzonte), ma e un effetto di coordinate.
@@ -195,6 +229,13 @@ Dal log `logs/06_interior_regularization_consistency_test.log`:
 2. Nel nuovo test `06`, il core passa a regime integrabile (`n_eff ~ 2 < 3`) e `Q(rmin)` converge.
 3. Il canale IR resta coerente con la narrativa globale:
    il BH resta locale e la soppressione con volume cosmologico e preservata.
+
+## Risposta operativa: confronto tra proxy causali
+1. Il test `07` confronta direttamente due prescrizioni di dominio:
+   `redshift-threshold` e `apparent-horizon-based`.
+2. Il criterio di confronto non e il valore puntuale di `Q`, ma la classe IR:
+   soppressione di `deltaQ` con legge di volume cosmologico (`~1/Volume`, rapporto `~1/8` a `H -> H/2`).
+3. Se entrambe le prescrizioni cadono nella stessa classe (`IR_SUPPRESSED_SUBLEADING`) e la scansione su `z2` mantiene la classe, il risultato non e fine-tuning del dominio.
 
 ## Risposta operativa alla validazione "BH non spegne selezione"
 1. Il test `04` conferma la narrativa IR:

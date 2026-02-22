@@ -1,0 +1,69 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2129,         60]
+NotebookOptionsPosition[      1588,         45]
+NotebookOutlinePosition[      1902,         59]
+CellTagsIndexPosition[      1859,         56]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["10 - Pipeline 06-09 Appendix-Ready Summary Test", "Title",ExpressionUUID->"bfe41a67-6e40-4c3e-8447-3eb0e6b35648"],
+
+Cell["\<\
+Objective: build a compact, reproducible summary table for the complete-EOM \
+block (tests 06-09) and verify that the hard-vs-soft storyline is internally \
+consistent and not fine-tuned.\
+\>", "Text",ExpressionUUID->"c9356cd9-e1af-47d1-9e5b-8be8c19e0403"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"classesExpected", "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<COMPLETE_EOM_MATTER_SELFCONSISTENT_DS_BRANCH_ONLY\>\"", 
+     ",", "\"\<COMPLETE_EOM_SOFT_CLOSURE_EVOLVING_BRANCH_FOUND\>\"", 
+     ",", "\"\<PAPER_READY_HARD_SOFT_EOM_BRIDGE_CONFIRMED\>\"", 
+     ",", "\"\<COMPLETE_EOM_SOFT_BRANCH_ROBUST_NOT_FINE_TUNED\>\""}], "}"}]}],
+  
+  HoldForm]], "Input",ExpressionUUID->"240dc0a5-23cd-4b1c-9151-dc607a8423e5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", "\[Equal]", "\"\<PIPELINE_06_09_APPENDIX_READY\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"d4ce3df0-ec16-415a-bfad-425f54108acb"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"87ab83c0-bd66-46b7-a27f-dc7df3b37a5e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 119, 0, 70, "Title",ExpressionUUID->"bfe41a67-6e40-4c3e-8447-3eb0e6b35648"],
+Cell[676, 22, 266, 4, 70, "Text",ExpressionUUID->"c9356cd9-e1af-47d1-9e5b-8be8c19e0403"],
+Cell[945, 28, 450, 9, 70, "Input",ExpressionUUID->"240dc0a5-23cd-4b1c-9151-dc607a8423e5"],
+Cell[1398, 39, 186, 4, 70, "Input",ExpressionUUID->"d4ce3df0-ec16-415a-bfad-425f54108acb"]
+}
+]
+*)
+
+(* End of internal cache information *)

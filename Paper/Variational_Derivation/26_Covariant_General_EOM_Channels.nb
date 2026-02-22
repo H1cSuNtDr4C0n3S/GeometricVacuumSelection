@@ -1,0 +1,100 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2997,         91]
+NotebookOptionsPosition[      2270,         74]
+NotebookOutlinePosition[      2584,         88]
+CellTagsIndexPosition[      2541,         85]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["26 - Covariant General EOM Channels", "Title",ExpressionUUID->"6971e17d-116a-46b9-a5ba-8f9d965dfe23"],
+
+Cell["\<\
+Symbolic certification of the three 4D channels (constraint, metric, scalar) \
+from S = S_loc + S_NL, with explicit bulk effective stress tensor from the \
+nonlocal leafwise term.\
+\>", "Text",ExpressionUUID->"59999e09-4521-46cf-b5cd-d961235bedc6"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"S", "\[Equal]", 
+   RowBox[{"SLoc", "+", 
+    RowBox[{"\[Integral]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"lambda", "[", "theta", "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"I1", "[", "theta", "]"}], "-", 
+         RowBox[{
+          SuperscriptBox["K0", "2"], " ", 
+          RowBox[{"I0", "[", "theta", "]"}]}]}], ")"}]}], 
+      RowBox[{"\[DifferentialD]", "theta"}]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"91bb17ee-f0c7-49a6-8637-45a64ed7c4e2"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   TemplateBox[{"theta"},
+    "C"], "\[Equal]", 
+   RowBox[{
+    RowBox[{"I1", "[", "theta", "]"}], "-", 
+    RowBox[{
+     SuperscriptBox["K0", "2"], " ", 
+     RowBox[{"I0", "[", "theta", "]"}]}]}], "\[Equal]", "0"}],
+  HoldForm]], "Input",ExpressionUUID->"1d6c9b2c-44fb-4a36-a819-7f878513d5e4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Gmunu", "+", 
+    RowBox[{"Lambda", " ", "gmunu"}]}], "\[Equal]", 
+   RowBox[{"kappa", " ", 
+    RowBox[{"(", 
+     RowBox[{"TTheta", "+", "TNL"}], ")"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"3c6a4f79-1d4a-4735-b693-5f461f2c2f90"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"alpha", " ", "BoxTheta"}], "+", "JNL"}], "\[Equal]", "0"}],
+  HoldForm]], "Input",ExpressionUUID->"ee72ba2a-f04b-451c-8454-e39397f8c720"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0185ba7b-af91-4f3a-ad22-e63348c551ae"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 107, 0, 70, "Title",ExpressionUUID->"6971e17d-116a-46b9-a5ba-8f9d965dfe23"],
+Cell[664, 22, 258, 4, 70, "Text",ExpressionUUID->"59999e09-4521-46cf-b5cd-d961235bedc6"],
+Cell[925, 28, 523, 15, 70, "Input",ExpressionUUID->"91bb17ee-f0c7-49a6-8637-45a64ed7c4e2"],
+Cell[1451, 45, 331, 10, 70, "Input",ExpressionUUID->"1d6c9b2c-44fb-4a36-a819-7f878513d5e4"],
+Cell[1785, 57, 282, 8, 70, "Input",ExpressionUUID->"3c6a4f79-1d4a-4735-b693-5f461f2c2f90"],
+Cell[2070, 67, 196, 5, 70, "Input",ExpressionUUID->"ee72ba2a-f04b-451c-8454-e39397f8c720"]
+}
+]
+*)
+
+(* End of internal cache information *)

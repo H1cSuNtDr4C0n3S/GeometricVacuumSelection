@@ -18,12 +18,12 @@ WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["01 - Kottler Global Foliation: Crossing vs Asymptotic Stall", "Title",ExpressionUUID->"11cfe22f-90af-4c90-a657-5fc7940e8161"],
+Cell["01 - Kottler Global Foliation: Crossing vs Asymptotic Stall", "Title",ExpressionUUID->"ed3311e5-1464-4efb-88ac-b0edf0849af1"],
 
 Cell["\<\
 Operational test for question 2: in Schwarzschild-de Sitter, does a regular \
 global foliation Theta cross horizons or stall at them?\
-\>", "Text",ExpressionUUID->"ae03c992-cfd5-4d5e-af3c-c3adc1173fe2"],
+\>", "Text",ExpressionUUID->"8b3485f9-e5ca-492c-897c-9eaee77fb47f"],
 
 Cell[BoxData[
  TagBox[
@@ -36,7 +36,7 @@ Cell[BoxData[
     RowBox[{
      SuperscriptBox["H", "2"], " ", 
      SuperscriptBox["r", "2"]}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"c0eb5a4a-41b2-42f8-aaa5-e7d03a4995df"],
+  HoldForm]], "Input",ExpressionUUID->"ce322379-7922-428f-802c-a3577c1e245f"],
 
 Cell[BoxData[
  TagBox[
@@ -55,7 +55,7 @@ Cell[BoxData[
         RowBox[{"r", ",", "M", ",", "H"}], "]"}]}]], 
      RowBox[{"f", "[", 
       RowBox[{"r", ",", "M", ",", "H"}], "]"}]]}]}],
-  HoldForm]], "Input",ExpressionUUID->"60f8759d-58cb-4aac-a496-4d3b2ecab199"],
+  HoldForm]], "Input",ExpressionUUID->"35b9b376-9e7a-49a2-8158-8713492e349e"],
 
 Cell[BoxData[
  TagBox[
@@ -72,7 +72,7 @@ Cell[BoxData[
        SubscriptBox["\[PartialD]", 
         RowBox[{"x", "[", "nu", "]"}]], "Theta"}]}], ")"}]}], "\[Equal]", 
    "1"}],
-  HoldForm]], "Input",ExpressionUUID->"72b1189b-321c-4cb1-8ea7-faaff4229c1a"],
+  HoldForm]], "Input",ExpressionUUID->"6e18cfca-228c-47e0-9b77-929d8d4aa08f"],
 
 Cell[BoxData[
  TagBox[
@@ -87,16 +87,16 @@ Cell[BoxData[
     SuperscriptBox["dr", "2"], "+", 
     RowBox[{
      SuperscriptBox["r", "2"], " ", "dOmega2"}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"cb7367dd-004e-412b-b8bc-015fb5c65995"],
+  HoldForm]], "Input",ExpressionUUID->"f62b7ffc-18b3-4d62-a913-74f35016d59e"],
 
 Cell[BoxData[
  TagBox[
   RowBox[{"behavior", "\[Equal]", "\"\<A_crossing\>\""}],
-  HoldForm]], "Input",ExpressionUUID->"c5214e46-a409-4fb9-9b04-05e0a8e1d1a7"]
+  HoldForm]], "Input",ExpressionUUID->"cd6499cb-8938-49c3-99fa-99a772a8ee01"]
 },
 FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"74766fa5-ace0-4c11-a882-2afd6a32b5cc"
+ExpressionUUID->"c9116b29-1cb7-4cbf-ac58-74bc83224b0e"
 ]
 (* End of Notebook Content *)
 
@@ -109,13 +109,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 131, 0, 70, "Title",ExpressionUUID->"11cfe22f-90af-4c90-a657-5fc7940e8161"],
-Cell[688, 22, 212, 3, 70, "Text",ExpressionUUID->"ae03c992-cfd5-4d5e-af3c-c3adc1173fe2"],
-Cell[903, 27, 357, 11, 70, "Input",ExpressionUUID->"c0eb5a4a-41b2-42f8-aaa5-e7d03a4995df"],
-Cell[1263, 40, 567, 17, 70, "Input",ExpressionUUID->"60f8759d-58cb-4aac-a496-4d3b2ecab199"],
-Cell[1833, 59, 501, 15, 70, "Input",ExpressionUUID->"72b1189b-321c-4cb1-8ea7-faaff4229c1a"],
-Cell[2337, 76, 430, 13, 70, "Input",ExpressionUUID->"cb7367dd-004e-412b-b8bc-015fb5c65995"],
-Cell[2770, 91, 158, 3, 70, "Input",ExpressionUUID->"c5214e46-a409-4fb9-9b04-05e0a8e1d1a7"]
+Cell[554, 20, 131, 0, 70, "Title",ExpressionUUID->"ed3311e5-1464-4efb-88ac-b0edf0849af1"],
+Cell[688, 22, 212, 3, 70, "Text",ExpressionUUID->"8b3485f9-e5ca-492c-897c-9eaee77fb47f"],
+Cell[903, 27, 357, 11, 70, "Input",ExpressionUUID->"ce322379-7922-428f-802c-a3577c1e245f"],
+Cell[1263, 40, 567, 17, 70, "Input",ExpressionUUID->"35b9b376-9e7a-49a2-8158-8713492e349e"],
+Cell[1833, 59, 501, 15, 70, "Input",ExpressionUUID->"6e18cfca-228c-47e0-9b77-929d8d4aa08f"],
+Cell[2337, 76, 430, 13, 70, "Input",ExpressionUUID->"f62b7ffc-18b3-4d62-a913-74f35016d59e"],
+Cell[2770, 91, 158, 3, 70, "Input",ExpressionUUID->"cd6499cb-8938-49c3-99fa-99a772a8ee01"]
 }
 ]
 *)

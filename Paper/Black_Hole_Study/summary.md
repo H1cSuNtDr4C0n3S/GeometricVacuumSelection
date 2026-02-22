@@ -2,7 +2,7 @@
 
 Mappa notebook `Paper/Black_Hole_Study` -> passaggi matematici, output verificati e lettura fisica.
 
-## Notebook 00-06
+## Notebook 00-07
 
 1. `00_DTheta_Domain_SdS_Shape_Derivative.nb`
 `Riferimento`: definizione operativa di `D_Theta` nel patch Schwarzschild-de Sitter con soglia di redshift `z2`.
@@ -134,6 +134,29 @@ Mappa notebook `Paper/Black_Hole_Study` -> passaggi matematici, output verificat
 `Interpretazione`: con core regolarizzato il ramo crossing resta coerente: il contributo profondo diventa integrabile (`n_eff<3`), `Q` converge, e il BH resta una correzione locale IR-soppressa.
 `Esito log`: `check=True`.
 
+8. `07_Domain_Proxy_IR_Class_Equivalence_Test.nb`
+`Riferimento`: confronto diretto tra due proxy causali ragionevoli per `D_Theta` (`redshift-threshold` vs `apparent-horizon-based`) per verificare robustezza della classe IR e assenza di fine-tuning.
+`Output`:
+1. proxy confrontati:
+   `D_Theta^red: f(r;M,H) >= z2`, `D_Theta^app: f(r;M,H) >= 0`;
+2. benchmark proxy redshift (`z2=0.05`):
+   `ratioDelta=deltaQ(H/2)/deltaQ(H)=0.125047351783873...`,
+   `ratioI0=I0(H/2)/I0(H)=8.135159074166715...`,
+   `epsRef=0.01359030348629268...`, `epsHalf=0.006797725843600157...`;
+3. benchmark proxy apparent-horizon:
+   `ratioDelta=0.12510272401715578...`,
+   `ratioI0=8.124747757702517...`,
+   `epsRef=0.012835120633473382...`, `epsHalf=0.006422834217345289...`;
+4. accordo di classe tra proxy:
+   entrambi classificati `IR_SUPPRESSED_SUBLEADING` (stesso comportamento IR, differenze solo di normalizzazione O(10^-3));
+5. test anti fine-tuning sul proxy redshift:
+   scansione `z2 in {0.01,0.02,0.05,0.1}` con `ratioDelta` sempre vicino a `1/8` (`~0.124984... - 0.125092...`) e `eps` sempre subleading;
+6. classificazione complessiva:
+   `classification="PROXY_CLASS_EQUIVALENT_IR"`.
+`Perche questo passaggio`: risponde all'obiezione che il risultato IR possa dipendere in modo artificiale dalla scelta del dominio.
+`Interpretazione`: il meccanismo non e un tuning del proxy: cambiando prescrizione causale in modo ragionevole resta invariata la classe fisica (`deltaQ` IR-soppresso, BH subleading).
+`Esito log`: `check=True`.
+
 ## Quadro fisico attuale
 1. `D_Theta` e ora definito in forma operativa con bordo mobile calcolabile (`00`).
 2. La biforcazione della domanda 2, nel caso Kottler testato, cade nel caso `A` (foglie che attraversano) (`01`).
@@ -143,6 +166,7 @@ Mappa notebook `Paper/Black_Hole_Study` -> passaggi matematici, output verificat
 6. Il test `04` conferma direttamente la narrativa "BH = sotto-regione locale su sfondo gia selezionato", con `deltaQ(H/2) ~ deltaQ(H)/8`.
 7. Il killer test `05` conferma che, nel setup geometrico reale crossing, il core e effettivamente `n_eff ~ 3` e il no-go resta valido senza ipotesi toy.
 8. Il test `06` implementa la scelta `Interior regularization`: il core diventa integrabile (`n_eff ~ 2`), il cutoff converge e la soppressione IR resta compatibile con la tesi principale.
+9. Il test `07` mostra robustezza rispetto al proxy di dominio: `redshift-threshold` e `apparent-horizon-based` cadono nella stessa classe IR (`PROXY_CLASS_EQUIVALENT_IR`), quindi il risultato non e fine-tuning.
 
 ## Nota operativa
 

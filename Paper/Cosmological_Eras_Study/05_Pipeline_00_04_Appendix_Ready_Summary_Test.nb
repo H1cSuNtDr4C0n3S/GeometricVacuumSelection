@@ -1,0 +1,69 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2091,         60]
+NotebookOptionsPosition[      1550,         45]
+NotebookOutlinePosition[      1864,         59]
+CellTagsIndexPosition[      1821,         56]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["05 - Pipeline 00-04 Appendix-Ready Summary Test", "Title",ExpressionUUID->"d3fac194-4763-40b1-9953-768c843e38dc"],
+
+Cell["\<\
+Objective: produce a compact, reproducible summary table of tests 00-04 and \
+verify the whole Cosmological_Eras pipeline is internally consistent and \
+appendix-ready.\
+\>", "Text",ExpressionUUID->"9fc7415e-b475-4426-a2b3-04c85a8bb7d1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"classesExpected", "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<STANDARD_ERA_HISTORY_COMPATIBLE\>\"", 
+     ",", "\"\<RADIATION_ERA_IR_SUPPRESSED\>\"", 
+     ",", "\"\<MATTER_ERA_IR_SUPPRESSED\>\"", 
+     ",", "\"\<ERAS_PIPELINE_CONTINUITY_CONFIRMED\>\"", 
+     ",", "\"\<ERA_PROXY_CLASS_EQUIVALENT_IR\>\""}], "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"12663ece-3b8f-4609-95c0-42e87a7ed37c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", "\[Equal]", "\"\<PIPELINE_00_04_APPENDIX_READY\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"20e5348d-54c3-4acf-a7ff-c3dfecfd656d"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 119, 0, 70, "Title",ExpressionUUID->"d3fac194-4763-40b1-9953-768c843e38dc"],
+Cell[676, 22, 247, 4, 70, "Text",ExpressionUUID->"9fc7415e-b475-4426-a2b3-04c85a8bb7d1"],
+Cell[926, 28, 431, 9, 70, "Input",ExpressionUUID->"12663ece-3b8f-4609-95c0-42e87a7ed37c"],
+Cell[1360, 39, 186, 4, 70, "Input",ExpressionUUID->"20e5348d-54c3-4acf-a7ff-c3dfecfd656d"]
+}
+]
+*)
+
+(* End of internal cache information *)

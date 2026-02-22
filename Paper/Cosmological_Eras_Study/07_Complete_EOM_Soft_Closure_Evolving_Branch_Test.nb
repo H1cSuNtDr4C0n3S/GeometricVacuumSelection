@@ -1,0 +1,113 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3421,        104]
+NotebookOptionsPosition[      2601,         86]
+NotebookOutlinePosition[      2915,        100]
+CellTagsIndexPosition[      2872,         97]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["07 - Complete EOM Soft-Closure Evolving Branch Test", "Title",ExpressionUUID->"be692280-fdf3-4c1d-a68d-73a6bd4c19b7"],
+
+Cell["\<\
+Objective: test a finite-domain inspired soft closure for the constraint \
+channel and verify existence of an evolving matter->de Sitter branch that is \
+self-consistent in the complete EOM channels.\
+\>", "Text",ExpressionUUID->"2245ddcb-a6c5-4589-92e3-a660a85eefbc"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"softConstraintNormalized", "\[Equal]", 
+   RowBox[{
+    RowBox[{"3", " ", 
+     SuperscriptBox["H", "2"]}], "-", 
+    SuperscriptBox["K0", "2"]}], "\[Equal]", 
+   FractionBox["sigma", 
+    SuperscriptBox["a", "3"]]}],
+  HoldForm]], "Input",ExpressionUUID->"f1f1f44e-f30a-4e41-85fb-bc9b9f866f6c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"H2soft", "[", "a_", "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["K0", "2"], "3"], "+", 
+    FractionBox["sigma", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["a", "3"]}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"f79d9926-42f4-43d2-a447-310ad935aae1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Ea", ",", "EN"}], "}"}], "\[Equal]", "0"}], "&&", 
+   RowBox[{
+    FractionBox["Elam", 
+     SuperscriptBox["a", "3"]], "\[Equal]", 
+    FractionBox["sigma", 
+     SuperscriptBox["a", "3"]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"bb066dde-b683-46b3-a9bf-148bdc146a13"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"weff", "[", "a_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"-", "1"}], "-", 
+    RowBox[{
+     FractionBox["1", "3"], " ", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", 
+       RowBox[{"Log", "[", "a", "]"}]], 
+      RowBox[{"Log", "[", 
+       RowBox[{"H2soft", "[", "a", "]"}], "]"}]}]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"df529b41-04f5-4e22-8fd9-8e8eb3ba8a07"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", 
+   "\[Equal]", "\"\<COMPLETE_EOM_SOFT_CLOSURE_EVOLVING_BRANCH_FOUND\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"297acdfc-07f2-4698-8a6b-692a6470f632"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 123, 0, 70, "Title",ExpressionUUID->"be692280-fdf3-4c1d-a68d-73a6bd4c19b7"],
+Cell[680, 22, 278, 4, 70, "Text",ExpressionUUID->"2245ddcb-a6c5-4589-92e3-a660a85eefbc"],
+Cell[961, 28, 329, 9, 70, "Input",ExpressionUUID->"f1f1f44e-f30a-4e41-85fb-bc9b9f866f6c"],
+Cell[1293, 39, 319, 10, 70, "Input",ExpressionUUID->"f79d9926-42f4-43d2-a447-310ad935aae1"],
+Cell[1615, 51, 350, 11, 70, "Input",ExpressionUUID->"bb066dde-b683-46b3-a9bf-148bdc146a13"],
+Cell[1968, 64, 418, 13, 70, "Input",ExpressionUUID->"df529b41-04f5-4e22-8fd9-8e8eb3ba8a07"],
+Cell[2389, 79, 208, 5, 70, "Input",ExpressionUUID->"297acdfc-07f2-4698-8a6b-692a6470f632"]
+}
+]
+*)
+
+(* End of internal cache information *)

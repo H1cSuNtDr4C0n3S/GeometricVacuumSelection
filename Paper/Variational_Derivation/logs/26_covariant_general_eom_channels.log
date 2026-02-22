@@ -1,0 +1,28 @@
+Notebook: 26_Covariant_General_EOM_Channels.nb
+deltaSNLeta = eta*i1 - eta*i0*k0^2
+expectedDeltaSNLeta = eta*i1 - eta*i0*k0^2
+checkA(constraint channel) = True
+dMuRaw = -1/2*(dg*g*mu) + (dg*mu*uu)/2
+dMuExpected = -1/2*(dg*g*mu) + (dg*mu*uu)/2
+checkB(dmu metric identity) = True
+metricCoeffI0 = -1/2*(chi*h*mu)
+expectedCoeffI0 = -1/2*(chi*h*mu)
+checkC(dI0 metric coeff) = True
+metricCoeffI1 = -1/2*(chi*h*k2*mu) + chi*mu*piG
+expectedCoeffI1 = -1/2*(chi*h*k2*mu) + chi*mu*piG
+checkD(dI1 metric coeff) = True
+metricCoeffSNL = (chi*h*k0^2*lam*mu)/2 - (chi*h*k2*lam*mu)/2 + chi*lam*mu*piG
+expectedMetricCoeffSNL = (chi*h*k0^2*lam*mu)/2 - (chi*h*k2*lam*mu)/2 + chi*lam*mu*piG
+checkE(dS_NL metric coeff) = True
+tnlBulkFromDef = -(chi*h*k0^2*lam*mu) + chi*h*k2*lam*mu - 2*chi*lam*mu*piG
+tnlBulkExpected = -(chi*h*k0^2*lam*mu) + chi*h*k2*lam*mu - 2*chi*lam*mu*piG
+checkF(TNL bulk explicit) = True
+scalarEquationLHS = alpha*boxTheta + jNL
+checkG(scalar channel assembly) = True
+metricEqLHS = gEin/kappa + (gmn*Lambda)/kappa - tNL - tTheta
+metricEqExpected = gEin/kappa + (gmn*Lambda)/kappa - tNL - tTheta
+checkH(metric channel assembly) = True
+lamRule = {lam0 -> (3*h0^2 - Lambda)/(6*h0^2*kappa)}
+lam0(Lambda=0,H^2=K0^2/3) = 1/(2*kappa)
+checkI(deSitter lambda) = True
+check = True

@@ -1,0 +1,19 @@
+Notebook: 05_Pipeline_00_04_Appendix_Ready_Summary_Test.nb
+sourceUsed = "embedded_snapshot"
+bestfitURL = "https://data.desi.lbl.gov/public/dr1/vac/dr1/bao-cosmo-params/v1.0/iminuit/base/desi-bao-all/bestfit.minimum.txt"
+dataFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/desi_dr1_v1.0_bestfit.minimum.txt"
+hashFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/desi_dr1_v1.0.sha256sum"
+manifestFile = "/C:/lean/StaticSanityCheck/Paper/Cosmological_Eras_Study/data/manifest.md"
+expectedHash = 948784a698e81e31ef496e212bde038604b71ff4fed13ff7bda0a4ee2db12b25
+actualHash = "948784a698e81e31ef496e212bde038604b71ff4fed13ff7bda0a4ee2db12b25"
+checkDataA = True
+checkDataB = True
+checkDataC = True
+rows = {<|"test" -> "00", "title" -> "Data baseline consistency", "classification" -> "STANDARD_ERA_HISTORY_COMPATIBLE", "check" -> True|>, <|"test" -> "01", "title" -> "Radiation era IR scaling", "classification" -> "RADIATION_ERA_IR_SUPPRESSED", "check" -> True|>, <|"test" -> "02", "title" -> "Matter era IR scaling", "classification" -> "MATTER_ERA_IR_SUPPRESSED", "check" -> True|>, <|"test" -> "03", "title" -> "Era continuity global channel", "classification" -> "ERAS_PIPELINE_CONTINUITY_CONFIRMED", "check" -> True|>, <|"test" -> "04", "title" -> "Proxy equivalence across eras", "classification" -> "ERA_PROXY_CLASS_EQUIVALENT_IR", "check" -> True|>}
+classesObserved = {"STANDARD_ERA_HISTORY_COMPATIBLE", "RADIATION_ERA_IR_SUPPRESSED", "MATTER_ERA_IR_SUPPRESSED", "ERAS_PIPELINE_CONTINUITY_CONFIRMED", "ERA_PROXY_CLASS_EQUIVALENT_IR"}
+classesExpected = {"STANDARD_ERA_HISTORY_COMPATIBLE", "RADIATION_ERA_IR_SUPPRESSED", "MATTER_ERA_IR_SUPPRESSED", "ERAS_PIPELINE_CONTINUITY_CONFIRMED", "ERA_PROXY_CLASS_EQUIVALENT_IR"}
+checkAllRows = True
+checkClasses = True
+summaryMarkdown = "| Test | Title | Classification | Check |\n|---|---|---|---|\n| 00 | Data baseline consistency | STANDARD_ERA_HISTORY_COMPATIBLE | True |\n| 01 | Radiation era IR scaling | RADIATION_ERA_IR_SUPPRESSED | True |\n| 02 | Matter era IR scaling | MATTER_ERA_IR_SUPPRESSED | True |\n| 03 | Era continuity global channel | ERAS_PIPELINE_CONTINUITY_CONFIRMED | True |\n| 04 | Proxy equivalence across eras | ERA_PROXY_CLASS_EQUIVALENT_IR | True |"
+classification = "PIPELINE_00_04_APPENDIX_READY"
+check = True

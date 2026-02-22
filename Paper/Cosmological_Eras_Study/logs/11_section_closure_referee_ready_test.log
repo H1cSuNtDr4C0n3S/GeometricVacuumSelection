@@ -1,0 +1,27 @@
+Notebook: 11_Section_Closure_Referee_Ready_Test.nb
+constraintForm = -K0^2 + (3*Derivative[1][aa][t]^2)/aa[t]^2
+hardPowerNoGo = False
+weffEarly = -1.07999883360125971063951250932648992739087841785130872058658176649169219`50.*^-6
+weffMid = -0.51923076923076923076923076923076923076923076923076923076923076923076923076923`50.
+weffLate = -0.99999907407493141210054435134782282608997584261496054170320212666469753268747`50.
+zLambdaMatterPlanck = 0.306291721795789
+zSoftPlanck = 0.306291721795789
+scanRatios = {1/20, 1/5, 1, 3}
+ratioSpan = 60.`50.
+scanData = {<|"ratio" -> 0.05`50., "maxResidual" -> 0, "pass" -> True|>, <|"ratio" -> 0.2`50., "maxResidual" -> 0, "pass" -> True|>, <|"ratio" -> 1.`50., "maxResidual" -> 0, "pass" -> True|>, <|"ratio" -> 3.`50., "maxResidual" -> 0, "pass" -> True|>}
+maxResidualScan = 0
+checkA(hard constraint channel form) = True
+checkB(Elam on hard branch) = True
+checkC(EN solved on hard branch) = True
+checkD(Ea solved on hard branch) = True
+checkE(hard branch power-law no-go) = True
+checkF(Ea on soft branch) = True
+checkG(EN on soft branch) = True
+checkH(soft channel residual) = True
+checkI(soft matter->deSitter trend) = True
+checkJ(Planck transition anchor) = True
+checkK(anti-fine-tuning scan) = True
+refereeClosureSnippet = "Complete-EOM closure test: (i) hard channel selects a self-consistent de Sitter branch, (ii) a finite-domain soft closure restores an evolving matter->de Sitter solution, (iii) the branch is not fine-tuned (broad parameter scan, vanishing residuals), and its transition anchor matches the standard Planck matter-vacuum scale."
+closureChecklistMarkdown = "| Claim | Status |\n|---|---|\n| Hard branch consistency and power-law no-go | True |\n| Soft branch complete-channel consistency | True |\n| Matter->de Sitter effective evolution | True |\n| Planck transition anchor match | True |\n| Broad-parameter anti-fine-tuning scan | True |"
+classification = "COSMOLOGICAL_ERAS_SECTION_CLOSURE_READY"
+check = True

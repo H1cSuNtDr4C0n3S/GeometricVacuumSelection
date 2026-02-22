@@ -2,7 +2,7 @@
 
 Mappa notebook `Paper/Variational_Derivation` -> passaggi matematici, output verificati e lettura fisica.
 
-## Notebook 00-25
+## Notebook 00-26
 
 1. `00_Variational_Seed.nb`
 `Riferimento`: azione con moltiplicatore di Lagrange, `eq:lag_mult` (`Paper/main.tex:301`).
@@ -161,8 +161,14 @@ Mappa notebook `Paper/Variational_Derivation` -> passaggi matematici, output ver
 `Perche questo passaggio`: chiude la derivazione variazionale in forma coerente con l'azione del paper, distinguendo enforcement (`delta lambda`) da risposta geometrica bulk+boundary.
 `Interpretazione fisica dell'output`: nel canale della media normalizzata le correzioni decadono come `1/I0` (qui `~L^-3`), quindi la modifica non-locale resta IR-dominata e localmente soppressa, in linea con l'argomento di recupero GR locale nel paper.
 
+27. `26_Covariant_General_EOM_Channels.nb`
+`Riferimento`: richiesta revisore sulle EOM generali esplicite (vincolo, metrica, scalare) e identificazione del tensore efficace non-locale.
+`Output`: `checkA=True` (canale vincolo da variazione in `lambda`), `checkB=True` (`delta mu = -(1/2) mu h_{mn} delta g^{mn}`), `checkC=True`, `checkD=True` (coefficienti metrici di `delta I0`, `delta I1`), `checkE=True`, `checkF=True` (`TNLbulk = lambda chi mu[(K2-K0^2) h - 2 Pi(K2)]`), `checkG=True` (assemblaggio canale scalare `alpha BoxTheta + JNL`), `checkH=True` (assemblaggio canale metrico covariante), `checkI=True` (`lambda0(Lambda=0,H^2=K0^2/3)=1/(2kappa)`), `check=True`.
+`Perche questo passaggio`: certifica in pipeline Mathematica la forma delle EOM generali usata nel testo, evitando passaggi non verificabili dal lettore.
+`Interpretazione fisica dell'output`: il contributo non-locale entra come tensore efficace ben definito nel canale metrico e come sorgente nel canale scalare; sul ramo FRW de Sitter con `Lambda=0` la soluzione resta coerente con `H^2=K0^2/3`.
+
 Nota di scope:
-1. La catena `23-25` copre la variazione covariante 4D una volta introdotto l'indicatore `chi_Theta` del dominio causale.
+1. La catena `23-26` copre la variazione covariante 4D una volta introdotto l'indicatore `chi_Theta` del dominio causale.
 2. Resta separato (come gia' dichiarato nel paper) il problema della dimostrazione generale di equivalenza tra `chi_Theta` e una costruzione esplicita via mutua raggiungibilita' causale in background arbitrari.
 
 ## Nota operativa

@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3673,        109]
+NotebookOptionsPosition[      2852,         91]
+NotebookOutlinePosition[      3166,        105]
+CellTagsIndexPosition[      3123,        102]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["07 - Domain Proxy IR Class Equivalence Test", "Title",ExpressionUUID->"f2f11b14-21c1-4677-9b9f-c71d3674eeeb"],
+
+Cell["\<\
+Objective: compare two reasonable causal-domain proxies (redshift-threshold \
+vs apparent-horizon) and verify they lead to the same IR behavior class, \
+showing no fine-tuning.\
+\>", "Text",ExpressionUUID->"ec6a4326-ec51-4b1c-8500-ff3d5f73f415"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"DThetaRed", "[", 
+    RowBox[{"M_", ",", "H_", ",", "z2_"}], "]"}], "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", ">", "0"}], "|", 
+     RowBox[{
+      RowBox[{"f", "[", 
+       RowBox[{"r", ",", "M", ",", "H"}], "]"}], "\[GreaterEqual]", "z2"}]}], 
+    "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"8d958c60-1c41-409f-96f6-4d97f11fad97"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"DThetaApp", "[", 
+    RowBox[{"M_", ",", "H_"}], "]"}], "\[Equal]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", ">", "0"}], "|", 
+     RowBox[{
+      RowBox[{"f", "[", 
+       RowBox[{"r", ",", "M", ",", "H"}], "]"}], "\[GreaterEqual]", "0"}]}], 
+    "}"}]}],
+  HoldForm]], "Input",ExpressionUUID->"a3547888-cda6-4f6d-a79d-313f1b2b75e9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{"M_", ",", "H_", ",", "proxy_"}], "]"}], "\[Equal]", 
+   FractionBox[
+    RowBox[{"I1", "[", 
+     RowBox[{"M", ",", "H", ",", "proxy"}], "]"}], 
+    RowBox[{"I0", "[", 
+     RowBox[{"M", ",", "H", ",", "proxy"}], "]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"841fcf66-707b-4a80-97f5-e78b2a457a1d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"deltaQ", "[", 
+    RowBox[{"H_", ",", "proxy_"}], "]"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"Q", "[", 
+     RowBox[{"M", ",", "H", ",", "proxy"}], "]"}], "-", 
+    RowBox[{"Q", "[", 
+     RowBox[{"0", ",", "H", ",", "proxy"}], "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"24705fac-2f6c-46cd-a60a-130fa4fcf2e8"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"proxyClass", "[", "proxy", "]"}], 
+    "\[Equal]", "\"\<IR_SUPPRESSED_SUBLEADING\>\""}], "&&", 
+   RowBox[{
+    RowBox[{"proxyClass", "[", "\"\<redshift\>\"", "]"}], "\[Equal]", 
+    RowBox[{"proxyClass", "[", "\"\<apparent_horizon\>\"", "]"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"b0f3b7d3-36a6-4000-a923-050e7e327221"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0a37820a-bc34-4a7a-afd6-2fd8589e1896"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 115, 0, 70, "Title",ExpressionUUID->"f2f11b14-21c1-4677-9b9f-c71d3674eeeb"],
+Cell[672, 22, 255, 4, 70, "Text",ExpressionUUID->"ec6a4326-ec51-4b1c-8500-ff3d5f73f415"],
+Cell[930, 28, 401, 12, 70, "Input",ExpressionUUID->"8d958c60-1c41-409f-96f6-4d97f11fad97"],
+Cell[1334, 42, 388, 12, 70, "Input",ExpressionUUID->"a3547888-cda6-4f6d-a79d-313f1b2b75e9"],
+Cell[1725, 56, 369, 10, 70, "Input",ExpressionUUID->"841fcf66-707b-4a80-97f5-e78b2a457a1d"],
+Cell[2097, 68, 363, 10, 70, "Input",ExpressionUUID->"24705fac-2f6c-46cd-a60a-130fa4fcf2e8"],
+Cell[2463, 80, 385, 9, 70, "Input",ExpressionUUID->"b0f3b7d3-36a6-4000-a923-050e7e327221"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -18,12 +18,12 @@ WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["00 - DTheta Domain in Schwarzschild-de Sitter", "Title",ExpressionUUID->"39cbb32d-0ccf-483b-97e4-cdbc6b8df0d6"],
+Cell["00 - DTheta Domain in Schwarzschild-de Sitter", "Title",ExpressionUUID->"ab260156-b966-4607-8b77-503b800ebf71"],
 
 Cell["\<\
 Question zero: define DTheta with an operational redshift cutoff and test \
 unambiguous boundary shape derivative under BH-mass deformation.\
-\>", "Text",ExpressionUUID->"09de83f1-8f7d-4b26-9c3d-c5ca1e330602"],
+\>", "Text",ExpressionUUID->"81e7fa3f-67eb-49a5-a46a-2b1d4c03252a"],
 
 Cell[BoxData[
  TagBox[
@@ -36,7 +36,7 @@ Cell[BoxData[
     RowBox[{
      SuperscriptBox["H", "2"], " ", 
      SuperscriptBox["r", "2"]}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"f5b25fab-e390-4606-8333-2afba98cf0f3"],
+  HoldForm]], "Input",ExpressionUUID->"49dfabe5-1d87-4ccd-8d2a-29bae876e267"],
 
 Cell[BoxData[
  TagBox[
@@ -50,7 +50,7 @@ Cell[BoxData[
       RowBox[{"f", "[", 
        RowBox[{"r", ",", "M", ",", "H"}], "]"}], "\[GreaterEqual]", "z2"}]}], 
     "}"}]}],
-  HoldForm]], "Input",ExpressionUUID->"e32bbad0-fc33-4438-bddf-e9e49f3acfc2"],
+  HoldForm]], "Input",ExpressionUUID->"f1e25f12-1826-4b39-80af-9e817733900e"],
 
 Cell[BoxData[
  TagBox[
@@ -64,7 +64,7 @@ Cell[BoxData[
        RowBox[{"r", ",", "M", ",", "H"}], "]"}], "-", "z2"}], "\[Equal]", 
      "0"}], "&&", 
     RowBox[{"rIn", "<", "rOut"}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"c15495e8-935a-49dc-b553-7659795addd6"],
+  HoldForm]], "Input",ExpressionUUID->"f59f6663-94c8-46a2-98ef-52d37144a231"],
 
 Cell[BoxData[
  TagBox[
@@ -89,7 +89,7 @@ Cell[BoxData[
      RowBox[{
       SuperscriptBox["H", "2"], " ", 
       SuperscriptBox["r", "3"]}]}]]}],
-  HoldForm]], "Input",ExpressionUUID->"12a86853-1d17-4eff-b4bf-062503b1c6f5"],
+  HoldForm]], "Input",ExpressionUUID->"8b332980-89cf-494d-8094-0160e8ca0278"],
 
 Cell[BoxData[
  TagBox[
@@ -99,11 +99,11 @@ Cell[BoxData[
      RowBox[{"mu", "[", "rOut", "]"}], " ", "drOutdM"}], "-", 
     RowBox[{
      RowBox[{"mu", "[", "rIn", "]"}], " ", "drIndM"}]}]}],
-  HoldForm]], "Input",ExpressionUUID->"f3bb05af-af54-4895-8616-9d3d8585b019"]
+  HoldForm]], "Input",ExpressionUUID->"b58b6876-b282-4fe0-be2d-59fdb4a680d3"]
 },
 FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"66f610bd-1e99-4033-b22c-32bac2f9df85"
+ExpressionUUID->"8d138ad1-bab2-4bba-9d65-a0e38aa1c69f"
 ]
 (* End of Notebook Content *)
 
@@ -116,13 +116,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 117, 0, 70, "Title",ExpressionUUID->"39cbb32d-0ccf-483b-97e4-cdbc6b8df0d6"],
-Cell[674, 22, 219, 3, 70, "Text",ExpressionUUID->"09de83f1-8f7d-4b26-9c3d-c5ca1e330602"],
-Cell[896, 27, 357, 11, 70, "Input",ExpressionUUID->"f5b25fab-e390-4606-8333-2afba98cf0f3"],
-Cell[1256, 40, 398, 12, 70, "Input",ExpressionUUID->"e32bbad0-fc33-4438-bddf-e9e49f3acfc2"],
-Cell[1657, 54, 392, 12, 70, "Input",ExpressionUUID->"c15495e8-935a-49dc-b553-7659795addd6"],
-Cell[2052, 68, 729, 23, 70, "Input",ExpressionUUID->"12a86853-1d17-4eff-b4bf-062503b1c6f5"],
-Cell[2784, 93, 292, 8, 70, "Input",ExpressionUUID->"f3bb05af-af54-4895-8616-9d3d8585b019"]
+Cell[554, 20, 117, 0, 70, "Title",ExpressionUUID->"ab260156-b966-4607-8b77-503b800ebf71"],
+Cell[674, 22, 219, 3, 70, "Text",ExpressionUUID->"81e7fa3f-67eb-49a5-a46a-2b1d4c03252a"],
+Cell[896, 27, 357, 11, 70, "Input",ExpressionUUID->"49dfabe5-1d87-4ccd-8d2a-29bae876e267"],
+Cell[1256, 40, 398, 12, 70, "Input",ExpressionUUID->"f1e25f12-1826-4b39-80af-9e817733900e"],
+Cell[1657, 54, 392, 12, 70, "Input",ExpressionUUID->"f59f6663-94c8-46a2-98ef-52d37144a231"],
+Cell[2052, 68, 729, 23, 70, "Input",ExpressionUUID->"8b332980-89cf-494d-8094-0160e8ca0278"],
+Cell[2784, 93, 292, 8, 70, "Input",ExpressionUUID->"b58b6876-b282-4fe0-be2d-59fdb4a680d3"]
 }
 ]
 *)

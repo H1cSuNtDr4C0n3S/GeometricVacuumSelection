@@ -1,0 +1,85 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2566,         76]
+NotebookOptionsPosition[      1841,         59]
+NotebookOutlinePosition[      2155,         73]
+CellTagsIndexPosition[      2112,         70]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["11 - Section Closure Referee-Ready Test", "Title",ExpressionUUID->"0e48dfc9-be3a-4191-aec9-1814e4408e8c"],
+
+Cell["\<\
+Objective: produce a concise referee-facing closure block for the \
+cosmological EOM storyline (hard branch, soft branch, robustness) and verify \
+all claims in a single reproducible test.\
+\>", "Text",ExpressionUUID->"efa28a15-276b-4b67-b1c2-16c764761868"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "hardClaim", 
+   "\[Equal]", "\"\<Under hard Elam=0, the complete-EOM consistent branch is \
+de Sitter.\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"d7c054fe-d336-4751-abb2-ada4d732f058"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "softClaim", 
+   "\[Equal]", "\"\<A finite-domain-inspired soft closure restores an \
+evolving matter->de Sitter branch.\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"c7772148-2652-4a68-b502-51d291c14094"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "robustnessClaim", 
+   "\[Equal]", "\"\<The soft branch is broad-parameter robust (not \
+fine-tuned).\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"8fcb41db-12ab-41f0-ac84-d6f940e4467d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", 
+   "\[Equal]", "\"\<COSMOLOGICAL_ERAS_SECTION_CLOSURE_READY\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"36ffa788-0207-44fa-bd97-e144f1aa611c"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e2ce90d-cef3-4eb5-9ddc-b26f3f168921"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 111, 0, 70, "Title",ExpressionUUID->"0e48dfc9-be3a-4191-aec9-1814e4408e8c"],
+Cell[668, 22, 267, 4, 70, "Text",ExpressionUUID->"efa28a15-276b-4b67-b1c2-16c764761868"],
+Cell[938, 28, 225, 6, 70, "Input",ExpressionUUID->"d7c054fe-d336-4751-abb2-ada4d732f058"],
+Cell[1166, 36, 242, 6, 70, "Input",ExpressionUUID->"c7772148-2652-4a68-b502-51d291c14094"],
+Cell[1411, 44, 223, 6, 70, "Input",ExpressionUUID->"8fcb41db-12ab-41f0-ac84-d6f940e4467d"],
+Cell[1637, 52, 200, 5, 70, "Input",ExpressionUUID->"36ffa788-0207-44fa-bd97-e144f1aa611c"]
+}
+]
+*)
+
+(* End of internal cache information *)

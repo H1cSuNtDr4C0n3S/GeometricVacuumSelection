@@ -1,0 +1,113 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3433,        104]
+NotebookOptionsPosition[      2706,         87]
+NotebookOutlinePosition[      3020,        101]
+CellTagsIndexPosition[      2977,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["00 - Friedmann Eras Data Baseline Consistency Test", "Title",ExpressionUUID->"ca40917e-9e17-4e57-a16b-6e74b39d3fcc"],
+
+Cell["\<\
+Objective: build a reproducible cosmology baseline from frozen data (DESI \
+DR1) and verify that radiation, matter, and late de Sitter eras remain \
+standard and ordered.\
+\>", "Text",ExpressionUUID->"70d05375-af4d-447a-9947-d4bbe199544f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"\[ExponentialE]", "[", "z_", "]"}], ":=", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{"\[CapitalOmega]r", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "z"}], ")"}], "4"]}], "+", 
+     RowBox[{"\[CapitalOmega]m", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "z"}], ")"}], "3"]}], "+", 
+     "\[CapitalOmega]\[CapitalLambda]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"4ea7d95d-b6b9-4f07-a7aa-3d82e4ce13a4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"zEq", ":=", 
+   RowBox[{
+    FractionBox["\[CapitalOmega]m", "\[CapitalOmega]r"], "-", "1"}]}],
+  HoldForm]], "Input",ExpressionUUID->"45c5855f-1149-4b06-8a23-58a027463c19"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"zLambdaMatter", ":=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["\[CapitalOmega]\[CapitalLambda]", "\[CapitalOmega]m"], 
+      ")"}], 
+     RowBox[{"1", "/", "3"}]], "-", "1"}]}],
+  HoldForm]], "Input",ExpressionUUID->"989370d3-0b78-40fd-b7c9-4cea72bd26ab"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"wEff", "[", "z_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "3"], " ", "\[CapitalOmega]r", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "z"}], ")"}], "4"]}], "-", 
+     "\[CapitalOmega]\[CapitalLambda]"}], 
+    RowBox[{
+     RowBox[{"\[CapitalOmega]r", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "z"}], ")"}], "4"]}], "+", 
+     RowBox[{"\[CapitalOmega]m", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "z"}], ")"}], "3"]}], "+", 
+     "\[CapitalOmega]\[CapitalLambda]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"08bcf340-9ef5-4b22-bc9e-ab0a3eb84611"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e1b7d626-7b88-4a58-bd0c-02690ede64cc"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 122, 0, 70, "Title",ExpressionUUID->"ca40917e-9e17-4e57-a16b-6e74b39d3fcc"],
+Cell[679, 22, 249, 4, 70, "Text",ExpressionUUID->"70d05375-af4d-447a-9947-d4bbe199544f"],
+Cell[931, 28, 508, 15, 70, "Input",ExpressionUUID->"4ea7d95d-b6b9-4f07-a7aa-3d82e4ce13a4"],
+Cell[1442, 45, 207, 5, 70, "Input",ExpressionUUID->"45c5855f-1149-4b06-8a23-58a027463c19"],
+Cell[1652, 52, 319, 9, 70, "Input",ExpressionUUID->"989370d3-0b78-40fd-b7c9-4cea72bd26ab"],
+Cell[1974, 63, 728, 22, 70, "Input",ExpressionUUID->"08bcf340-9ef5-4b22-bc9e-ab0a3eb84611"]
+}
+]
+*)
+
+(* End of internal cache information *)

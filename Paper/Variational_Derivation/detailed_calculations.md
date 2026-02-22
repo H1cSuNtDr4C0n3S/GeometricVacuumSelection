@@ -593,14 +593,50 @@ Conclusione:
 1. La variazione dell'azione non-locale e' chiusa in forma bulk+boundary coerente con `S = Sloc + integral dTheta lambda(Theta)[I1-K0^2 I0]`.
 2. Nel canale normalizzato, il contributo variazionale scala come `1/I0` (qui `~L^-3`), cioe' resta IR-dominato e localmente soppresso.
 
-## Quadro complessivo (00-25)
+## 26 - Covariant General EOM Channels
+
+Riferimento: `scripts/26_covariant_general_eom_channels.wl`, log `logs/26_covariant_general_eom_channels.log`.
+
+Calcolo fatto:
+1. Si parte dall'azione completa `S = SLoc + integral dtheta lambda(theta) (I1-K0^2 I0)`.
+2. Si certifica il canale vincolo da variazione in `lambda`:
+   `deltaS_eta = eta (I1-K0^2 I0)`.
+3. Si deriva in forma simbolica l'identita' di misura covariante per variazione metrica:
+   `delta mu = -(1/2) mu h_{mn} delta g^{mn}`.
+4. Si estraggono i coefficienti metrici bulk di `delta I0` e `delta I1`, introducendo il kernel variazionale di `K2`:
+   `delta K2 = PiG delta g + PiTheta deltaTheta + divV`.
+5. Si ottiene il tensore efficace non-locale bulk dalla definizione variazionale:
+   `TNLbulk = lambda chi mu [ (K2-K0^2) h - 2 PiG ]`.
+6. Si assembla il canale metrico covariante:
+   `(G+Lambda g)/kappa - TTheta - TNL = 0`.
+7. Si assembla il canale scalare:
+   `alpha BoxTheta + JNL = 0`.
+8. Si aggiunge check minisuperspace del ramo de Sitter:
+   `lambda0(Lambda=0,H^2=K0^2/3)=1/(2 kappa)`.
+
+Output:
+1. `checkA(constraint channel)=True`.
+2. `checkB(dmu metric identity)=True`.
+3. `checkC(dI0 metric coeff)=True`, `checkD(dI1 metric coeff)=True`.
+4. `checkE(dS_NL metric coeff)=True`, `checkF(TNL bulk explicit)=True`.
+5. `checkG(scalar channel assembly)=True`.
+6. `checkH(metric channel assembly)=True`.
+7. `checkI(deSitter lambda)=True`.
+8. `check=True`.
+
+Conclusione:
+1. Le EOM generali (vincolo/metrica/scalare) sono ora certificate in pipeline Mathematica, non solo riportate in forma testuale.
+2. Il contributo non-locale metrico e' esplicitato come tensore efficace bulk con origine variazionale tracciabile.
+3. Il ramo de Sitter con `Lambda=0` resta coerente nella chiusura EOM del proxy omogeneo.
+
+## Quadro complessivo (00-26)
 
 Risultato tecnico consolidato:
-1. Tutti gli script `00..25` hanno check positivi nei log; nei notebook iniziali compaiono come `checkA/checkB/...`, mentre nei blocchi successivi anche come `check=True` unificato.
+1. Tutti gli script `00..26` hanno check positivi nei log; nei notebook iniziali compaiono come `checkA/checkB/...`, mentre nei blocchi successivi anche come `check=True` unificato.
 2. Le identita variazionali simboliche sono consistenti.
 3. Le verifiche numeriche indipendenti danno residui a livello macchina o nulli.
 4. La riduzione FRW produce EOM chiuse, propagazione coerente dei vincoli, riduzione lineare completa e identita' Noether/Bianchi off-shell, anche con estensione a curvatura spaziale.
-5. E' ora esplicitata anche la catena 4D covariante del dominio causale (`chi_Theta`, `delta(Theta-theta)`) con variazione bulk+boundary e derivata di forma.
+5. E' ora esplicitata anche la catena 4D covariante del dominio causale (`chi_Theta`, `delta(Theta-theta)`) con variazione bulk+boundary, derivata di forma e canali EOM generali certificati.
 6. Coerentemente con il testo del paper, la parte qui validata riguarda la variazione covariante dato un indicatore causale `chi_Theta`; la costruzione geometrica universale di `chi_Theta` da mutua raggiungibilita' causale resta un blocco separato.
 
 Risultato fisico consolidato:
@@ -624,6 +660,6 @@ Artefatti:
 2. Log: `Paper/Variational_Derivation/logs/*.log`.
 
 ## Nota EFT / scale di validita
-1. La catena `00..25` valida la parte variazionale e mostra soppressione IR controllata, ma non fissa una scala UV fondamentale della teoria.
+1. La catena `00..26` valida la parte variazionale e mostra soppressione IR controllata, ma non fissa una scala UV fondamentale della teoria.
 2. La discussione quantitativa di cutoff operativo, strong-coupling proxy e regime di validita e' implementata nel blocco perturbativo (`Paper/Perturbative_Spectrum_Study/scripts/15_eft_validity_scales_proxy.wl`).
 3. Quindi questa cartella va letta come fondazione strutturale EFT (operatori e variazioni), non come determinazione completa del dominio UV.

@@ -30,6 +30,7 @@ con verifica obbligatoria via Mathematica (`wolframscript`) prima della consegna
 - `scripts/23_covariant_causal_domain_variation.wl`
 - `scripts/24_covariant_boundary_shape_derivative.wl`
 - `scripts/25_covariant_nonlocal_action_variation.wl`
+- `scripts/26_covariant_general_eom_channels.wl`
 - `logs/` (riempita dopo esecuzione)
 - `summary.md` (mappa notebook <-> formule del paper)
 - `detailed_calculations.md` (dettaglio passaggi matematici + output log)
@@ -56,10 +57,11 @@ Nota: `run_all.ps1` esegue automaticamente tutti i file `*.wl` presenti
 in `scripts/`, ordinati per nome.
 
 ## Copertura EOM rispetto al paper
-La catena `23-25` estende i blocchi minisuperspace con una formulazione 4D covariante dei funzionali leafwise:
+La catena `23-26` estende i blocchi minisuperspace con una formulazione 4D covariante dei funzionali leafwise:
 1. rappresentazione covariante di `I0`, `I1` con `delta(Theta-theta)` e indicatore causale `chi_Theta` (aderente a `Paper/main.tex:242-263`);
 2. variazione del bordo tramite derivata di forma (`Heaviside -> DiracDelta`) coerente con la discussione su domini finiti/causali (`Paper/main.tex:278-281`, `Paper/main.tex:524-528`);
-3. variazione dell'azione non-locale `S_NL = ∫ dTheta lambda(Theta) [I1-K0^2 I0]` in split bulk+boundary, in linea con `Paper/main.tex:292-301` e con l'argomento di dominanza IR (`Paper/main.tex:314-329`).
+3. variazione dell'azione non-locale `S_NL = integral dTheta lambda(Theta) [I1-K0^2 I0]` in split bulk+boundary, in linea con `Paper/main.tex:292-301` e con l'argomento di dominanza IR (`Paper/main.tex:314-329`).
+4. derivazione simbolica certificata dei canali EOM generali (vincolo, metrica, scalare), con forma bulk esplicita del tensore efficace non-locale e verifica del ramo de Sitter con `Lambda=0`.
 
 ## Nota EFT / validita
 Questa cartella chiude la parte variazionale (bulk+boundary) ma non fissa da sola cutoff UV o scala di strong coupling.

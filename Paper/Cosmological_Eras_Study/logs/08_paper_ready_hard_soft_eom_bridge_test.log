@@ -1,0 +1,27 @@
+Notebook: 08_Paper_Ready_Hard_Soft_EOM_Bridge_Test.nb
+lamGeneric = -1/6*(-3*h2 + Lambda + kappa*rh)/(h2*kappa)
+lamHardA = -1/2*(-K0^2 + Lambda + (kappa*rho0)/a^(3*(1 + ww)))/(K0^2*kappa)
+h2Soft(a) = K0^2/3 + sigma/(3*a^3)
+h2SoftRebuild(a) = ((K0^2 + sigma)*(K0^2/(K0^2 + sigma) + sigma/(a^3*(K0^2 + sigma))))/3
+omegaM0 = sigma/(K0^2 + sigma)
+omegaL0 = K0^2/(K0^2 + sigma)
+weffSoft(a) = -((a^3*K0^2)/(a^3*K0^2 + sigma))
+weffEarlyLim = 0
+weffLateLim = -1
+softToHard = K0^2/3
+aGrid = {1/100, 1, 100}
+h2SoftVals = {111111.2311111111111111111111111111111111111111111111111111111112`50., 0.23111111111111111111111111111111111111111111111111111111111111111111111111111`50., 0.12000011111111111111111111111111111111111111111111111111111111111111111111111`50.}
+weffVals = {-1.07999883360125971063951250932648992739087841785130872058658176649169219`50.*^-6, -0.51923076923076923076923076923076923076923076923076923076923076923076923076923`50., -0.99999907407493141210054435134782282608997584261496054170320212666469753268747`50.}
+lamHardVals = {-462962.8322440087145969498910675381263616557734204793028322440087`50., -0.33224400871459694989106753812636165577342047930283224400871459694989106753812`50., 0.13071849128540305010893246187363834422657952069716775599128540305010893246187`50.}
+checkA(lam hard from EN) = True
+checkB(lam hard vacuum limit) = True
+checkC(soft H2 LCDM form) = True
+checkD(omegas sum to one) = True
+checkE(weff closed form) = True
+checkF(weff limits early/late) = True
+checkG(soft->hard at sigma=0) = True
+checkH(weff numeric anchors) = True
+checkI(lamHard monotonic sample) = True
+paperSnippet = "Hard branch (complete channels):\n  3 H^2 - K0^2 = 0,   lambda_hard(a) = (K0^2 - Lambda - kappa rho(a)) / (2 kappa K0^2).\nSoft finite-domain closure:\n  3 H^2 - K0^2 = sigma a^-3,   H^2(a) = K0^2/3 + sigma/(3 a^3).\n  This is equivalent to H^2(a)=H0^2[Omega_m0 a^-3 + Omega_L0] with\n  Omega_m0 = sigma/(K0^2+sigma), Omega_L0 = K0^2/(K0^2+sigma).\n  Effective equation of state: w_eff(a) = -1 + sigma/(sigma + K0^2 a^3),\n  hence w_eff -> 0 (early) and w_eff -> -1 (late)."
+classification = "PAPER_READY_HARD_SOFT_EOM_BRIDGE_CONFIRMED"
+check = True

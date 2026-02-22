@@ -50,8 +50,10 @@ of an additional dynamical dark energy degree of freedom.
 A supplementary minisuperspace check including barotropic matter shows that, under a hard
 implementation of the leafwise constraint, the selected homogeneous branch remains de Sitter
 ($H^2=K_0^2/3$) while matter sources the leafwise multiplier $\lambda(\Theta)$ rather than an evolving
-$H(t)$. This reinforces the need for a finite-domain/causal prescription to obtain a realistic
-radiation/matter history.
+$H(t)$. A dedicated supplementary \texttt{Cosmological\_Eras\_Study} pipeline then provides
+constructive proof-of-principle evidence that finite-domain closures can recover realistic era behavior:
+IR-suppressed and proxy-independent channels in radiation/matter tests, and a robust soft
+minisuperspace branch with LCDM-like matter$\to$de Sitter evolution.
 \end{abstract}
 
 \subsection*{Conventions}
@@ -119,7 +121,7 @@ phenomenology remain outside the scope of this work.
 \paragraph{Additional supplementary minisuperspace pipeline (barotropic matter).}
 We additionally provide a dedicated supplementary minisuperspace pipeline
 (\texttt{Paper/Barotropic\_Cosmology\_Study}) analyzing FRW cosmology with barotropic matter.
-It verifies that on the hard-constrained homogeneous branch (by ``hard implementation'' we mean
+It verifies that on the hard-constrained homogeneous branch (by ``hard-constrained implementation'' we mean
 a uniform enforcement of the infrared leafwise condition $Q(\theta)=K_0^2$ across all leaves
 in the homogeneous reduction, rather than a finite-domain/causal prescription)
 the constraint fixes $H^2=K_0^2/3$ while the matter sector is absorbed into a time-dependent leafwise multiplier
@@ -272,7 +274,8 @@ mutually related by causal curves in the ambient spacetime geometry.
 This definition is intrinsic to the foliation and does not depend on the
 choice of any fiducial observer. In asymptotically flat spacetimes,
 $D_\Theta$ extends to spatial infinity, while in spacetimes with a
-cosmological horizon the causal domain is bounded by the horizon scale,
+quasi-local causal boundary (reducing to the cosmological horizon in symmetric
+de Sitter) the causal domain is bounded at finite radius,
 providing a finite and geometrically natural infrared cutoff.
 
 On each leaf we define the functionals
@@ -289,6 +292,32 @@ and $W\ge 0$ is an optional smoothing/window weight (set to $W=1$ in this work).
 \langle K^2\rangle_{D_\Theta} \equiv \frac{I_1[\Theta]}{I_0[\Theta]} .
 \end{equation}
 
+\paragraph{Causal IR domain prescription.}
+\textbf{(A) Maximum causally accessible volume.}
+The causal IR domain is defined leafwise and observer-independently:
+$D_\Theta\subset\Sigma_\Theta$ is the maximal connected component selected by
+mutual causal reachability in the ambient geometry. Here ``maximal'' means
+maximal under the causal relation allowed by the geometry on that leaf, not
+``maximal by looking at the full future history''.
+
+\textbf{(B) Teleology-free boundary prescription.}
+To avoid teleological ambiguity, $\partial D_\Theta$ is not identified with a
+global event horizon. We use a quasi-local causal boundary prescription
+(apparent/trapping horizon, or an equivalent operational reachability rule on
+the leaf) defined at finite time. In highly symmetric limits this finite
+prescription reproduces the standard de Sitter static-patch domain.
+
+\textbf{(C) No retro-causal dynamics.}
+The non-local term is leafwise by construction:
+$I_0[\Theta]$ and $I_1[\Theta]$ are evaluated on a single hypersurface
+$\Sigma_\Theta$, with no integration over future times. Its variation produces
+bulk plus boundary contributions on that same leaf and its boundary
+(\(\delta\chi_\Theta\)-type shape terms in the covariant representation).
+Therefore the mechanism is not teleological dynamics; it is an IR consistency
+condition that selects the admissible solution sector rather than an advanced
+signalling channel. Black-hole backgrounds are used only as non-trivial
+consistency checks in the supplementary analysis.
+
 The geometric constraint is imposed by requiring
 \begin{equation}
 \lim_{R\to\infty}\frac{\int_{D_\Theta(R)} K^2\sqrt{\gamma}\,d^3x}{\int_{D_\Theta(R)} \sqrt{\gamma}\,d^3x}=K_0^2 ,
@@ -297,7 +326,8 @@ The geometric constraint is imposed by requiring
 where $K_0$ is a fixed parameter setting the curvature scale of the foliation.
 Here, $D_\Theta(R)$ denotes a family of nested subdomains monotonically
 exhausting $D_\Theta$ as $R\to\infty$. In spacetimes where $D_\Theta$
-is itself bounded (e.g.\ by a cosmological horizon), the limit is saturated
+is itself bounded (e.g.\ by a quasi-local causal boundary reducing to the
+cosmological horizon in symmetric de Sitter), the limit is saturated
 at finite $R$ and the constraint is automatically well-defined without
 external regulators. Conceptually, the use of global (or nonlocal)
 constraints to control vacuum properties has precedents in unimodular
@@ -327,11 +357,149 @@ Because $\lambda$ is not a local field but a function of $\Theta$ only, the
 constraint does not generate a pointwise equation $K^2(x)=K_0^2$. Instead,
 it acts globally on the geometry of each leaf, selecting admissible
 foliations without introducing unsuppressed local modifications of the
-gravitational dynamics. Boundary terms required for a well-defined variational principle can be made explicit by representing the causal domain through an indicator function and performing a covariant shape variation; the full covariant treatment is given in Appendix~\ref{app:covariant_variation}. A complete bulk+boundary derivation of the non-local Euler--Lagrange structure is provided in the supplementary \texttt{Variational\_Derivation} pipeline (scripts 00--25), together with symbolic and independent numerical checks.
+gravitational dynamics. Boundary terms required for a well-defined variational principle can be made explicit by representing the causal domain through an indicator function and performing a covariant shape variation; the full covariant treatment is given in Appendix~\ref{app:covariant_variation}. A complete bulk+boundary derivation of the non-local Euler--Lagrange structure is provided in the supplementary \texttt{Variational\_Derivation} pipeline (scripts 00--26), together with symbolic and independent numerical checks.
+
+\subsection{Covariant field equations and effective stress tensor}
+\label{sec:covariant_field_equations}
+
+For completeness, we write the full 4D Euler--Lagrange system generated by
+\eqref{eq:lag_mult}. The three channels are:
+
+\paragraph{Constraint channel (\(\lambda\)-variation).}
+For each leaf label \(\theta\),
+\begin{equation}
+\mathcal{C}[\theta]\equiv I_1[\theta]-K_0^2 I_0[\theta]=0.
+\label{eq:constraint_channel_general}
+\end{equation}
+
+\paragraph{Metric channel (\(g_{\mu\nu}\)-variation).}
+\begin{equation}
+G_{\mu\nu}+\Lambda g_{\mu\nu}
+=
+\kappa\Big(T^{(\Theta)}_{\mu\nu}+T^{\mathrm{NL}}_{\mu\nu}\Big),
+\label{eq:metric_channel_general}
+\end{equation}
+with
+\begin{equation}
+T^{(\Theta)}_{\mu\nu}
+=
+\alpha\!\left(\partial_\mu\Theta\,\partial_\nu\Theta
+-\frac12 g_{\mu\nu}X\right),
+\qquad
+X=g^{\rho\sigma}\partial_\rho\Theta\,\partial_\sigma\Theta,
+\label{eq:Ttheta_general}
+\end{equation}
+and non-local effective stress tensor
+\begin{equation}
+T^{\mathrm{NL}}_{\mu\nu}(x)
+\equiv
+-\frac{2}{\sqrt{-g(x)}}\int d\theta\,\lambda(\theta)\!
+\left[
+\frac{\delta I_1[\theta]}{\delta g^{\mu\nu}(x)}
+-K_0^2\frac{\delta I_0[\theta]}{\delta g^{\mu\nu}(x)}
+\right].
+\label{eq:Tnl_def_general}
+\end{equation}
+Using the bulk/boundary split of Appendix~\ref{app:covariant_variation},
+\begin{equation}
+T^{\mathrm{NL}}_{\mu\nu}
+=
+T^{\mathrm{NL,bulk}}_{\mu\nu}+T^{\mathrm{NL},\partial D}_{\mu\nu}.
+\label{eq:Tnl_split_general}
+\end{equation}
+For \(W=1\), the metric variation of the covariant leaf measure
+\(\mu=\sqrt{-g}\sqrt{X}\,\delta(\Theta-\theta)\) is
+\begin{equation}
+\delta\mu
+=
+-\frac12\,\mu\,h_{\rho\sigma}\,\delta g^{\rho\sigma},
+\qquad
+h_{\mu\nu}=g_{\mu\nu}-u_\mu u_\nu,
+\qquad
+u_\mu=\frac{\partial_\mu\Theta}{\sqrt{X}}.
+\label{eq:dmu_metric_general}
+\end{equation}
+Hence
+\begin{equation}
+\frac{\delta I_0^{\mathrm{bulk}}[\theta]}{\delta g^{\mu\nu}}
+=
+-\frac12\,\chi_\theta\,\mu\,h_{\mu\nu},
+\qquad
+\frac{\delta I_1^{\mathrm{bulk}}[\theta]}{\delta g^{\mu\nu}}
+=
+-\frac12\,\chi_\theta\,\mu\,K^2 h_{\mu\nu}
++\chi_\theta\,\mu\,\Pi^{(K^2)}_{\mu\nu},
+\label{eq:dI_bulk_metric_general}
+\end{equation}
+where \(\Pi^{(K^2)}_{\mu\nu}\) is the metric variational kernel of \(K^2\),
+defined by
+\begin{equation}
+\delta K^2
+=
+\Pi^{(K^2)}_{\mu\nu}\,\delta g^{\mu\nu}
++\Pi^{(K^2)}_{\Theta}\,\delta\Theta
++\nabla_\rho \mathcal{V}^\rho.
+\label{eq:deltaK2_kernel_general}
+\end{equation}
+Therefore the bulk non-local tensor is
+\begin{equation}
+T^{\mathrm{NL,bulk}}_{\mu\nu}
+=
+\int d\theta\,
+\lambda(\theta)\,\chi_\theta\,\mu\,
+\Big[
+(K^2-K_0^2)\,h_{\mu\nu}
+-2\,\Pi^{(K^2)}_{\mu\nu}
+\Big],
+\label{eq:Tnl_bulk_explicit_general}
+\end{equation}
+while \(T^{\mathrm{NL},\partial D}_{\mu\nu}\) is the corresponding
+distributional shape-derivative term generated by \(\delta\chi_\theta\).
+
+\paragraph{Scalar channel (\(\Theta\)-variation).}
+\begin{equation}
+\alpha\,\Box\Theta + \mathcal{J}_{\mathrm{NL}}=0,
+\label{eq:scalar_channel_general}
+\end{equation}
+with
+\begin{equation}
+\mathcal{J}_{\mathrm{NL}}(x)
+\equiv
+\frac{1}{\sqrt{-g(x)}}\int d\theta\,\lambda(\theta)\!
+\left[
+\frac{\delta I_1[\theta]}{\delta\Theta(x)}
+-K_0^2\frac{\delta I_0[\theta]}{\delta\Theta(x)}
+\right]
+=
+\mathcal{J}_{\mathrm{NL}}^{\mathrm{bulk}}+\mathcal{J}_{\mathrm{NL}}^{\partial D}.
+\label{eq:Jnl_def_general}
+\end{equation}
+
+Equations \eqref{eq:constraint_channel_general},
+\eqref{eq:metric_channel_general}, and \eqref{eq:scalar_channel_general}
+are the general metric-scalar field equations of the model.
+The fully expanded operators in the reduced \((A,B,\psi)\) proxy and the
+independent symbolic/numerical checks are provided in the supplementary
+\texttt{Variational\_Derivation} notebooks 10--11 and 16--26.
+
+\paragraph{de Sitter branch at \(\Lambda=0\).}
+On homogeneous FRW leaves one has \(Q=K^2=3H^2\), so the constraint channel
+\eqref{eq:constraint_channel_general} gives
+\(H^2=K_0^2/3\) directly. In the minisuperspace Euler--Lagrange system
+\((E_a,E_N,E_\lambda)\), the de Sitter branch satisfies all channels with
+\begin{equation}
+\lambda_0=\frac{K_0^2-\Lambda}{2K_0^2\kappa},
+\qquad
+\Lambda=0 \;\Longrightarrow\; \lambda_0=\frac{1}{2\kappa},
+\label{eq:lambda0_ds_general}
+\end{equation}
+as verified in the supplementary logs (\texttt{16\_frw\_minisuperspace\_eom},
+\texttt{18\_desitter\_constraint\_propagation},
+\texttt{19\_frw\_linearized\_full\_eom\_reduction}).
 
 \subsection{Variational structure and infrared dominance}
 
-A complete derivation of the Euler--Lagrange structure associated with the non-local term in \eqref{eq:lag_mult} is now available in the supplementary\linebreak\texttt{Variational\_Derivation} pipeline (scripts 00--25) and is summarized in covariant form in Appendix~\ref{app:covariant_variation}, including explicit bulk/boundary splitting and independent numerical cross-checks. Here we summarize the structural features needed in the main text.
+A complete derivation of the Euler--Lagrange structure associated with the non-local term in \eqref{eq:lag_mult} is now available in the supplementary\linebreak\texttt{Variational\_Derivation} pipeline (scripts 00--26) and is summarized in covariant form in Appendix~\ref{app:covariant_variation}, including explicit bulk/boundary splitting and independent numerical cross-checks. Here we summarize the structural features needed in the main text.
 
 Define the leafwise functionals
 \begin{align}
@@ -357,13 +525,13 @@ the induced boundary piece in the normalized channel is
 \delta Q\big|_{\partial D}=\frac{b_1\,I_0 - b_0\,I_1}{I_0^2},
 \label{eq:deltaQ_boundary}
 \end{equation}
-where $b_0,b_1$ are the domain-shape (``injection'') densities associated with $I_0$ and $I_1$ on $\partial D_\Theta$. In the covariant formulation (supplementary scripts 23--25), this term arises from a shape derivative $\delta\chi_\Theta\sim \rho\,\delta(\partial D_\Theta)$ of the causal-domain indicator $\chi_\Theta$, i.e.\ it is not added by hand.
+where $b_0,b_1$ are the domain-shape (``injection'') densities associated with $I_0$ and $I_1$ on $\partial D_\Theta$. In the covariant formulation (supplementary scripts 23--26), this term arises from a shape derivative $\delta\chi_\Theta\sim \rho\,\delta(\partial D_\Theta)$ of the causal-domain indicator $\chi_\Theta$, i.e.\ it is not added by hand.
 
 Equation \eqref{eq:deltaQ_ratio} immediately implies infrared dominance in the normalized channel: for extensive variations $\delta I_a = \mathcal{O}(I_0)$ one has
 \begin{equation}
 \delta Q = \mathcal{O}\!\left(\frac{1}{I_0}\right),
 \end{equation}
-so the induced corrections to the local field equations are suppressed by inverse powers of the leafwise volume. In asymptotically flat configurations $I_0\sim L^3$ for a domain of linear size $L$, and the non-local corrections vanish locally as $L\to\infty$. In spacetimes with a cosmological horizon, $D_\Theta$ saturates at finite size, so the same mechanism naturally selects an infrared vacuum geometry while leaving local Schwarzschild/post-Newtonian physics unsuppressed at leading order.
+so the induced corrections to the local field equations are suppressed by inverse powers of the leafwise volume. In asymptotically flat configurations $I_0\sim L^3$ for a domain of linear size $L$, and the non-local corrections vanish locally as $L\to\infty$. In spacetimes with a quasi-local causal boundary (reducing to the cosmological horizon in symmetric de Sitter), $D_\Theta$ saturates at finite size, so the same mechanism naturally selects an infrared vacuum geometry while leaving local Schwarzschild/post-Newtonian physics unsuppressed at leading order.
 
 \section{Sanity checks and local GR recovery}
 
@@ -496,7 +664,7 @@ leafwise geometric constraint.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.77\linewidth]{plot_4_convergence_analysis.png}
-  \caption{Convergence of the Minkowski leafwise average $\langle K^2\rangle(R_{\max})$ toward its infrared limit (example shown for $v=0.5$). The plot illustrates that a genuinely infrared domain is required for robust convergence, motivating the interpretation of the constraint as an infrared boundary condition defined by horizon-scale causal domains.}
+  \caption{Convergence of the Minkowski leafwise average $\langle K^2\rangle(R_{\max})$ toward its infrared limit (example shown for $v=0.5$). The plot illustrates that a genuinely infrared domain is required for robust convergence, motivating the interpretation of the constraint as an infrared boundary condition defined by quasi-local causal-boundary domains.}
   \label{fig:minkowski_convergence}
 \end{figure}
 
@@ -527,7 +695,8 @@ the de Sitter PG average theorem in
 \path{StaticSanityCheck/DeSitterPG.lean}.
 
 It is worth noting that the causal domain of the de Sitter foliation
-is bounded by the cosmological horizon at $r=H^{-1}$, so that $D_\Theta$
+is bounded by the quasi-local causal boundary, reducing in this symmetric
+de Sitter case to the cosmological horizon at $r=H^{-1}$, so that $D_\Theta$
 has finite volume. The infrared limit defining the constraint is therefore
 saturated at a finite, geometrically determined scale. This is in sharp
 contrast with the Minkowski case, where $D_\Theta$ extends to spatial
@@ -727,7 +896,25 @@ The lapse channel instead fixes the leafwise multiplier; on the de Sitter branch
 \end{equation*}
 For $w=-1$ one recovers $\dot\lambda=0$, while for $w\neq -1$ matter is encoded in $\lambda(t)$ rather than
 in an evolving $H(t)$.
-This reinforces the need for the finite-domain/causal prescription for realistic cosmological eras.
+This identifies the limitation of the uniform hard-constrained implementation and motivates the finite-domain/causal
+closure for realistic cosmological eras.
+
+\paragraph{Supplementary finite-domain closure (proof-of-principle).}
+The hard-constrained homogeneous reduction admits only the de Sitter branch, with matter absorbed into the leafwise multiplier.
+Motivated by the finite-domain/causal formulation, the dedicated \texttt{Cosmological\_Eras\_Study} pipeline
+exhibits a soft closure of the normalized constraint channel that admits an evolving solution in the complete minisuperspace EOM:
+\(3H^2-K_0^2=\sigma/a^3\), hence
+\(H^2(a)=K_0^2/3+\sigma/(3a^3)\), which is algebraically equivalent to an LCDM-like form
+\(H^2=H_0^2(\Omega_{m0}a^{-3}+\Omega_{\Lambda0})\) with
+\(\Omega_{m0}=\sigma/(K_0^2+\sigma)\), \(\Omega_{\Lambda0}=K_0^2/(K_0^2+\sigma)\).
+The effective equation of state interpolates between matter-like and de Sitter-like behavior,
+\(w_\mathrm{eff}(a)=-1+\sigma/(\sigma+K_0^2a^3)\), and the branch remains robust under broad parameter scans
+while matching the standard matter--vacuum transition scale used as benchmark.
+This soft closure is an effective construction inspired by the finite-domain formulation, and is not yet derived from the full domain dynamics.
+For direct traceability of this claim, see
+\texttt{05\_pipeline\_00\_04\_appendix\_ready\_summary\_test.wl},
+\texttt{10\_pipeline\_06\_09\_appendix\_ready\_summary\_test.wl}, and
+the section-closure artifact (test 11) in \texttt{Paper/Cosmological\_Eras\_Study}.
 
 \subsection{Perturbative spectrum (summary of supplementary results)}
 \label{sec:perturbative_spectrum}
@@ -794,7 +981,7 @@ curvature tensor $K_{\mu\nu}$.
 
 The notebooks are provided as supplementary material.
 
-In addition, a dedicated supplementary pipeline\linebreak(\texttt{Paper/Variational\_Derivation}) provides a complete derivation of the non-local variational structure (including explicit boundary/shape terms and a covariant causal-domain formulation), organized as scripts 00--25 with mandatory checks. The pipeline is executable via \texttt{wolframscript} and produces both notebooks and plain-text logs (\texttt{logs/*.log}) for reproducibility.
+In addition, a dedicated supplementary pipeline\linebreak(\texttt{Paper/Variational\_Derivation}) provides a complete derivation of the non-local variational structure (including explicit boundary/shape terms and a covariant causal-domain formulation), organized as scripts 00--26 with mandatory checks. The pipeline is executable via \texttt{wolframscript} and produces both notebooks and plain-text logs (\texttt{logs/*.log}) for reproducibility.
 
 A second dedicated supplementary pipeline (\texttt{Paper/Perturbative\_Spectrum\_Study})
 provides the perturbative spectrum analysis (ghost/gradient conditions and dispersion
@@ -808,6 +995,16 @@ provides minisuperspace FRW checks with barotropic matter.
 The validated block (\texttt{00\_barotropic\_hard\_constraint\_consistency.wl})
 enforces the hard branch $H^2=K_0^2/3$ and solves the lapse channel for $\lambda(t)$,
 with mandatory checks (\texttt{check=True}) recorded in plain-text logs for reproducibility.
+
+A fourth dedicated supplementary pipeline (\texttt{Paper/Cosmological\_Eras\_Study})
+provides finite-domain cosmological-era and complete-EOM closure tests.
+For appendix/supplement insertion, it includes two appendix-ready synthesis blocks:
+\texttt{05\_pipeline\_00\_04\_appendix\_ready\_summary\_test.wl}
+(radiation/matter IR suppression, era continuity, proxy-equivalence) and
+\texttt{10\_pipeline\_06\_09\_appendix\_ready\_summary\_test.wl}
+(hard$\to$soft$\to$robustness in minisuperspace), plus a concise section-closure artifact
+(test 11). Detailed outputs are provided in
+\texttt{summary.md} and \texttt{detailed\_calculations.md}.
 
 \subsection{Formal verification artifact (Lean)}
 
@@ -828,7 +1025,7 @@ version-pinned for reproducibility:
 {CI workflow}
 \end{itemize}
 
-For referee traceability, the artifact README provides a mapping from
+For traceability, the artifact README provides a mapping from
 paper equations to Lean theorems, with assumptions:
 \href{https://github.com/H1cSuNtDr4C0n3S/GeometricVacuumSelection/blob/v2.0/README.md}
 {README traceability table}.
@@ -876,7 +1073,7 @@ mathlib \texttt{a3a10db0e9d66acbebf76c5e6a135066525ac900}; CI reproduces
 
 \begin{sloppypar}
 \paragraph{Variational structure (supplementary).}
-The full bulk+boundary variational derivation of the non-local term, including explicit shape derivatives for finite/causal domains and a covariant indicator-function formulation, is verified in the supplementary Mathematica pipeline (\texttt{Variational\_Derivation}, scripts 00--25). This verification is symbolic plus independently cross-checked numerically at machine precision; it is complementary to (and currently separate from) the Lean formalization scope stated above.
+The full bulk+boundary variational derivation of the non-local term, including explicit shape derivatives for finite/causal domains and a covariant indicator-function formulation, is verified in the supplementary Mathematica pipeline (\texttt{Variational\_Derivation}, scripts 00--26). This verification is symbolic plus independently cross-checked numerically at machine precision; it is complementary to (and currently separate from) the Lean formalization scope stated above.
 \end{sloppypar}
 
 
@@ -910,19 +1107,24 @@ The present framework is intended as a proof-of-principle for vacuum selection
 in the strict infrared regime.
 A complete cosmological implementation requires a finite-domain prescription
 for the causal regions $D_\Theta$.
-We anticipate that the resulting finite-volume corrections---suppressed in the
-early universe but relevant at late times---will provide the dynamical mechanism
-driving the evolution toward the selected de Sitter vacuum.
-Developing such a finite-domain formulation and its implications for the
-radiation- and matter-dominated eras is left for future work.
-This necessity is reinforced by the barotropic minisuperspace check:
-under a uniform hard implementation the homogeneous branch remains de Sitter,
-while the matter sector is absorbed into the leafwise multiplier $\lambda(\Theta)$
-rather than reopening a standard FRW evolution $H(t)$.
+An explicit quasi-local class of finite-domain prescriptions, together with a
+black-hole patch stress test across two distinct proxies, is summarized in
+Appendix~\ref{app:finite_domain_bh}.
+The barotropic minisuperspace check clarifies why this is needed:
+under a uniform hard-constrained implementation the homogeneous branch remains de Sitter,
+while matter is absorbed into the leafwise multiplier $\lambda(\Theta)$ rather than
+reopening a standard FRW evolution $H(t)$.
+To address this at proof-of-principle level (without over-claiming a full cosmological model),
+the dedicated supplementary \texttt{Cosmological\_Eras\_Study} pipeline provides:
+(i) finite-domain IR-suppressed radiation/matter behavior with global era continuity and
+proxy-independence (appendix-ready block 00--04), and
+(ii) a soft minisuperspace closure admitting an LCDM-like matter$\to$de Sitter branch,
+robust under broad parameter scans (appendix-ready block 06--09, plus closure test 11).
 
 These results suggest that the observed late-time cosmic acceleration may reflect
 a global geometric property of the spacetime foliation defining the present---a
-resistance to staticity enforced at the cosmological horizon---rather than
+resistance to staticity enforced at the quasi-local causal boundary (reducing to
+the cosmological horizon in symmetric de Sitter)---rather than
 requiring the introduction of an additional dynamical dark energy degree of freedom.
 
 
@@ -1129,6 +1331,116 @@ $\delta I_a=\mathcal{O}(I_0)$), the induced correction in the normalized channel
 so local modifications to the field equations are parametrically suppressed by the
 infrared volume of the causal domain. This provides a precise underpinning for the
 infrared-dominance arguments used in the main text.
+
+\subsection{Finite-domain prescriptions and black-hole patch stress test}
+\label{app:finite_domain_bh}
+
+To make the finite-domain prescription explicit without tying it to a single
+ansatz, consider a quasi-local \emph{accessibility functional}
+\(\mathcal{A}_\theta(x)\) on each leaf \(\Sigma_\theta\), constructed from
+leafwise geometric data (or from null congruences launched from \(\Sigma_\theta\)).
+For a threshold \(\alpha\), define
+\begin{equation}
+D_\theta(\alpha)
+\equiv
+\{x\in\Sigma_\theta \mid \mathcal{A}_\theta(x)\ge \alpha\}.
+\label{eq:Dtheta_accessibility}
+\end{equation}
+This includes as special cases redshift/lapse thresholds, finite
+reachability-time criteria, and trapped-surface proxies based on local null
+expansions. Crucially, \eqref{eq:Dtheta_accessibility} is finite and quasi-local:
+no global event-horizon construction (hence no teleological input) is required.
+
+In spherical symmetry, \(\mathcal{A}_\theta(x)\to \mathcal{A}(r)\), and
+\(\partial D_\theta\) is determined by the level-set equation
+\(\mathcal{A}(r)=\alpha\), yielding one or two radii
+\(r_{\rm in},r_{\rm out}\) and therefore a finite radial domain
+\begin{equation}
+D_\theta=[r_{\rm in},r_{\rm out}]
+\quad\text{(or }[0,r_{\rm out}]\text{ if only one positive root exists).}
+\label{eq:Dtheta_spherical_general}
+\end{equation}
+The redshift-threshold implementation used in part of the manuscript is thus
+one representative element of a broader quasi-local class.
+
+As a non-trivial stress test, the supplementary
+\texttt{Black\_Hole\_Study} pipeline compares two distinct proxies in a Kottler
+black-hole patch:
+\begin{align}
+D_\theta^{\rm red} &= \{r\mid f(r;M,H)\ge z_2\},\nonumber\\
+D_\theta^{\rm AH}  &= \{r\mid f(r;M,H)\ge 0\},
+\label{eq:proxy_pair_bh}
+\end{align}
+with \(f(r;M,H)=1-2M/r-H^2r^2\). In spherical symmetry,
+\(D_\theta^{\rm AH}\) coincides with the apparent-horizon-type boundary
+criterion.
+
+Using the same normalized channel \(Q=I_1/I_0\), both prescriptions yield the
+same infrared behavior class (\texttt{IR\_SUPPRESSED\_SUBLEADING}):
+\begin{equation}
+\frac{\delta Q(H/2)}{\delta Q(H)}
+=
+0.1250473517\ldots\ \ (\text{redshift}),\qquad
+0.1251027240\ldots\ \ (\text{apparent-horizon}),
+\label{eq:ratioDelta_two_proxies}
+\end{equation}
+both compatible with \(1/8\), while the relative amplitudes remain subleading
+(\(\epsilon_{\rm ref}\sim 10^{-2}\), \(\epsilon_{1/2}\sim 10^{-3}\text{--}10^{-2}\)).
+Moreover, scanning \(z_2\in\{0.01,0.02,0.05,0.1\}\) leaves the class unchanged
+and keeps \(\delta Q(H/2)/\delta Q(H)\) within
+\([0.124984\ldots,\,0.125092\ldots]\).
+
+Therefore the BH patch does not overturn infrared dominance: near-BH/UV
+contributions are controllable, the outer cosmological part of the finite causal
+domain controls the IR normalization, and the mechanism remains a quasi-local
+consistency selection rather than a teleological dynamics.
+
+\subsection{Cosmological-eras supplementary synthesis (appendix-ready)}
+\label{app:cosmo_eras_appendix_ready}
+
+For convenience, we summarize here the validated appendix-ready outputs of
+the dedicated \texttt{Paper/Cosmological\_Eras\_Study} pipeline.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\hline
+Test & Title & Classification & Check \\
+\hline
+00 & Data baseline consistency & \texttt{STANDARD\_ERA\_HISTORY\_COMPATIBLE} & True \\
+01 & Radiation era IR scaling & \texttt{RADIATION\_ERA\_IR\_SUPPRESSED} & True \\
+02 & Matter era IR scaling & \texttt{MATTER\_ERA\_IR\_SUPPRESSED} & True \\
+03 & Era continuity global channel & \texttt{ERAS\_PIPELINE\_CONTINUITY\_CONFIRMED} & True \\
+04 & Proxy equivalence across eras & \texttt{ERA\_PROXY\_CLASS\_EQUIVALENT\_IR} & True \\
+05 & Aggregate 00--04 & \texttt{PIPELINE\_00\_04\_APPENDIX\_READY} & True \\
+\hline
+\end{tabular}
+\caption{Appendix-ready synthesis for radiation/matter IR suppression, continuity, and proxy-equivalence (\texttt{00--04}, aggregated by \texttt{05}).}
+\label{tab:cosmo_eras_00_04}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llll}
+\hline
+Test & Title & Classification & Check \\
+\hline
+06 & Hard complete-EOM branch search & \texttt{COMPLETE\_EOM\_MATTER\_SELFCONSISTENT\_DS\_BRANCH\_ONLY} & True \\
+07 & Soft-closure evolving branch & \texttt{COMPLETE\_EOM\_SOFT\_CLOSURE\_EVOLVING\_BRANCH\_FOUND} & True \\
+08 & Paper-ready hard-soft bridge & \texttt{PAPER\_READY\_HARD\_SOFT\_EOM\_BRIDGE\_CONFIRMED} & True \\
+09 & Soft-branch robustness scan & \texttt{COMPLETE\_EOM\_SOFT\_BRANCH\_ROBUST\_NOT\_FINE\_TUNED} & True \\
+10 & Aggregate 06--09 & \texttt{PIPELINE\_06\_09\_APPENDIX\_READY} & True \\
+\hline
+\end{tabular}
+\caption{Appendix-ready synthesis for hard$\to$soft$\to$robustness closure (\texttt{06--09}, aggregated by \texttt{10}).}
+\label{tab:cosmo_eras_06_09}
+\end{table}
+
+The section-closure artifact (test 11)
+provides a compact claim checklist (hard consistency, soft evolving branch,
+anti-fine-tuning robustness, and transition-anchor match), all validated with \texttt{check=True}.
 
 \subsection{Second variations of the normalized channel and quadratic kernel}
 \label{app:secondvar}

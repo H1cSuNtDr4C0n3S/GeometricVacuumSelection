@@ -1,0 +1,114 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3538,        105]
+NotebookOptionsPosition[      2810,         88]
+NotebookOutlinePosition[      3124,        102]
+CellTagsIndexPosition[      3081,         99]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["06 - Complete EOM With Matter: Self-Consistent Branch Search", "Title",ExpressionUUID->"354b6eed-c5e0-4f76-821c-e870e14cd013"],
+
+Cell["\<\
+Objective: solve the complete minisuperspace EOM channels (Ea, EN, Elam) with \
+barotropic matter, identify an exact self-consistent branch, and test whether \
+a standard power-law expanding branch can satisfy the hard constraint channel.\
+\>", "Text",ExpressionUUID->"c204005e-9ac6-42d8-8f1b-e619f0cd2b6a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"L", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"3", " ", "a", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SuperscriptBox["a", "\[Prime]",
+          MultilineFunction->None], ")"}], "2"]}], 
+      RowBox[{"kappa", " ", "N"}]]}], "-", 
+    FractionBox[
+     RowBox[{"Lambda", " ", 
+      SuperscriptBox["a", "3"], " ", "N"}], "kappa"], "+", 
+    RowBox[{"lambda", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"3", " ", "a", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox["a", "\[Prime]",
+            MultilineFunction->None], ")"}], "2"]}], 
+        SuperscriptBox["N", "2"]], "-", 
+       RowBox[{
+        SuperscriptBox["K0", "2"], " ", 
+        SuperscriptBox["a", "3"]}]}], ")"}]}], "-", 
+    RowBox[{"rho0", " ", 
+     SuperscriptBox["a", 
+      RowBox[{
+       RowBox[{"-", "3"}], " ", "w"}]], " ", "N"}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"2796e3e8-7f8f-4dc0-84e3-920a02fb687b"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Ea", "\[Equal]", "0"}], ",", 
+    RowBox[{"EN", "\[Equal]", "0"}], ",", 
+    RowBox[{"Elam", "\[Equal]", "0"}]}], "}"}],
+  HoldForm]], "Input",ExpressionUUID->"8ad2a333-6029-4afb-bc9c-aaa1c3082d7d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Elam", "\[Equal]", "0"}], "\[Implies]", 
+   RowBox[{
+    SuperscriptBox["H", "2"], "\[Equal]", 
+    FractionBox[
+     SuperscriptBox["K0", "2"], "3"]}]}],
+  HoldForm]], "Input",ExpressionUUID->"18d8151f-c757-43fb-bc50-34b26479ddbd"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+  "classification", 
+   "\[Equal]", "\"\<COMPLETE_EOM_MATTER_SELFCONSISTENT_DS_BRANCH_ONLY\>\""}],
+  HoldForm]], "Input",ExpressionUUID->"fcf438f1-b4d6-481e-8aee-bf5be1c67bdc"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"de5b4399-bcf9-423d-a4f7-d725a8b6388b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 132, 0, 70, "Title",ExpressionUUID->"354b6eed-c5e0-4f76-821c-e870e14cd013"],
+Cell[689, 22, 317, 4, 70, "Text",ExpressionUUID->"c204005e-9ac6-42d8-8f1b-e619f0cd2b6a"],
+Cell[1009, 28, 1038, 32, 70, "Input",ExpressionUUID->"2796e3e8-7f8f-4dc0-84e3-920a02fb687b"],
+Cell[2050, 62, 262, 7, 70, "Input",ExpressionUUID->"8ad2a333-6029-4afb-bc9c-aaa1c3082d7d"],
+Cell[2315, 71, 278, 8, 70, "Input",ExpressionUUID->"18d8151f-c757-43fb-bc50-34b26479ddbd"],
+Cell[2596, 81, 210, 5, 70, "Input",ExpressionUUID->"fcf438f1-b4d6-481e-8aee-bf5be1c67bdc"]
+}
+]
+*)
+
+(* End of internal cache information *)

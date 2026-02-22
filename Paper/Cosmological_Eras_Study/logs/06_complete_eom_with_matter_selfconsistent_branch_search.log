@@ -1,0 +1,34 @@
+Notebook: 06_Complete_EOM_With_Matter_Selfconsistent_Branch_Search.nb
+Ea = (3*(kappa*rho0*ww*aa[t]^(-1 - 3*ww)*NN[t]^4 - aa[t]^2*NN[t]^3*(K0^2*kappa*ll[t] + Lambda*NN[t]) + NN[t]*(-(kappa*ll[t]) + NN[t])*Derivative[1][aa][t]^2 - 2*aa[t]*(-2*kappa*ll[t]*Derivative[1][aa][t]*Derivative[1][NN][t] - NN[t]^2*Derivative[2][aa][t] + NN[t]*(Derivative[1][aa][t]*(kappa*Derivative[1][ll][t] + Derivative[1][NN][t]) + kappa*ll[t]*Derivative[2][aa][t]))))/(kappa*NN[t]^3)
+EN = -((Lambda*aa[t]^3)/kappa) - rho0/aa[t]^(3*ww) - (3*aa[t]*(2*kappa*ll[t] - NN[t])*Derivative[1][aa][t]^2)/(kappa*NN[t]^3)
+Elam = -(K0^2*aa[t]^3) + (3*aa[t]*Derivative[1][aa][t]^2)/NN[t]^2
+ElamN1 = -(K0^2*aa[t]^3) + 3*aa[t]*Derivative[1][aa][t]^2
+constraintForm = -K0^2 + (3*Derivative[1][aa][t]^2)/aa[t]^2
+EaDS = (-3*(-3*E^(2*H0*t)*H0^2 + E^(2*H0*t)*Lambda - (E^(H0*t))^(-1 - 3*ww)*kappa*rho0*ww + E^(2*H0*t)*(3*H0^2 + K0^2)*kappa*ll[t] + 2*E^(2*H0*t)*H0*kappa*Derivative[1][ll][t]))/kappa
+ENDS = -((E^(3*H0*t)*Lambda + (kappa*rho0)/(E^(H0*t))^(3*ww) + 3*E^(3*H0*t)*H0^2*(-1 + 2*kappa*ll[t]))/kappa)
+ElamDS = E^(3*H0*t)*(3*H0^2 - K0^2)
+hardRule = H0^2 -> K0^2/3
+lamRule = {ll[t] -> (E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2 - E^(3*H0*t)*(E^(H0*t))^(3*ww)*Lambda - kappa*rho0)/(2*E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2*kappa)}
+lamExpr = -1/2*(-K0^2 + Lambda + (kappa*rho0)/(E^(3*H0*t)*(E^(H0*t))^(3*ww)))/(K0^2*kappa)
+lamPrimeExpr = (3*H0*rho0*(1 + ww))/(2*E^(3*H0*t)*(E^(H0*t))^(3*ww)*K0^2)
+EaCons = (3*(E^(H0*t))^(-1 - 3*ww)*(-3*H0^2 + K0^2)*rho0*(1 + ww))/K0^2
+ENCons = 0
+ElamCons = 0
+rhoConservation = 0
+lamPrimeDust = 5/(2*Sqrt[3]*E^((3*Sqrt[3])/5))
+lamPrimeDE = 0
+ElamPower = t^(-2 + 3*p)*(3*p^2 - K0^2*t^2)
+powerNoGoReduce = False
+sampleResiduals = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+maxResidual = 0
+checkA(constraint channel form) = True
+checkB(Elam on hard branch) = True
+checkC(EN solved by lambda) = True
+checkD(Ea consistency on branch) = True
+checkE(matter continuity eq) = True
+checkF(lambda time dependence for dust) = True
+checkG(lambda static for w=-1) = True
+checkH(power-law no-go under hard constraint) = True
+checkI(numerical residuals) = True
+classification = "COMPLETE_EOM_MATTER_SELFCONSISTENT_DS_BRANCH_ONLY"
+check = True

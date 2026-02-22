@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      2731,         84]
+NotebookOptionsPosition[      2005,         67]
+NotebookOutlinePosition[      2319,         81]
+CellTagsIndexPosition[      2276,         78]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["01 - Radiation Era Finite-Domain IR Scaling Test", "Title",ExpressionUUID->"6bf95794-152b-44f7-8655-44cdc1c6d800"],
+
+Cell["\<\
+Objective: in radiation era, verify that a finite causal-domain proxy keeps \
+the non-local channel IR-suppressed and with expected H^3 scaling.\
+\>", "Text",ExpressionUUID->"b414f9e5-6186-46c8-999e-becba629dadb"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"hNorm", "[", "z_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"\[ExponentialE]", "[", "z", "]"}], 
+    RowBox[{"\[ExponentialE]", "[", "zRef", "]"}]]}],
+  HoldForm]], "Input",ExpressionUUID->"9c5ad66f-f512-405c-8d53-972ef936e27c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Rdom", "[", "h_", "]"}], ":=", 
+   FractionBox[
+    SqrtBox[
+     RowBox[{"1", "-", "z2"}]], "h"]}],
+  HoldForm]], "Input",ExpressionUUID->"b8227966-47a0-4308-aae7-b03c54438c66"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"Q", "[", "h_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"3", " ", 
+     SuperscriptBox["h", "2"]}], "+", 
+    FractionBox[
+     RowBox[{"I1", "[", "h", "]"}], 
+     RowBox[{"I0", "[", "h", "]"}]]}]}],
+  HoldForm]], "Input",ExpressionUUID->"23b7ea0a-8ad2-478c-a1fd-a4f8176375a8"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   RowBox[{"deltaQ", "[", "h_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Q", "[", "h", "]"}], "-", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["h", "2"]}]}]}],
+  HoldForm]], "Input",ExpressionUUID->"dfa85a97-5b22-48c2-9976-7f96acc31cf1"]
+},
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a83bd6d1-c378-4ba4-8c49-4f0e587986a8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 120, 0, 70, "Title",ExpressionUUID->"6bf95794-152b-44f7-8655-44cdc1c6d800"],
+Cell[677, 22, 223, 3, 70, "Text",ExpressionUUID->"b414f9e5-6186-46c8-999e-becba629dadb"],
+Cell[903, 27, 275, 7, 70, "Input",ExpressionUUID->"9c5ad66f-f512-405c-8d53-972ef936e27c"],
+Cell[1181, 36, 224, 7, 70, "Input",ExpressionUUID->"b8227966-47a0-4308-aae7-b03c54438c66"],
+Cell[1408, 45, 321, 10, 70, "Input",ExpressionUUID->"23b7ea0a-8ad2-478c-a1fd-a4f8176375a8"],
+Cell[1732, 57, 269, 8, 70, "Input",ExpressionUUID->"dfa85a97-5b22-48c2-9976-7f96acc31cf1"]
+}
+]
+*)
+
+(* End of internal cache information *)

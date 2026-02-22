@@ -1,0 +1,29 @@
+Notebook: 07_Complete_EOM_Soft_Closure_Evolving_Branch_Test.nb
+Ea = (3*(kappa*rho0*ww*aa[t]^(-1 - 3*ww)*NN[t]^4 - aa[t]^2*NN[t]^3*(K0^2*kappa*ll[t] + Lambda*NN[t]) + NN[t]*(-(kappa*ll[t]) + NN[t])*Derivative[1][aa][t]^2 - 2*aa[t]*(-2*kappa*ll[t]*Derivative[1][aa][t]*Derivative[1][NN][t] - NN[t]^2*Derivative[2][aa][t] + NN[t]*(Derivative[1][aa][t]*(kappa*Derivative[1][ll][t] + Derivative[1][NN][t]) + kappa*ll[t]*Derivative[2][aa][t]))))/(kappa*NN[t]^3)
+EN = -((Lambda*aa[t]^3)/kappa) - rho0/aa[t]^(3*ww) - (3*aa[t]*(2*kappa*ll[t] - NN[t])*Derivative[1][aa][t]^2)/(kappa*NN[t]^3)
+Elam = -(K0^2*aa[t]^3) + (3*aa[t]*Derivative[1][aa][t]^2)/NN[t]^2
+h2Soft(a) = K0^2/3 + sigma/(3*aa[t]^3)
+EaSoft = 0
+ENSoft = 0
+ElamSoft = sigma
+softConstraintResidual = 0
+weff(a) = -1 + sigma/(sigma + K0^2*aa[t]^3)
+weffEarly(a=1e-2) = -1.07999883360125971063951250932648992739087841785130872058658176649169219`50.*^-6
+weffMid(a=1) = -0.51923076923076923076923076923076923076923076923076923076923076923076923076923`50.
+weffLate(a=1e2) = -0.99999907407493141210054435134782282608997584261496054170320212666469753268747`50.
+eaNumVals = {0, 0, 0, 0, 0}
+enNumVals = {0, 0, 0, 0, 0}
+elamNumVals = {0, 0, 0, 0, 0}
+maxResidual = 0
+ElamPowerHard = t^(-2 + 3*p)*(3*p^2 - K0^2*t^2)
+hardPowerNoGo = False
+checkA(Ea channel) = True
+checkB(EN channel) = True
+checkC(soft constraint channel) = True
+checkD(early matter-like weff) = True
+checkE(late deSitter-like weff) = True
+checkF(monotonic transition weff) = True
+checkG(numerical residuals) = True
+checkH(hard-branch power-law no-go) = True
+classification = "COMPLETE_EOM_SOFT_CLOSURE_EVOLVING_BRANCH_FOUND"
+check = True
